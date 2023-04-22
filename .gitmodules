@@ -10,3 +10,6 @@
 [submodule "godot_spatial_gardener"]
 	path = godot_spatial_gardener
 	url = https://github.com/dreadpon/godot_spatial_gardener
+[submodule "LD41"]
+	path = LD41
+	url = https://github.com/LudumDare41/LD41
