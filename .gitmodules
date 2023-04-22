@@ -16,3 +16,6 @@
 [submodule "Godot_Third_Person_Controller"]
 	path = Godot_Third_Person_Controller
 	url = https://github.com/JohnnyRouddro/Godot_Third_Person_Controller
+[submodule "GDTLancer"]
+	path = GDTLancer
+	url = https://github.com/roalyr/GDTLancer
