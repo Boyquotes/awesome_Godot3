@@ -7,3 +7,6 @@
 [submodule "oriks_lantern"]
 	path = oriks_lantern
 	url = https://github.com/OsamaElHariri/oriks_lantern
+[submodule "godot_spatial_gardener"]
+	path = godot_spatial_gardener
+	url = https://github.com/dreadpon/godot_spatial_gardener
