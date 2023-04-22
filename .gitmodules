@@ -13,3 +13,6 @@
 [submodule "LD41"]
 	path = LD41
 	url = https://github.com/LudumDare41/LD41
+[submodule "Godot_Third_Person_Controller"]
+	path = Godot_Third_Person_Controller
+	url = https://github.com/JohnnyRouddro/Godot_Third_Person_Controller
