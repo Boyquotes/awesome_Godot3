@@ -1,0 +1,13 @@
+[remap]
+
+importer="np.dialog"
+type="Resource"
+path="res://.import/fountain_statue.dialog-133c791a323963ee5a3b2e28f2fdfa8f.tres"
+
+[deps]
+
+source_file="res://dialog/crab_hill/fountain_statue.dialog"
+dest_files=[ "res://.import/fountain_statue.dialog-133c791a323963ee5a3b2e28f2fdfa8f.tres" ]
+
+[params]
+

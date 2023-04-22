@@ -1,0 +1,50 @@
+[gd_scene format=2]
+
+[node name="options" type="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="vbox" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+
+[node name="tabs" type="TabContainer" parent="vbox"]
+margin_right = 1004.0
+margin_bottom = 556.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+tab_align = 0
+
+[node name="buttons" type="HBoxContainer" parent="vbox"]
+margin_top = 560.0
+margin_right = 1004.0
+margin_bottom = 580.0
+
+[node name="Cancel" type="Button" parent="vbox/buttons"]
+margin_right = 54.0
+margin_bottom = 20.0
+text = "Cancel"
+
+[node name="Apply" type="Button" parent="vbox/buttons"]
+margin_left = 58.0
+margin_right = 106.0
+margin_bottom = 20.0
+text = "Apply"
+
+[node name="ralign" type="HBoxContainer" parent="vbox/buttons"]
+margin_left = 110.0
+margin_right = 1004.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="Reset" type="Button" parent="vbox/buttons/ralign"]
+margin_left = 789.0
+margin_right = 894.0
+margin_bottom = 20.0
+focus_neighbour_left = NodePath("../../Apply")
+text = "Reset Defaults"

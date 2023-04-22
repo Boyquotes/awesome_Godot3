@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://_glb/env/copper/rail_cart.glb" type="PackedScene" id=1]
+[ext_resource path="res://material/env/copper/copper_local_coords.tres" type="Material" id=2]
+[ext_resource path="res://entities/control/door.gd" type="Script" id=3]
+
+[sub_resource type="ConvexPolygonShape" id=34]
+points = PoolVector3Array( 2.85327, 1.35, 1.57452, 2.80959, 1.35, 2.48921, 2.85327, 1.03117, 1.57452, 2.85327, 1.35, -1.575, -1.32611, 1.35, 2.48921, 2.80959, 1.03117, 2.48921, -1.32611, 0.531421, 2.48921, 2.85327, 1.03117, -1.575, 2.80959, 1.35, -2.48921, -1.41558, 1.28101, 2.41416, -1.35006, 1.35, 1.57452, -1.43574, 1.28101, 1.65395, -1.41558, 0.600331, 2.41416, -1.43574, 0.600331, 1.65395, -1.35006, 0.531421, 1.57452, -1.32611, 0.531421, -2.48921, 2.80959, 1.03117, -2.48921, -1.32611, 1.35, -2.48921, -1.43742, 1.28101, 1.08671, -1.35006, 1.35, -1.575, -1.43742, 0.600331, 1.08671, -1.35006, 0.531421, -1.575, -1.43574, 0.600331, -1.65444, -1.41558, 0.600331, -2.41465, -1.41558, 1.28101, -2.41465, -1.43574, 1.28101, -1.65444, -1.43742, 1.28101, -1.0872, -1.43742, 0.600331, -1.0872 )
+
+[sub_resource type="ConvexPolygonShape" id=35]
+points = PoolVector3Array( 2.85369, 1.72585, 2.98688, 2.85369, 0.726775, 2.98688, 2.85369, 1.72585, 2.475, -1.35, 1.72585, 2.98688, 2.85369, 0.726775, 2.475, -1.35, 0.22709, 2.98688, -1.35, 1.72585, 2.475, -1.35, 0.22709, 2.475 )
+
+[sub_resource type="ConvexPolygonShape" id=36]
+points = PoolVector3Array( 2.85369, 1.72585, -2.475, 2.85369, 0.726775, -2.475, 2.85369, 1.72585, -2.98688, -1.35, 1.72585, -2.475, 2.85369, 0.726775, -2.98688, -1.35, 0.22709, -2.475, -1.35, 1.72585, -2.98688, -1.35, 0.22709, -2.98688 )
+
+[node name="rail_cart" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="cart" parent="." index="0"]
+material/0 = ExtResource( 2 )
+
+[node name="rail1" parent="cart" index="0"]
+material/0 = ExtResource( 2 )
+
+[node name="rail2" parent="cart" index="1"]
+material/0 = ExtResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="." index="1"]
+shape = SubResource( 34 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="." index="2"]
+shape = SubResource( 35 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="." index="3"]
+shape = SubResource( 36 )

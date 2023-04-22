@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://areas/chunk_content.gd" type="Script" id=1]
+[ext_resource path="res://entities/enemies/speeder.tscn" type="PackedScene" id=2]
+[ext_resource path="res://entities/env/stone/rock3.tscn" type="PackedScene" id=3]
+[ext_resource path="res://entities/env/stone/ruin1.tscn" type="PackedScene" id=4]
+
+[node name="chunk116" type="Spatial"]
+script = ExtResource( 1 )
+lighting_preview = true
+
+[node name="ruin1" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.8271, 295.015, -59.1924 )
+
+[node name="rock3" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.116403, 0.147304, -0.982218, -0.784595, 0.620008, 5.84569e-09, 0.608983, 0.770643, 0.187745, 14.3837, 291.084, 26.2103 )
+
+[node name="active_entities" type="Spatial" parent="."]
+
+[node name="speeder" parent="active_entities" instance=ExtResource( 2 )]
+transform = Transform( 0.69839, 0, 0.715717, 0, 1, 0, -0.715717, 0, 0.69839, -114.557, 293.645, -65.4778 )
+
+[node name="speeder2" parent="active_entities" instance=ExtResource( 2 )]
+transform = Transform( 0.69839, 0, 0.715717, 0, 1, 0, -0.715717, 0, 0.69839, -81.7362, 295.134, -74.2433 )
+
+[connection signal="timeout" from="sun/Timer" to="sun" method="update_rotation"]

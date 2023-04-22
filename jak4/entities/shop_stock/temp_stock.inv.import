@@ -1,0 +1,13 @@
+[remap]
+
+importer="game.shop_inventory"
+type="Resource"
+path="res://.import/temp_stock.inv-06c5bde40a956dfebdce529f8c50f471.tres"
+
+[deps]
+
+source_file="res://entities/shop_stock/temp_stock.inv"
+dest_files=[ "res://.import/temp_stock.inv-06c5bde40a956dfebdce529f8c50f471.tres" ]
+
+[params]
+

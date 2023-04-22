@@ -1,0 +1,2176 @@
+[gd_scene load_steps=105 format=2]
+
+[ext_resource path="res://player/scripts/player.gd" type="Script" id=1]
+[ext_resource path="res://player/scripts/camera_rig.gd" type="Script" id=2]
+[ext_resource path="res://player/base_mesh.tscn" type="PackedScene" id=3]
+[ext_resource path="res://ui/dialog_viewer.tscn" type="PackedScene" id=4]
+[ext_resource path="res://ui/default_theme.tres" type="Theme" id=5]
+[ext_resource path="res://ui/components/big_font.res" type="DynamicFont" id=6]
+[ext_resource path="res://ui/status_menu.gd" type="Script" id=7]
+[ext_resource path="res://ui/components/input_prompt.tscn" type="PackedScene" id=8]
+[ext_resource path="res://ui/pause_menu.tscn" type="PackedScene" id=9]
+[ext_resource path="res://ui/components/alert_prompt.tscn" type="PackedScene" id=10]
+[ext_resource path="res://entities/visual/flag.tscn" type="PackedScene" id=11]
+[ext_resource path="res://ui/diagetic/target.png" type="Texture" id=12]
+[ext_resource path="res://ui/icons/wep_pistol.svg" type="Texture" id=13]
+[ext_resource path="res://ui/weapon.gd" type="Script" id=14]
+[ext_resource path="res://ui/arrow_up.svg" type="Texture" id=15]
+[ext_resource path="res://ui/map/map.tscn" type="PackedScene" id=16]
+[ext_resource path="res://ui/ui.gd" type="Script" id=17]
+[ext_resource path="res://player/scripts/camera.gd" type="Script" id=18]
+[ext_resource path="res://ui/reset_bar.gd" type="Script" id=19]
+[ext_resource path="res://player/scripts/SpringArm.gd" type="Script" id=20]
+[ext_resource path="res://ui/journal.tscn" type="PackedScene" id=21]
+[ext_resource path="res://ui/debug_fps.gd" type="Script" id=22]
+[ext_resource path="res://ui/inventory.tscn" type="PackedScene" id=23]
+[ext_resource path="res://ui/game_ui.gd" type="Script" id=24]
+[ext_resource path="res://ui/icons/item_bug.png" type="Texture" id=25]
+[ext_resource path="res://ui/icons/item_gem.png" type="Texture" id=26]
+[ext_resource path="res://ui/icons/item_capacitor.png" type="Texture" id=27]
+[ext_resource path="res://ui/icons/item_flag.png" type="Texture" id=28]
+[ext_resource path="res://ui/debug_console.gd" type="Script" id=29]
+[ext_resource path="res://ui/equipment.gd" type="Script" id=30]
+[ext_resource path="res://ui/save_load.tscn" type="PackedScene" id=31]
+[ext_resource path="res://ui/wardrobe/wardrobe.tscn" type="PackedScene" id=32]
+[ext_resource path="res://ui/dialog.gd" type="Script" id=33]
+[ext_resource path="res://ui/story_time.gd" type="Script" id=34]
+[ext_resource path="res://material/env/water_ripple.png" type="Texture" id=35]
+[ext_resource path="res://material/env/water_ripple_moving.png" type="Texture" id=36]
+
+[sub_resource type="Gradient" id=173]
+offsets = PoolRealArray( 0, 0.239216, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 0.972549, 0.972549, 0.972549, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=80]
+gradient = SubResource( 173 )
+width = 32
+
+[sub_resource type="Curve" id=81]
+_data = [ Vector2( 0, 0.0897727 ), 0.0, 1.56096, 0, 0, Vector2( 1, 1 ), 0.32761, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=82]
+width = 32
+curve = SubResource( 81 )
+
+[sub_resource type="ParticlesMaterial" id=83]
+flag_align_y = true
+spread = 180.0
+flatness = 1.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 0.1
+scale = 2.0
+scale_random = 0.19
+scale_curve = SubResource( 82 )
+color_ramp = SubResource( 80 )
+
+[sub_resource type="SpatialMaterial" id=84]
+flags_transparent = true
+vertex_color_use_as_albedo = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 35 )
+
+[sub_resource type="QuadMesh" id=174]
+material = SubResource( 84 )
+
+[sub_resource type="Gradient" id=175]
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=176]
+gradient = SubResource( 175 )
+width = 32
+
+[sub_resource type="Curve" id=177]
+_data = [ Vector2( 0, 0.401136 ), 0.0, 1.51636, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=92]
+width = 32
+curve = SubResource( 177 )
+
+[sub_resource type="ParticlesMaterial" id=178]
+direction = Vector3( 0, 0, -1 )
+spread = 27.42
+flatness = 1.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 1.0
+scale_curve = SubResource( 92 )
+color_ramp = SubResource( 176 )
+
+[sub_resource type="SpatialMaterial" id=179]
+flags_transparent = true
+vertex_color_use_as_albedo = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 36 )
+
+[sub_resource type="PlaneMesh" id=93]
+material = SubResource( 179 )
+size = Vector2( 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=44]
+
+[sub_resource type="CubeMesh" id=43]
+size = Vector3( 0.1, 0.1, 0.1 )
+
+[sub_resource type="SpatialMaterial" id=45]
+
+[sub_resource type="SpatialMaterial" id=46]
+
+[sub_resource type="BoxShape" id=74]
+extents = Vector3( 0.170593, 0.228779, 0.270713 )
+
+[sub_resource type="SphereShape" id=13]
+radius = 0.831067
+
+[sub_resource type="CylinderShape" id=95]
+height = 0.894503
+radius = 0.514844
+
+[sub_resource type="CylinderShape" id=94]
+height = 1.11658
+radius = 0.6381
+
+[sub_resource type="Animation" id=34]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=35]
+resource_name = "spin"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, -720, 0 ) ]
+}
+
+[sub_resource type="CapsuleShape" id=64]
+radius = 0.366568
+height = 0.511555
+
+[sub_resource type="CapsuleShape" id=21]
+radius = 0.718492
+height = 1.19129
+
+[sub_resource type="SphereShape" id=22]
+radius = 0.820178
+
+[sub_resource type="CylinderShape" id=23]
+height = 0.948043
+radius = 1.31936
+
+[sub_resource type="CylinderShape" id=41]
+height = 1.10324
+radius = 1.40098
+
+[sub_resource type="SphereShape" id=97]
+radius = 0.332461
+
+[sub_resource type="CapsuleShape" id=2]
+radius = 0.3
+height = 0.9
+
+[sub_resource type="CapsuleShape" id=7]
+radius = 0.3
+height = 0.3
+
+[sub_resource type="CapsuleShape" id=72]
+radius = 0.227975
+height = 0.345514
+
+[sub_resource type="SphereShape" id=66]
+radius = 0.3
+
+[sub_resource type="CapsuleShape" id=8]
+radius = 0.28584
+height = 0.269648
+
+[sub_resource type="CapsuleShape" id=71]
+radius = 0.340094
+height = 0.655353
+
+[sub_resource type="PrismMesh" id=12]
+size = Vector3( 0.2, 0.2, 0.2 )
+
+[sub_resource type="SphereShape" id=6]
+radius = 0.4
+
+[sub_resource type="Animation" id=30]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=31]
+resource_name = "fadein"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 0.574349, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=32]
+resource_name = "fadeout"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 0.517632, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="OpenSimplexNoise" id=78]
+
+[sub_resource type="NoiseTexture" id=77]
+noise = SubResource( 78 )
+
+[sub_resource type="StyleBoxEmpty" id=65]
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0, 0, 0, 0.745098 )
+
+[sub_resource type="Animation" id=9]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("save:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("saving:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("saving:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("save:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "save_complete"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("save:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("save:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.9, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("saving:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.9, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "save_start"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("save:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("saving:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("saving:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("save:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 1, 0.458824, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=38]
+bg_color = Color( 1, 0.776471, 0.776471, 1 )
+
+[sub_resource type="StyleBoxFlat" id=40]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="Animation" id=67]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("values/Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("values/spacer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("values/number:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("values/Label:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("values/Label:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "Challenge Failed" ]
+}
+
+[sub_resource type="Animation" id=70]
+resource_name = "completed"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("values/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Challenge Completed" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("values/Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1.86607, 1 ),
+"update": 0,
+"values": [ Color( 1, 0.890196, 0.470588, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("values/spacer:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("values/number:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=69]
+resource_name = "fail"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("values/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Challenge Failed" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("values/Label:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 4.59479, 0.0915055 ),
+"update": 0,
+"values": [ Color( 1, 0.611765, 0.611765, 1 ), Color( 1, 0.611765, 0.611765, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("values/spacer:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("values/number:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=68]
+resource_name = "start"
+length = 0.02
+tracks/0/type = "value"
+tracks/0/path = NodePath("values/Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("values/spacer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("values/number:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("values/Label:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=50]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=51]
+resource_name = "show"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=52]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=53]
+resource_name = "show"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=54]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=55]
+resource_name = "show"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="PrismMesh" id=58]
+size = Vector3( 0.2, 0.2, 0.1 )
+
+[sub_resource type="PrismMesh" id=60]
+size = Vector3( 0.18, 0.18, 0.05 )
+
+[sub_resource type="SpatialMaterial" id=61]
+albedo_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="SphereMesh" id=59]
+radius = 0.05
+height = 0.1
+
+[sub_resource type="CylinderShape" id=73]
+height = 1.13577
+radius = 0.215107
+
+[sub_resource type="SphereMesh" id=96]
+radius = 0.1
+height = 0.2
+
+[sub_resource type="SpatialMaterial" id=98]
+flags_unshaded = true
+
+[node name="player" type="KinematicBody" groups=["player", "post_save_object", "pre_save_object", "push"]]
+time_scale_response = false
+collision_layer = 65546
+moving_platform_exclude_mask = 65536
+script = ExtResource( 1 )
+flag = ExtResource( 11 )
+
+[node name="water_cast" type="RayCast" parent="."]
+time_scale_response = false
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+enabled = true
+cast_to = Vector3( 0, -2, 0 )
+collision_mask = 8192
+
+[node name="Particles" type="Particles" parent="water_cast"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.19209e-07, 0 )
+emitting = false
+lifetime = 5.0
+local_coords = false
+process_material = SubResource( 83 )
+draw_pass_1 = SubResource( 174 )
+
+[node name="base_mesh" parent="." instance=ExtResource( 3 )]
+
+[node name="Particles2" type="Particles" parent="base_mesh"]
+time_scale_response = false
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 2, 0 )
+emitting = false
+amount = 16
+lifetime = 1.2
+local_coords = false
+process_material = SubResource( 178 )
+draw_pass_1 = SubResource( 93 )
+
+[node name="flag_ref" type="Spatial" parent="base_mesh"]
+time_scale_response = false
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.260516, 0.947519, 0.346891 )
+
+[node name="debug_center" type="MeshInstance" parent="base_mesh"]
+time_scale_response = false
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.72277, 0.299135 )
+visible = false
+material_override = SubResource( 44 )
+mesh = SubResource( 43 )
+skeleton = NodePath("")
+
+[node name="debug_right" type="MeshInstance" parent="base_mesh"]
+time_scale_response = false
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17, 1.68075, 0.152855 )
+visible = false
+material_override = SubResource( 45 )
+mesh = SubResource( 43 )
+skeleton = NodePath("")
+
+[node name="debug_left" type="MeshInstance" parent="base_mesh"]
+time_scale_response = false
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17, 1.67863, 0.17822 )
+visible = false
+material_override = SubResource( 46 )
+mesh = SubResource( 43 )
+skeleton = NodePath("")
+
+[node name="ledge_area" type="Area" parent="base_mesh"]
+time_scale_response = false
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.26954, 0.136381 )
+visible = false
+collision_layer = 0
+collision_mask = 17
+
+[node name="CollisionShape" type="CollisionShape" parent="base_mesh/ledge_area"]
+time_scale_response = false
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15776, 0.235825 )
+shape = SubResource( 74 )
+
+[node name="leftHandCast" type="RayCast" parent="base_mesh"]
+time_scale_response = false
+transform = Transform( 1, -1.34887e-07, 2.70194e-07, 0, 0.894704, 0.446659, -3.01992e-07, -0.446659, 0.894704, 0.17, 1.65147, 0.193106 )
+enabled = true
+cast_to = Vector3( 0, -0.35, 0 )
+collision_mask = 17
+
+[node name="rightHandCast" type="RayCast" parent="base_mesh"]
+time_scale_response = false
+transform = Transform( 1, -1.34887e-07, 2.70194e-07, 0, 0.894704, 0.446659, -3.01992e-07, -0.446659, 0.894704, -0.17, 1.65147, 0.193106 )
+enabled = true
+cast_to = Vector3( 0, -0.35, 0 )
+collision_mask = 17
+
+[node name="centerCast" type="RayCast" parent="base_mesh"]
+time_scale_response = false
+transform = Transform( 1, -1.34887e-07, 2.70194e-07, 0, 0.894704, 0.446659, -3.01992e-07, -0.446659, 0.894704, 0, 1.70647, 0.327074 )
+enabled = true
+cast_to = Vector3( 0, -0.5, 0 )
+collision_mask = 17
+
+[node name="ceilingCast" type="RayCast" parent="base_mesh"]
+time_scale_response = false
+transform = Transform( 1, 0, 0, 0, 0.999456, -0.0329854, 0, 0.0329854, 0.999456, -7.45068e-08, 1.02568, 0.142043 )
+enabled = true
+cast_to = Vector3( 0, 0.75, 0 )
+collision_mask = 17
+
+[node name="headFloorCast" type="RayCast" parent="base_mesh"]
+time_scale_response = false
+transform = Transform( 1, 0, 0, 0, -0.999456, 0.0329856, 0, -0.0329856, -0.999456, -7.45068e-08, 1.6733, 0.0595681 )
+enabled = true
+cast_to = Vector3( 0, 0.75, 0 )
+collision_mask = 17
+
+[node name="reference" type="Position3D" parent="base_mesh"]
+time_scale_response = false
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.45588e-09, 1.50822, 0.501811 )
+visible = false
+
+[node name="wall_check" type="Position3D" parent="base_mesh"]
+time_scale_response = false
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.45588e-09, 1.70827, 0.117608 )
+visible = false
+
+[node name="attack_lunge" type="Area" parent="base_mesh"]
+time_scale_response = false
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.42109e-14, 0.65977, 0.530665 )
+visible = false
+collision_layer = 0
+collision_mask = 536870916
+
+[node name="CollisionShape" type="CollisionShape" parent="base_mesh/attack_lunge"]
+time_scale_response = false
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0254159, 0, -0.0763994 )
+shape = SubResource( 13 )
+
+[node name="attack_spin" type="Area" parent="base_mesh"]
+time_scale_response = false
+visible = false
+collision_layer = 0
+collision_mask = 536870916
+
+[node name="CollisionShape" type="CollisionShape" parent="base_mesh/attack_spin"]
+time_scale_response = false
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.489956, 0.40164, 0 )
+shape = SubResource( 95 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="base_mesh/attack_spin"]
+time_scale_response = false
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.555129, 0 )
+shape = SubResource( 94 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="base_mesh/attack_spin"]
+time_scale_response = false
+anims/RESET = SubResource( 34 )
+anims/spin = SubResource( 35 )
+
+[node name="attack_roll" type="Area" parent="base_mesh"]
+time_scale_response = false
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0.43397, 0 )
+visible = false
+collision_layer = 0
+collision_mask = 536870916
+
+[node name="CollisionShape" type="CollisionShape" parent="base_mesh/attack_roll"]
+time_scale_response = false
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00123382, -0.0249694, -0.0953637 )
+shape = SubResource( 64 )
+
+[node name="attack_uppercut" type="Area" parent="base_mesh"]
+time_scale_response = false
+visible = false
+collision_layer = 0
+collision_mask = 536870916
+
+[node name="CollisionShape" type="CollisionShape" parent="base_mesh/attack_uppercut"]
+time_scale_response = false
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.0808, 0.11483 )
+shape = SubResource( 21 )
+
+[node name="attack_dive_start" type="Area" parent="base_mesh"]
+time_scale_response = false
+visible = false
+collision_layer = 0
+collision_mask = 536870916
+
+[node name="CollisionShape" type="CollisionShape" parent="base_mesh/attack_dive_start"]
+time_scale_response = false
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19209e-07, 0.347216, 0.265631 )
+shape = SubResource( 22 )
+
+[node name="attack_dive_end" type="Area" parent="base_mesh"]
+time_scale_response = false
+visible = false
+collision_layer = 0
+collision_mask = 536870916
+
+[node name="CollisionShape" type="CollisionShape" parent="base_mesh/attack_dive_end"]
+time_scale_response = false
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19209e-07, 0.198498, 0.0490749 )
+shape = SubResource( 23 )
+
+[node name="the_coat_zone" type="Area" parent="base_mesh"]
+time_scale_response = false
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0624051, 0 )
+visible = false
+collision_layer = 0
+collision_mask = 4096
+
+[node name="CollisionShape" type="CollisionShape" parent="base_mesh/the_coat_zone"]
+time_scale_response = false
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.51068, 1.02734 )
+shape = SubResource( 41 )
+
+[node name="OmniLight" type="OmniLight" parent="base_mesh"]
+time_scale_response = false
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.199459, 1.5586, 0.253699 )
+visible = false
+light_cull_mask = 4293918722
+
+[node name="the_sleep_zone" type="Area" parent="base_mesh"]
+time_scale_response = false
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.315046, 0 )
+collision_layer = 0
+collision_mask = 512
+
+[node name="CollisionShape" type="CollisionShape" parent="base_mesh/the_sleep_zone"]
+shape = SubResource( 97 )
+
+[node name="standing_col" type="CollisionShape" parent="."]
+time_scale_response = false
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.75, 0 )
+shape = SubResource( 2 )
+
+[node name="crouching_col" type="CollisionShape" parent="."]
+time_scale_response = false
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.450713, 0 )
+shape = SubResource( 7 )
+
+[node name="ledgejump_col" type="CollisionShape" parent="."]
+time_scale_response = false
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.439699, -4.20637e-09 )
+shape = SubResource( 72 )
+
+[node name="groundArea" type="Area" parent="."]
+time_scale_response = false
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.299583, 0 )
+collision_layer = 10
+
+[node name="CollisionShape" type="CollisionShape" parent="groundArea"]
+time_scale_response = false
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0408306, 0 )
+shape = SubResource( 66 )
+
+[node name="crouchHeadArea" type="Area" parent="."]
+time_scale_response = false
+collision_layer = 2
+
+[node name="CollisionShape" type="CollisionShape" parent="crouchHeadArea"]
+time_scale_response = false
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.996834, 0 )
+shape = SubResource( 8 )
+
+[node name="climbArea" type="Area" parent="."]
+time_scale_response = false
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.481154, 0 )
+collision_layer = 10
+
+[node name="CollisionShape" type="CollisionShape" parent="climbArea"]
+time_scale_response = false
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.163397, 7.14229e-09 )
+shape = SubResource( 71 )
+
+[node name="intention" type="Spatial" parent="."]
+time_scale_response = false
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="intention"]
+time_scale_response = false
+transform = Transform( -1, 1.50996e-07, -6.60024e-15, 0, -4.37114e-08, -1, -1.50996e-07, -1, 4.37114e-08, 1.32709e-07, 1, -0.431523 )
+visible = false
+mesh = SubResource( 12 )
+
+[node name="camera_rig" type="Node" parent="."]
+time_scale_response = false
+script = ExtResource( 2 )
+
+[node name="yaw" type="Spatial" parent="camera_rig"]
+time_scale_response = false
+
+[node name="Listener" type="Listener" parent="camera_rig/yaw"]
+time_scale_response = false
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25011, 0 )
+current = true
+
+[node name="pitch" type="Spatial" parent="camera_rig/yaw"]
+time_scale_response = false
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.863214, 0 )
+
+[node name="Camera" type="Camera" parent="camera_rig/yaw/pitch"]
+time_scale_response = false
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.134417, 0.276053 )
+near = 0.15
+far = 12000.0
+script = ExtResource( 18 )
+
+[node name="SpringArm" type="SpringArm" parent="camera_rig/yaw/pitch"]
+time_scale_response = false
+transform = Transform( 1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 0.134417, 0.276053 )
+collision_mask = 256
+shape = SubResource( 6 )
+spring_length = 2.5
+script = ExtResource( 20 )
+
+[node name="cam_tween" type="Tween" parent="camera_rig"]
+time_scale_response = false
+
+[node name="fade" type="ColorRect" parent="."]
+time_scale_response = false
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fade"]
+time_scale_response = false
+autoplay = "fadein"
+anims/RESET = SubResource( 30 )
+anims/fadein = SubResource( 31 )
+anims/fadeout = SubResource( 32 )
+
+[node name="ui" type="Control" parent="." groups=["post_save_object", "pre_save_object"]]
+pause_mode = 2
+time_scale_response = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 5 )
+script = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+stamina_color = Color( 0.513726, 1, 0.580392, 1 )
+drained_stamina_color = Color( 0.623529, 0, 0, 1 )
+
+[node name="status_menu" type="Control" parent="ui"]
+pause_mode = 2
+time_scale_response = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="TextureRect" type="TextureRect" parent="ui/status_menu"]
+time_scale_response = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 77 )
+expand = true
+stretch_mode = 1
+flip_v = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="tabs" type="TabContainer" parent="ui/status_menu"]
+time_scale_response = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 65 )
+custom_styles/tabs_panel = SubResource( 5 )
+all_tabs_in_front = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Options" parent="ui/status_menu/tabs" instance=ExtResource( 9 )]
+time_scale_response = false
+margin_top = 32.0
+
+[node name="Map" parent="ui/status_menu/tabs" instance=ExtResource( 16 )]
+time_scale_response = false
+visible = false
+show_behind_parent = true
+margin_top = 32.0
+
+[node name="Journal" parent="ui/status_menu/tabs" instance=ExtResource( 21 )]
+time_scale_response = false
+visible = false
+
+[node name="Inventory" parent="ui/status_menu/tabs" instance=ExtResource( 23 )]
+time_scale_response = false
+visible = false
+margin_top = 32.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Wardrobe" parent="ui/status_menu/tabs" instance=ExtResource( 32 )]
+pause_mode = 2
+time_scale_response = false
+visible = false
+pause_menu = true
+
+[node name="Save & Load" parent="ui/status_menu/tabs" instance=ExtResource( 31 )]
+time_scale_response = false
+visible = false
+
+[node name="PromptLeft" type="HBoxContainer" parent="ui/status_menu"]
+time_scale_response = false
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -80.0
+margin_right = 342.0
+
+[node name="Label" type="Label" parent="ui/status_menu/PromptLeft"]
+time_scale_response = false
+margin_top = 29.0
+margin_right = 104.0
+margin_bottom = 51.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+custom_constants/shadow_as_outline = 1
+text = "<< Previous"
+
+[node name="input_prompt" parent="ui/status_menu/PromptLeft" instance=ExtResource( 8 )]
+time_scale_response = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 108.0
+margin_right = 191.0
+margin_bottom = 80.0
+action = "ui_page_down"
+small = true
+
+[node name="PromptRight" type="HBoxContainer" parent="ui/status_menu"]
+time_scale_response = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -311.0
+margin_top = -80.0
+alignment = 2
+
+[node name="input_prompt" parent="ui/status_menu/PromptRight" instance=ExtResource( 8 )]
+time_scale_response = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 155.0
+margin_right = 238.0
+margin_bottom = 80.0
+action = "ui_page_up"
+small = true
+
+[node name="Label" type="Label" parent="ui/status_menu/PromptRight"]
+time_scale_response = false
+margin_left = 242.0
+margin_top = 29.0
+margin_right = 311.0
+margin_bottom = 51.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+custom_constants/shadow_as_outline = 1
+text = "Next >>"
+align = 2
+
+[node name="date_time" type="PanelContainer" parent="ui/status_menu"]
+time_scale_response = false
+anchor_top = 0.875
+anchor_bottom = 0.875
+margin_left = 20.0
+margin_top = -65.0
+margin_right = 210.0
+margin_bottom = 6.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="margin" type="MarginContainer" parent="ui/status_menu/date_time"]
+time_scale_response = false
+margin_right = 190.0
+margin_bottom = 71.0
+custom_constants/margin_right = 5
+custom_constants/margin_top = 5
+custom_constants/margin_left = 5
+custom_constants/margin_bottom = 5
+
+[node name="stats" type="VBoxContainer" parent="ui/status_menu/date_time/margin"]
+time_scale_response = false
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 185.0
+margin_bottom = 66.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="date" type="Label" parent="ui/status_menu/date_time/margin/stats"]
+time_scale_response = false
+margin_right = 180.0
+margin_bottom = 22.0
+text = "X Days on Journey"
+
+[node name="time" type="Label" parent="ui/status_menu/date_time/margin/stats"]
+time_scale_response = false
+margin_top = 26.0
+margin_right = 180.0
+margin_bottom = 48.0
+text = "Time: "
+
+[node name="gameing" type="Control" parent="ui"]
+time_scale_response = false
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="saveStats" type="VBoxContainer" parent="ui/gameing"]
+pause_mode = 1
+time_scale_response = false
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 17.0
+margin_top = -20.0
+margin_right = 163.0
+margin_bottom = 20.0
+
+[node name="saving" type="Label" parent="ui/gameing/saveStats"]
+time_scale_response = false
+visible = false
+margin_right = 182.0
+margin_bottom = 14.0
+text = "Saving..."
+
+[node name="save" type="Label" parent="ui/gameing/saveStats"]
+time_scale_response = false
+visible = false
+margin_right = 146.0
+margin_bottom = 22.0
+text = "SAVED!"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ui/gameing/saveStats"]
+time_scale_response = false
+anims/RESET = SubResource( 9 )
+anims/save_complete = SubResource( 10 )
+anims/save_start = SubResource( 11 )
+
+[node name="stats" type="Control" parent="ui/gameing"]
+pause_mode = 1
+time_scale_response = false
+margin_left = 30.0
+margin_top = 16.0
+margin_right = 465.0
+margin_bottom = 53.0
+
+[node name="health" type="HBoxContainer" parent="ui/gameing/stats"]
+time_scale_response = false
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 0
+
+[node name="base" type="ProgressBar" parent="ui/gameing/stats/health"]
+time_scale_response = false
+margin_right = 400.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 400, 32 )
+custom_styles/fg = SubResource( 17 )
+max_value = 50.0
+value = 25.0
+percent_visible = false
+
+[node name="extra" type="ProgressBar" parent="ui/gameing/stats/health"]
+time_scale_response = false
+margin_left = 400.0
+margin_right = 600.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 200, 32 )
+custom_styles/fg = SubResource( 38 )
+max_value = 50.0
+value = 50.0
+percent_visible = false
+
+[node name="stamina" type="HBoxContainer" parent="ui/gameing/stats"]
+time_scale_response = false
+margin_top = 37.0
+margin_right = 400.0
+margin_bottom = 52.0
+custom_constants/separation = 0
+
+[node name="extra" type="ColorRect" parent="ui/gameing/stats/stamina"]
+time_scale_response = false
+margin_right = 200.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 200, 15 )
+color = Color( 1, 0.862745, 0.498039, 1 )
+
+[node name="base" type="ProgressBar" parent="ui/gameing/stats/stamina"]
+time_scale_response = false
+margin_left = 200.0
+margin_right = 400.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 200, 15 )
+custom_styles/fg = SubResource( 40 )
+value = 50.0
+percent_visible = false
+
+[node name="debug" type="Panel" parent="ui/gameing"]
+pause_mode = 1
+time_scale_response = false
+visible = false
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 12.0
+margin_top = -473.0
+margin_right = 452.0
+margin_bottom = -13.0
+
+[node name="stats" type="VBoxContainer" parent="ui/gameing/debug"]
+time_scale_response = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 7.0
+margin_right = -16.0
+margin_bottom = -11.0
+
+[node name="Label" type="Label" parent="ui/gameing/debug/stats"]
+time_scale_response = false
+margin_right = 414.0
+margin_bottom = 22.0
+text = "Debug Data"
+
+[node name="debug_fps" type="Label" parent="ui/gameing/debug/stats"]
+time_scale_response = false
+margin_top = 26.0
+margin_right = 414.0
+margin_bottom = 48.0
+script = ExtResource( 22 )
+
+[node name="a1" type="Label" parent="ui/gameing/debug/stats"]
+time_scale_response = false
+margin_top = 52.0
+margin_right = 414.0
+margin_bottom = 74.0
+text = "Debug Data"
+
+[node name="a2" type="Label" parent="ui/gameing/debug/stats"]
+time_scale_response = false
+margin_top = 78.0
+margin_right = 414.0
+margin_bottom = 100.0
+text = "Debug Data"
+
+[node name="a3" type="Label" parent="ui/gameing/debug/stats"]
+time_scale_response = false
+margin_top = 104.0
+margin_right = 414.0
+margin_bottom = 126.0
+text = "Debug Data"
+
+[node name="a4" type="Label" parent="ui/gameing/debug/stats"]
+time_scale_response = false
+margin_top = 130.0
+margin_right = 414.0
+margin_bottom = 152.0
+text = "Debug Data"
+
+[node name="a5" type="Label" parent="ui/gameing/debug/stats"]
+time_scale_response = false
+margin_top = 156.0
+margin_right = 414.0
+margin_bottom = 178.0
+text = "Debug Data"
+
+[node name="a6" type="Label" parent="ui/gameing/debug/stats"]
+time_scale_response = false
+margin_top = 182.0
+margin_right = 414.0
+margin_bottom = 204.0
+text = "Debug Data"
+
+[node name="a7" type="Label" parent="ui/gameing/debug/stats"]
+time_scale_response = false
+margin_top = 208.0
+margin_right = 414.0
+margin_bottom = 230.0
+text = "Debug Data"
+
+[node name="a8" type="Label" parent="ui/gameing/debug/stats"]
+time_scale_response = false
+margin_top = 234.0
+margin_right = 414.0
+margin_bottom = 256.0
+text = "Debug Data"
+
+[node name="a9" type="Label" parent="ui/gameing/debug/stats"]
+time_scale_response = false
+margin_top = 260.0
+margin_right = 414.0
+margin_bottom = 282.0
+text = "Debug Data"
+
+[node name="a10" type="Label" parent="ui/gameing/debug/stats"]
+time_scale_response = false
+margin_top = 286.0
+margin_right = 414.0
+margin_bottom = 308.0
+text = "Debug Data"
+
+[node name="game_state" type="VBoxContainer" parent="ui/gameing/debug"]
+time_scale_response = false
+margin_left = 210.0
+margin_right = 452.0
+margin_bottom = 167.0
+
+[node name="tutorial" type="HBoxContainer" parent="ui/gameing"]
+pause_mode = 1
+time_scale_response = false
+visible = false
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -148.0
+margin_bottom = -68.0
+alignment = 1
+
+[node name="input_prompt" parent="ui/gameing/tutorial" instance=ExtResource( 8 )]
+time_scale_response = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 241.0
+margin_right = 324.0
+margin_bottom = 80.0
+
+[node name="plus" type="Label" parent="ui/gameing/tutorial"]
+time_scale_response = false
+margin_left = 328.0
+margin_top = 13.0
+margin_right = 388.0
+margin_bottom = 67.0
+rect_min_size = Vector2( 60, 0 )
+custom_fonts/font = ExtResource( 6 )
+text = "+"
+align = 1
+
+[node name="input_prompt2" parent="ui/gameing/tutorial" instance=ExtResource( 8 )]
+time_scale_response = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 392.0
+margin_right = 475.0
+margin_bottom = 80.0
+
+[node name="spacer" type="Control" parent="ui/gameing/tutorial"]
+time_scale_response = false
+margin_left = 479.0
+margin_right = 539.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 60, 0 )
+
+[node name="Label" type="Label" parent="ui/gameing/tutorial"]
+time_scale_response = false
+margin_left = 543.0
+margin_top = 13.0
+margin_right = 782.0
+margin_bottom = 67.0
+custom_fonts/font = ExtResource( 6 )
+text = "Stuff here!"
+
+[node name="prompt_timer" type="Timer" parent="ui/gameing/tutorial"]
+time_scale_response = false
+wait_time = 6.0
+one_shot = true
+
+[node name="custom_game" type="Control" parent="ui/gameing"]
+time_scale_response = false
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 24 )
+
+[node name="values" type="HBoxContainer" parent="ui/gameing/custom_game"]
+pause_mode = 1
+time_scale_response = false
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -74.0
+margin_bottom = -20.0
+custom_constants/separation = 25
+alignment = 1
+
+[node name="Label" type="Label" parent="ui/gameing/custom_game/values"]
+time_scale_response = false
+margin_left = 236.0
+margin_right = 602.0
+margin_bottom = 54.0
+custom_fonts/font = ExtResource( 6 )
+text = "Challenge Failed"
+
+[node name="spacer" type="Label" parent="ui/gameing/custom_game/values"]
+time_scale_response = false
+margin_left = 627.0
+margin_right = 642.0
+margin_bottom = 54.0
+custom_fonts/font = ExtResource( 6 )
+text = ":"
+
+[node name="number" type="Label" parent="ui/gameing/custom_game/values"]
+time_scale_response = false
+margin_left = 667.0
+margin_right = 788.0
+margin_bottom = 54.0
+custom_fonts/font = ExtResource( 6 )
+text = "Value"
+
+[node name="marker_ref" type="Sprite" parent="ui/gameing/custom_game"]
+time_scale_response = false
+position = Vector2( 379, 356 )
+texture = ExtResource( 12 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ui/gameing/custom_game"]
+time_scale_response = false
+anims/RESET = SubResource( 67 )
+anims/completed = SubResource( 70 )
+anims/fail = SubResource( 69 )
+anims/start = SubResource( 68 )
+
+[node name="weapon" type="TextureRect" parent="ui/gameing"]
+pause_mode = 1
+time_scale_response = false
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -562.0
+margin_top = 51.0
+margin_right = -306.0
+margin_bottom = 179.0
+rect_min_size = Vector2( 256, 128 )
+texture = ExtResource( 13 )
+stretch_mode = 6
+script = ExtResource( 14 )
+
+[node name="ammo" type="Control" parent="ui/gameing/weapon"]
+time_scale_response = false
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 37.0
+margin_right = 192.0
+
+[node name="ammo_label" type="Label" parent="ui/gameing/weapon/ammo"]
+time_scale_response = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 6 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="ArrowUp" type="TextureRect" parent="ui/gameing/weapon"]
+time_scale_response = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 22.0
+margin_top = -92.0
+margin_right = 54.0
+margin_bottom = -75.0
+texture = ExtResource( 15 )
+
+[node name="ArrowDown" type="TextureRect" parent="ui/gameing/weapon"]
+time_scale_response = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 22.0
+margin_top = 63.0
+margin_right = 54.0
+margin_bottom = 80.0
+texture = ExtResource( 15 )
+flip_v = true
+
+[node name="ArrowLeft" type="TextureRect" parent="ui/gameing/weapon"]
+time_scale_response = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -154.0
+margin_top = -22.0
+margin_right = -122.0
+margin_bottom = -5.0
+rect_rotation = 90.0
+texture = ExtResource( 15 )
+flip_v = true
+
+[node name="ArrowRight" type="TextureRect" parent="ui/gameing/weapon"]
+time_scale_response = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 149.0
+margin_top = -21.0
+margin_right = 181.0
+margin_bottom = -4.0
+rect_rotation = 90.0
+texture = ExtResource( 15 )
+flip_h = true
+
+[node name="inventory" type="GridContainer" parent="ui/gameing"]
+pause_mode = 1
+time_scale_response = false
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -322.0
+margin_top = -97.0
+margin_bottom = 167.0
+custom_constants/vseparation = 16
+custom_constants/hseparation = 18
+columns = 3
+
+[node name="gem_icon" type="TextureRect" parent="ui/gameing/inventory"]
+time_scale_response = false
+margin_right = 100.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+texture = ExtResource( 26 )
+expand = true
+stretch_mode = 6
+
+[node name="gem_count" type="Label" parent="ui/gameing/inventory"]
+time_scale_response = false
+margin_left = 118.0
+margin_top = 23.0
+margin_right = 145.0
+margin_bottom = 77.0
+custom_fonts/font = ExtResource( 6 )
+text = "0"
+
+[node name="gem_added" type="Label" parent="ui/gameing/inventory"]
+time_scale_response = false
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 163.0
+margin_top = 23.0
+margin_right = 232.0
+margin_bottom = 77.0
+custom_fonts/font = ExtResource( 6 )
+text = "+ 1"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ui/gameing/inventory/gem_added"]
+time_scale_response = false
+anims/RESET = SubResource( 50 )
+anims/show = SubResource( 51 )
+
+[node name="bug_icon" type="TextureRect" parent="ui/gameing/inventory"]
+time_scale_response = false
+margin_top = 116.0
+margin_right = 100.0
+margin_bottom = 216.0
+rect_min_size = Vector2( 100, 100 )
+texture = ExtResource( 25 )
+expand = true
+stretch_mode = 6
+
+[node name="bug_count" type="Label" parent="ui/gameing/inventory"]
+time_scale_response = false
+margin_left = 118.0
+margin_top = 139.0
+margin_right = 145.0
+margin_bottom = 193.0
+custom_fonts/font = ExtResource( 6 )
+text = "0"
+
+[node name="bug_added" type="Label" parent="ui/gameing/inventory"]
+time_scale_response = false
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 163.0
+margin_top = 139.0
+margin_right = 232.0
+margin_bottom = 193.0
+custom_fonts/font = ExtResource( 6 )
+text = "+ 1"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ui/gameing/inventory/bug_added"]
+time_scale_response = false
+anims/RESET = SubResource( 52 )
+anims/show = SubResource( 53 )
+
+[node name="capacitor_icon" type="TextureRect" parent="ui/gameing/inventory"]
+time_scale_response = false
+margin_top = 232.0
+margin_right = 100.0
+margin_bottom = 332.0
+rect_min_size = Vector2( 100, 100 )
+texture = ExtResource( 27 )
+expand = true
+stretch_mode = 6
+
+[node name="capacitor_count" type="Label" parent="ui/gameing/inventory"]
+time_scale_response = false
+margin_left = 118.0
+margin_top = 255.0
+margin_right = 145.0
+margin_bottom = 309.0
+custom_fonts/font = ExtResource( 6 )
+text = "0"
+
+[node name="capacitor_added" type="Label" parent="ui/gameing/inventory"]
+time_scale_response = false
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 163.0
+margin_top = 255.0
+margin_right = 232.0
+margin_bottom = 309.0
+custom_fonts/font = ExtResource( 6 )
+text = "+ 1"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ui/gameing/inventory/capacitor_added"]
+time_scale_response = false
+anims/RESET = SubResource( 54 )
+anims/show = SubResource( 55 )
+
+[node name="vis_timer" type="Timer" parent="ui/gameing/inventory"]
+time_scale_response = false
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="equipment" type="VBoxContainer" parent="ui/gameing"]
+time_scale_response = false
+visible = false
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 51.0
+margin_top = -108.0
+margin_right = 353.0
+margin_bottom = 108.0
+alignment = 1
+script = ExtResource( 30 )
+
+[node name="prev_item" type="TextureRect" parent="ui/gameing/equipment"]
+time_scale_response = false
+margin_right = 302.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 0, 48 )
+texture = ExtResource( 28 )
+expand = true
+stretch_mode = 6
+
+[node name="up" type="TextureRect" parent="ui/gameing/equipment"]
+time_scale_response = false
+margin_top = 52.0
+margin_right = 302.0
+margin_bottom = 68.0
+texture = ExtResource( 15 )
+stretch_mode = 4
+
+[node name="equipped" type="HBoxContainer" parent="ui/gameing/equipment"]
+time_scale_response = false
+margin_top = 72.0
+margin_right = 302.0
+margin_bottom = 172.0
+
+[node name="icon" type="TextureRect" parent="ui/gameing/equipment/equipped"]
+time_scale_response = false
+margin_right = 100.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+texture = ExtResource( 28 )
+expand = true
+stretch_mode = 6
+
+[node name="count" type="Label" parent="ui/gameing/equipment/equipped"]
+time_scale_response = false
+margin_left = 104.0
+margin_top = 23.0
+margin_right = 198.0
+margin_bottom = 77.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 6 )
+text = "0"
+align = 1
+
+[node name="spacer" type="Control" parent="ui/gameing/equipment/equipped"]
+time_scale_response = false
+margin_left = 202.0
+margin_right = 302.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 0 )
+
+[node name="down" type="TextureRect" parent="ui/gameing/equipment"]
+time_scale_response = false
+margin_top = 176.0
+margin_right = 302.0
+margin_bottom = 192.0
+texture = ExtResource( 15 )
+stretch_mode = 4
+flip_v = true
+
+[node name="next_item" type="TextureRect" parent="ui/gameing/equipment"]
+time_scale_response = false
+margin_top = 196.0
+margin_right = 302.0
+margin_bottom = 244.0
+rect_min_size = Vector2( 0, 48 )
+texture = ExtResource( 28 )
+expand = true
+stretch_mode = 6
+
+[node name="Timer" type="Timer" parent="ui/gameing/equipment"]
+time_scale_response = false
+one_shot = true
+
+[node name="reset_bar" type="ProgressBar" parent="ui/gameing"]
+time_scale_response = false
+visible = false
+anchor_left = 0.1
+anchor_top = 1.0
+anchor_right = 0.9
+anchor_bottom = 1.0
+margin_top = -50.0
+margin_bottom = -13.0
+max_value = 1.0
+value = 0.5
+percent_visible = false
+script = ExtResource( 19 )
+
+[node name="Label" type="Label" parent="ui/gameing/reset_bar"]
+time_scale_response = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Resetting"
+align = 1
+valign = 1
+
+[node name="item_get" parent="ui/gameing" instance=ExtResource( 10 )]
+format = "Item Found: %s"
+
+[node name="note_get" parent="ui/gameing" instance=ExtResource( 10 )]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -38.0
+margin_bottom = 0.0
+format = "New Journal Entry: %s/%s"
+
+[node name="dialog" type="Control" parent="ui"]
+time_scale_response = false
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 33 )
+
+[node name="viewer" parent="ui/dialog" instance=ExtResource( 4 )]
+pause_mode = 1
+time_scale_response = false
+anchor_left = 0.625
+rect_min_size = Vector2( 500, 0 )
+
+[node name="VBoxContainer" type="GridContainer" parent="ui/dialog"]
+time_scale_response = false
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 28.0
+margin_top = -233.0
+margin_right = 593.0
+margin_bottom = -21.0
+custom_constants/vseparation = 10
+custom_constants/hseparation = 15
+columns = 2
+
+[node name="input_prompt" parent="ui/dialog/VBoxContainer" instance=ExtResource( 8 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 83.0
+margin_bottom = 64.0
+action = "ui_accept"
+small = true
+
+[node name="Label" type="Label" parent="ui/dialog/VBoxContainer"]
+margin_left = 98.0
+margin_top = 21.0
+margin_right = 203.0
+margin_bottom = 43.0
+text = "Continue"
+
+[node name="input_prompt2" parent="ui/dialog/VBoxContainer" instance=ExtResource( 8 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 74.0
+margin_right = 83.0
+margin_bottom = 138.0
+action = "ui_cancel"
+small = true
+
+[node name="Label2" type="Label" parent="ui/dialog/VBoxContainer"]
+margin_left = 98.0
+margin_top = 95.0
+margin_right = 203.0
+margin_bottom = 117.0
+text = "Exit"
+
+[node name="prompt_trade" parent="ui/dialog/VBoxContainer" instance=ExtResource( 8 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 148.0
+margin_right = 83.0
+margin_bottom = 212.0
+action = "dialog_coat"
+small = true
+
+[node name="label_trade" type="Label" parent="ui/dialog/VBoxContainer"]
+margin_left = 98.0
+margin_top = 169.0
+margin_right = 203.0
+margin_bottom = 191.0
+text = "Trade Coats"
+
+[node name="black" type="ColorRect" parent="ui/dialog"]
+time_scale_response = false
+visible = false
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="note_get" parent="ui/dialog" instance=ExtResource( 10 )]
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+margin_top = -37.0
+margin_right = 640.0
+margin_bottom = 0.0
+format = "New Journal Entry: %s/%s"
+
+[node name="debug_console" type="PanelContainer" parent="ui"]
+time_scale_response = false
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 455.0
+margin_bottom = -16.0
+script = ExtResource( 29 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ui/debug_console"]
+time_scale_response = false
+margin_right = 2375.0
+margin_bottom = 1064.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ui/debug_console/ScrollContainer"]
+time_scale_response = false
+margin_right = 2375.0
+margin_bottom = 1064.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="logs" type="VBoxContainer" parent="ui/debug_console/ScrollContainer/VBoxContainer"]
+time_scale_response = false
+margin_right = 2375.0
+margin_bottom = 1028.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="LineEdit" type="LineEdit" parent="ui/debug_console/ScrollContainer/VBoxContainer"]
+time_scale_response = false
+margin_top = 1032.0
+margin_right = 2375.0
+margin_bottom = 1064.0
+
+[node name="story_time" type="Panel" parent="ui"]
+time_scale_response = false
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 34 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ui/story_time"]
+anchor_left = 0.25
+anchor_top = 0.1
+anchor_right = 0.75
+anchor_bottom = 0.9
+margin_left = -6.0
+margin_right = 6.0
+rect_min_size = Vector2( 400, 0 )
+
+[node name="Label" type="Label" parent="ui/story_time/ScrollContainer"]
+margin_right = 612.0
+margin_bottom = 576.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+autowrap = true
+
+[node name="input_prompt" parent="ui/story_time" instance=ExtResource( 8 )]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+margin_left = -41.5
+margin_top = -64.0
+margin_right = 41.5
+margin_bottom = 0.0
+action = "ui_cancel"
+small = true
+
+[node name="timer" type="Timer" parent="ui/story_time"]
+wait_time = 3.0
+one_shot = true
+
+[node name="post_pause_timer" type="Timer" parent="ui"]
+time_scale_response = false
+wait_time = 0.1
+one_shot = true
+
+[node name="debug_climb" type="Spatial" parent="."]
+time_scale_response = false
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 1.41574, 0 )
+visible = false
+
+[node name="mesh" type="MeshInstance" parent="debug_climb"]
+time_scale_response = false
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -0.481227 )
+mesh = SubResource( 58 )
+
+[node name="dog" type="MeshInstance" parent="debug_climb/mesh"]
+time_scale_response = false
+mesh = SubResource( 60 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 61 )
+
+[node name="MeshInstance" type="MeshInstance" parent="debug_climb/mesh"]
+time_scale_response = false
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.89334e-09, -0.0766101, 0.0518876 )
+mesh = SubResource( 59 )
+
+[node name="hover_floor_finder" type="RayCast" parent="."]
+time_scale_response = false
+visible = false
+enabled = true
+collision_mask = 8193
+
+[node name="hover_cast" type="RayCast" parent="."]
+time_scale_response = false
+visible = false
+enabled = true
+collision_mask = 8193
+
+[node name="hover_area" type="Area" parent="."]
+time_scale_response = false
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.294071, 0 )
+collision_layer = 2
+collision_mask = 8193
+
+[node name="CollisionShape" type="CollisionShape" parent="hover_area"]
+time_scale_response = false
+transform = Transform( 1, 0, 0, 0, -1, -1.50996e-07, 0, 1.50996e-07, -1, 0, -0.0106984, -9.91884e-09 )
+shape = SubResource( 73 )
+
+[node name="emergency_floor_raycast" type="RayCast" parent="."]
+time_scale_response = false
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0157221, 0 )
+enabled = true
+cast_to = Vector3( 0, -0.1, 0 )
+
+[node name="ledge_ref" type="Node" parent="."]
+time_scale_response = false
+
+[node name="mesh" type="MeshInstance" parent="ledge_ref"]
+time_scale_response = false
+visible = false
+mesh = SubResource( 96 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 98 )
+
+[connection signal="active" from="ui/status_menu/tabs/Wardrobe" to="ui/status_menu" method="_on_Wardrobe_active"]
+[connection signal="exited" from="ui/status_menu/tabs/Wardrobe" to="ui/status_menu" method="_on_wardrobe_exited"]
+[connection signal="timeout" from="ui/gameing/tutorial/prompt_timer" to="ui" method="_on_prompt_timer_timeout"]
+[connection signal="timeout" from="ui/gameing/inventory/vis_timer" to="ui" method="_on_vis_timer_timeout"]
+[connection signal="timeout" from="ui/gameing/equipment/Timer" to="ui/gameing/equipment" method="_on_Timer_timeout"]
+[connection signal="reset" from="ui/gameing/reset_bar" to="." method="respawn"]
+[connection signal="sleep" from="ui/gameing/reset_bar" to="." method="go_to_sleep" flags=3]
+[connection signal="event_with_source" from="ui/dialog/viewer" to="." method="_on_dialog_event"]
+[connection signal="exited" from="ui/dialog/viewer" to="." method="_on_dialog_exited"]
+[connection signal="exited_anim" from="ui/dialog/viewer" to="." method="_on_dialog_exited_anim"]
+[connection signal="text_entered" from="ui/debug_console/ScrollContainer/VBoxContainer/LineEdit" to="ui/debug_console" method="_on_text_entered"]
+[connection signal="timeout" from="ui/story_time/timer" to="ui/story_time" method="_on_timer_timeout"]

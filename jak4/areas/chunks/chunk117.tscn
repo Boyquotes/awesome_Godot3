@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://areas/chunk_content.gd" type="Script" id=1]
+[ext_resource path="res://entities/env/stone/rock3.tscn" type="PackedScene" id=2]
+[ext_resource path="res://entities/env/stone/rock1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://items/bug_pickup.tscn" type="PackedScene" id=4]
+
+[node name="chunk117" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="rock3" parent="." instance=ExtResource( 2 )]
+transform = Transform( -0.0726396, 0.453535, -0.888273, -0.997358, -0.0330319, 0.0646947, -4.28408e-08, 0.890626, 0.454736, 103.585, 407.074, -103.276 )
+
+[node name="rock1" parent="." instance=ExtResource( 3 )]
+transform = Transform( -0.371687, 0.928358, 0, -0.928358, -0.371687, 0, 0, 0, 1, 138.238, 372.605, 250.53 )
+
+[node name="active_entities" type="Spatial" parent="."]
+
+[node name="bug_pickup" parent="active_entities" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 104.699, 426.172, -108.036 )

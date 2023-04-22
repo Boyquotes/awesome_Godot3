@@ -1,0 +1,340 @@
+[gd_scene load_steps=37 format=2]
+
+[ext_resource path="res://areas/chunk_content.gd" type="Script" id=1]
+[ext_resource path="res://entities/env/stone/hive_hut_flat_roof.tscn" type="PackedScene" id=2]
+[ext_resource path="res://entities/env/stone/fountain.tscn" type="PackedScene" id=3]
+[ext_resource path="res://entities/env/stone/garden_melon.tscn" type="PackedScene" id=4]
+[ext_resource path="res://entities/env/stone/garden.tscn" type="PackedScene" id=5]
+[ext_resource path="res://entities/env/stone/hive_hut_dome_roof.tscn" type="PackedScene" id=6]
+[ext_resource path="res://entities/env/stone/hive_hut_single_flat.tscn" type="PackedScene" id=7]
+[ext_resource path="res://entities/env/stone/hive_hut_foundation_stairs.tscn" type="PackedScene" id=8]
+[ext_resource path="res://material/env/city/signs/kels_market.png" type="Texture" id=9]
+[ext_resource path="res://ui/items/vis/mesh_hover_scooter.tscn" type="PackedScene" id=10]
+[ext_resource path="res://items/item_pickup.tscn" type="PackedScene" id=11]
+[ext_resource path="res://items/gem_pickup.tscn" type="PackedScene" id=12]
+[ext_resource path="res://entities/env/copper/scrap1.tscn" type="PackedScene" id=13]
+[ext_resource path="res://entities/env/city/sign_small.tscn" type="PackedScene" id=14]
+[ext_resource path="res://entities/env/copper/pail.tscn" type="PackedScene" id=15]
+[ext_resource path="res://items/bug_pickup.tscn" type="PackedScene" id=18]
+[ext_resource path="res://entities/env/furniture/fruit_stand.tscn" type="PackedScene" id=19]
+[ext_resource path="res://entities/env/electrical/light_wall.tscn" type="PackedScene" id=20]
+[ext_resource path="res://entities/env/electrical/wind_generator.tscn" type="PackedScene" id=21]
+[ext_resource path="res://dialog/side_content/chunk028/mr_no_guests.dialog" type="Resource" id=22]
+[ext_resource path="res://entities/env/furniture/shelf.tscn" type="PackedScene" id=23]
+[ext_resource path="res://entities/env/furniture/bed_native.tscn" type="PackedScene" id=24]
+[ext_resource path="res://entities/npc/npc.tscn" type="PackedScene" id=25]
+[ext_resource path="res://entities/env/furniture/bottle2.tscn" type="PackedScene" id=26]
+[ext_resource path="res://entities/env/furniture/bottle1.tscn" type="PackedScene" id=27]
+[ext_resource path="res://items/upgrades/health_up_pickup.tscn" type="PackedScene" id=28]
+[ext_resource path="res://dialog/side_content/little_gods_treasure/hikori.dialog" type="Resource" id=29]
+[ext_resource path="res://entities/visual/flag.tscn" type="PackedScene" id=30]
+[ext_resource path="res://games/jump_game.gd" type="Script" id=31]
+[ext_resource path="res://dialog/side_content/jump_game.dialog" type="Resource" id=32]
+[ext_resource path="res://entities/env/copper/scrap2.tscn" type="PackedScene" id=33]
+[ext_resource path="res://entities/env/stone/rock1.tscn" type="PackedScene" id=34]
+[ext_resource path="res://dialog/side_content/little_gods_treasure/kels.dialog" type="Resource" id=35]
+[ext_resource path="res://entities/shop_stock/shop_default_stock.inv" type="Resource" id=36]
+[ext_resource path="res://entities/npc/npc_shop.tscn" type="PackedScene" id=37]
+
+[sub_resource type="SphereShape" id=2]
+
+[node name="chunk028" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="zone_village" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 45.9, -3.3, -222.2 )
+
+[node name="scrap2" parent="zone_village" instance=ExtResource( 33 )]
+transform = Transform( 0.79047, 0.286914, -0.541145, -0.341187, 0.939996, -2.41752e-08, 0.508674, 0.184631, 0.840929, -31.1603, 1.24262, 20.8851 )
+
+[node name="rock1" parent="zone_village" instance=ExtResource( 34 )]
+transform = Transform( 0.464177, 0, 0.885742, 0, 1, 0, -0.885742, 0, 0.464177, -35.8953, -2.85894, 17.1067 )
+
+[node name="hive_hut_flat_roof" parent="zone_village" instance=ExtResource( 2 )]
+transform = Transform( -0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, -4.89632, 0.234854, -4.37454 )
+
+[node name="hive_hut_foundation_stairs" parent="zone_village/hive_hut_flat_roof" instance=ExtResource( 8 )]
+
+[node name="hive_hut_flat_roof2" parent="zone_village" instance=ExtResource( 2 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 6.70367, 0.234854, -3.47453 )
+
+[node name="hive_hut_flat_roof3" parent="zone_village" instance=ExtResource( 2 )]
+transform = Transform( 0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 7.50368, 0.234854, 8.12546 )
+
+[node name="hive_hut_single_flat6" parent="zone_village" instance=ExtResource( 7 )]
+transform = Transform( -0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 17.2037, 0.234854, 1.52544 )
+
+[node name="hive_hut_single_flat7" parent="zone_village" instance=ExtResource( 7 )]
+transform = Transform( -0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, 17.2037, 4.28793, 1.52544 )
+
+[node name="hive_hut_flat_roof5" parent="zone_village" instance=ExtResource( 2 )]
+transform = Transform( 0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 16.2037, 0.234854, -9.97456 )
+
+[node name="hive_hut_flat_roof6" parent="zone_village" instance=ExtResource( 2 )]
+transform = Transform( -0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 5.70368, 0.234854, -14.9746 )
+
+[node name="hive_hut_foundation_stairs" parent="zone_village/hive_hut_flat_roof6" instance=ExtResource( 8 )]
+
+[node name="hive_hut_flat_roof7" parent="zone_village" instance=ExtResource( 2 )]
+transform = Transform( 0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -5.99962, 0.234854, -16.04 )
+
+[node name="hive_hut_foundation_stairs" parent="zone_village/hive_hut_flat_roof7" instance=ExtResource( 8 )]
+
+[node name="hive_hut_flat_roof10" parent="zone_village" instance=ExtResource( 2 )]
+transform = Transform( -0.218835, 0, 0.975762, 0, 1, 0, -0.975762, 0, -0.218835, -17.8572, 0.234854, -17.2518 )
+
+[node name="hive_hut_foundation_stairs" parent="zone_village/hive_hut_flat_roof10" instance=ExtResource( 8 )]
+
+[node name="hive_hut_flat_roof9" parent="zone_village" instance=ExtResource( 2 )]
+transform = Transform( -0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, -5.95436, 8.53485, -15.9681 )
+
+[node name="hive_hut_flat_roof11" parent="zone_village" instance=ExtResource( 2 )]
+transform = Transform( -0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, -5.95436, 16.7849, -15.9681 )
+
+[node name="hive_hut_flat_roof12" parent="zone_village" instance=ExtResource( 2 )]
+transform = Transform( -0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, -29.4499, 0.234854, -18.5563 )
+
+[node name="hive_hut_flat_roof13" parent="zone_village/hive_hut_flat_roof12" instance=ExtResource( 2 )]
+transform = Transform( 0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 0.0811615, 8.3, -0.0251083 )
+
+[node name="hive_hut_flat_roof14" parent="zone_village/hive_hut_flat_roof12" instance=ExtResource( 2 )]
+transform = Transform( -0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, 0.0930939, 16.55, -0.0175476 )
+
+[node name="hive_hut_foundation_stairs" parent="zone_village/hive_hut_flat_roof12" instance=ExtResource( 8 )]
+
+[node name="fountain" parent="zone_village" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.999872, 0.0160202, 0, -0.0160202, 0.999872, -11.05, -0.937344, 13.7496 )
+
+[node name="garden" parent="zone_village" instance=ExtResource( 5 )]
+transform = Transform( 0.999984, -0.00563024, -0.000446941, 0.00563475, 0.999926, 0.0108089, 0.000386051, -0.0108112, 0.999941, -19.1165, -0.972427, 2.45 )
+
+[node name="pail" parent="zone_village/garden" instance=ExtResource( 15 )]
+transform = Transform( -0.707107, -4.23825e-10, 0.707107, -9.31323e-10, 1, 4.65661e-10, -0.707107, 0, -0.707107, 4.14444, 0.292148, 1.24341 )
+
+[node name="garden_melon" parent="zone_village" instance=ExtResource( 4 )]
+transform = Transform( -1, 0, 3.72529e-08, 0, 1, 0, -3.72529e-08, 0, -1, 7.49999, 8.3, 8.40001 )
+
+[node name="hive_hut_dome_roof" parent="zone_village" instance=ExtResource( 6 )]
+transform = Transform( -0.965086, 0, 0.26193, 0, 1, 0, -0.26193, 0, -0.965086, 4.73127, 8.5, -11.3852 )
+
+[node name="hive_hut_single_flat" parent="zone_village" instance=ExtResource( 7 )]
+transform = Transform( 0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 17.152, 8.4, 1.53787 )
+
+[node name="hive_hut_flat_roof8" parent="zone_village" instance=ExtResource( 2 )]
+transform = Transform( -0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 22.9124, 0.234854, -19.6912 )
+
+[node name="hive_hut_single_flat5" parent="zone_village" instance=ExtResource( 7 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 22.86, 8.4, -19.6263 )
+
+[node name="hive_hut_single_flat2" parent="zone_village" instance=ExtResource( 7 )]
+transform = Transform( -0.258819, 0, 0.965925, 0, 1, 0, -0.965925, 0, -0.258819, 28.1, 0.199999, 6.69998 )
+
+[node name="hive_hut_foundation_stairs" parent="zone_village/hive_hut_single_flat2" instance=ExtResource( 8 )]
+
+[node name="garden2" parent="zone_village" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 31.5122, -0.0999999, -7.37524 )
+
+[node name="hive_hut_single_flat3" parent="zone_village" instance=ExtResource( 7 )]
+transform = Transform( -0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, 18.3, 0.199999, 13.4 )
+
+[node name="hive_hut_foundation_stairs" parent="zone_village/hive_hut_single_flat3" instance=ExtResource( 8 )]
+
+[node name="hive_hut_single_flat4" parent="zone_village" instance=ExtResource( 7 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 8.60002, 0.199999, 20.1 )
+
+[node name="hive_hut_foundation_stairs" parent="zone_village/hive_hut_single_flat4" instance=ExtResource( 8 )]
+
+[node name="active_entities" type="Spatial" parent="."]
+
+[node name="zone_village" type="MultiMeshSystem" parent="active_entities"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 48.154, 7.42639, -210.094 )
+
+[node name="kels_market" type="Spatial" parent="active_entities/zone_village"]
+transform = Transform( 0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 5.24968, -10.4915, -3.98055 )
+
+[node name="npc_kels" parent="active_entities/zone_village/kels_market" instance=ExtResource( 37 )]
+transform = Transform( 0.982479, 0, -0.18637, 0, 1, 0, 0.18637, 0, 0.982479, -2.2063, 0.112466, -1.18115 )
+dialog = ExtResource( 35 )
+visual_name = "Kels"
+inventory_data = ExtResource( 36 )
+
+[node name="lonely_house" type="Spatial" parent="active_entities/zone_village"]
+transform = Transform( -0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -31.745, 6.05851, -30.7477 )
+
+[node name="bottle1" parent="active_entities/zone_village/lonely_house" instance=ExtResource( 27 )]
+transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 3.53438, 4.86785, -3.7795 )
+
+[node name="bottle2" parent="active_entities/zone_village/lonely_house" instance=ExtResource( 26 )]
+transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 3.84283, 4.86785, -3.89369 )
+
+[node name="bottle3" parent="active_entities/zone_village/lonely_house" instance=ExtResource( 26 )]
+transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 4.00537, 4.86785, -3.83257 )
+
+[node name="bottle4" parent="active_entities/zone_village/lonely_house" instance=ExtResource( 26 )]
+transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 4.1227, 4.86785, -3.96921 )
+
+[node name="bottle5" parent="active_entities/zone_village/lonely_house" instance=ExtResource( 27 )]
+transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 4.36728, 4.86785, -3.82285 )
+
+[node name="bottle6" parent="active_entities/zone_village/lonely_house" instance=ExtResource( 27 )]
+transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 4.75063, 4.86877, -3.65041 )
+
+[node name="bottle7" parent="active_entities/zone_village/lonely_house" instance=ExtResource( 27 )]
+transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 4.98773, 4.86869, -3.41452 )
+
+[node name="bottle8" parent="active_entities/zone_village/lonely_house" instance=ExtResource( 26 )]
+transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 5.26926, 4.86785, -2.802 )
+
+[node name="bottle9" parent="active_entities/zone_village/lonely_house" instance=ExtResource( 26 )]
+transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 5.47188, 4.86785, -2.72253 )
+
+[node name="bottle10" parent="active_entities/zone_village/lonely_house" instance=ExtResource( 27 )]
+transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 5.49184, 4.86785, -2.47208 )
+
+[node name="bottle11" parent="active_entities/zone_village/lonely_house" instance=ExtResource( 26 )]
+transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 5.41785, 4.86785, -2.22786 )
+
+[node name="bottle12" parent="active_entities/zone_village/lonely_house" instance=ExtResource( 26 )]
+transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 5.66484, 4.86785, -2.28233 )
+
+[node name="bottle13" parent="active_entities/zone_village/lonely_house" instance=ExtResource( 26 )]
+transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 5.57344, 4.86785, -1.97858 )
+
+[node name="bottle14" parent="active_entities/zone_village/lonely_house" instance=ExtResource( 27 )]
+transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 5.37747, 4.86785, -1.79683 )
+
+[node name="bottle15" parent="active_entities/zone_village/lonely_house" instance=ExtResource( 27 )]
+transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 5.32243, 4.86876, -1.50549 )
+
+[node name="bottle16" parent="active_entities/zone_village/lonely_house" instance=ExtResource( 26 )]
+transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 5.09904, 4.86868, -1.38527 )
+
+[node name="npc" parent="active_entities/zone_village/lonely_house" instance=ExtResource( 25 )]
+transform = Transform( 1, 0, -2.68221e-07, 0, 1, 0, 2.68221e-07, 0, 1, 0.234024, 3.97151, -5.35132 )
+dialog = ExtResource( 22 )
+visual_name = "Secluded Man"
+sitting = true
+
+[node name="bed_native" parent="active_entities/zone_village/lonely_house" instance=ExtResource( 24 )]
+transform = Transform( -2.68221e-07, 0, -1, 0, 1, 0, 1, 0, -2.68221e-07, 0.164719, 3.84633, -5.1647 )
+
+[node name="shelf" parent="active_entities/zone_village/lonely_house" instance=ExtResource( 23 )]
+transform = Transform( -0.307658, 0, -0.951497, 0, 1, 0, 0.951497, 0, -0.307658, 4.30296, 3.87455, -3.41232 )
+
+[node name="shelf2" parent="active_entities/zone_village/lonely_house" instance=ExtResource( 23 )]
+transform = Transform( -0.951497, 0, 0.307658, 0, 1, 0, -0.307658, 0, -0.951497, 5.0531, 3.87455, -2.02481 )
+
+[node name="health_up_pickup" parent="active_entities/zone_village/lonely_house" instance=ExtResource( 28 )]
+transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 4.47214, 3.8577, -0.752182 )
+
+[node name="bug_pickup" parent="active_entities/zone_village" instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.154, -7.17639, 2.59399 )
+
+[node name="bug_pickup2" parent="active_entities/zone_village" instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.904, -10.9264, 1.59399 )
+
+[node name="hover_scooter_pickup" parent="active_entities/zone_village" instance=ExtResource( 11 )]
+transform = Transform( -0.0529627, -0.935159, 0.350247, -0.998539, 0.0533814, -0.0084659, -0.0107797, -0.350184, -0.936618, -7.63697, 14.1708, -25.929 )
+item_id = "hover_scooter"
+preview = ExtResource( 10 )
+friendly_name = "scooter_demo"
+
+[node name="demo" type="Spatial" parent="active_entities/zone_village"]
+
+[node name="gem_pickup2" parent="active_entities/zone_village/demo" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.37345, -6.74431, 4.06894 )
+
+[node name="gem_pickup5" parent="active_entities/zone_village/demo" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.6249, -2.55085, 0.836243 )
+
+[node name="gem_pickup6" parent="active_entities/zone_village/demo" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2676, 1.44789, -4.60493 )
+
+[node name="gem_pickup9" parent="active_entities/zone_village/demo" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.737705, 5.70804, -27.1086 )
+
+[node name="gem_pickup17" parent="active_entities/zone_village/demo" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98771, 5.70804, -23.1086 )
+
+[node name="gem_pickup11" parent="active_entities/zone_village/demo" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5123, 5.70804, -31.1086 )
+
+[node name="gem_pickup10" parent="active_entities/zone_village/demo" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.86212, 14.0736, -23.6062 )
+
+[node name="scrap1" parent="active_entities/zone_village" instance=ExtResource( 13 )]
+transform = Transform( -1, 1.50996e-07, 0, -1.50996e-07, -1, 0, 0, 0, 1, 16.096, 3.57361, -30.656 )
+
+[node name="pail" parent="active_entities/zone_village" instance=ExtResource( 15 )]
+transform = Transform( 0.707107, 0.707107, -3.09086e-08, 0, -4.37114e-08, -1, -0.707107, 0.707107, -3.09086e-08, 16.8889, 2.61241, -32.052 )
+
+[node name="sign_small" parent="active_entities/zone_village" instance=ExtResource( 14 )]
+transform = Transform( -0.773049, 0, 0.634346, 0, 1, 0, -0.634346, 0, -0.773049, -1.65994, -7.17639, -3.93933 )
+texture = ExtResource( 9 )
+
+[node name="fruit_stand" parent="active_entities/zone_village" instance=ExtResource( 19 )]
+transform = Transform( 0.255788, 0, 0.966733, 0, 1, 0, -0.966733, 0, 0.255788, -3.47038, -10.8955, -2.43811 )
+
+[node name="light_wall" parent="active_entities/zone_village" instance=ExtResource( 20 )]
+transform = Transform( -5.12742e-08, -0.753038, -0.657977, 1, -4.37114e-08, -2.79005e-08, -7.75095e-09, -0.657977, 0.753038, -0.686432, -7.17639, -4.34911 )
+
+[node name="wind_generator" parent="active_entities/zone_village" instance=ExtResource( 21 )]
+transform = Transform( 0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 8.846, 2.07361, -8.90601 )
+move_scale = 0.7
+
+[node name="wind_generator2" parent="active_entities/zone_village" instance=ExtResource( 21 )]
+transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 25.4965, 2.32361, -34.4812 )
+move_scale = 0.7
+
+[node name="wind_generator3" parent="active_entities/zone_village" instance=ExtResource( 21 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.03037, 14.8236, -33.4206 )
+
+[node name="wind_generator4" parent="active_entities/zone_village" instance=ExtResource( 21 )]
+transform = Transform( -0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -12.1339, 14.8236, -32.2741 )
+
+[node name="npc_hikori" parent="active_entities/zone_village" instance=ExtResource( 25 )]
+transform = Transform( 0.947759, 0, 0.318986, 0, 1, 0, -0.318986, 0, 0.947759, -15.2569, -11.1319, -6.70372 )
+dialog = ExtResource( 29 )
+visual_name = "Hikori"
+
+[node name="jump_game" type="Spatial" parent="active_entities/zone_village"]
+script = ExtResource( 31 )
+max_jumps = 4
+bugs_earned = 5
+gems_earned = 12
+
+[node name="npc_child1" parent="active_entities/zone_village/jump_game" instance=ExtResource( 25 )]
+transform = Transform( 0.482976, 0, 0.875633, 0, 1, 0, -0.875633, 0, 0.482976, -32.4517, 14.0493, -27.3136 )
+dialog = ExtResource( 32 )
+visual_name = "Child"
+model_scale = 0.8
+
+[node name="npc_child2" parent="active_entities/zone_village/jump_game" instance=ExtResource( 25 )]
+transform = Transform( 0.482976, 0, 0.875633, 0, 1, 0, -0.875633, 0, 0.482976, -33.5686, -11.4592, 5.69777 )
+dialog = ExtResource( 32 )
+visual_name = "Child"
+model_scale = 0.8
+
+[node name="npc_child3" parent="active_entities/zone_village/jump_game" instance=ExtResource( 25 )]
+transform = Transform( 0.109931, 0, 0.99394, 0, 1, 0, -0.99394, 0, 0.109931, -38.193, -6.77463, 3.89767 )
+dialog = ExtResource( 32 )
+visual_name = "Child"
+model_scale = 0.8
+
+[node name="npc_child4" parent="active_entities/zone_village/jump_game" instance=ExtResource( 25 )]
+transform = Transform( -0.591177, 0, 0.806542, 0, 1, 0, -0.806542, 0, -0.591177, -36.8401, -11.331, 11.8994 )
+dialog = ExtResource( 32 )
+visual_name = "Child"
+model_scale = 0.8
+
+[node name="game_start" type="Position3D" parent="active_entities/zone_village/jump_game"]
+transform = Transform( -0.963662, 0, -0.267125, 0, 1, 0, 0.267125, 0, -0.963662, -21.611, -11.0696, 2.4183 )
+
+[node name="game_target" type="Area" parent="active_entities/zone_village/jump_game"]
+transform = Transform( 0.98215, 0, -0.1881, 0, 1, 0, 0.1881, 0, 0.98215, -32.6206, 15.2401, -25.0799 )
+
+[node name="flag" parent="active_entities/zone_village/jump_game/game_target" instance=ExtResource( 30 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.324883, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="active_entities/zone_village/jump_game/game_target"]
+shape = SubResource( 2 )

@@ -1,0 +1,113 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://material/env/copper/copper_corroded.material" type="Material" id=1]
+[ext_resource path="res://_glb/chunks/chunk011.glb" type="PackedScene" id=2]
+[ext_resource path="res://areas/chunk_content.gd" type="Script" id=3]
+[ext_resource path="res://entities/env/copper/copper_fountain.tscn" type="PackedScene" id=4]
+[ext_resource path="res://games/race.gd" type="Script" id=5]
+[ext_resource path="res://entities/visual/flag.tscn" type="PackedScene" id=6]
+[ext_resource path="res://entities/npc/npc.tscn" type="PackedScene" id=7]
+[ext_resource path="res://dialog/side_content/race/race_coat_trade.dialog" type="Resource" id=8]
+[ext_resource path="res://dialog/side_content/race/race_generic.dialog" type="Resource" id=9]
+[ext_resource path="res://entities/env/copper/mine_shack_small.tscn" type="PackedScene" id=10]
+[ext_resource path="res://entities/env/copper/scrap1.tscn" type="PackedScene" id=11]
+
+[sub_resource type="CylinderShape" id=1]
+radius = 3.95042
+
+[node name="chunk011" instance=ExtResource( 2 )]
+script = ExtResource( 3 )
+
+[node name="tuble" parent="." index="0"]
+material/0 = ExtResource( 1 )
+
+[node name="tube" parent="." index="1"]
+material/0 = ExtResource( 1 )
+
+[node name="tube001" parent="." index="2"]
+material/0 = ExtResource( 1 )
+
+[node name="tube002" parent="." index="3"]
+material/0 = ExtResource( 1 )
+
+[node name="tube003" parent="." index="4"]
+material/0 = ExtResource( 1 )
+
+[node name="tube004" parent="." index="5"]
+material/0 = ExtResource( 1 )
+
+[node name="tube005" parent="." index="6"]
+material/0 = ExtResource( 1 )
+
+[node name="platform" parent="." index="7"]
+material/0 = ExtResource( 1 )
+
+[node name="zone_tubez" type="MultiMeshSystem" parent="." index="8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 76.0921, 519.132, -45.2586 )
+
+[node name="copper_fountain" parent="zone_tubez" index="0" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.4678, -6.60675, 2.2674 )
+
+[node name="mine_shack_small" parent="zone_tubez" index="1" instance=ExtResource( 10 )]
+transform = Transform( 0.800116, 0, 0.599846, 0, 1, 0, -0.599846, 0, 0.800116, -17.3117, 1.58997, 48.3676 )
+
+[node name="scrap1" parent="zone_tubez" index="2" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.4668, -2.62402, 32.5941 )
+
+[node name="scrap2" parent="zone_tubez" index="3" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8763, -0.386047, 37.9101 )
+
+[node name="active_entities" type="Spatial" parent="." index="10"]
+
+[node name="race" type="Spatial" parent="active_entities" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 76.0921, 523.977, -45.2586 )
+script = ExtResource( 5 )
+bronze_seconds = 70.0
+silver_seconds = 40.0
+gold_seconds = 20.0
+bronze_reward = 7
+silver_reward = 10
+gold_reward = 14
+max_rarity = 3
+friendly_id = "race_011"
+required_items = [ "wep_wave_shot" ]
+
+[node name="npc_race" parent="active_entities/race" index="0" instance=ExtResource( 7 )]
+transform = Transform( -0.410483, 0, -0.911868, 0, 1, 0, 0.911868, 0, -0.410483, -15.3671, -3.14966, 38.2129 )
+dialog = ExtResource( 9 )
+visual_name = "Scrambler"
+
+[node name="npc" parent="active_entities/race" index="1" instance=ExtResource( 7 )]
+transform = Transform( -0.0828454, 0, -0.996562, 0, 1, 0, 0.996562, 0, -0.0828454, 36.1003, 38.6339, 35.8474 )
+dialog = ExtResource( 8 )
+visual_name = "Scrambler"
+no_dialog_trigger = true
+
+[node name="npc3" parent="active_entities/race" index="2" instance=ExtResource( 7 )]
+transform = Transform( -0.429256, 0, -0.903183, 0, 1, 0, 0.903183, 0, -0.429256, 32.2813, 38.6339, 36.0374 )
+dialog = ExtResource( 8 )
+visual_name = "Scrambler"
+no_dialog_trigger = true
+
+[node name="npc2" parent="active_entities/race" index="3" instance=ExtResource( 7 )]
+transform = Transform( 0.628248, 0, -0.778013, 0, 1, 0, 0.778013, 0, 0.628248, 35.6198, 38.6339, 33.6682 )
+dialog = ExtResource( 8 )
+visual_name = "Scrambler"
+no_dialog_trigger = true
+
+[node name="flag" parent="active_entities/race" index="4" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 31.1694, 39.4176, 34.8028 )
+
+[node name="Timer" type="Timer" parent="active_entities/race" index="5"]
+
+[node name="race_start" type="Spatial" parent="active_entities/race" index="6"]
+transform = Transform( -0.896467, 0, 0.44311, 0, 1, 0, -0.44311, 0, -0.896467, -20.2884, -5.18188, 34.5816 )
+
+[node name="race_end" type="Area" parent="active_entities/race" index="7"]
+transform = Transform( -0.896467, 0, 0.44311, 0, 1, 0, -0.44311, 0, -0.896467, 32.4259, 38.5703, 34.6644 )
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape" type="CollisionShape" parent="active_entities/race/race_end" index="0"]
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 1.19939, 0.73175, -0.962864 )
+shape = SubResource( 1 )

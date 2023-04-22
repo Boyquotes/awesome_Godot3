@@ -1,0 +1,73 @@
+{talked == 0}
+	* The man smiles as you approach.
+	{remember("He seems friendly enough")} Are your housings satisfactory?
+	We made sure to get wardrobe, as asked.
+	[You] Yes, thank you. It's perfect. So about the Medium?
+	{remember("He must be the little fellow by the Medium, like the landlord said.", "Armstrong")} Armstrong is out beside the machine, with the goggles. He knows it better than everyone.
+	It is the white building in town. Impossible to miss.
+	[You] Right. I'll talk to him.
+{otherwise}?{talked/mum}!{landlord/discussed/mum}
+	Say, if you do not mind me prying, who did you talk with in there?
+	> Uh, sorry, I can't get into it right now.
+		Oh, no worries! Eh, enjoy the lodgings!
+	> My mother.
+		Oh. I understand. You must miss her terribly.
+		> {skip()} Honestly, no.
+			[You] +{jackie/ambivalent} Honestly, no. I didn't know her well enough to miss her, per se. It's more...
+			> {skip()} Anger
+				[You] Anger. Or, frustration, I suppose. I know so little about her. She left behind no photographs, no letters, no family or friends besides my father. I'm not even certain she died.
+				You're not?
+				[You] No! She left without any notice, supposedly right after I was weaned off milk.
+					I came all the way out here, at considerable expense, to learn where she went and why.
+			> {skip()} Emptiness
+				[You] Emptiness? A void? It feels like I missed a chunk of my life without her.
+					My father
+			> {skip()} Envy
+				[You] I always felt so envious of my friends. Their mothers were just there. All the time! And almost everything I heard was complaining!
+					"Mum isn't letting me go out tonight!" "My mother's so stupid!"
+			[You] Sorry. It's improper to share so much
+			It is?
+		> I suppose I do...
+			You are awfully young for such loss.
+			When did she pass?
+			> We don't know if she died at all.
+				You don't?
+				[You] No. She left after I was born, and nobody could ever contact her again, so we assume as much.
+				> {skip()} I hope she died.
+					[You] +{jackie/ambivalent}I h--
+					[You] .... 
+					[You] I have to go, sorry.
+				> I hope I can get more answers from the Medium.
+					I hope you do as well. It sounds like you have many questions for her.
+					[You] ...
+			> When I was very young. Just a baby.
+				I'm sure she would have wished to see you now. That she left so soon is an tragedy for both of you.
+				[You] ... it is.
+	+{landlord/discussed/mum}
+{otherwise}
+	Did you need anything?
+	[You] Not right now, thanks.
+	Ok, I will be around if you need.
+{exit()}
+
+:_coat
+{traded_coats()}
+	[You] Could we trade coats again?
+	You gave me this one? You want it again?
+	> Never mind, it looks good on you!
+		Oh, okay.
+	> Yes, you can have the one I'm wearing.
+		Every guest has their needs.
+		{swap_coats()} Here you go.
+		[You] Wonderful, thank you!
+{otherwise}
+	[You] So, there's something you could do for me.
+	Repairs? Errands? As my guest, I will help with whatever you need.
+	[You] I'd like your coat.
+	... Pardon?
+	> Never mind. It's an odd request.
+		.. Uh, well. if you need anything else, let me know.
+	> I'd like to trade my coat for yours. That fabric is lovely.
+		I've never had such a request before.
+		{swap_coats()} Well, it's no problem for me. I hope you enjoy.
+		[You] Thank you dearly! It looks great!

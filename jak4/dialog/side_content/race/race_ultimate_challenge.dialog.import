@@ -1,0 +1,13 @@
+[remap]
+
+importer="np.dialog"
+type="Resource"
+path="res://.import/race_ultimate_challenge.dialog-38abeacf9e976f787c59fa710a8d8aa3.tres"
+
+[deps]
+
+source_file="res://dialog/side_content/race/race_ultimate_challenge.dialog"
+dest_files=[ "res://.import/race_ultimate_challenge.dialog-38abeacf9e976f787c59fa710a8d8aa3.tres" ]
+
+[params]
+

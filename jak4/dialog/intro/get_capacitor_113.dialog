@@ -1,0 +1,11 @@
+* There is a capacitor in the machine.
+* Will you take it?
+> {skip()} Yes
+	{Global.task_remove_place("the_tree_tower", "village_tower")}
+	{Global.mark_map("village_tower", "I found a capacitor in here. The building collapsed after I took it.")}
+	{main_speaker.deactivate()}
+	{Global.add_item("capacitor")}
+	{Global.add_stat("capacitor_113")}
+> {skip()} No
+
+{exit()}

@@ -1,0 +1,316 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://areas/chunk_content.gd" type="Script" id=1]
+[ext_resource path="res://entities/env/stone/hut.tscn" type="PackedScene" id=2]
+[ext_resource path="res://entities/npc/npc.tscn" type="PackedScene" id=3]
+[ext_resource path="res://dialog/side_content/rocks_077.dialog" type="Resource" id=4]
+[ext_resource path="res://entities/env/stone/rock1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://entities/env/stone/rock2.tscn" type="PackedScene" id=6]
+[ext_resource path="res://entities/env/copper/scrap2.tscn" type="PackedScene" id=7]
+[ext_resource path="res://entities/env/copper/scrap_pile1.tscn" type="PackedScene" id=8]
+[ext_resource path="res://entities/env/stone/pillar.tscn" type="PackedScene" id=9]
+[ext_resource path="res://entities/env/copper/scrap1.tscn" type="PackedScene" id=10]
+[ext_resource path="res://items/ammo/pistol_pickup.tscn" type="PackedScene" id=11]
+[ext_resource path="res://items/coat_pickup.tscn" type="PackedScene" id=12]
+[ext_resource path="res://items/bug_pickup.tscn" type="PackedScene" id=13]
+[ext_resource path="res://entities/env/copper/crate1.tscn" type="PackedScene" id=14]
+[ext_resource path="res://items/gem_pickup.tscn" type="PackedScene" id=15]
+[ext_resource path="res://entities/env/stone/rock4.tscn" type="PackedScene" id=16]
+[ext_resource path="res://entities/env/stone/rock_kinematic.tscn" type="PackedScene" id=17]
+[ext_resource path="res://entities/env/stone/rock3.tscn" type="PackedScene" id=18]
+
+[node name="chunk077" type="MultiMeshSystem"]
+script = ExtResource( 1 )
+
+[node name="pillar" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.5791, -252, 142.072 )
+
+[node name="pillar2" parent="pillar" instance=ExtResource( 9 )]
+transform = Transform( -0.145224, 0.019274, -0.989211, 0.131564, 0.991308, 3.69291e-09, 0.980612, -0.130145, -0.146498, 9.7803, 0, 13.4817 )
+
+[node name="pillar3" parent="pillar" instance=ExtResource( 9 )]
+transform = Transform( -0.0565708, 0, 0.998399, 0, 1, 0, -0.998399, 0, -0.0565708, 14.6305, 0, -2.53651 )
+
+[node name="rock2" parent="pillar" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 0.967294, -0.253657, 0, 0.253657, 0.967294, 9.57375, 25.1432, 5.06068 )
+
+[node name="rock3" parent="pillar" instance=ExtResource( 18 )]
+transform = Transform( 0.961941, 0.181827, -0.20398, 0.111146, -0.942292, -0.315805, -0.24963, 0.281114, -0.926639, 8.60127, 39.6618, 1.55148 )
+
+[node name="rock4" parent="pillar" instance=ExtResource( 6 )]
+transform = Transform( -0.945366, -0.317179, 0.0753667, -0.314558, 0.948184, 0.0447334, -0.08565, 0.0185823, -0.996152, 8.13108, 53.624, -0.366486 )
+
+[node name="rock5" parent="pillar" instance=ExtResource( 6 )]
+transform = Transform( 0.366816, 0.925063, 0.0985077, 0.0731381, -0.134237, 0.988247, 0.927414, -0.355299, -0.116898, 13.775, 70.436, 4.24586 )
+
+[node name="scrap2" parent="pillar/rock5" instance=ExtResource( 7 )]
+transform = Transform( 0.450862, 0.892594, 0, -0.892594, 0.450862, -1.86265e-08, 0, 0, 1, -16.7422, 4.96103, 2.40173 )
+
+[node name="hut" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 61.4759, -175.3, 31.2446 )
+
+[node name="rock1" parent="." instance=ExtResource( 5 )]
+transform = Transform( -0.617915, -0.786245, 0, 0.786245, -0.617915, 0, 0, 0, 1, 29.5795, -250.033, 176.875 )
+
+[node name="rock7" parent="." instance=ExtResource( 6 )]
+transform = Transform( -0.874924, 0.00421956, -0.484241, 0.481402, 0.116035, -0.868785, 0.0525229, -0.993236, -0.103553, 2.90779, -260.552, 190.792 )
+
+[node name="rock6" parent="." instance=ExtResource( 5 )]
+transform = Transform( -0.874925, 0.00421956, -0.484241, 0.481402, 0.116035, -0.868785, 0.0525229, -0.993236, -0.103553, 16.845, -252.124, 174.67 )
+
+[node name="scrap2" parent="." instance=ExtResource( 7 )]
+transform = Transform( 0.372939, -0.927856, 0, 0.927856, 0.372939, 0, 0, 0, 1, 26.672, -250.779, 185.96 )
+
+[node name="scrap3" parent="." instance=ExtResource( 7 )]
+transform = Transform( -0.1134, -0.0525567, -0.992158, -0.565785, -0.817453, 0.107969, -0.816718, 0.573592, 0.0629633, 19.3174, -249.738, 191.163 )
+
+[node name="scrap_pile1" parent="." instance=ExtResource( 8 )]
+transform = Transform( -0.999656, -0.0262117, 0, 0.0262117, -0.999656, 0, 0, 0, 1, -8.8097, -252, 173.397 )
+
+[node name="pillar3" parent="." instance=ExtResource( 9 )]
+transform = Transform( 0.875852, 0.479209, -0.0569386, 0.157909, -0.396085, -0.904534, -0.456013, 0.783247, -0.422583, 75.6041, -248.518, 141.968 )
+
+[node name="rock3" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.5, -0.866025, 0, 0.866025, 0.5, 0, 0, 0, 1, 75.1627, -255.19, 132.496 )
+
+[node name="scrap1" parent="." instance=ExtResource( 10 )]
+transform = Transform( 0.0119894, 0.00994823, 0.999879, 0.238785, -0.971049, 0.00679815, 0.970999, 0.238674, -0.0140178, 47.2549, -187.118, 132.263 )
+
+[node name="rock4" parent="." instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 219.606, -244.349, 185.812 )
+
+[node name="scrap4" parent="." instance=ExtResource( 7 )]
+transform = Transform( 0.531044, -0.847345, 0, 0.847345, 0.531044, 0, 0, 0, 1, 219.722, -241.621, 184.102 )
+
+[node name="scrap6" parent="." instance=ExtResource( 7 )]
+transform = Transform( 0.18755, 0.951096, 0.24544, -0.158533, -0.217288, 0.963147, 0.969377, -0.219548, 0.110028, 217.431, -244.022, 184.45 )
+
+[node name="scrap5" parent="." instance=ExtResource( 10 )]
+transform = Transform( -0.939046, 0.343791, 0, -0.343791, -0.939046, 0, 0, 0, 1, 219.212, -249.364, 190.2 )
+
+[node name="rock_kinematic7" parent="." instance=ExtResource( 17 )]
+transform = Transform( -0.829185, -0.238564, 0.505509, -0.535296, 0.078474, -0.841011, 0.160966, -0.967951, -0.192772, 32.5631, -247.169, 162.189 )
+
+[node name="rock_kinematic6" parent="." instance=ExtResource( 17 )]
+transform = Transform( -0.968483, -0.192527, 0.158031, 0.129464, -0.931121, -0.340957, 0.212789, -0.309752, 0.926701, 31.34, -249.417, 163.322 )
+
+[node name="rock_kinematic5" parent="." instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 0.772955, -0.634461, 0, 0.634461, 0.772955, 33.1898, -248.102, 164.692 )
+
+[node name="rock_kinematic4" parent="." instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 0.994484, 0.104893, 0, -0.104893, 0.994484, 33.1898, -248.639, 162.494 )
+
+[node name="rock_kinematic3" parent="." instance=ExtResource( 17 )]
+transform = Transform( -0.833857, 0.551981, 0, -0.551981, -0.833857, 0, 0, 0, 1, 28.9736, -192.217, 135.273 )
+
+[node name="rock_kinematic2" parent="." instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 0.771514, -0.636213, 0, 0.636213, 0.771514, 27.4112, -223.396, 159.852 )
+
+[node name="rock_kinematic" parent="." instance=ExtResource( 17 )]
+transform = Transform( 0.971904, 0.23538, 0, -0.23538, 0.971904, 0, 0, 0, 1, 44.0473, -200.689, 153.406 )
+initial_velocity = 5.0
+
+[node name="pillar2" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 39.3993, -174.653, 23.1097 )
+
+[node name="active_entities" type="MultiMeshSystem" parent="."]
+
+[node name="rock_kinematic8" parent="active_entities" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 51.0034, -173.225, 21.4951 )
+
+[node name="bug_pickup11" parent="active_entities" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 38.7542, -157.061, 22.7128 )
+quantity = 5
+
+[node name="bug_pickup22" parent="active_entities" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 218.603, -247.012, 190.146 )
+
+[node name="bug_pickup23" parent="active_entities" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 218.666, -249.318, 180.77 )
+
+[node name="bug_pickup24" parent="active_entities" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 219.07, -239.27, 180.77 )
+
+[node name="bug_pickup25" parent="active_entities" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 215.292, -237.856, 187.344 )
+
+[node name="gem_pickup33" parent="active_entities" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 225.055, -238.376, 187.38 )
+quantity = 3
+
+[node name="gem_pickup34" parent="active_entities" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 217.653, -236.906, 193.258 )
+quantity = 3
+
+[node name="gem_pickup35" parent="active_entities" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 217.715, -244.385, 188.435 )
+quantity = 3
+
+[node name="gem_pickup36" parent="active_entities" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 223.99, -234.665, 180.541 )
+quantity = 3
+
+[node name="bug_pickup" parent="active_entities" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 38.7645, -174.838, 129.063 )
+
+[node name="bug_pickup2" parent="active_entities" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.1129, -173.964, 139.504 )
+
+[node name="bug_pickup3" parent="active_entities" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34.3048, -190.182, 133.321 )
+
+[node name="bug_pickup4" parent="active_entities" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34.9458, -195.587, 129.4 )
+
+[node name="bug_pickup5" parent="active_entities" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 49.9027, -190.23, 149.442 )
+
+[node name="bug_pickup6" parent="active_entities" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 44.336, -180.104, 125.932 )
+
+[node name="bug_pickup7" parent="active_entities" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 37.2296, -209.724, 138.12 )
+
+[node name="bug_pickup8" parent="active_entities" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 32.6587, -217.924, 144.469 )
+
+[node name="bug_pickup9" parent="active_entities" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 43.6042, -219.034, 146.208 )
+
+[node name="bug_pickup10" parent="active_entities" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 47.2539, -221.16, 139.058 )
+
+[node name="bug_pickup14" parent="active_entities" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.2424, -204.365, 157.584 )
+
+[node name="crate1" parent="active_entities" instance=ExtResource( 14 )]
+transform = Transform( 0.796973, 0.409243, 0.444245, -0.220109, 0.881689, -0.417345, -0.562481, 0.23483, 0.792761, 44.9123, -168.309, 144.817 )
+
+[node name="bug_pickup15" parent="active_entities" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 44.7216, -168.254, 144.519 )
+quantity = 10
+
+[node name="gem_pickup" parent="active_entities" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 45.3573, -168.563, 145.344 )
+quantity = 35
+
+[node name="pistol_pickup" parent="active_entities" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 45.0214, -168.303, 144.829 )
+
+[node name="coat_pickup" parent="active_entities" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 46.6724, -170.94, 154.112 )
+persistent = false
+max_rarity = 3
+
+[node name="gem_pickup2" parent="active_entities" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.5296, -191.959, 138.545 )
+
+[node name="gem_pickup3" parent="active_entities" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 32.3203, -191.246, 146.367 )
+
+[node name="gem_pickup4" parent="active_entities" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.6346, -191.222, 149.695 )
+
+[node name="gem_pickup5" parent="active_entities" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 42.167, -201.544, 153.413 )
+
+[node name="gem_pickup6" parent="active_entities" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 40.1351, -202.115, 155.042 )
+
+[node name="gem_pickup7" parent="active_entities" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 37.8203, -202.715, 156.75 )
+
+[node name="gem_pickup8" parent="active_entities" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.8592, -207.408, 144.819 )
+
+[node name="gem_pickup9" parent="active_entities" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.5102, -207.874, 143.589 )
+
+[node name="gem_pickup10" parent="active_entities" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.4273, -208.556, 142.202 )
+
+[node name="gem_pickup11" parent="active_entities" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.2276, -197.178, 137.933 )
+
+[node name="gem_pickup12" parent="active_entities" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.4664, -196.876, 139.436 )
+
+[node name="gem_pickup13" parent="active_entities" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 48.5441, -211.054, 129.222 )
+
+[node name="gem_pickup14" parent="active_entities" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 46.8979, -211.347, 128.346 )
+
+[node name="gem_pickup15" parent="active_entities" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 45.1094, -211.666, 127.455 )
+
+[node name="gem_pickup16" parent="active_entities" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 42.1595, -212.704, 127.494 )
+
+[node name="gem_pickup17" parent="active_entities" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.7294, -219.314, 143.674 )
+
+[node name="gem_pickup18" parent="active_entities" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.5877, -219.658, 144.124 )
+
+[node name="gem_pickup19" parent="active_entities" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.4435, -218.706, 145.262 )
+
+[node name="gem_pickup20" parent="active_entities" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5352, -218.927, 145.732 )
+
+[node name="gem_pickup21" parent="active_entities" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.7717, -218.621, 148.002 )
+
+[node name="gem_pickup22" parent="active_entities" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.7036, -218.916, 147.742 )
+
+[node name="gem_pickup23" parent="active_entities" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.6462, -226.725, 161.499 )
+
+[node name="gem_pickup24" parent="active_entities" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30.0782, -226.406, 161.278 )
+
+[node name="gem_pickup25" parent="active_entities" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 32.712, -225.675, 161.227 )
+
+[node name="bug_pickup16" parent="active_entities" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 40.0498, -248.827, 140.813 )
+
+[node name="gem_pickup26" parent="active_entities" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30.8604, -245.691, 177.507 )
+
+[node name="gem_pickup27" parent="active_entities" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.1765, -246.926, 179.256 )
+
+[node name="gem_pickup28" parent="active_entities" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.8897, -248.808, 175.878 )
+
+[node name="gem_pickup29" parent="active_entities" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.4709, -247.693, 171.988 )
+
+[node name="bug_pickup17" parent="active_entities" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9119, -248.599, 164.295 )
+
+[node name="gem_pickup30" parent="active_entities" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.84387, -247.28, 169.849 )
+
+[node name="gem_pickup31" parent="active_entities" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.8766, -247.505, 170.931 )
+
+[node name="bug_pickup18" parent="active_entities" instance=ExtResource( 13 )]
+transform = Transform( -0.294541, 0, 0.955639, 0, 1, 0, -0.955639, 0, -0.294541, 77.4409, -250.66, 139.916 )
+
+[node name="gem_pickup32" parent="active_entities" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 76.2619, -246.33, 142.536 )
+
+[node name="bug_pickup19" parent="active_entities" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 64.741, -163.545, 30.2172 )
+
+[node name="bug_pickup20" parent="active_entities" instance=ExtResource( 13 )]
+transform = Transform( 0.15559, 0, 0.987822, 0, 1, 0, -0.987822, 0, 0.15559, 58.6443, -168.953, 31.2818 )
+
+[node name="npc" parent="active_entities" instance=ExtResource( 3 )]
+transform = Transform( 0.921877, 0, 0.387483, 0, 1, 0, -0.387483, 0, 0.921877, 60.5164, -175.87, 39.2705 )
+dialog = ExtResource( 4 )
+visual_name = "Stone Watcher"

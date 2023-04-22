@@ -1,0 +1,22 @@
+I-ine kes!?
+[You] Uh, ko ilam Jackie?
+
+
+{exit()}
+:_coat
+{Global.stat("language/djaket")}
+	{Global.stat("language/gertte")}
+		[You] Leshene ine djaketep.. tr- (what's the word for trade?) uh... mirtte?
+		Eh?
+		* She does not understand you.
+	{otherwise}
+		[You] Leshene ine.. eh, djaketep gertte pa?
+		{traded_coats()} Ilte?
+		{otherwise} ... Djaketep gertte?
+		[You] Eeya.
+		{swap_coats()} Eh, eeya?
+		[You] Nereb sunai!
+{otherwise}
+	[You] Do you want to... uh, trade... coats?
+	???
+	* She does not understand

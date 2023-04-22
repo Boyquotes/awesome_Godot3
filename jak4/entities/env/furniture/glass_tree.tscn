@@ -1,0 +1,36 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://material/triplanar.shader" type="Shader" id=1]
+[ext_resource path="res://material/gem_transparent.shader" type="Shader" id=2]
+[ext_resource path="res://material/env/plants/birch.png" type="Texture" id=3]
+[ext_resource path="res://_glb/env/furniture/glass_tree.glb" type="PackedScene" id=4]
+[ext_resource path="res://entities/visual/random_color.gd" type="Script" id=5]
+
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0, 0.294964, 0.607914, 0.805755, 1 )
+colors = PoolColorArray( 0.0336304, 0.226562, 0, 1, 0.66207, 0.90625, 0.619507, 1, 0.615509, 0.855363, 0.949219, 1, 0.460102, 0.3284, 0.824219, 1, 0.480469, 0, 0.349091, 1 )
+
+[sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
+shader = ExtResource( 2 )
+shader_param/albedo = Color( 0.592157, 1, 0.533333, 1 )
+shader_param/refraction = -0.071
+shader_param/brightness = 0.143
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 1 )
+shader_param/uv_scale = 1.0
+shader_param/power = 1.0
+shader_param/wall = ExtResource( 3 )
+shader_param/ground = ExtResource( 3 )
+shader_param/ceiling = ExtResource( 3 )
+
+[node name="glass_tree" instance=ExtResource( 4 )]
+script = ExtResource( 5 )
+palette = SubResource( 3 )
+mesh_instance = NodePath("tree-kine/mesh")
+shader_param = "albedo"
+
+[node name="mesh" parent="tree-kine" index="0"]
+material/0 = SubResource( 1 )
+material/1 = SubResource( 2 )

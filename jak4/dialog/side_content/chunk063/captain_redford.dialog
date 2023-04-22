@@ -1,0 +1,156 @@
+!{captain_redford/start}
+	{talked == 0}
+		// At the blockade
+		I, Captain Nathaniel Redford of the Sixth Cavalry, on authority of King August IX, declare this locomotive property of the Vaeland Empire!
+		> You can talk?
+		> King August IX died fifteen years ago...
+
+		What? Little boy, what are you doing here?
+		[You] "Little boy"? I'm a 27-year-old woman!
+		My God, did these savages take you captive and shave your head? Are you held hostage?
+		[You] How dare you!
+		{remember("I met the most rude creature, calling itself \"Captain Redford\". I had no idea these beasts could talk, and I wish they didn't!")}
+		[You] Short hair is fashionable! It's sporty and comfortable! You will not insult me again, creature!
+		Fashion? Well, if one wishes not to be insulted, perhaps one should not make oneself so easy to insult.
+		[You] I will not tolerate such abuse from a skull with legs! State your business or I shall deal with you like the other spectres, talking or not!
+		You speak nonsense, girl. I stated my business. I am capturing this locomotive to aid in the war effort. The question is, what is a woman such as yourself doing in the middle of a battlefield?
+		[You] What war? Do you mean the Vaeler-Yaqaz War? But it's been over for forty years...
+		What do you mean "over"?
+		[You] We lost. The Yaqazi dispelled us from the region decades ago. And they've been awfully smug about it, quite frankly.
+		Impossible! I saw my company just two days ago! Speaking of which, we must find them. They're likely uneasy without my leadership.
+		You shall accompany me to our fortifications at the Ember Crest Manor. With reinforcements, we can hold this station with ease.
+		And once we get there, you shall be sent home to Vaeland. This abominable desert is no place for a lady, even a short-haired one.
+	{otherwise}
+		Young lady. As I have said, we must part for the Ember Crest Manor at once!
+	> Fine. I will humor your delusions and go to this manor with you.
+		+{captain_redford/start}
+		It's just over the ridge northeast of here. Stay by my side. We can't trust these natives...
+		{Global.note_task("captain_redford", 'A strange talking spectre, calling itself "Captain Redford", has demanded I travel with him to the Ember Crest Manor to find his men. I have no doubt this is a trap of some sort.')}
+		{Global.task_note_place("captain_redford", "ember_crest_manor", "I am to accompany Captain Redford to this manor.")}
+		{Global.task_note_person("captain_redford", "captain_redford", "He's demanded I accompany him to the manor. I will humor him, and keep my eyes peeled for signs of a trap.")}
+		{main_speaker.travel_to('ember_crest_manor', "../path_ember_crest")}
+	> No. Stay on that train forever for all I care.
+		What?! Young lady, that was an order from an officer! You will not wander the battlefield unaccompanied!
+		... Get back here!
+{otherwise if main_speaker.get_chunk() == "chunk063"}
+	Right, let's continue!
+	{main_speaker.continue_travel("../path_ember_crest")}
+{otherwise if main_speaker.at("front_door")}
+	{!Global.count("manor_key")}
+		There's something wrong here.
+		[You] Yes. Your soldiers left decades ago. There's only the blasted spectres here now.
+		The... survivors must have taken refuge inside! Quickly! I've got the key, but... my hands are... rather stiff.
+		[You] You don't have hands.
+		Stop it. Stop with this nonsense. Just... take the key and open the door.
+		* He wriggles a key out of his breast pocket. It falls to the ground and you take it.
+		{Global.add_item("manor_key")}
+	{otherwise if !Global.stat("chunk052/front_door/open")}
+		Well... Are you going to open it?
+		[You] I unlocked it, but it's still stuck.
+		It can probably be kicked open now.
+	{otherwise}
+		Marvelous! Now to find my men...
+		{main_speaker.travel_to("", "../path_entry")}
+{otherwise if main_speaker.at("entry")}
+	Right, where in the blazes IS everyone?
+	[You] They're gone! I've been telling you! And you haven't explained how you became a spectre!
+	I've told you who I am plenty of times! I'm Captain Nathaniel Redford of the Sixth Cavalry! Recognized by His Grace, King August IX, December 8th, 1251.
+	[You] It's 1302...
+	Wait! Do you feel that?
+	[You] What?
+	Air... There's a nasty draft in here.
+	[You] Oh, come on! The windows are broken out!
+	No, no... it's moving somewhere else...
+	{main_speaker.travel_to("", "../shelf_view")}
+{otherwise if Global.has_stat("manor052/investigation1")}
+	?{manor052/passage/open} 
+		So it was a passage!
+		Excellent work, uh, I never caught your name.
+		[You] Jackie.
+		Short for Jacqueline, I presume?
+		[You] Yes.
+		Well Jacqueline, it appears we're in a puzzle-box. A devious labyrinth of unknown purpose. They're more common in this region than I'd prefer.
+		We must find my men. They may've been trapped in this evil place.
+		[You] Alright, "Captain". If I humor you and help you "find" your "men", will you agree to stop harassing those workers at the train?
+		I promise no such thing.
+		[You] Ugh. Well, I'm curious what's at the end of this all the same...
+		{Global.remove_stat("manor052/investigation1")}
+		{main_speaker.emit_signal("npc_event", "investigation1_complete")}
+		{main_speaker.travel_to("", "../path_passage")}
+	{otherwise}
+		There must be a lock or something...
+{otherwise if main_speaker.at("shelf_view")}
+	?{manor052/passage/open}
+		Alright, let's go in.
+		{main_speaker.travel_to("", "../path_passage")}
+	{otherwise} 
+		Air is going behind this shelf. A secret passage? Help me push it out of the way.
+		* You both try pushing the shelf. It's locked in place by some mechanism.
+		[You] Your suspicion seems well-founded... this is a door, alright.  Perhaps there's a lever or what-have-you.
+		+{manor052/investigation1}
+{otherwise if main_speaker.at("kitchen")}
+	!{manor052/investigation2}
+		Well done! It appears it was a secret passage to the kitchen! Perhaps for servants.
+		[You] It doesn't appear any soldiers have ever quartered here.
+			This is just a regular home.
+		No. We need to investigate further! Let's find the keys to the rest of the home.
+		+{manor052/investigation2}
+	{otherwise}
+		Did you find anything?
+		{!Global.count("manor_den_key")}
+			[You] Nothing yet.
+			Let's keep looking I'm sure there's a way into the rest of the house.
+	{Global.count("manor_den_key")}
+		[You] I found this key in a lockbox.
+		Oh, excellent! Let's go see what it unlocks!
+		{Global.remove_stat("manor052/investigation2")}
+		{main_speaker.travel_to("", "../path_den")}
+{otherwise if main_speaker.at("den")}
+	!{manor052/investigation3}
+		+{manor052/investigation3}
+		Nothing here makes any sense.  Where are the sandbags? We boarded up the windows weeks ago!
+		[You] I've been telling you, you buffoon! The war ended! Whatever delusions you have are of a long-gone era.
+		...
+		We just... Have to find the next part of the path.
+		[You] What path? What proof do we have there's a path? All we know is there was a servant's path behind the cabinet. What more are we looking for?
+		Trust me, Jacqueline. I've got... a feeling, I suppose. There is more here.
+	{otherwise}!{redford/discussed/denial}
+		It's clear the manor was renovated since I was last here...
+		But whoever it was is long gone now.
+		[You] Have you been listening to a word I've said this entire time?
+		* He makes a noise like a sigh, despite no evidence he has lungs.
+		Jacqueline, may I tell you a story?
+		We often receive mail at the front lines. Letters and gifts from loved ones, newspapers, et cetera.
+		One day, one of my soldiers received a letter informing him his wife and daughter had drowned in a boating accident.
+		He flew into a rage. He proclaimed the letter was a fake, designed to demoralize us.
+		He meticulously found grammatical and factual errors proving it was from the enemy. And after interrogating the delivery men, it was clear to him the letter was inserted with the rest of the mail during their stop at Muzna Cross.
+		He was so thorough in his investigation, so certain in his conclusions...
+		That you could almost believe him.
+		[You] What are you trying to say?
+		Well, have you heard of the seven stages of grief?
+		[You] It's five stages.
+		If you say so. But for some men, I believe there are only two stages:
+		Denial and death.
+		+{jackie/info/denial}
+		+{redford/discussed/denial}
+	{otherwise}
+		Let's open up the rest of this manor first.
+{otherwise}
+	[ERROR]: Captain Redford has no words for the current situation.
+{exit()}
+
+:_coat
+* He doesn't have anything you could wear.
+{back()}
+
+:opened
+* The map clicks into place, and you here a louder click behind you.
+That must be the cabinet! Let's try it again!
+It's curious the secret code was merely straightening the map. Perhaps it was to confuse the natives, since they draw their maps with East at the top.
+> (Leave)
+
+// Perhaps more puzzles. I think The Captain can tell you the solution, but chooses not to
+I believe I understand what's happening here. But I don't want to deprive you the joy of a good puzzle.
+> Fair enough, I'll solve it on my own.
+> Give me a hint.
+> I hate puzzles. Tell me what to do.

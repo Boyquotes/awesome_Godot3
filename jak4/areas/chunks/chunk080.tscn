@@ -1,0 +1,87 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://areas/chunk_content.gd" type="Script" id=1]
+[ext_resource path="res://entities/env/stone/hut_curves_bug.tscn" type="PackedScene" id=2]
+[ext_resource path="res://entities/env/stone/hut_curves_tube.tscn" type="PackedScene" id=3]
+[ext_resource path="res://items/gem_pickup.tscn" type="PackedScene" id=4]
+[ext_resource path="res://entities/env/stone/hut_curves_noodle.tscn" type="PackedScene" id=5]
+[ext_resource path="res://entities/env/stone/fountain2.tscn" type="PackedScene" id=6]
+[ext_resource path="res://entities/control/trigger_zone.gd" type="Script" id=7]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 59.4623, 17.0945, 26.4847 )
+
+[node name="chunk080" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="zone_village" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.17094, 706.035, -157.822 )
+
+[node name="hut_curves_bug" parent="zone_village" instance=ExtResource( 2 )]
+transform = Transform( -0.155974, 0.00305602, 0.987757, 0.0913169, 0.995758, 0.0113389, -0.983531, 0.0919675, -0.155592, -9.88896, 1.573, -0.310989 )
+
+[node name="hut_curves_bug2" parent="zone_village" instance=ExtResource( 2 )]
+transform = Transform( -0.747841, -0.00785468, 0.663831, 0.0470234, 0.996792, 0.0647688, -0.66221, 0.0796524, -0.745073, -5.91906, 1.04901, 6.69501 )
+
+[node name="hut_curves_bug3" parent="zone_village" instance=ExtResource( 2 )]
+transform = Transform( -0.997866, 0.0300681, -0.0579622, 0.025323, 0.996398, 0.0809292, 0.0601868, 0.0792886, -0.995034, 1.49454, 0.658997, 9.23901 )
+
+[node name="hut_curves_bug4" parent="zone_village" instance=ExtResource( 2 )]
+transform = Transform( -0.610531, 0.0239975, -0.791629, -0.0530585, 0.996056, 0.0711151, 0.790214, 0.0854206, -0.60685, 8.53206, 0.878052, 5.65601 )
+
+[node name="hut_curves_bug6" parent="zone_village" instance=ExtResource( 2 )]
+transform = Transform( 0.732528, 0, -0.680737, 0, 1, 0, 0.680737, 0, 0.732528, 6.85673, 2.05505, -9.03999 )
+
+[node name="hut_curves_bug7" parent="zone_village" instance=ExtResource( 2 )]
+transform = Transform( 0.986529, 0.00619099, 0.163472, 0.00385103, 0.998128, -0.0610415, -0.163543, 0.0608487, 0.984658, -0.51087, 2.18903, -11.235 )
+
+[node name="hut_curves_bug8" parent="zone_village" instance=ExtResource( 2 )]
+transform = Transform( 0.691928, 0.0162966, 0.721782, 0.0410818, 0.997237, -0.0618985, -0.720796, 0.0724814, 0.689347, -7.60626, 1.99506, -7.74699 )
+
+[node name="hut_curves_tube" parent="zone_village" instance=ExtResource( 3 )]
+transform = Transform( -0.162208, 0, 0.986757, 0, 1, 0, -0.986757, 0, -0.162208, 24.6724, 2.59406, -16.254 )
+
+[node name="hut_curves_tube2" parent="zone_village" instance=ExtResource( 3 )]
+transform = Transform( 0.443259, 0, -0.896394, 0, 1, 0, 0.896394, 0, 0.443259, 36.4976, 2.32605, -9.71199 )
+
+[node name="hut_curves_tube3" parent="zone_village" instance=ExtResource( 3 )]
+transform = Transform( -0.207367, 0, -0.978264, 0, 1, 0, 0.978264, 0, -0.207367, 33.958, 2.29803, -17.485 )
+
+[node name="hut_curves_noodle" parent="zone_village" instance=ExtResource( 5 )]
+transform = Transform( 0.985397, 4.65661e-09, 0.170272, 0.0143451, 0.996445, -0.0830181, -0.169667, 0.0842484, 0.981894, 72.0292, 0.577026, -4.437 )
+
+[node name="hut_curves_noodle4" parent="zone_village" instance=ExtResource( 5 )]
+transform = Transform( 0.439275, 0, -0.898353, -0.0756847, 0.996445, -0.0370082, 0.895159, 0.0842484, 0.437714, 75.9887, 1.17505, -11.514 )
+
+[node name="hut_curves_noodle5" parent="zone_village" instance=ExtResource( 5 )]
+transform = Transform( -0.652442, 1.11759e-08, -0.757839, -0.0638467, 0.996445, 0.0549672, 0.755145, 0.0842484, -0.650122, 84.2959, 0.979004, -9.679 )
+
+[node name="hut_curves_noodle2" parent="zone_village" instance=ExtResource( 5 )]
+transform = Transform( 0.127503, 1.86265e-09, 0.991839, 0.0835608, 0.996445, -0.0107419, -0.988312, 0.0842484, 0.127049, 77.5959, 0.0100098, 1.783 )
+
+[node name="hut_curves_noodle3" parent="zone_village" instance=ExtResource( 5 )]
+transform = Transform( -0.918409, -5.58794e-09, 0.395633, 0.0333314, 0.996445, 0.0773745, -0.394226, 0.0842484, -0.915144, 85.2541, 0.30603, -1.717 )
+
+[node name="active_entities" type="Spatial" parent="."]
+
+[node name="zone_village2" type="MultiMeshSystem" parent="active_entities"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.17094, 706.035, -157.822 )
+
+[node name="fountain2" parent="active_entities/zone_village2" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 0.997067, -0.0765308, 0, 0.0765308, 0.997067, 79.0454, 0.128784, -4.80058 )
+
+[node name="gem_pickup" parent="active_entities/zone_village2" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.478273, 1.63605, -1.22362 )
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="active_entities/zone_village2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 79.3662, 2.51825, -4.58818 )
+extents = Vector3( 14.0894, 5.23004, 11.2339 )
+
+[node name="visited_village_80" type="Area" parent="active_entities/zone_village2"]
+transform = Transform( 0.984778, 0, 0.173814, 0, 1, 0, -0.173814, 0, 0.984778, 3.18961, 0, 7.74115 )
+script = ExtResource( 7 )
+stat = "visited/village_080"
+
+[node name="CollisionShape" type="CollisionShape" parent="active_entities/zone_village2/visited_village_80"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30.2196, 0, 0 )
+shape = SubResource( 1 )

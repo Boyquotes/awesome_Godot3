@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/charge.wav-72c6e5164d29ec0294632dd831d723c6.sample"
+
+[deps]
+
+source_file="res://audio/weapons/charge.wav"
+dest_files=[ "res://.import/charge.wav-72c6e5164d29ec0294632dd831d723c6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=102813
+edit/loop_end=-10
+compress/mode=0

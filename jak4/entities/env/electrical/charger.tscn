@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://_glb/env/electrical/charger.glb" type="PackedScene" id=1]
+[ext_resource path="res://entities/visual/random_color.gd" type="Script" id=2]
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0, 0.172662, 0.327338, 0.453237, 0.654676, 0.798561, 1 )
+colors = PoolColorArray( 0, 0, 0, 1, 0.139869, 0.216168, 0.628184, 1, 0.221466, 0.960938, 0.250352, 1, 0.869313, 1, 0.00390625, 1, 1, 0.492188, 0, 1, 0.957031, 0.213089, 0.213089, 1, 1, 1, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=1]
+resource_local_to_scene = true
+albedo_color = Color( 0, 0, 0, 1 )
+roughness = 0.55
+
+[node name="charger" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+palette = SubResource( 2 )
+mesh_instance = NodePath("charger")
+shader_param = "albedo_color"
+
+[node name="charger" parent="." index="0"]
+material/0 = SubResource( 1 )

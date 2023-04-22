@@ -1,0 +1,142 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://areas/chunk_content.gd" type="Script" id=1]
+[ext_resource path="res://games/race.gd" type="Script" id=2]
+[ext_resource path="res://entities/npc/npc.tscn" type="PackedScene" id=3]
+[ext_resource path="res://dialog/side_content/race/race_generic.dialog" type="Resource" id=4]
+[ext_resource path="res://entities/visual/flag.tscn" type="PackedScene" id=5]
+[ext_resource path="res://dialog/side_content/race/race_coat_trade.dialog" type="Resource" id=6]
+[ext_resource path="res://entities/env/stone/rock1.tscn" type="PackedScene" id=7]
+[ext_resource path="res://entities/env/copper/scrap1.tscn" type="PackedScene" id=8]
+[ext_resource path="res://entities/env/stone/rock2.tscn" type="PackedScene" id=9]
+[ext_resource path="res://entities/env/copper/scrap2.tscn" type="PackedScene" id=10]
+[ext_resource path="res://entities/env/stone/pillar.tscn" type="PackedScene" id=11]
+[ext_resource path="res://entities/env/vaeler/cannon_wheel.tscn" type="PackedScene" id=12]
+[ext_resource path="res://entities/env/stone/ruin1.tscn" type="PackedScene" id=14]
+[ext_resource path="res://entities/env/stone/rock3.tscn" type="PackedScene" id=15]
+[ext_resource path="res://entities/env/stone/ruin2.tscn" type="PackedScene" id=16]
+
+[sub_resource type="SphereShape" id=1]
+radius = 4.19616
+
+[node name="chunk078" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="rock1" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22.9682, -28.1572, -179.967 )
+
+[node name="rock2" parent="." instance=ExtResource( 7 )]
+transform = Transform( -0.764267, 0.288926, 0.576556, 0.353617, 0.93539, 0, -0.539305, 0.20388, -0.817057, -29.4538, -28.7091, -192.435 )
+
+[node name="rock3" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -194.848, 54.2858, 102.611 )
+
+[node name="rock4" parent="." instance=ExtResource( 9 )]
+transform = Transform( -0.0145662, 0.275513, 0.961187, -0.999894, -0.00401354, -0.0140023, -5.70435e-08, -0.961289, 0.275542, -162.5, 37.3114, -121.099 )
+
+[node name="scrap2" parent="." instance=ExtResource( 8 )]
+transform = Transform( 0.984166, 0.177248, 0, -0.0912727, 0.50679, -0.857224, -0.151941, 0.843651, 0.514943, -18.0017, -42.1208, -63.0303 )
+
+[node name="scrap3" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 0.578981, -0.815341, 0, 0.815341, 0.578981, -14.1358, -41.6191, -64.9694 )
+
+[node name="scrap4" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 0.853436, 0.521198, 0, -0.521198, 0.853436, -9.56586, -42.4725, -62.9661 )
+
+[node name="scrap5" parent="." instance=ExtResource( 10 )]
+transform = Transform( -0.336666, 0.410211, -0.847575, 0.407168, 0.875037, 0.26177, 0.849041, -0.256976, -0.46162, -6.26246, -40.8707, -62.5376 )
+
+[node name="scrap6" parent="." instance=ExtResource( 10 )]
+transform = Transform( 0.580848, -0.257115, 0.772339, 0.404771, 0.914418, 1.36259e-08, -0.70624, 0.31262, 0.635211, -4.36828, -39.6657, -65.8147 )
+
+[node name="scrap1" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 0.455612, -0.890178, 0, 0.890178, 0.455612, -21.7996, -41.9237, -63.5375 )
+
+[node name="rock5" parent="." instance=ExtResource( 7 )]
+transform = Transform( 0.179388, 0.983778, 0, -0.983778, 0.179388, 0, 0, 0, 1, -22.2652, -43.7128, -124.96 )
+
+[node name="rock6" parent="." instance=ExtResource( 7 )]
+transform = Transform( 0.179388, 0.57345, -0.799359, -0.983778, 0.104566, -0.14576, 3.72529e-08, 0.81254, 0.582906, -23.9326, -44.6073, -89.4883 )
+
+[node name="rock7" parent="." instance=ExtResource( 15 )]
+transform = Transform( 0.226827, -0.778708, 0.584947, -0.181219, -0.623859, -0.760236, 0.956927, 0.0664387, -0.282625, 32.248, -48.9598, 92.2199 )
+
+[node name="rock8" parent="rock7" instance=ExtResource( 7 )]
+transform = Transform( 0.226827, 0.963266, 0.143761, -0.778708, 0.0907185, 0.620793, 0.584948, -0.252761, 0.77068, 6.4846, 21.8335, -8.34365 )
+
+[node name="rock10" parent="rock7" instance=ExtResource( 7 )]
+transform = Transform( -0.0185421, 0.340465, -0.940074, 0.672276, 0.700204, 0.240332, 0.740068, -0.627533, -0.24187, -6.5773, 17.7626, -6.29272 )
+
+[node name="rock9" parent="rock7" instance=ExtResource( 7 )]
+transform = Transform( 0.384632, -0.34081, 0.85785, -0.487679, -0.864082, -0.124626, 0.783726, -0.37042, -0.49856, 5.20985, 17.5607, -13.5375 )
+
+[node name="ruin1" parent="." instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 83.6817, -34.502, 16.9001 )
+
+[node name="ruin2" parent="." instance=ExtResource( 16 )]
+transform = Transform( 0.413257, -0.222439, 0.883029, 0.0942865, 0.974947, 0.201467, -0.90572, 0, 0.423876, 52.8819, -35.6345, -12.4682 )
+
+[node name="ruin3" parent="." instance=ExtResource( 16 )]
+transform = Transform( -0.853768, 0, 0.520654, 0.044065, -0.996412, 0.0722577, 0.518786, 0.0846339, 0.850705, 75.4749, -31.7201, -4.32617 )
+
+[node name="pillar" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 0.975132, 0.221625, 0, -0.221625, 0.975132, 63.236, -38.3601, 0.35875 )
+
+[node name="active_entities" type="Spatial" parent="."]
+
+[node name="cannon_wheel" parent="active_entities" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 0.770682, 0.63722, 0, -0.63722, 0.770682, 60.767, -35.872, 20.9378 )
+
+[node name="cannon_wheel2" parent="active_entities" instance=ExtResource( 12 )]
+transform = Transform( 0.756758, -0.653695, 0, 0.653695, 0.756758, 0, 0, 0, 1, 72.8688, -33.4957, 14.5257 )
+
+[node name="race" type="Spatial" parent="active_entities"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -231.489, 52.8011, 162.526 )
+script = ExtResource( 2 )
+bronze_seconds = 60.0
+silver_seconds = 35.0
+gold_seconds = 28.0
+bronze_reward = 5
+silver_reward = 8
+gold_reward = 15
+max_rarity = 3
+hover_scooter = true
+required_items = [ "hover_scooter" ]
+checkpoints = [ NodePath("race_midpoint") ]
+
+[node name="race_start" type="Spatial" parent="active_entities/race"]
+transform = Transform( -0.831114, 0, 0.556102, 0, 1, 0, -0.556102, 0, -0.831114, -6.23628, 0, -6.19279 )
+
+[node name="Timer" type="Timer" parent="active_entities/race"]
+
+[node name="race_midpoint" type="Area" parent="active_entities/race"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 197.424, -81.1894, -345.768 )
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape" type="CollisionShape" parent="active_entities/race/race_midpoint"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.984493, 0 )
+shape = SubResource( 1 )
+
+[node name="race_end" type="Area" parent="active_entities/race"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 282.543, -116.338, 63.3969 )
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape" type="CollisionShape" parent="active_entities/race/race_end"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.984493, 0 )
+shape = SubResource( 1 )
+
+[node name="flag" parent="active_entities/race/race_end" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.59161, 0 )
+
+[node name="npc_race" parent="active_entities/race" instance=ExtResource( 3 )]
+transform = Transform( -0.865837, 0, 0.500326, 0, 1, 0, -0.500326, 0, -0.865837, -3.43204, -0.885025, -5.18025 )
+dialog = ExtResource( 4 )
+visual_name = "Racer"
+
+[node name="npc2" parent="active_entities/race" instance=ExtResource( 3 )]
+transform = Transform( 0.683606, 0, -0.729851, 0, 1, 0, 0.729851, 0, 0.683606, 199.547, -81.0692, -347.402 )
+dialog = ExtResource( 6 )
+visual_name = "Racer"
+no_dialog_trigger = true

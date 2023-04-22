@@ -1,0 +1,94 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://items/item_pickup.tscn" type="PackedScene" id=1]
+[ext_resource path="res://_glb/items/gem_gem.mesh" type="ArrayMesh" id=2]
+
+[sub_resource type="CylinderShape" id=1]
+height = 0.635406
+radius = 0.301974
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("mesh_component:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("mesh_component:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.323171, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "spin"
+length = 3.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("mesh_component:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 720, 360 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("mesh_component:translation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.4, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.323171, 0 ), Vector3( 0, 0.218253, 0 ), Vector3( 0, 0.323171, 0 ) ]
+}
+
+[node name="gem_pickup" instance=ExtResource( 1 )]
+item_id = "gem"
+persistent = false
+
+[node name="CollisionShape" parent="." index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.318765, 0 )
+shape = SubResource( 1 )
+
+[node name="VisibilityEnabler" type="VisibilityEnabler" parent="." index="2"]
+aabb = AABB( -0.223331, 0.0370607, -0.220164, 0.446663, 0.532324, 0.440329 )
+children_only = false
+
+[node name="mesh_component" type="MultiMeshComponent" parent="VisibilityEnabler" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.323171, 0 )
+mesh = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VisibilityEnabler" index="1"]
+autoplay = "spin"
+anims/RESET = SubResource( 2 )
+anims/spin = SubResource( 3 )
+
+[node name="CollisionShape" parent="area" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.337273, 0 )
+
+[node name="OmniLight" parent="." index="4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.132617, 0 )
+light_color = Color( 0.996078, 0.631373, 0.87451, 1 )
+light_energy = 0.2
+omni_range = 0.382223

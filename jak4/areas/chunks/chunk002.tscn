@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://areas/chunk_content.gd" type="Script" id=1]
+[ext_resource path="res://entities/env/stone/hive_hut_single_flat.tscn" type="PackedScene" id=2]
+
+[node name="chunk002" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="hive_hut_single_flat" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7175, -190.693, 31.233 )

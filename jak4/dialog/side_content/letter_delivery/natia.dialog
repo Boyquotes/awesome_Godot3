@@ -1,0 +1,86 @@
+?{natia/leaving}
+	Oh, don't mind me! Just making sure everything here is in order before I head out.
+	{exit()}
+{otherwise}
+	Hello!
+	{Global.count("mother_letter")}
+		[You] Hello! I'm looking for Natia. I have a letter for her.
+		+{info/natia}Oh, that's me! Who do I have the pleasure of speaking with?
+		[You] I'm Jackie.
+		Jackie! A pleasure. Who is this letter from?
+		[You] Uh.... I didn't actually get her name, now that I think of it. She's from Hideaway.
+		Oh really?
+		[You] I have it here, if you'd like.
+		* You hand Natia the letter. She reads it quickly and nods. Then she tears it to pieces and throws it into the fountain.
+		Hang on.
+		{Global.remove_item("mother_letter")}
+		{Global.add_item("mother_poem")}
+		{Global.task_remove_place("letter_delivery", "muzna_cross")}
+		{Global.note_task("letter_delivery","I've delivered the letter, and received a poem for the woman.")}
+		{Global.task_note_place("letter_delivery", "hideaway", "Natia gave me a poem to bring back to Hideaway")}
+		+{natia/leaving}* She presents you a note of her own.
+		Could you give this poem to the woman you received the letter from?
+		[You] Uh... Alright. Is there no mail delivery service out here?
+		Hahaha! Sorry you've been caught in the middle of this delivery nonsense.
+		+{info/mail_stealing} Mail often goes missing around here. So somebody trustworthy makes a much better courier.
+		[You] Am I trustworthy? A stranger from out of the country? I could just hop on the train back to Vaeland and you'd never be the wiser...
+		What, at the train station I am currently watching? Haha! Plus, you delivered Yomi's letter safe and sound, so you have already proven some level of trustworthiness.
+		[You] You've got a point.
+		What brought you out here, anyway?
+		> I'm using the Medium in Hideaway.
+			Really? Someone got it working after all these years?
+			[You] I did, in fact.
+			Wow! You must really have faith in it. Who did you want to talk to?
+			[You] Uh, my mother. She lived around here before she got married.
+			Interesting... And you're from Vaeland, correct?
+			[You] I am.
+			Was her name Tara?
+			[You] W-What? You know her?
+			She was? That was just a guess! I only know a few women who married off to Vaelers, and it would have been about 30 years ago?
+			[You] Yes, that lines up exactly!
+			Oh, I wish I had more time to discuss this, but I'm actually leaving soon.
+			{Global.task_note_place("letter_delivery", "mountain_valley", "Natia said she's going up the mountain to stay here for a while")} 
+			{Global.task_note_place("mum", "mountain_valley", "Natia apparently knew about my mother. She wanted to talk with me after I delivered her poem.")}
+			+{natia/info/mum}
+			How about this: I'm headed up the mountain, to the valley with the waterfall. It's here on your map.
+			If you can get that poem to Natia, I would love if you stopped by! I'll tell you everything, then!
+			+{natia/chat}
+		> Uh, I'm just a tourist.
+			Hm... I don't think you are, but we'll let you have your secrets for today, eh?
+			[You] Uh, y-yes- I mean, I'm not... exactly
+			Hahaha! I'll share one of my secrets:
+			{Global.note_task("letter_delivery", "Natia said she's going up the mountain to stay here for a while")} I'm heading out for a trip up the mountain once you leave. If you're ever up there, I'd love to chat some more!
+			After you deliver my poem, of course!
+			[You] Alright, I'll look forward to seeing you again!
+	{otherwise}
+		[You] Hi!
+{exit()}
+
+:_coat
+?{info/natia}
+	[You] Hello again, Natia.
+	Oh, hello Jackie!
+{otherwise}
+	[You] Excuse me, ma'am.
+	Yes, dear?
+{mention("_coat")}
+{traded_coats()}
+	[You] How do you like my coat?
+	It's lovely, thank you.
+	> That's good to hear. Take care!
+	> Could we trade again?
+		Hm.... well, why not?
+		{swap_coats()} [You] Excellent, thank you!
+{otherwise}
+	[You] I couldn't help but notice that beautiful fabric you're wearing!
+	Really? A bit of a fashionista, yourself?
+	[You] Uh, I suppose so.
+	> I just thought I'd mention it. Take care!
+		{exit()}
+	> I'd like to trade my jacket for yours.
+		Hm? You really do like it, do you?
+		[You] If it's no trouble...
+		* She examines your coat.
+		{swap_coats()} Well, yours is a finer fabric. Here you go!
+		?{info/natia} [You] Wonderful! Take care, Natia!
+		{otherwise}[You] Excellent, thank you!

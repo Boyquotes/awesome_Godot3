@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/grav_gun_fire.wav-41d92aa6c9b8cc4b1fa58acd73699a7d.sample"
+
+[deps]
+
+source_file="res://audio/weapons/grav_gun_fire.wav"
+dest_files=[ "res://.import/grav_gun_fire.wav-41d92aa6c9b8cc4b1fa58acd73699a7d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

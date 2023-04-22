@@ -1,0 +1,79 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://areas/chunk_content.gd" type="Script" id=1]
+[ext_resource path="res://entities/env/stone/rock1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://games/race.gd" type="Script" id=3]
+[ext_resource path="res://entities/visual/flag.tscn" type="PackedScene" id=4]
+[ext_resource path="res://dialog/side_content/race/race_climb.dialog" type="Resource" id=5]
+[ext_resource path="res://entities/npc/npc.tscn" type="PackedScene" id=6]
+[ext_resource path="res://entities/env/copper/crate1.tscn" type="PackedScene" id=7]
+[ext_resource path="res://items/random_ammo_pickup.tscn" type="PackedScene" id=8]
+[ext_resource path="res://entities/env/stone/rock_collapsible.tscn" type="PackedScene" id=9]
+[ext_resource path="res://entities/env/stone/rock_kinematic.tscn" type="PackedScene" id=10]
+
+[sub_resource type="SphereShape" id=1]
+radius = 1.66702
+
+[node name="chunk036" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="rock1" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -244.34, -363.019, -141.117 )
+
+[node name="rock_collapsible" parent="." instance=ExtResource( 9 )]
+transform = Transform( -0.947095, -0.211497, -0.241411, -0.217943, 0.975961, -3.24761e-09, 0.235608, 0.0526139, -0.970423, -72.7239, -113.009, -179.426 )
+
+[node name="rock2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 0.982761, 0.184879, 0, -0.184879, 0.982761, -55.9003, -101.542, -75.0554 )
+
+[node name="rock_kinematic" parent="." instance=ExtResource( 10 )]
+transform = Transform( 0.336429, -0.0919311, -0.937211, 0, 0.995224, -0.0976216, 0.941709, 0.0328427, 0.334822, -11.6111, -33.4872, -137.32 )
+
+[node name="rock_kinematic2" parent="." instance=ExtResource( 10 )]
+transform = Transform( -0.816816, -0.165747, 0.552575, -0.0565049, 0.976219, 0.209295, -0.574124, 0.139733, -0.806757, -10.5297, -32.8684, -143.514 )
+
+[node name="active_entities" type="Spatial" parent="."]
+
+[node name="race" type="Spatial" parent="active_entities"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -245.834, -359.177, -139.584 )
+script = ExtResource( 3 )
+bronze_seconds = 240.0
+silver_seconds = 180.0
+gold_seconds = 112.0
+bronze_reward = 10
+silver_reward = 20
+gold_reward = 25
+min_rarity = 2
+max_rarity = 4
+required_items = [ "stamina_up*5" ]
+
+[node name="race_start" type="Spatial" parent="active_entities/race"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.418411, 0.0561829, -0.595734 )
+
+[node name="race_end" type="Area" parent="active_entities/race"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 231.982, 324.785, 0 )
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape" type="CollisionShape" parent="active_entities/race/race_end"]
+shape = SubResource( 1 )
+
+[node name="flag" parent="active_entities/race/race_end" instance=ExtResource( 4 )]
+transform = Transform( -0.0918015, 0, -0.995777, 0, 1, 0, 0.995777, 0, -0.0918015, 0, 0.755955, 0 )
+
+[node name="crate1" parent="active_entities/race" instance=ExtResource( 7 )]
+transform = Transform( -0.149883, 0, -0.988704, 0, 1, 0, 0.988704, 0, -0.149883, 1.04991, 0.0961304, 0.828461 )
+
+[node name="random_ammo_pickup" parent="active_entities/race/crate1" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0537567, 0.0342407, -0.44426 )
+
+[node name="random_ammo_pickup2" parent="active_entities/race/crate1" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.164978, 0.0342102, -0.0180664 )
+
+[node name="random_ammo_pickup3" parent="active_entities/race/crate1" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.113403, 0.0342102, 0.503555 )
+
+[node name="npc_race" parent="active_entities/race" instance=ExtResource( 6 )]
+transform = Transform( 0.72234, 0, 0.691538, 0, 1, 0, -0.691538, 0, 0.72234, 1.02869, -0.025238, -3.16136 )
+dialog = ExtResource( 5 )
+visual_name = "Elite Scrambler"

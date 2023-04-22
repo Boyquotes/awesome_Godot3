@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://areas/chunk_content.gd" type="Script" id=1]
+[ext_resource path="res://entities/env/stone/rock2.tscn" type="PackedScene" id=2]
+[ext_resource path="res://entities/env/stone/rock1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://entities/env/stone/rock3.tscn" type="PackedScene" id=4]
+[ext_resource path="res://entities/env/stone/hut.tscn" type="PackedScene" id=5]
+
+[node name="chunk101" type="MultiMeshSystem"]
+script = ExtResource( 1 )
+
+[node name="rock1" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, -0.0145032, -0.999895, 0, 0.999895, -0.0145032, 120, -128.814, 271.868 )
+
+[node name="rock2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 152, -250, 207 )
+
+[node name="rock3" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.457718, -0.224144, 0.86038, 0.811805, 0.5, -0.301617, -0.362584, 0.836516, 0.41082, 117.488, -238.645, 254.673 )
+
+[node name="rock16" parent="." instance=ExtResource( 2 )]
+transform = Transform( -0.178846, -0.278804, -0.943548, 0.0313067, 0.956912, -0.288687, 0.983379, -0.08117, -0.162412, 89.5411, -251.753, 292.883 )
+
+[node name="rock4" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.999701, -0.0244671, 1.19174e-07, -0.0244671, -0.999701, -2.9167e-09, 1.19209e-07, 0, -1, 180.699, -250, 208.278 )
+
+[node name="rock5" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.626386, -0.669558, 0.399165, -0.730258, -0.683172, -8.70535e-08, 0.272699, -0.291493, -0.916879, 191.59, -243.178, 232.684 )
+
+[node name="rock6" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.241552, 0.772601, 0.587146, 0.951073, -0.308612, 0.0148183, 0.192649, 0.554839, -0.809345, 109.65, -236.709, 279.423 )
+
+[node name="rock10" parent="." instance=ExtResource( 4 )]
+transform = Transform( -0.335797, -0.94085, 0.0451759, -0.941934, 0.33541, -0.0161051, 0, -0.0479607, -0.998849, 122.462, -231.313, 290.82 )
+
+[node name="rock11" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.572919, -0.818669, 0.0393092, -0.819612, -0.572259, 0.0274776, 0, -0.0479607, -0.998849, 112.422, -209.386, 286.439 )
+
+[node name="rock12" parent="." instance=ExtResource( 4 )]
+transform = Transform( -0.253066, -0.966336, 0.0463996, -0.967449, 0.252775, -0.0121372, 0, -0.0479607, -0.998849, 120.357, -190.886, 286.9 )
+
+[node name="rock13" parent="." instance=ExtResource( 4 )]
+transform = Transform( -0.703159, 0.710214, -0.0341016, 0.711033, 0.70235, -0.033724, 0, -0.0479607, -0.998849, 116.783, -162.009, 284.306 )
+
+[node name="rock14" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, -0.916879, 0.399165, 0, -0.399165, -0.916879, 122.367, -139.115, 278.402 )
+
+[node name="rock7" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.962531, 0.248256, -0.109101, 0.248126, -0.968612, -0.0149806, -0.109395, -0.0126515, -0.993918, 219.681, -234.926, 198.18 )
+
+[node name="rock8" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 211.172, -248.373, 185.811 )
+
+[node name="rock9" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, -0.472351, -0.881411, 0, 0.881411, -0.472351, 54.2822, -252.865, 229.362 )
+
+[node name="rock17" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 0.540138, 0.841577, 0, -0.841577, 0.540138, -225.237, -198.281, 157.382 )
+
+[node name="rock18" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.948556, -0.297105, -0.109408, -0.316609, -0.890122, -0.327783, 0, 0.345561, -0.938397, -225.237, -181.241, 143.789 )
+
+[node name="rock15" parent="." instance=ExtResource( 2 )]
+transform = Transform( -0.0114316, -0.999935, 0, 0.999935, -0.0114316, 0, 0, 0, 1, 110.912, -173.794, 285.874 )
+
+[node name="hut" parent="." instance=ExtResource( 5 )]
+transform = Transform( -0.711634, 0, -0.702551, 0, 1, 0, 0.702551, 0, -0.711634, -228.436, -169.767, 152.44 )

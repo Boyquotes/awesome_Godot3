@@ -1,0 +1,13 @@
+[remap]
+
+importer="np.dialog"
+type="Resource"
+path="res://.import/get_capacitor_113.dialog-be5bc619a062bb288a327aa9973d1ed7.tres"
+
+[deps]
+
+source_file="res://dialog/intro/get_capacitor_113.dialog"
+dest_files=[ "res://.import/get_capacitor_113.dialog-be5bc619a062bb288a327aa9973d1ed7.tres" ]
+
+[params]
+

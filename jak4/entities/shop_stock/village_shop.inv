@@ -1,0 +1,11 @@
+{
+	"persistent": [
+		{"I":"bug",        "C":15, "$$":30, "TT":"He has a bug in a jar. It's looking at me. Is it smiling?"},
+	],
+	"temporary": [
+		{"I":"flag", "C":5, "$$":45},
+		{"I":"armor", "C":5, "$$":35},
+		{"I":"stamina_booster", "C":5, "$$":35},
+		{"I":"drink", "C":12, "$$":1, "TT":"Bottles of water, soft drinks, and milk sit in the cooler. [No gameplay effect.]"}
+	]
+}

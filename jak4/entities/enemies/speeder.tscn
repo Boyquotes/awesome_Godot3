@@ -1,0 +1,114 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://_glb/enemies/speeder.glb" type="PackedScene" id=1]
+[ext_resource path="res://entities/enemies/crawly.gd" type="Script" id=2]
+[ext_resource path="res://material/env/ancient/white_metal.material" type="Material" id=3]
+[ext_resource path="res://material/triplanar_local_coords.shader" type="Shader" id=4]
+[ext_resource path="res://material/env/copper/copper_corroded1.png" type="Texture" id=5]
+[ext_resource path="res://material/env/copper/copper1.png" type="Texture" id=6]
+
+[sub_resource type="ShaderMaterial" id=7]
+shader = ExtResource( 4 )
+shader_param/uv_scale = 1.0
+shader_param/power = 2.0
+shader_param/softness = 0.3
+shader_param/specularity = 3.0
+shader_param/light_bias = 0.0
+shader_param/wall = ExtResource( 5 )
+shader_param/ground = ExtResource( 6 )
+shader_param/ceiling = ExtResource( 5 )
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.510857
+height = 1.41435
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 0.516012, 0.37716, 0.913159 )
+
+[sub_resource type="CubeMesh" id=2]
+
+[sub_resource type="CapsuleShape" id=3]
+radius = 35.9064
+height = 61.9333
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 2.38184, 1.79791, 6.0287 )
+
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 0.717496, 0.589175, 1 )
+
+[node name="speeder" groups=["dynamic", "enemy", "push", "target"] instance=ExtResource( 1 )]
+collision_layer = 65549
+mass = 80.0
+angular_damp = 4.136
+script = ExtResource( 2 )
+id = "speeder"
+drops_ammo = 0.75
+maximum_rarity = 4
+gem_drop_max = 25
+mesh_node = NodePath("Armature/Skeleton/speeder")
+health = 45
+attack_damage = 20
+run_speed = 24.0
+lunge_speed = 40.0
+turn_speed_radians = 90.0
+turn_speed_windup = 85.0
+windup_time = 0.1
+alert_time = 0.5
+damaged_time = 0.2
+cooldown_time = 0.5
+extra_chase_time = 5.0
+
+[node name="speeder" parent="Armature/Skeleton" index="0"]
+material/0 = ExtResource( 3 )
+material/1 = SubResource( 7 )
+
+[node name="CollisionShape" type="CollisionShape" parent="." index="1"]
+transform = Transform( 1, 0, 0, 0, 0.916156, -0.400823, 0, 0.400823, 0.916156, 0, 0.881691, -0.0406947 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="." index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.376277, -0.122809 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="." index="3"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.20286e-08, 0.376277, -0.626765 )
+shape = SubResource( 4 )
+
+[node name="debug_shield" type="MeshInstance" parent="." index="4"]
+transform = Transform( 0.592973, 0, 0, 0, 0.820549, 0.0928247, 0, -0.571576, 0.133258, -2.38419e-07, 0.481397, 1.13942 )
+visible = false
+mesh = SubResource( 2 )
+
+[node name="awareness" type="Area" parent="." index="5"]
+collision_layer = 0
+collision_mask = 6
+
+[node name="CollisionShape" type="CollisionShape" parent="awareness" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 45.7717 )
+shape = SubResource( 3 )
+
+[node name="AnimationPlayer" parent="." index="6"]
+autoplay = "Idle-loop"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="7"]
+
+[node name="ref_target" type="Position3D" parent="." index="8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05773, 0 )
+
+[node name="attack_range" type="Area" parent="." index="9"]
+collision_layer = 0
+collision_mask = 6
+
+[node name="CollisionShape" type="CollisionShape" parent="attack_range" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12, 3.88631 )
+shape = SubResource( 5 )
+
+[node name="hurtbox" type="Area" parent="." index="10"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.701406 )
+collision_layer = 0
+collision_mask = 6
+
+[node name="CollisionShape" type="CollisionShape" parent="hurtbox" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.618408, 0.613402 )
+shape = SubResource( 6 )

@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://areas/chunk_content.gd" type="Script" id=1]
+[ext_resource path="res://entities/env/stone/pillar.tscn" type="PackedScene" id=2]
+[ext_resource path="res://entities/env/stone/rock3.tscn" type="PackedScene" id=3]
+[ext_resource path="res://entities/env/stone/rock2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://entities/env/copper/scrap_pile2.tscn" type="PackedScene" id=5]
+[ext_resource path="res://entities/env/copper/bridge_long_damaged.tscn" type="PackedScene" id=6]
+[ext_resource path="res://entities/env/stone/rock1.tscn" type="PackedScene" id=7]
+
+[node name="chunk088" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="bridge_long_damaged" parent="." instance=ExtResource( 6 )]
+transform = Transform( 0.923136, -0.0501438, -0.381189, 0, 0.991459, -0.130422, 0.384473, 0.120398, 0.915251, -65.2415, -28.6583, 32.8174 )
+
+[node name="rock3" parent="." instance=ExtResource( 3 )]
+transform = Transform( -0.965926, -0.12941, -0.224144, 0, 0.866025, -0.5, 0.258819, -0.482963, -0.836516, 57, -245, 133 )
+
+[node name="village_area" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 179, -245, 16 )
+
+[node name="rock16" parent="village_area" instance=ExtResource( 7 )]
+transform = Transform( 0.0391424, 0.195906, -0.979841, -0.470573, -0.861434, -0.191031, -0.881493, 0.468564, 0.0584696, -29.584, -1.356, 32.7622 )
+
+[node name="rock17" parent="village_area" instance=ExtResource( 7 )]
+transform = Transform( 0.891309, -0.44443, 0.0897191, 0.270553, 0.362561, -0.891824, 0.363825, 0.819165, 0.443396, -29.584, 3.821, 26.6156 )
+
+[node name="rock5" parent="village_area" instance=ExtResource( 4 )]
+transform = Transform( 0.87202, 0.189013, 0.451504, 0.221019, -0.975091, -0.0186673, 0.436729, 0.116069, -0.892074, 35.96, -6.233, -30.3394 )
+
+[node name="rock6" parent="village_area" instance=ExtResource( 4 )]
+transform = Transform( -0.890787, 0.19421, -0.41083, 0.405837, 0.746731, -0.526962, 0.204438, -0.636141, -0.743996, 16.116, 0.544006, -44.5139 )
+
+[node name="rock10" parent="village_area" instance=ExtResource( 4 )]
+transform = Transform( -0.622971, 0.670025, -0.403701, -0.374758, 0.197362, 0.905872, 0.686632, 0.715622, 0.128147, -11.727, 0.544006, -46.1382 )
+
+[node name="rock9" parent="village_area" instance=ExtResource( 4 )]
+transform = Transform( 0.40743, 0.801129, -0.438398, -0.766341, 0.0388238, -0.64126, -0.496712, 0.59723, 0.629756, -40.4, -2.31599, -27.3442 )
+
+[node name="scrap_pile6" parent="village_area" instance=ExtResource( 5 )]
+transform = Transform( -0.139176, -0.501894, -0.853658, 0.897154, -0.428845, 0.105865, -0.41922, -0.751129, 0.509961, 17.353, 2.02699, 39.8158 )
+
+[node name="pillar2" parent="village_area" instance=ExtResource( 2 )]
+transform = Transform( -0.757884, 0, 0.65239, 0, 1, 0, -0.65239, 0, -0.757884, -42.697, -8.16901, -11.7651 )
+
+[node name="pillar3" parent="village_area" instance=ExtResource( 2 )]
+transform = Transform( -0.30034, 0, -0.953832, 0, 1, 0, 0.953832, 0, -0.30034, -10.715, -8.16901, 37.5453 )
+
+[node name="pillar4" parent="village_area" instance=ExtResource( 2 )]
+transform = Transform( 0.995968, 0, 0.0897112, 0, 1, 0, -0.0897112, 0, 0.995968, 30.735, -8.16901, 12.7417 )
+
+[node name="pillar5" parent="village_area" instance=ExtResource( 2 )]
+transform = Transform( 0.995968, 0, 0.0897112, 0, 1, 0, -0.0897112, 0, 0.995968, 26.993, -9.799, -20.422 )

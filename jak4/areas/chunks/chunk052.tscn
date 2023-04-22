@@ -1,0 +1,1123 @@
+[gd_scene load_steps=83 format=2]
+
+[ext_resource path="res://areas/chunk_content.gd" type="Script" id=1]
+[ext_resource path="res://_glb/chunks/chunk052.glb" type="PackedScene" id=2]
+[ext_resource path="res://material/env/stone/bricks.material" type="Material" id=3]
+[ext_resource path="res://entities/env/stone/fountain.tscn" type="PackedScene" id=4]
+[ext_resource path="res://material/env/vaeler/siding_yellowed.png" type="Texture" id=5]
+[ext_resource path="res://material/main_spatial.shader" type="Shader" id=6]
+[ext_resource path="res://material/env/vaeler/trim_decayed.png" type="Texture" id=7]
+[ext_resource path="res://material/env/vaeler/roof_tiles.png" type="Texture" id=8]
+[ext_resource path="res://material/env/vaeler/faux_marble.png" type="Texture" id=9]
+[ext_resource path="res://material/triplanar_local_coords.shader" type="Shader" id=10]
+[ext_resource path="res://material/env/vaeler/wood-slats-old.png" type="Texture" id=11]
+[ext_resource path="res://entities/env/plants/juniper_small.tscn" type="PackedScene" id=12]
+[ext_resource path="res://entities/env/plants/cactus_round.tscn" type="PackedScene" id=13]
+[ext_resource path="res://entities/env/plants/cactus_round_flower.tscn" type="PackedScene" id=14]
+[ext_resource path="res://entities/env/plants/tree1.tscn" type="PackedScene" id=15]
+[ext_resource path="res://entities/env/vaeler/cannon.tscn" type="PackedScene" id=16]
+[ext_resource path="res://entities/env/vaeler/cannon_wheel.tscn" type="PackedScene" id=17]
+[ext_resource path="res://entities/env/vaeler/saddle.tscn" type="PackedScene" id=18]
+[ext_resource path="res://entities/enemies/crawly.tscn" type="PackedScene" id=19]
+[ext_resource path="res://entities/enemies/gunner.tscn" type="PackedScene" id=20]
+[ext_resource path="res://entities/env/stone/ruin1.tscn" type="PackedScene" id=21]
+[ext_resource path="res://entities/env/stone/rock1.tscn" type="PackedScene" id=22]
+[ext_resource path="res://entities/env/stone/hut.tscn" type="PackedScene" id=23]
+[ext_resource path="res://entities/env/vaeler/v_rifle.tscn" type="PackedScene" id=24]
+[ext_resource path="res://entities/env/stone/garden_empty.tscn" type="PackedScene" id=25]
+[ext_resource path="res://entities/visual/flag.tscn" type="PackedScene" id=26]
+[ext_resource path="res://games/race.gd" type="Script" id=27]
+[ext_resource path="res://dialog/side_content/race/race_052.dialog" type="Resource" id=28]
+[ext_resource path="res://entities/npc/npc.tscn" type="PackedScene" id=29]
+[ext_resource path="res://entities/navigation/nav_point.gd" type="Script" id=30]
+[ext_resource path="res://entities/control/door.gd" type="Script" id=31]
+[ext_resource path="res://entities/control/locked_button.gd" type="Script" id=32]
+[ext_resource path="res://entities/npc/captain_redford.tscn" type="PackedScene" id=33]
+[ext_resource path="res://entities/one_time/chunks/chunk052_manor.gd" type="Script" id=34]
+[ext_resource path="res://ui/diagetic/dialog_circle.tscn" type="PackedScene" id=35]
+[ext_resource path="res://entities/dialog_trigger.gd" type="Script" id=36]
+[ext_resource path="res://entities/env/manor/map.png" type="Texture" id=37]
+[ext_resource path="res://dialog/side_content/chunk052/rotating_map.dialog" type="Resource" id=38]
+[ext_resource path="res://entities/one_time/chunks/chunk052_rotating_map.gd" type="Script" id=39]
+[ext_resource path="res://entities/save_zone.gd" type="Script" id=40]
+[ext_resource path="res://management/environment_override.gd" type="Script" id=41]
+[ext_resource path="res://entities/visual/distance_visible.gd" type="Script" id=42]
+[ext_resource path="res://material/env/copper/copper_cleaned.tres" type="Material" id=43]
+[ext_resource path="res://items/item_pickup.tscn" type="PackedScene" id=44]
+[ext_resource path="res://material/env/copper/copper_corroded.material" type="Material" id=45]
+[ext_resource path="res://dialog/side_content/chunk052/lockbox_bedroom.dialog" type="Resource" id=46]
+[ext_resource path="res://entities/one_time/chunks/lockbox.gd" type="Script" id=47]
+
+[sub_resource type="Animation" id=11]
+resource_name = "Activate"
+tracks/0/type = "value"
+tracks/0/path = NodePath("door1-kine:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, -89.8127, 0 ), Vector3( 0, 26.7757, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("door2-kine:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 88.3722, 0 ), Vector3( 0, -49.5456, 0 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("door1-kine:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, -89.8127, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("door2-kine:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 88.3722, 0 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "open_outward"
+tracks/0/type = "value"
+tracks/0/path = NodePath("door1-kine:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 90.8316, 0 ), Vector3( 0, -11.9931, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("door2-kine:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 88.3722, 0 ), Vector3( 0, -159.085, 0 ) ]
+}
+
+[sub_resource type="Animation" id=23]
+resource_name = "Activate"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("door2-kine001:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 88.3722, 0 ), Vector3( 0, -17.1841, 0 ) ]
+}
+
+[sub_resource type="Animation" id=24]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("door2-kine001:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 88.3722, 0 ) ]
+}
+
+[sub_resource type="Animation" id=25]
+resource_name = "Activate"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("door3-kine001:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 105.371, 0 ) ]
+}
+
+[sub_resource type="Animation" id=26]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("door3-kine001:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=27]
+resource_name = "Activate"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("door3-kine002:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 124.302, 0 ) ]
+}
+
+[sub_resource type="Animation" id=28]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("door3-kine002:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=32]
+resource_name = "Activate"
+tracks/0/type = "value"
+tracks/0/path = NodePath("../estate/door_den-kine:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 133.905, 0 ), Vector3( 0, 260, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../estate/door_den2-kine:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, -44.9404, 0 ), Vector3( 0, -162.134, 0 ) ]
+}
+
+[sub_resource type="Animation" id=33]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("../estate/door_den-kine:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 133.905, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../estate/door_den2-kine:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, -44.9404, 0 ) ]
+}
+
+[sub_resource type="Animation" id=34]
+resource_name = "Activate"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("../estate/door_den_small-kine:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 180, 0 ), Vector3( 0, 280, 0 ) ]
+}
+
+[sub_resource type="Animation" id=35]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("../estate/door_den_small-kine:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 180, 0 ) ]
+}
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 6 )
+shader_param/subsurface_scattering = -1.0
+shader_param/softness = 1.0
+shader_param/specularity = 1.0
+shader_param/main_texture = ExtResource( 5 )
+
+[sub_resource type="ShaderMaterial" id=5]
+shader = ExtResource( 10 )
+shader_param/uv_scale = 1.0
+shader_param/power = 5.0
+shader_param/softness = 0.5
+shader_param/specularity = 1.0
+shader_param/light_bias = 0.0
+shader_param/wall = ExtResource( 11 )
+shader_param/ground = ExtResource( 11 )
+shader_param/ceiling = ExtResource( 11 )
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 6 )
+shader_param/subsurface_scattering = -1.0
+shader_param/softness = 1.0
+shader_param/specularity = 1.0
+shader_param/main_texture = ExtResource( 8 )
+
+[sub_resource type="ShaderMaterial" id=6]
+shader = ExtResource( 10 )
+shader_param/uv_scale = 1.0
+shader_param/power = 5.0
+shader_param/softness = 0.5
+shader_param/specularity = 1.0
+shader_param/light_bias = 0.0
+shader_param/wall = ExtResource( 7 )
+shader_param/ground = ExtResource( 7 )
+shader_param/ceiling = ExtResource( 7 )
+
+[sub_resource type="ShaderMaterial" id=20]
+shader = ExtResource( 10 )
+shader_param/uv_scale = 1.0
+shader_param/power = 5.0
+shader_param/softness = 0.5
+shader_param/specularity = 1.0
+shader_param/light_bias = 0.0
+shader_param/wall = ExtResource( 11 )
+shader_param/ground = ExtResource( 11 )
+shader_param/ceiling = ExtResource( 11 )
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = ExtResource( 6 )
+shader_param/subsurface_scattering = -1.0
+shader_param/softness = 1.0
+shader_param/specularity = 1.0
+shader_param/main_texture = ExtResource( 9 )
+
+[sub_resource type="CapsuleShape" id=9]
+radius = 41.5901
+height = 88.7438
+
+[sub_resource type="CubeMesh" id=13]
+size = Vector3( 1, 2.4, 1 )
+
+[sub_resource type="BoxShape" id=14]
+extents = Vector3( 0.5, 1.2, 0.5 )
+
+[sub_resource type="Animation" id=15]
+resource_name = "Activate"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -4.10157, -4.9531, 7.04248 ), Vector3( -4.71874, -4.9531, 7.78838 ) ]
+}
+
+[sub_resource type="Animation" id=16]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -4.10157, -4.9531, 7.04248 ) ]
+}
+
+[sub_resource type="QuadMesh" id=17]
+
+[sub_resource type="SpatialMaterial" id=18]
+albedo_texture = ExtResource( 37 )
+
+[sub_resource type="SphereShape" id=19]
+radius = 0.718802
+
+[sub_resource type="CubeMesh" id=29]
+size = Vector3( 0.1, 0.1, 0.1 )
+
+[sub_resource type="BoxShape" id=21]
+extents = Vector3( 1.9491, 1, 0.388692 )
+
+[sub_resource type="BoxShape" id=22]
+extents = Vector3( 5.0752, 2.36129, 10.3064 )
+
+[sub_resource type="BoxShape" id=30]
+extents = Vector3( 3.23208, 1.8743, 7.40974 )
+
+[sub_resource type="BoxShape" id=31]
+extents = Vector3( 2.39442, 1.8743, 7.40974 )
+
+[sub_resource type="CubeMesh" id=36]
+size = Vector3( 0.4, 0.5, 0.5 )
+
+[sub_resource type="SphereShape" id=37]
+radius = 0.231265
+
+[sub_resource type="SphereShape" id=8]
+radius = 3.2984
+
+[node name="chunk052" instance=ExtResource( 2 )]
+script = ExtResource( 1 )
+
+[node name="interaction" type="Node" parent="." index="0"]
+script = ExtResource( 34 )
+
+[node name="front_door" type="AnimationPlayer" parent="interaction" index="0"]
+root_node = NodePath("../../estate")
+anims/Activate = SubResource( 11 )
+anims/RESET = SubResource( 10 )
+anims/open_outward = SubResource( 12 )
+script = ExtResource( 31 )
+
+[node name="kitchen_door" type="AnimationPlayer" parent="interaction" index="1"]
+root_node = NodePath("../../estate")
+anims/Activate = SubResource( 23 )
+anims/RESET = SubResource( 24 )
+script = ExtResource( 31 )
+
+[node name="bedroom1" type="AnimationPlayer" parent="interaction" index="2"]
+root_node = NodePath("../../estate")
+anims/Activate = SubResource( 25 )
+anims/RESET = SubResource( 26 )
+script = ExtResource( 31 )
+
+[node name="bedroom2" type="AnimationPlayer" parent="interaction" index="3"]
+root_node = NodePath("../../estate")
+anims/Activate = SubResource( 27 )
+anims/RESET = SubResource( 28 )
+script = ExtResource( 31 )
+
+[node name="den_front" type="AnimationPlayer" parent="interaction" index="4"]
+anims/Activate = SubResource( 32 )
+anims/RESET = SubResource( 33 )
+script = ExtResource( 31 )
+
+[node name="den_side" type="AnimationPlayer" parent="interaction" index="5"]
+anims/Activate = SubResource( 34 )
+anims/RESET = SubResource( 35 )
+script = ExtResource( 31 )
+
+[node name="wall" parent="." index="1"]
+material/0 = ExtResource( 3 )
+
+[node name="StaticBody" parent="wall" index="0"]
+collision_layer = 261
+
+[node name="fencepost" parent="." index="2"]
+material/0 = ExtResource( 3 )
+
+[node name="StaticBody" parent="fencepost" index="0"]
+collision_layer = 261
+
+[node name="fencepost001" parent="." index="3"]
+material/0 = ExtResource( 3 )
+
+[node name="StaticBody" parent="fencepost001" index="0"]
+collision_layer = 261
+
+[node name="estate" parent="." index="4"]
+material/0 = SubResource( 1 )
+material/1 = ExtResource( 3 )
+material/2 = SubResource( 5 )
+material/3 = SubResource( 2 )
+material/4 = SubResource( 6 )
+
+[node name="door1-kine" parent="estate" index="0"]
+transform = Transform( 0.00326903, 0, -0.999995, 0, 1, 0, 0.999995, 0, 0.00326903, -10.2865, -4.48246, 0.0920563 )
+collision_layer = 5
+script = ExtResource( 32 )
+__meta__ = {
+"_edit_group_": true
+}
+key = "manor_key"
+
+[node name="mesh" parent="estate/door1-kine" index="0"]
+material/0 = SubResource( 20 )
+
+[node name="door2-kine" parent="estate" index="1"]
+transform = Transform( 0.0284067, 0, 0.999596, 0, 1, 0, -0.999596, 0, 0.0284067, -10.3373, -4.51904, 2.57399 )
+collision_layer = 5
+script = ExtResource( 32 )
+__meta__ = {
+"_edit_group_": true
+}
+key = "manor_key"
+
+[node name="mesh" parent="estate/door2-kine" index="0"]
+material/0 = SubResource( 20 )
+
+[node name="door2-kine001" parent="estate" index="2"]
+transform = Transform( 0.0284067, 0, 0.999596, 0, 1, 0, -0.999596, 0, 0.0284067, 5.04744, -4.46446, 2.69171 )
+collision_layer = 5
+script = ExtResource( 32 )
+__meta__ = {
+"_edit_group_": true
+}
+key = "manor_hallway_key"
+
+[node name="mesh" parent="estate/door2-kine001" index="0"]
+material/0 = SubResource( 20 )
+
+[node name="door3-kine001" parent="estate" index="3"]
+collision_layer = 5
+script = ExtResource( 32 )
+__meta__ = {
+"_edit_group_": true
+}
+key = "manor_hallway_key"
+
+[node name="mesh" parent="estate/door3-kine001" index="0"]
+material/0 = SubResource( 20 )
+
+[node name="door3-kine002" parent="estate" index="4"]
+collision_layer = 5
+script = ExtResource( 32 )
+__meta__ = {
+"_edit_group_": true
+}
+key = "manor_hallway_key"
+
+[node name="mesh" parent="estate/door3-kine002" index="0"]
+material/0 = SubResource( 20 )
+
+[node name="door_den-kine" parent="estate" index="6"]
+transform = Transform( -0.693465, 0, 0.720491, 0, 1, 0, -0.720491, 0, -0.693465, -5.75968, -5.86954, -4.01544 )
+collision_layer = 5
+script = ExtResource( 32 )
+__meta__ = {
+"_edit_group_": true
+}
+key = "manor_den_key"
+
+[node name="mesh" parent="estate/door_den-kine" index="0"]
+material/0 = SubResource( 20 )
+
+[node name="door_den2-kine" parent="estate" index="7"]
+transform = Transform( 0.707842, 0, -0.706371, 0, 1, 0, 0.706371, 0, 0.707842, -4.31018, -5.87548, -2.54445 )
+collision_layer = 5
+script = ExtResource( 32 )
+__meta__ = {
+"_edit_group_": true
+}
+key = "manor_den_key"
+
+[node name="mesh" parent="estate/door_den2-kine" index="0"]
+material/0 = SubResource( 20 )
+
+[node name="door_den_small-kine" parent="estate" index="8"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.83774, -5.86213, 1.02872 )
+collision_layer = 5
+script = ExtResource( 32 )
+__meta__ = {
+"_edit_group_": true
+}
+key = "manor_den_key"
+
+[node name="mesh" parent="estate/door_den_small-kine" index="0"]
+material/0 = SubResource( 20 )
+
+[node name="doorframe" parent="estate" index="11"]
+material/0 = SubResource( 6 )
+
+[node name="StaticBody" parent="estate/doorframe" index="0"]
+collision_layer = 261
+
+[node name="estate2" parent="estate" index="12"]
+material/0 = SubResource( 1 )
+material/1 = ExtResource( 3 )
+material/2 = SubResource( 5 )
+material/3 = SubResource( 2 )
+material/4 = SubResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody" parent="estate/estate2" index="0"]
+collision_layer = 257
+
+[node name="interior" parent="estate" index="13"]
+material/0 = ExtResource( 45 )
+material/1 = ExtResource( 45 )
+material/2 = ExtResource( 45 )
+
+[node name="stairs" parent="estate/interior" index="0"]
+material/0 = ExtResource( 45 )
+
+[node name="stairs" parent="estate/interior/stairs" index="0"]
+collision_layer = 257
+
+[node name="StaticBody" parent="estate/interior" index="1"]
+visible = false
+collision_layer = 257
+
+[node name="interior2" parent="estate" index="14"]
+material/0 = ExtResource( 45 )
+
+[node name="StaticBody" parent="estate/interior2" index="0"]
+collision_layer = 257
+
+[node name="interior3" parent="estate" index="15"]
+material/0 = ExtResource( 45 )
+
+[node name="StaticBody" parent="estate/interior3" index="0"]
+collision_layer = 257
+
+[node name="roof" parent="estate" index="16"]
+material/0 = SubResource( 1 )
+material/1 = SubResource( 2 )
+material/2 = SubResource( 6 )
+
+[node name="servant_quarters" parent="estate" index="17"]
+material/0 = ExtResource( 3 )
+material/1 = SubResource( 6 )
+material/2 = SubResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody" parent="estate/servant_quarters" index="0"]
+collision_layer = 257
+
+[node name="StaticBody" parent="estate" index="18"]
+visible = false
+collision_layer = 257
+
+[node name="column" parent="." index="5"]
+material/0 = SubResource( 4 )
+
+[node name="StaticBody" parent="column" index="0"]
+collision_layer = 261
+
+[node name="column2" parent="." index="6"]
+material/0 = SubResource( 4 )
+
+[node name="StaticBody" parent="column2" index="0"]
+collision_layer = 261
+
+[node name="column3" parent="." index="7"]
+material/0 = SubResource( 4 )
+
+[node name="StaticBody" parent="column3" index="0"]
+collision_layer = 261
+
+[node name="column4" parent="." index="8"]
+material/0 = SubResource( 4 )
+
+[node name="StaticBody" parent="column4" index="0"]
+collision_layer = 261
+
+[node name="path_entry" type="Position3D" parent="." index="9"]
+transform = Transform( 0.811764, 0, 0.583985, 0, 1, 0, -0.583985, 0, 0.811764, -37.5326, -126.026, 197.263 )
+script = ExtResource( 30 )
+next = NodePath("entry")
+
+[node name="entry" type="Position3D" parent="path_entry" index="0"]
+transform = Transform( 0.758919, 0, -0.651184, 0, 1, 0, 0.651184, 0, 0.758919, 2.53998, 0, 0.689117 )
+script = ExtResource( 30 )
+action = 2
+
+[node name="path_passage" type="Position3D" parent="." index="10"]
+transform = Transform( 0.609709, 0, 0.792625, 0, 1, 0, -0.792625, 0, 0.609709, -37.223, -126.026, 204.818 )
+script = ExtResource( 30 )
+next = NodePath("path_passage2")
+
+[node name="path_passage2" type="Position3D" parent="path_passage" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.05626, 0, 0 )
+script = ExtResource( 30 )
+next = NodePath("../path_passage3")
+
+[node name="path_passage3" type="Position3D" parent="path_passage" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.24603, 0, 11.4663 )
+script = ExtResource( 30 )
+next = NodePath("../path_passage4")
+
+[node name="path_passage4" type="Position3D" parent="path_passage" index="2"]
+transform = Transform( -0.00841081, 0, 0.999965, 0, 1, 0, -0.999965, 0, -0.00841081, 3.93063, 0, 11.9922 )
+script = ExtResource( 30 )
+next = NodePath("../kitchen")
+
+[node name="kitchen" type="Position3D" parent="path_passage" index="3"]
+transform = Transform( -0.937144, 0, -0.348942, 0, 1, 0, 0.348942, 0, -0.937144, 7.0921, 0, 11.6709 )
+script = ExtResource( 30 )
+action = 2
+
+[node name="path_den" type="Position3D" parent="." index="11"]
+transform = Transform( -0.665177, 0, -0.746685, 0, 1, 0, 0.746685, 0, -0.665177, -27.4661, -126.026, 205.846 )
+script = ExtResource( 30 )
+next = NodePath("path_den2")
+action = 3
+
+[node name="path_den2" type="Position3D" parent="path_den" index="0"]
+transform = Transform( 0.0302427, 0, -0.999542, 0, 1, 0, 0.999542, 0, 0.0302427, -0.142868, 0, 3.2116 )
+script = ExtResource( 30 )
+next = NodePath("../den")
+action = 3
+
+[node name="den" type="Position3D" parent="path_den" index="1"]
+transform = Transform( 0.735212, 0, -0.677837, 0, 1, 0, 0.677837, 0, 0.735212, -4.79507, 0, 3.35236 )
+script = ExtResource( 30 )
+action = 2
+
+[node name="path_manor" type="Position3D" parent="." index="12"]
+transform = Transform( -0.450179, 0, -0.892938, 0, 1, 0, 0.892938, 0, -0.450179, 128.534, -109.444, 153.446 )
+script = ExtResource( 30 )
+next = NodePath("outer_fence")
+
+[node name="outer_fence" type="Position3D" parent="path_manor" index="0"]
+transform = Transform( 0.527416, 0, 0.849607, 0, 1, 0, -0.849607, 0, 0.527416, 88.9766, -21.1443, 148.107 )
+script = ExtResource( 30 )
+next = NodePath("../entry")
+
+[node name="entry" type="Position3D" parent="path_manor" index="1"]
+transform = Transform( -0.845171, 0, 0.534496, 0, 1, 0, -0.534496, 0, -0.845171, 103.419, -19.1241, 157.072 )
+script = ExtResource( 30 )
+next = NodePath("../front_door")
+
+[node name="front_door" type="Position3D" parent="path_manor" index="2"]
+transform = Transform( -0.977005, 0, 0.213215, 0, 1, 0, -0.213215, 0, -0.977005, 113.778, -16.413, 134.728 )
+script = ExtResource( 30 )
+action = 2
+
+[node name="shelf_view" type="Position3D" parent="." index="13"]
+transform = Transform( 0.738511, 0, 0.674241, 0, 1, 0, -0.674241, 0, 0.738511, -39.2719, -126.026, 202.63 )
+script = ExtResource( 30 )
+action = 2
+
+[node name="active_entities" type="Spatial" parent="." index="14"]
+
+[node name="zone_estate" type="MultiMeshSystem" parent="active_entities" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -34, -121, 197 )
+
+[node name="juniper_small" parent="active_entities/zone_estate" index="0" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -6, -2 )
+
+[node name="juniper_small2" parent="active_entities/zone_estate" index="1" instance=ExtResource( 12 )]
+transform = Transform( -0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -9, -4.33141, 11 )
+
+[node name="cactus_round" parent="active_entities/zone_estate" index="2" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, -6.19619, -6 )
+
+[node name="cactus_round2" parent="active_entities/zone_estate" index="3" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, -6.17764, -6 )
+
+[node name="cactus_round_flower" parent="active_entities/zone_estate" index="4" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, -4.87543, 1 )
+
+[node name="cactus_round_flower2" parent="active_entities/zone_estate" index="5" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, -6.67603, -8 )
+
+[node name="cactus_round_flower3" parent="active_entities/zone_estate" index="6" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5125, -7.76459, -19.7622 )
+
+[node name="cactus_round3" parent="active_entities/zone_estate" index="7" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.0533, -7.71202, -19.3634 )
+
+[node name="cactus_round_flower4" parent="active_entities/zone_estate" index="8" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.8575, -7.60464, -24.0657 )
+
+[node name="fountain" parent="active_entities/zone_estate" index="9" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2129, -3.362, 15.48 )
+
+[node name="tree1" parent="active_entities/zone_estate" index="10" instance=ExtResource( 15 )]
+transform = Transform( -0.888086, 0, 0.459677, 0, 1, 0, -0.459677, 0, -0.888086, 0.1493, -1.98143, 22.9193 )
+
+[node name="cannon" parent="active_entities/zone_estate" index="11" instance=ExtResource( 16 )]
+transform = Transform( -0.934501, 0.146008, -0.324638, 0.154368, 0.988013, 3.68064e-09, 0.320747, -0.0501139, -0.945838, -17.7577, -7.25999, -12.119 )
+
+[node name="cannon2" parent="active_entities/zone_estate" index="12" instance=ExtResource( 16 )]
+transform = Transform( 0.950046, -0.312111, 0, 0.303356, 0.923396, -0.235191, 0.0734058, 0.223443, 0.971949, 11.8921, -1.203, 23.84 )
+
+[node name="cannon3" parent="active_entities/zone_estate" index="13" instance=ExtResource( 16 )]
+transform = Transform( -0.999383, 0, -0.0351353, 0, 1, 0, 0.0351353, 0, -0.999383, -20.3426, -5.057, -1.63499 )
+
+[node name="cannon_wheel" parent="active_entities/zone_estate" index="14" instance=ExtResource( 17 )]
+transform = Transform( 0.972269, -0.233866, 0, 0.233866, 0.972269, 0, 0, 0, 1, -19.5504, -7.451, -11.726 )
+
+[node name="cannon_wheel2" parent="active_entities/zone_estate" index="15" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5946, -1.7, 23.529 )
+
+[node name="cannon_wheel3" parent="active_entities/zone_estate" index="16" instance=ExtResource( 17 )]
+transform = Transform( 0.552406, 0.833575, 0, -0.833575, 0.552406, 0, 0, 0, 1, 12.5162, -1.061, 23.833 )
+
+[node name="saddle" parent="active_entities/zone_estate" index="17" instance=ExtResource( 18 )]
+transform = Transform( 0.226075, 0.369897, -0.901147, 0, 0.925098, 0.379728, 0.97411, -0.0858471, 0.209142, -14.5216, -5.89182, -1.3951 )
+
+[node name="gunner3" parent="active_entities/zone_estate" index="18" instance=ExtResource( 20 )]
+transform = Transform( -0.558115, 0, -0.829764, 0, 1, 0, 0.829764, 0, -0.558115, -7.44091, 8.19002, 3.28262 )
+reset_on_player_death = true
+
+[node name="gunner2" parent="active_entities/zone_estate" index="19" instance=ExtResource( 20 )]
+transform = Transform( 0.251453, 0, 0.96787, 0, 1, 0, -0.96787, 0, 0.251453, 6.16129, 8.19002, 14.5874 )
+reset_on_player_death = true
+drops_coat = true
+maximum_rarity = 4
+health = 90
+flee_radius = 2.0
+safe_radius = 6.0
+bounce_impulse_h = 10.0
+laser_color = Color( 0.454902, 0.258824, 1, 1 )
+
+[node name="custom_awareness" type="Area" parent="active_entities/zone_estate/gunner2" index="12"]
+collision_layer = 0
+collision_mask = 6
+
+[node name="CollisionShape" type="CollisionShape" parent="active_entities/zone_estate/gunner2/custom_awareness" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.05176e-05, 0, 81.2602 )
+shape = SubResource( 9 )
+
+[node name="bookshelf" type="KinematicBody" parent="active_entities/zone_estate" index="20"]
+transform = Transform( 0.63749, 0, 0.770458, 0, 1, 0, -0.770458, 0, 0.63749, -4.10157, -4.9531, 7.04248 )
+script = ExtResource( 31 )
+__meta__ = {
+"_edit_group_": true
+}
+tracked_stat = "manor052/passage"
+
+[node name="MeshInstance" type="MeshInstance" parent="active_entities/zone_estate/bookshelf" index="0"]
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 1.20912, 0 )
+mesh = SubResource( 13 )
+
+[node name="CollisionShape" type="CollisionShape" parent="active_entities/zone_estate/bookshelf" index="1"]
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 1.20912, 0 )
+shape = SubResource( 14 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="active_entities/zone_estate/bookshelf" index="2"]
+anims/Activate = SubResource( 15 )
+anims/RESET = SubResource( 16 )
+
+[node name="rotating_map" type="MeshInstance" parent="active_entities/zone_estate" index="21"]
+transform = Transform( -8.69686e-08, 1.98657, 0.231394, -2, -8.74228e-08, -1.14856e-09, 8.97373e-09, -0.231394, 1.98657, -1.22702, -2.955, -3.93988 )
+mesh = SubResource( 17 )
+material/0 = SubResource( 18 )
+script = ExtResource( 39 )
+
+[node name="rotating_map_dialog" type="Area" parent="active_entities/zone_estate" index="22"]
+transform = Transform( 0.993285, 6.64424e-11, 0.115697, 0, 1, -5.74279e-10, -0.115697, 5.70422e-10, 0.993285, -1.1532, -5.02519, -3.30618 )
+collision_layer = 0
+collision_mask = 2
+script = ExtResource( 36 )
+dialog_sequence = ExtResource( 38 )
+main_speaker = NodePath("../rotating_map")
+friendly_id = "052/map"
+enabled = false
+
+[node name="dialog_circle" parent="active_entities/zone_estate/rotating_map_dialog" index="0" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 6.93889e-18, 1, -5.55112e-17, 0, 0, 1, -0.048584, 0, 0.417099 )
+
+[node name="CollisionShape" type="CollisionShape" parent="active_entities/zone_estate/rotating_map_dialog" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90735e-06, 0, 0.464119 )
+shape = SubResource( 19 )
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="active_entities/zone_estate" index="23"]
+transform = Transform( 0.784466, 0, -0.620172, 0, 1, 0, 0.620172, 0, 0.784466, 1.20301, -1.53694, 6.70212 )
+extents = Vector3( 10.2925, 3.75415, 5.18852 )
+origin_offset = Vector3( 0, -1.50439, -1.57422 )
+interior_enable = true
+interior_ambient_color = Color( 0.286275, 0.376471, 0.490196, 1 )
+
+[node name="ReflectionProbe4" type="ReflectionProbe" parent="active_entities/zone_estate" index="24"]
+transform = Transform( 0.71, 0.333597, -0.620172, -0.425254, 0.905074, -1.19872e-08, 0.561302, 0.26373, 0.784466, -3.92308, -4.87022, -0.479752 )
+extents = Vector3( 4.03318, 1.65883, 1.32802 )
+origin_offset = Vector3( -0.560547, -0.429199, 0 )
+interior_ambient_color = Color( 0.286275, 0.376471, 0.490196, 1 )
+
+[node name="ReflectionProbe3" type="ReflectionProbe" parent="active_entities/zone_estate" index="25"]
+transform = Transform( 0.116173, 0, -0.993229, 0, 1, 0, 0.993229, 0, 0.116173, 3.94852, -1.31258, -1.03792 )
+extents = Vector3( 3.51792, 3.94316, 7.264 )
+interior_enable = true
+interior_ambient_color = Color( 0.286275, 0.376471, 0.490196, 1 )
+
+[node name="ReflectionProbe5" type="ReflectionProbe" parent="active_entities/zone_estate" index="26"]
+transform = Transform( 0.774944, 0, -0.632029, 0, 1, 0, 0.632029, 0, 0.774944, 9.50206, -1.70148, 0.224503 )
+extents = Vector3( 2.59347, 3.43099, 5.28155 )
+interior_enable = true
+interior_ambient_color = Color( 0.286275, 0.376471, 0.490196, 1 )
+
+[node name="SpotLight" type="SpotLight" parent="active_entities/zone_estate" index="27"]
+transform = Transform( -0.78963, 0.143304, -0.596615, 0.051626, 0.984413, 0.168124, 0.611408, 0.101955, -0.78472, -5.10551, -2.22023, -1.81747 )
+light_color = Color( 0.686275, 0.909804, 0.976471, 1 )
+spot_range = 7.64257
+spot_angle = 70.8495
+script = ExtResource( 42 )
+
+[node name="OmniLight" type="OmniLight" parent="active_entities/zone_estate" index="28"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.56603, -1.68523, 10.8754 )
+light_color = Color( 0.933333, 0.992157, 0.839216, 1 )
+light_energy = 0.597
+omni_range = 4.41137
+omni_attenuation = 0.707107
+script = ExtResource( 42 )
+
+[node name="OmniLight2" type="OmniLight" parent="active_entities/zone_estate" index="29"]
+transform = Transform( 0.167299, 0.604955, 0.778486, -0.175584, -0.75871, 0.62732, 0.970145, -0.24164, -0.020711, 5.03158, -4.809, 15.2723 )
+light_energy = 0.5
+omni_range = 0.990237
+script = ExtResource( 42 )
+
+[node name="OmniLight4" type="OmniLight" parent="active_entities/zone_estate" index="30"]
+transform = Transform( 0.167299, 0.604955, 0.778486, -0.175584, -0.75871, 0.62732, 0.970145, -0.24164, -0.020711, 3.5815, -0.882874, -0.140854 )
+omni_range = 4.41272
+script = ExtResource( 42 )
+
+[node name="OmniLight3" type="OmniLight" parent="active_entities/zone_estate" index="31"]
+transform = Transform( 0.167299, 0.604955, 0.778486, -0.175584, -0.75871, 0.62732, 0.970145, -0.241639, -0.0207112, 1.54367, -3.89427, 12.4317 )
+omni_range = 0.63136
+script = ExtResource( 42 )
+
+[node name="spot" type="SpotLight" parent="active_entities/zone_estate" index="32"]
+transform = Transform( 0.167299, 0.604955, 0.778486, -0.175584, -0.75871, 0.62732, 0.970145, -0.241639, -0.0207112, 10.8741, -1.55293, 8.95459 )
+light_color = Color( 0.933333, 0.992157, 0.839216, 1 )
+light_energy = 0.597
+spot_range = 9.4164
+spot_angle = 47.8125
+script = ExtResource( 42 )
+
+[node name="spot2" type="SpotLight" parent="active_entities/zone_estate" index="33"]
+transform = Transform( 0.378101, 0.626312, 0.681743, 0.0946754, -0.758709, 0.644513, 0.920911, -0.179146, -0.346165, 13.2151, 1.59645, -2.73209 )
+light_color = Color( 0.933333, 0.992157, 0.839216, 1 )
+light_energy = 0.597
+spot_range = 17.8361
+spot_angle = 33.6986
+script = ExtResource( 42 )
+
+[node name="SpotLight2" type="SpotLight" parent="active_entities/zone_estate" index="34"]
+transform = Transform( -0.674562, 0.420311, -0.606881, -0.666798, 0.00585525, 0.745215, 0.316776, 0.907361, 0.276313, -6.54382, 0.730896, 5.11311 )
+light_color = Color( 0.686275, 0.909804, 0.976471, 1 )
+light_energy = 0.497
+spot_range = 10.0501
+spot_angle = 50.4718
+script = ExtResource( 42 )
+
+[node name="hallway_key_pickup" parent="active_entities/zone_estate" index="35" instance=ExtResource( 44 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.1873, -4.95766, 7.54468 )
+item_id = "manor_hallway_key"
+celebrate = true
+
+[node name="preview" type="MeshInstance" parent="active_entities/zone_estate/hallway_key_pickup" index="4"]
+mesh = SubResource( 29 )
+material/0 = ExtResource( 43 )
+
+[node name="save_zone" type="Area" parent="active_entities/zone_estate" index="36"]
+transform = Transform( 0.63036, 0, 0.776303, 0, 1, 0, -0.776303, 0, 0.63036, -5.16872, -3.4092, -1.23218 )
+collision_layer = 0
+collision_mask = 2
+script = ExtResource( 40 )
+heal = false
+
+[node name="CollisionShape" type="CollisionShape" parent="active_entities/zone_estate/save_zone" index="0"]
+shape = SubResource( 21 )
+
+[node name="env" type="Area" parent="active_entities/zone_estate" index="37"]
+transform = Transform( 0.612313, 0, 0.790615, 0, 1, 0, -0.790615, 0, 0.612313, -3.76292, -3.226, -0.122711 )
+collision_layer = 0
+collision_mask = 2
+script = ExtResource( 41 )
+custom_fog = Color( 1, 1.5, 2.5, 1 )
+show_sun = false
+no_combat = true
+close_cam = true
+
+[node name="CollisionShape" type="CollisionShape" parent="active_entities/zone_estate/env" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.35471, 0, 8.07608 )
+shape = SubResource( 22 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="active_entities/zone_estate/env" index="1"]
+transform = Transform( 0.713985, 0, 0.700162, 0, 1, 0, -0.700162, 0, 0.713985, 5.52866, 0, 5.40111 )
+shape = SubResource( 30 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="active_entities/zone_estate/env" index="2"]
+transform = Transform( 0.00977448, 0, 0.999954, 0, 1, 0, -0.999954, 0, 0.00977448, 5.52243, 0, 10.7204 )
+shape = SubResource( 31 )
+
+[node name="lockbox1" type="MeshInstance" parent="active_entities/zone_estate" index="38"]
+transform = Transform( -0.70982, 0, 0.704383, 0, 1, 0, -0.704383, 0, -0.70982, 4.94567, -4.70827, 14.1538 )
+mesh = SubResource( 36 )
+script = ExtResource( 47 )
+__meta__ = {
+"_edit_group_": true
+}
+combination = "E35"
+
+[node name="DialogTrigger" type="Area" parent="active_entities/zone_estate/lockbox1" index="0"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource( 36 )
+dialog_sequence = ExtResource( 46 )
+main_speaker = NodePath("..")
+
+[node name="CollisionShape" type="CollisionShape" parent="active_entities/zone_estate/lockbox1/DialogTrigger" index="0"]
+shape = SubResource( 37 )
+
+[node name="dialog_circle" parent="active_entities/zone_estate/lockbox1/DialogTrigger" index="1" instance=ExtResource( 35 )]
+transform = Transform( 0.706823, 0, 0, 0, 1, 0, 0, 0, 0.706823, 0, -0.249336, 0 )
+
+[node name="race" type="Spatial" parent="active_entities" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 147.882, -78.6913, 222.645 )
+script = ExtResource( 27 )
+bronze_seconds = 120.0
+silver_seconds = 60.0
+gold_seconds = 40.0
+bronze_reward = 10
+silver_reward = 14
+gold_reward = 17
+min_rarity = 2
+max_rarity = 4
+checkpoints = [ NodePath("midpoint") ]
+
+[node name="npc_race" parent="active_entities/race" index="0" instance=ExtResource( 29 )]
+transform = Transform( -0.10953, 0, -0.993983, 0, 1, 0, 0.993983, 0, -0.10953, -0.997635, -6.42883, 5.86717 )
+dialog = ExtResource( 28 )
+visual_name = "Weird Runner"
+
+[node name="race_start" type="Spatial" parent="active_entities/race" index="1"]
+
+[node name="midpoint" type="Area" parent="active_entities/race" index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -179.191, -34.0801, -22.6867 )
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape" type="CollisionShape" parent="active_entities/race/midpoint" index="0"]
+shape = SubResource( 8 )
+
+[node name="race_end" type="Area" parent="active_entities/race" index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9873, -11.0696, -25.852 )
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape" type="CollisionShape" parent="active_entities/race/race_end" index="0"]
+shape = SubResource( 8 )
+
+[node name="flag" parent="active_entities/race/race_end" index="1" instance=ExtResource( 26 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10639, 0 )
+
+[node name="captain_redford" parent="active_entities" index="2" instance=ExtResource( 33 )]
+transform = Transform( -0.511294, 0, 0.859406, 0, 1, 0, -0.859406, 0, -0.511294, -41.7783, -125.961, 194.699 )
+
+[node name="crawly" parent="active_entities" index="3" instance=ExtResource( 19 )]
+transform = Transform( 0.373318, 0, -0.927703, 0, 1, 0, 0.927703, 0, 0.373318, 120.28, -98.072, 198.534 )
+reset_on_player_death = true
+
+[node name="crawly2" parent="active_entities" index="4" instance=ExtResource( 19 )]
+transform = Transform( 0.766293, 0, 0.642491, 0, 1, 0, -0.642491, 0, 0.766293, 87.0583, -106.496, 196.068 )
+
+[node name="v_rifle" parent="active_entities" index="5" instance=ExtResource( 24 )]
+transform = Transform( 0.0132068, -0.79894, 0.601266, 0.973165, 0.148422, 0.175842, -0.229729, 0.582808, 0.779461, 58.3522, -115.497, 180.909 )
+
+[node name="hut" parent="." index="15" instance=ExtResource( 23 )]
+transform = Transform( -0.94834, 0, -0.317257, 0, 1, 0, 0.317257, 0, -0.94834, 57.9793, -116.869, 182.523 )
+
+[node name="garden_empty" parent="." index="16" instance=ExtResource( 25 )]
+transform = Transform( 0.98676, -0.162186, 0, 0.162186, 0.98676, 0, 0, 0, 1, 61.0821, -115.856, 168.228 )
+
+[node name="garden_empty2" parent="." index="17" instance=ExtResource( 25 )]
+transform = Transform( -0.706392, 0.0289788, 0.707228, -0.0746633, 0.990537, -0.115163, -0.703872, -0.134154, -0.697543, -43.8226, -123.192, 221.287 )
+
+[node name="garden_empty3" parent="." index="18" instance=ExtResource( 25 )]
+transform = Transform( -0.416031, 0.0391911, -0.908505, 0.0937871, 0.995592, 0, 0.904501, -0.085206, -0.417873, -34.1867, -123.281, 219.725 )
+
+[node name="rock1" parent="." index="19" instance=ExtResource( 22 )]
+transform = Transform( 1, 0, 0, 0, 0.222377, -0.974961, 0, 0.974961, 0.222377, 23.6852, -117.154, 222.829 )
+
+[node name="ruin1" parent="." index="20" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 80.9392, -113.708, 175.272 )
+
+[node name="ruin2" parent="." index="21" instance=ExtResource( 21 )]
+transform = Transform( -0.997308, 0, -0.0733329, 0, 1, 0, 0.0733329, 0, -0.997308, 85.7103, -109.85, 195.626 )
+
+[node name="ruin3" parent="." index="22" instance=ExtResource( 21 )]
+transform = Transform( -0.577748, 0, -0.816215, 0, 1, 0, 0.816215, 0, -0.577748, 104.983, -112.225, 163.059 )
+
+[node name="hut2" parent="." index="23" instance=ExtResource( 23 )]
+transform = Transform( -0.270403, 0, -0.962747, 0, 1, 0, 0.962747, 0, -0.270403, 127.828, -99.3008, 196.74 )
+
+[node name="rock2" parent="." index="24" instance=ExtResource( 22 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 148.593, -86.0253, 223.484 )
+
+[connection signal="opened" from="interaction/front_door" to="interaction" method="_on_front_door_opened"]
+[connection signal="toggled" from="estate/door1-kine" to="interaction/front_door" method="_on_toggled"]
+[connection signal="toggled" from="estate/door2-kine" to="interaction/front_door" method="_on_toggled"]
+[connection signal="toggled" from="estate/door2-kine001" to="interaction/kitchen_door" method="_on_toggled"]
+[connection signal="toggled" from="estate/door3-kine001" to="interaction/bedroom1" method="_on_toggled"]
+[connection signal="toggled" from="estate/door3-kine002" to="interaction/bedroom2" method="_on_toggled"]
+[connection signal="toggled" from="estate/door_den-kine" to="interaction/den_front" method="_on_toggled"]
+[connection signal="toggled" from="estate/door_den2-kine" to="interaction/den_front" method="_on_toggled"]
+[connection signal="toggled" from="estate/door_den_small-kine" to="interaction/den_side" method="_on_toggled"]
+[connection signal="completed" from="active_entities/zone_estate/rotating_map" to="interaction" method="_on_rotating_map_completed"]

@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://entities/env/furniture/bottle1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://items/item_pickup.tscn" type="PackedScene" id=2]
+
+[sub_resource type="Gradient" id=1]
+colors = PoolColorArray( 0.746094, 0.0349731, 0.0349731, 1, 1, 0.46875, 0, 1 )
+
+[node name="health_up_pickup" instance=ExtResource( 2 )]
+item_id = "health_up"
+celebrate = true
+
+[node name="OmniLight" parent="." index="3"]
+light_color = Color( 1, 0.67451, 0.54902, 1 )
+
+[node name="preview" parent="." index="4" instance=ExtResource( 1 )]
+palette = SubResource( 1 )

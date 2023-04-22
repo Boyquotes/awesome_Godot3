@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://entities/env/plants/cactus_round.mesh" type="ArrayMesh" id=1]
+[ext_resource path="res://entities/visual/random_scale.gd" type="Script" id=3]
+
+[node name="cactus_round" type="MultiMeshComponent"]
+mesh = ExtResource( 1 )
+script = ExtResource( 3 )
+min_scale = 0.5
+max_scale = 1.0

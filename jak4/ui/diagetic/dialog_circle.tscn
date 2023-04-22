@@ -1,0 +1,21 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://_glb/ui/dialog_circle.glb" type="PackedScene" id=1]
+[ext_resource path="res://ui/diagetic/dialog_circle.gd" type="Script" id=2]
+[ext_resource path="res://ui/diagetic/gradient.png" type="Texture" id=3]
+[ext_resource path="res://ui/diagetic/dialog_circle.gdshader" type="Shader" id=4]
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 4 )
+shader_param/albedo = Color( 0.729412, 0.992157, 1, 1 )
+shader_param/world_player = null
+shader_param/min_distance = 2.0
+shader_param/max_distance = 5.0
+shader_param/debug = false
+shader_param/texture_albedo = ExtResource( 3 )
+
+[node name="dialog_circle" groups=["distance_activated"] instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Circle" parent="." index="0"]
+material/0 = SubResource( 2 )

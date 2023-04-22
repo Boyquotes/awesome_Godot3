@@ -1,0 +1,29 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://_glb/env/furniture/bottle2.glb" type="PackedScene" id=1]
+[ext_resource path="res://material/env/copper/copper1.png" type="Texture" id=2]
+[ext_resource path="res://material/gem_transparent.shader" type="Shader" id=3]
+[ext_resource path="res://entities/visual/random_color.gd" type="Script" id=4]
+
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0, 0.241007, 0.517986, 0.805755, 1 )
+colors = PoolColorArray( 0.078125, 0.0643826, 0.038147, 1, 0.051178, 0.335938, 0.0756495, 1, 0.851562, 0.589425, 0.415802, 1, 0.337562, 0.226974, 0.683594, 1, 0.867188, 0.854749, 0.548767, 1 )
+
+[sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
+shader = ExtResource( 3 )
+shader_param/albedo = Color( 0.627451, 0.345098, 0.345098, 1 )
+shader_param/refraction = 0.1
+shader_param/brightness = null
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_texture = ExtResource( 2 )
+
+[node name="bottle2" instance=ExtResource( 1 )]
+script = ExtResource( 4 )
+palette = SubResource( 3 )
+mesh_instance = NodePath("bottle2-kine/mesh")
+
+[node name="mesh" parent="bottle2-kine" index="0"]
+material/0 = SubResource( 1 )
+material/1 = SubResource( 2 )

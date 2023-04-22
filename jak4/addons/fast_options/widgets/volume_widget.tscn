@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/fast_options/scripts/volume_widget.gd" type="Script" id=1]
+
+[node name="volume_widget" type="HBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+script = ExtResource( 1 )
+
+[node name="name" type="Label" parent="."]
+margin_top = 293.0
+margin_right = 475.0
+margin_bottom = 307.0
+size_flags_horizontal = 3
+text = "Name"
+
+[node name="volLabel" type="Label" parent="."]
+margin_left = 479.0
+margin_top = 293.0
+margin_right = 479.0
+margin_bottom = 307.0
+
+[node name="HSlider" type="HSlider" parent="."]
+margin_left = 483.0
+margin_right = 959.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 1.5
+step = 0.05
+
+[node name="mute" type="CheckBox" parent="."]
+margin_left = 963.0
+margin_right = 1024.0
+margin_bottom = 600.0
+text = "Mute"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="value_changed" from="HSlider" to="." method="vol_change"]
+[connection signal="toggled" from="mute" to="." method="mute"]

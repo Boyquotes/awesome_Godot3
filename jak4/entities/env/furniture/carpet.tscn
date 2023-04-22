@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://entities/visual/coat_like.gd" type="Script" id=1]
+[ext_resource path="res://_glb/env/furniture/carpet.glb" type="PackedScene" id=2]
+
+[node name="carpet" instance=ExtResource( 2 )]
+
+[node name="StaticBody" parent="carpet" index="0"]
+collision_layer = 4096
+collision_mask = 0
+script = ExtResource( 1 )

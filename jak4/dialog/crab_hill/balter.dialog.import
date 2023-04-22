@@ -1,0 +1,13 @@
+[remap]
+
+importer="np.dialog"
+type="Resource"
+path="res://.import/balter.dialog-eb2583e6e859c70a212e6649d0c9be86.tres"
+
+[deps]
+
+source_file="res://dialog/crab_hill/balter.dialog"
+dest_files=[ "res://.import/balter.dialog-eb2583e6e859c70a212e6649d0c9be86.tres" ]
+
+[params]
+

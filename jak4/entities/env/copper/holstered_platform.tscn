@@ -1,0 +1,78 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://entities/control/door.gd" type="Script" id=1]
+[ext_resource path="res://material/env/copper/copper_local_coords.tres" type="Material" id=2]
+[ext_resource path="res://_glb/env/copper/holstered_platform.glb" type="PackedScene" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Activate"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("holster-kine/platform-kine:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.3, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 0.517632, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0.106739, 0, 0 ), Vector3( 0.160109, 0, 0 ), Vector3( 3.33586, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("holster-kine/platform-kine:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0.767057, 0, 0 ), Vector3( 0, 0, 0 ), Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("holster-kine/platform-kine:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("holster-kine/platform-kine:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.767057, 0, 0 ) ]
+}
+
+[node name="holstered_platform" instance=ExtResource( 3 )]
+script = ExtResource( 1 )
+randomize_speed = true
+
+[node name="platform-kine" parent="holster-kine" index="0"]
+transform = Transform( 1, 0, 0, 0, 0.99991, -0.0133873, 0, 0.0133873, 0.99991, 0, 0, 0 )
+collision_layer = 257
+
+[node name="mesh" parent="holster-kine/platform-kine" index="0"]
+material/0 = ExtResource( 2 )
+
+[node name="mesh" parent="holster-kine" index="1"]
+material/0 = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+anims/Activate = SubResource( 1 )
+anims/RESET = SubResource( 2 )

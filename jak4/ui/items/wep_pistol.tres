@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://ui/items/item_description.gd" type="Script" id=1]
+[ext_resource path="res://ui/items/vis/mesh_pistol.tscn" type="PackedScene" id=2]
+
+[resource]
+script = ExtResource( 1 )
+category = 0
+preview_3d = ExtResource( 2 )
+full_name = "Pistol"
+description = "An old semi-automatic pistol. Not especially powerful against the Specters, but it does stagger them."
+extra_items = {
+"pistol": "Pistol Rounds",
+"pistol_capacity_up": "Capacity Upgrades"
+}

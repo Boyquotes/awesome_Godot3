@@ -1,0 +1,13 @@
+[remap]
+
+importer="np.dialog"
+type="Resource"
+path="res://.import/tylers_mom.dialog-c3e35a2b0f47fb5a8077687c3ce0ca62.tres"
+
+[deps]
+
+source_file="res://dialog/intro/tylers_mom.dialog"
+dest_files=[ "res://.import/tylers_mom.dialog-c3e35a2b0f47fb5a8077687c3ce0ca62.tres" ]
+
+[params]
+

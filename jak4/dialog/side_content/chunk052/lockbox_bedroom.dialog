@@ -1,0 +1,42 @@
+* It's a lockbox.
+{main_speaker.open}
+	{Global.count("manor_den_key")}
+		* It's already opened. You still have the key you found inside.
+	{otherwise}
+		* {Global.add_item("manor_den_key")} It's already unlocked. You take the key inside.
+	{exit()}
+	
+{main_speaker.reset()}
+* Enter the first digit.
+{subtopic("choose")}
+* Enter the second digit.
+{subtopic("choose")}
+* Enter the third digit.
+{subtopic("choose")}
+* You try "#{main_speaker.working_set}"...
+{main_speaker.unlock()}
+	* {Global.add_item("manor_den_key")} The box clicks open.
+	* There's an assortment of small toys, coins, and a key.
+	* You take the key.
+{otherwise}
+	* The combination was wrong.
+{exit()}
+
+:choose
+> {skip()} N
+	{main_speaker.add_digit("N")}
+> {skip()} S
+	{main_speaker.add_digit("S")}
+> {skip()} E
+	{main_speaker.add_digit("E")}
+> {skip()} W
+	{main_speaker.add_digit("W")}
+> {skip()} 2
+	{main_speaker.add_digit("2")}
+> {skip()} 3
+	{main_speaker.add_digit("3")}
+> {skip()} 5
+	{main_speaker.add_digit("5")}
+> {skip()} 7
+	{main_speaker.add_digit("7")}
+{back()}

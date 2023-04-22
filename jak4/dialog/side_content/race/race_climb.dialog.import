@@ -1,0 +1,13 @@
+[remap]
+
+importer="np.dialog"
+type="Resource"
+path="res://.import/race_climb.dialog-006160214ca8c2eb8d4fb8b2e6b40498.tres"
+
+[deps]
+
+source_file="res://dialog/side_content/race/race_climb.dialog"
+dest_files=[ "res://.import/race_climb.dialog-006160214ca8c2eb8d4fb8b2e6b40498.tres" ]
+
+[params]
+

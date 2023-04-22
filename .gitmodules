@@ -1,3 +1,9 @@
 [submodule "GodotSimpleExplosionVFX"]
 	path = GodotSimpleExplosionVFX
 	url = https://github.com/drcd1/GodotSimpleExplosionVFX
+[submodule "jak4"]
+        path = jak4
+        url = https://github.com/needleful/jak4
+[submodule "oriks_lantern"]
+	path = oriks_lantern
+	url = https://github.com/OsamaElHariri/oriks_lantern

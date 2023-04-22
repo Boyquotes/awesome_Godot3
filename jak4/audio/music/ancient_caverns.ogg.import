@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ancient_caverns.ogg-367dc8e3f726c7828cdc604c25660229.oggstr"
+
+[deps]
+
+source_file="res://audio/music/ancient_caverns.ogg"
+dest_files=[ "res://.import/ancient_caverns.ogg-367dc8e3f726c7828cdc604c25660229.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

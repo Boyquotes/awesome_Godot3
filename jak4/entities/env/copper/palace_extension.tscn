@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://material/env/copper/copper_corroded.material" type="Material" id=1]
+[ext_resource path="res://_glb/env/copper/palace_extension.glb" type="PackedScene" id=2]
+
+[node name="palace_extension" instance=ExtResource( 2 )]
+
+[node name="palace_extension" parent="." index="0"]
+material/0 = ExtResource( 1 )
+
+[node name="StaticBody" parent="palace_extension" index="0"]
+collision_layer = 257

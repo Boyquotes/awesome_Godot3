@@ -1,0 +1,58 @@
+:_entry_fountain
+{mention("fountain")}
+{!Global.task_exists("fountain_statue")}
+	[You] Hello there!
+	Hello! If you are looking for tours, the embassy by the church would be of assistance.
+	[You] Oh, thank you. I'm just looking around....
+	[You] So this is the front entrance to the fortress?
+	It is, yes.
+	[You] ... It's rather plain, no?
+	How do you mean?
+	{Global.note_task("fountain_statue", "I think there should be a statue on the fountain in Crab Hill.")}
+	[You] For such a large fortress, the grand entry is just a fountain. It's slightly larger than the others, sure, but it could do with a statue or something of that sort.
+	What?
+	[You] .... hm, yes, I can imagine it now. A statue would be lovely on top of the fountain! Perhaps made of that curious white metal, to stand out from the stone!
+	... uh...
+	{Global.stat("talked/balter")} 
+		{Global.task_note_location("fountain_statue", "crab_hill", "Ask Balter about putting a statue at the front entrance to the fort.")}
+		[You] I know! I'll ask Balter! He seems like an important fellow.
+	{otherwise}
+		{Global.task_note_location("fountain_statue", "crab_hill", "Find and ask an authority about adding a statue at the front of the fortress.")}
+		[You] Is there an administration building, or some authority I would ask about adding a statue?
+		Maybe the large grey building at the top of the city?
+		[You] I'll check there, thank you! 
+{otherwise if !Global.task_completed("fountain_statue")}
+	How goes your quest to add a statue to the fountain?
+	[You] Patience, friend! We can't rush art!
+	We are not friends.
+{otherwise}
+	I have to say, this is an impressive statue.
+	[You] Exactly! And you doubted me...
+	I did not have any opinion about you.
+{exit()}
+
+
+:_entry_siraj
+{mention("siraj")}
+{talked == 0}
+	Hello!
+	[You] Hi!
+{otherwise}
+	[You] Hello again!
+	Hello!
+{Global.task_exists("fountain_statue") and Global.stat("fountain_statue/balter")}
+	{!Global.stat("fountain_statue/siraj")}
+		+{fountain_statue/siraj}
+		[You] Are you Siraj, the head gardener?
+		I am... Did you need something?
+		[You] Yes. Balter said you also wanted to build a statue at the front plaza.
+		Eh? You're interested in helping?
+		[You] I could do with a bit more to do on my visit.
+	{otherwise}
+		Any progress on the statue?
+
+{exit()}
+
+:_entry_master_glassblower
+{mention("mgb")}
+{exit()}

@@ -1,0 +1,560 @@
+[gd_scene load_steps=40 format=2]
+
+[ext_resource path="res://areas/chunk_content.gd" type="Script" id=1]
+[ext_resource path="res://entities/env/stone/hut.tscn" type="PackedScene" id=2]
+[ext_resource path="res://entities/env/stone/rock1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://entities/env/stone/ruin1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://entities/env/copper/scrap_pile1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://entities/env/stone/wall1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://entities/env/stone/pillar.tscn" type="PackedScene" id=7]
+[ext_resource path="res://entities/env/copper/scrap3.tscn" type="PackedScene" id=8]
+[ext_resource path="res://items/bug_pickup.tscn" type="PackedScene" id=9]
+[ext_resource path="res://items/gem_pickup.tscn" type="PackedScene" id=10]
+[ext_resource path="res://entities/wardrobe.tscn" type="PackedScene" id=11]
+[ext_resource path="res://entities/env/copper/platform_small.tscn" type="PackedScene" id=12]
+[ext_resource path="res://entities/env/copper/scrap_pile3.tscn" type="PackedScene" id=13]
+[ext_resource path="res://entities/env/copper/scrap2.tscn" type="PackedScene" id=14]
+[ext_resource path="res://entities/npc/npc.tscn" type="PackedScene" id=15]
+[ext_resource path="res://_glb/entities/power_thing.glb" type="PackedScene" id=16]
+[ext_resource path="res://entities/env/ancient/arena1.tscn" type="PackedScene" id=17]
+[ext_resource path="res://entities/env/copper/palace2.tscn" type="PackedScene" id=18]
+[ext_resource path="res://entities/env/copper/palace_extension.tscn" type="PackedScene" id=19]
+[ext_resource path="res://entities/env/copper/palace_roof1.tscn" type="PackedScene" id=20]
+[ext_resource path="res://entities/env/stone/rock2.tscn" type="PackedScene" id=21]
+[ext_resource path="res://entities/env/copper/scrap_pile2.tscn" type="PackedScene" id=22]
+[ext_resource path="res://entities/env/copper/bridge_long_damaged.tscn" type="PackedScene" id=23]
+[ext_resource path="res://entities/enemies/crawly.tscn" type="PackedScene" id=24]
+[ext_resource path="res://entities/enemies/deathgnat.tscn" type="PackedScene" id=25]
+[ext_resource path="res://entities/env/stone/fountain.tscn" type="PackedScene" id=26]
+[ext_resource path="res://entities/npc/npc_riley.tscn" type="PackedScene" id=27]
+[ext_resource path="res://dialog/side_content/riley/riley.dialog" type="Resource" id=28]
+[ext_resource path="res://dialog/side_content/hermit111.dialog" type="Resource" id=29]
+[ext_resource path="res://entities/env/stone/rock_kinematic.tscn" type="PackedScene" id=30]
+[ext_resource path="res://entities/env/furniture/bottle1.tscn" type="PackedScene" id=31]
+[ext_resource path="res://entities/env/furniture/sofa.tscn" type="PackedScene" id=32]
+[ext_resource path="res://entities/env/train_set/20m-1v-straight_to_slant.tscn" type="PackedScene" id=33]
+[ext_resource path="res://entities/env/train_set/20m-2v-double_to_slant.tscn" type="PackedScene" id=34]
+[ext_resource path="res://entities/env/train_set/20m-2v-slant_to_double.tscn" type="PackedScene" id=35]
+[ext_resource path="res://entities/env/train_set/bridge_slant_straight.tscn" type="PackedScene" id=36]
+[ext_resource path="res://entities/env/train_set/bridge_double_straight.tscn" type="PackedScene" id=37]
+[ext_resource path="res://entities/env/train_set/column-10m.tscn" type="PackedScene" id=38]
+[ext_resource path="res://entities/env/train_set/column_20m.tscn" type="PackedScene" id=39]
+
+[node name="chunk111" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="zone_hut" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 198.064, -248.173, -231.533 )
+
+[node name="hut" parent="zone_hut" instance=ExtResource( 2 )]
+transform = Transform( -0.15471, 0, 0.98796, 0, 1, 0, -0.98796, 0, -0.15471, -5.80447, -1.82735, 9.53563 )
+
+[node name="hut2" parent="zone_hut" instance=ExtResource( 2 )]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -2.06447, -1.82735, -8.46738 )
+
+[node name="hut3" parent="zone_hut" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 11.9355, -1.82735, 11.5326 )
+
+[node name="rock1" parent="zone_hut" instance=ExtResource( 3 )]
+transform = Transform( -0.44074, -0.876391, -0.194129, -0.191107, -0.119696, 0.974244, -0.877055, 0.466488, -0.11473, 18.9625, -2.50635, 0.53862 )
+
+[node name="pillar" parent="zone_hut" instance=ExtResource( 7 )]
+transform = Transform( 0.299654, 0.574995, -0.761307, -0.953491, 0.207765, -0.218379, 0.0326058, 0.791337, 0.61051, 9.59253, -0.707352, -10.3114 )
+
+[node name="scrap3" parent="zone_hut" instance=ExtResource( 8 )]
+transform = Transform( 0.503351, -0.229191, -0.833132, 0.00470715, 0.964895, -0.262594, 0.864069, 0.128255, 0.486759, 0.570526, 7.21466, 0.0716248 )
+
+[node name="scrap_pile1" parent="zone_hut" instance=ExtResource( 5 )]
+transform = Transform( 0.102463, 0, 0.994737, 0, 1, 0, -0.994737, 0, 0.102463, 7.64352, 0.526657, 23.5756 )
+
+[node name="ruin1" parent="zone_hut" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -39.4195, -3.52734, 9.13263 )
+
+[node name="wall1" parent="zone_hut" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 0.864301, 0.502975, 0, -0.502975, 0.864301, -22.2795, -3.20935, 15.3746 )
+
+[node name="rock2" parent="zone_hut" instance=ExtResource( 3 )]
+transform = Transform( 0.0258654, 0.956658, 0.290063, -0.954862, -0.0622506, 0.290455, 0.295923, -0.284483, 0.911866, 7.42354, -2.80135, 4.74762 )
+
+[node name="platform" parent="zone_hut" instance=ExtResource( 12 )]
+transform = Transform( 0.821567, 0.329597, 0.46518, -1.23204e-07, -0.815946, 0.578128, 0.570111, -0.474971, -0.670355, 21.7815, -7.32335, 24.8126 )
+
+[node name="scrap_pile3" parent="zone_hut" instance=ExtResource( 13 )]
+transform = Transform( 0.525995, 0.462816, -0.713534, 0.769583, 0.0981301, 0.630961, 0.362038, -0.881006, -0.304559, 10.4865, -0.266342, 10.4686 )
+
+[node name="scrap2" parent="zone_hut" instance=ExtResource( 14 )]
+transform = Transform( -0.608789, 0, -0.793332, -0.0299147, 0.999289, 0.022956, 0.792768, 0.0377076, -0.608356, 10.5675, 0.867661, 9.99362 )
+
+[node name="zone_danger" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 110.927 )
+
+[node name="arena1" parent="zone_danger" instance=ExtResource( 17 )]
+transform = Transform( 0.939561, 0.342381, 0, -0.339082, 0.930509, 0.138482, 0.0474135, -0.130112, 0.990365, -23.603, 25.5061, 68.6823 )
+
+[node name="palace_extension" parent="zone_danger" instance=ExtResource( 19 )]
+transform = Transform( 0.696725, 0.21402, -0.684667, -0.0116564, 0.957707, 0.287508, 0.717243, -0.192334, 0.669754, -51.8859, 43.0377, 17.8823 )
+
+[node name="palace_extension2" parent="zone_danger" instance=ExtResource( 19 )]
+transform = Transform( 0.696725, 0.21402, -0.684667, -0.0116564, 0.957707, 0.287508, 0.717243, -0.192334, 0.669754, -48.3053, 56.7684, 15.3803 )
+
+[node name="platform2" parent="zone_danger" instance=ExtResource( 12 )]
+transform = Transform( 0.999218, 0, -0.0395389, 0, 1, 0, 0.0395389, 0, 0.999218, -15.2982, 63.8044, 65.5613 )
+
+[node name="bridge_long_damaged" parent="zone_danger" instance=ExtResource( 23 )]
+transform = Transform( 1, 0, 0, 0, 0.99509, 0.0989724, 0, -0.0989724, 0.99509, -13.1088, 81.4532, 65.6583 )
+
+[node name="palace_roof1" parent="zone_danger" instance=ExtResource( 20 )]
+transform = Transform( -0.0485736, 0.0401465, 0.998012, 0.637074, 0.770802, 0, -0.76927, 0.635808, -0.063017, -154.063, 22.9835, -48.7837 )
+
+[node name="palace2" parent="zone_danger" instance=ExtResource( 18 )]
+transform = Transform( -0.304748, -0.952433, 0, 0.952433, -0.304748, 0, 0, 0, 1, -10.3891, 45.4555, 64.1373 )
+
+[node name="palace3" parent="zone_danger" instance=ExtResource( 18 )]
+transform = Transform( 0.936739, 0.350028, 0, -0.350028, 0.936739, 0, 0, 0, 1, -12.3357, 64.9494, 61.3563 )
+
+[node name="rock3" parent="zone_danger" instance=ExtResource( 3 )]
+transform = Transform( 0.108138, -0.994136, 0, 0.994136, 0.108138, 0, 0, 0, 1, -42.4688, 37.2765, -3.82069 )
+
+[node name="rock4" parent="zone_danger" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 0.819682, 0.572818, 0, -0.572818, 0.819682, -92.4938, 59.1747, 26.2053 )
+
+[node name="wall2" parent="zone_danger" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -85.4301, 48.2341, 6.20031 )
+
+[node name="pillar2" parent="zone_danger" instance=ExtResource( 7 )]
+transform = Transform( -0.950057, 0.311594, -0.0173465, -0.125194, -0.431456, -0.893405, -0.285864, -0.846614, 0.448918, -56.8085, 45.1108, 18.7223 )
+
+[node name="wall3" parent="zone_danger" instance=ExtResource( 6 )]
+transform = Transform( 0.130798, 0.334152, 0.9334, -0.046372, 0.942519, -0.330919, -0.990324, 0, 0.138776, 22.9693, 17.2425, 5.47731 )
+
+[node name="scrap9" parent="zone_danger" instance=ExtResource( 8 )]
+transform = Transform( 0.650276, -0.526392, 0.54777, -0.489798, 0.260672, 0.831954, -0.580722, -0.809297, -0.0883173, -63.5988, 56.7504, 36.0313 )
+
+[node name="scrap_pile5" parent="zone_danger" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 0.776046, 0.630676, 0, -0.630676, 0.776046, -33.9468, 53.4099, 53.8973 )
+
+[node name="fountain" parent="zone_danger" instance=ExtResource( 26 )]
+transform = Transform( 1, 0, 0, 0, 0.990906, 0.134557, 0, -0.134557, 0.990906, -92.6164, 29.4386, -53.6613 )
+
+[node name="rock_kinematic" parent="zone_danger" instance=ExtResource( 30 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 57.6808, 11.0792, 1.89831 )
+
+[node name="rail" parent="." instance=ExtResource( 34 )]
+transform = Transform( -0.944729, 1.851e-08, 0.327855, -4.35975e-08, 0.999999, 4.33647e-08, -0.327855, 4.82542e-08, -0.944729, -211.044, 19.5154, 4.98993 )
+
+[node name="20m-2v-slant_to_double" parent="rail" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9, 2, -7.62939e-06 )
+
+[node name="bridge_double_straight" parent="rail/20m-2v-slant_to_double" instance=ExtResource( 37 )]
+
+[node name="column_20m" parent="rail/20m-2v-slant_to_double/bridge_double_straight" instance=ExtResource( 39 )]
+transform = Transform( 1, 3.55271e-15, 0, 8.88178e-16, 1, -1.77636e-15, 0, 0, 1, 0, -21, 0 )
+
+[node name="20m-2v-double_to_slant2" parent="rail" instance=ExtResource( 34 )]
+transform = Transform( 1, 0, 0, -8.88178e-16, 1, 1.77636e-15, 0, -7.10543e-15, 1, -39.8002, 4.00001, -0.000183105 )
+
+[node name="20m-2v-slant_to_double" parent="rail/20m-2v-double_to_slant2" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9, 2, -7.62939e-06 )
+
+[node name="bridge_double_straight" parent="rail/20m-2v-double_to_slant2/20m-2v-slant_to_double" instance=ExtResource( 37 )]
+
+[node name="column_20m" parent="rail/20m-2v-double_to_slant2/20m-2v-slant_to_double" instance=ExtResource( 39 )]
+transform = Transform( 1, 3.55271e-15, 0, 7.99361e-15, 1, 0, 0, -1.06581e-14, 1, 0, -21, 0 )
+
+[node name="bridge_double_straight" parent="rail/20m-2v-double_to_slant2" instance=ExtResource( 37 )]
+
+[node name="column_20m" parent="rail/20m-2v-double_to_slant2/bridge_double_straight" instance=ExtResource( 39 )]
+transform = Transform( 1, 3.55271e-15, 0, 7.99361e-15, 1, 0, 0, -1.06581e-14, 1, 0, -21, 0 )
+
+[node name="20m-2v-double_to_slant3" parent="rail" instance=ExtResource( 34 )]
+transform = Transform( 1, 0, 0, -8.88178e-16, 1, 1.77636e-15, 0, -7.10543e-15, 1, -79.6003, 8.00006, -0.000167847 )
+
+[node name="20m-2v-slant_to_double" parent="rail/20m-2v-double_to_slant3" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9, 2, -7.62939e-06 )
+
+[node name="bridge_double_straight" parent="rail/20m-2v-double_to_slant3/20m-2v-slant_to_double" instance=ExtResource( 37 )]
+
+[node name="column-10m" parent="rail/20m-2v-double_to_slant3/20m-2v-slant_to_double/bridge_double_straight" instance=ExtResource( 38 )]
+transform = Transform( 1, 1.77636e-15, 0, 4.44089e-15, 1, 0, 0, -3.55271e-15, 1, 0, -11, 0 )
+
+[node name="bridge_double_straight" parent="rail/20m-2v-double_to_slant3" instance=ExtResource( 37 )]
+
+[node name="column_20m" parent="rail/20m-2v-double_to_slant3/bridge_double_straight" instance=ExtResource( 39 )]
+transform = Transform( 1, 3.55271e-15, 0, 7.99361e-15, 1, 0, 0, -1.06581e-14, 1, 0, -21, 0 )
+
+[node name="20m-2v-double_to_slant4" parent="rail" instance=ExtResource( 34 )]
+transform = Transform( 1, 0, 0, -8.88178e-16, 1, 1.77636e-15, 0, -7.10543e-15, 1, -119.4, 12, -0.000259399 )
+
+[node name="20m-2v-slant_to_double" parent="rail/20m-2v-double_to_slant4" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9, 2, -7.62939e-06 )
+
+[node name="bridge_double_straight" parent="rail/20m-2v-double_to_slant4/20m-2v-slant_to_double" instance=ExtResource( 37 )]
+
+[node name="column-10m" parent="rail/20m-2v-double_to_slant4/20m-2v-slant_to_double/bridge_double_straight" instance=ExtResource( 38 )]
+transform = Transform( 1, 1.77636e-15, 0, 4.44089e-15, 1, 0, 0, -3.55271e-15, 1, 0, -11, 0 )
+
+[node name="bridge_double_straight" parent="rail/20m-2v-double_to_slant4" instance=ExtResource( 37 )]
+
+[node name="column-10m" parent="rail/20m-2v-double_to_slant4/bridge_double_straight" instance=ExtResource( 38 )]
+transform = Transform( 1, 1.77636e-15, 0, 4.44089e-15, 1, 0, 0, -3.55271e-15, 1, 0, -11, 0 )
+
+[node name="20m-2v-double_to_slant5" parent="rail" instance=ExtResource( 34 )]
+transform = Transform( 1, 0, 0, -8.88178e-16, 1, 1.77636e-15, 0, -7.10543e-15, 1, -159.001, 16, -0.00038147 )
+
+[node name="20m-1v-straight_to_slant2" parent="rail/20m-2v-double_to_slant5" instance=ExtResource( 33 )]
+transform = Transform( 1, -2.22045e-16, 3.27826e-07, 2.77556e-16, 1, 5.55112e-16, -3.27826e-07, -4.44089e-16, 1, -19.9745, 0.970058, 5.34058e-05 )
+
+[node name="bridge_slant_straight" parent="rail/20m-2v-double_to_slant5/20m-1v-straight_to_slant2" instance=ExtResource( 36 )]
+
+[node name="20m-1v-straight_to_slant3" parent="rail/20m-2v-double_to_slant5" instance=ExtResource( 33 )]
+transform = Transform( -1, -2.77556e-16, -3.89414e-07, -2.77556e-16, 1, -4.44089e-16, 3.89414e-07, -4.44089e-16, -1, -19.9745, 0.970058, 5.34058e-05 )
+
+[node name="bridge_slant_straight" parent="rail/20m-2v-double_to_slant5/20m-1v-straight_to_slant3" instance=ExtResource( 36 )]
+
+[node name="column-10m" parent="rail/20m-2v-double_to_slant5/20m-1v-straight_to_slant3/bridge_slant_straight" instance=ExtResource( 38 )]
+transform = Transform( 1, -1.77636e-15, 0, -3.55271e-15, 1, 0, 0, 0, 1, 0, -11, 0 )
+
+[node name="bridge_double_straight" parent="rail/20m-2v-double_to_slant5" instance=ExtResource( 37 )]
+
+[node name="20m-2v-double_to_slant6" parent="rail" instance=ExtResource( 34 )]
+transform = Transform( -1, 6.66145e-08, -5.96046e-08, -8.71951e-08, 1, 8.67295e-08, 5.96046e-08, 7.9037e-08, -1, -218.778, 14, -0.000205994 )
+
+[node name="20m-2v-slant_to_double" parent="rail/20m-2v-double_to_slant6" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9, 2, -7.62939e-06 )
+
+[node name="bridge_double_straight" parent="rail/20m-2v-double_to_slant6/20m-2v-slant_to_double" instance=ExtResource( 37 )]
+
+[node name="column-10m" parent="rail/20m-2v-double_to_slant6/20m-2v-slant_to_double/bridge_double_straight" instance=ExtResource( 38 )]
+transform = Transform( 1, 0, 0, 2.66454e-15, 1, 1.77636e-15, 0, 0, 1, -1.90735e-06, -11, 0 )
+
+[node name="bridge_double_straight" parent="rail/20m-2v-double_to_slant6" instance=ExtResource( 37 )]
+
+[node name="column-10m" parent="rail/20m-2v-double_to_slant6/bridge_double_straight" instance=ExtResource( 38 )]
+transform = Transform( 1, 0, 0, 2.66454e-15, 1, 1.77636e-15, 0, 0, 1, -1.90735e-06, -11, 0 )
+
+[node name="20m-2v-double_to_slant7" parent="rail" instance=ExtResource( 34 )]
+transform = Transform( -1, 6.66145e-08, -5.96046e-08, -8.71951e-08, 0.999999, 8.67295e-08, 5.96046e-08, 7.9037e-08, -1, -258.513, 10.0336, -0.000198364 )
+
+[node name="20m-2v-slant_to_double" parent="rail/20m-2v-double_to_slant7" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9, 2, -7.62939e-06 )
+
+[node name="bridge_double_straight" parent="rail/20m-2v-double_to_slant7/20m-2v-slant_to_double" instance=ExtResource( 37 )]
+
+[node name="column_20m" parent="rail/20m-2v-double_to_slant7/20m-2v-slant_to_double/bridge_double_straight" instance=ExtResource( 39 )]
+transform = Transform( 1, 0, 0, 3.55271e-15, 1, 1.77636e-15, 0, 0, 1, 0, -21, 0 )
+
+[node name="bridge_double_straight" parent="rail/20m-2v-double_to_slant7" instance=ExtResource( 37 )]
+
+[node name="column_20m" parent="rail/20m-2v-double_to_slant7/bridge_double_straight" instance=ExtResource( 39 )]
+transform = Transform( 1, 0, 0, 3.55271e-15, 1, 1.77636e-15, 0, 0, 1, 0, -21, -7.62939e-06 )
+
+[node name="20m-2v-double_to_slant8" parent="rail" instance=ExtResource( 34 )]
+transform = Transform( -1, 6.66145e-08, -5.96046e-08, -8.71951e-08, 0.999999, 8.67295e-08, 5.96046e-08, 7.9037e-08, -1, -298.272, 6.04129, -0.000205994 )
+
+[node name="20m-2v-slant_to_double" parent="rail/20m-2v-double_to_slant8" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9, 2, -7.62939e-06 )
+
+[node name="bridge_double_straight" parent="rail/20m-2v-double_to_slant8/20m-2v-slant_to_double" instance=ExtResource( 37 )]
+
+[node name="column_20m" parent="rail/20m-2v-double_to_slant8/20m-2v-slant_to_double/bridge_double_straight" instance=ExtResource( 39 )]
+transform = Transform( 1, 0, 0, 3.55271e-15, 1, 1.77636e-15, 0, 0, 1, 0, -21, 0 )
+
+[node name="bridge_double_straight" parent="rail/20m-2v-double_to_slant8" instance=ExtResource( 37 )]
+
+[node name="column_20m" parent="rail/20m-2v-double_to_slant8/bridge_double_straight" instance=ExtResource( 39 )]
+transform = Transform( 1, 0, 0, 3.55271e-15, 1, 1.77636e-15, 0, 0, 1, 0, -21, 0 )
+
+[node name="20m-2v-double_to_slant9" parent="rail" instance=ExtResource( 34 )]
+transform = Transform( -1, 6.66145e-08, -5.96046e-08, -8.71951e-08, 0.999999, 8.67295e-08, 5.96046e-08, 7.9037e-08, -1, -338.087, 2.05113, -0.000213623 )
+
+[node name="20m-2v-slant_to_double" parent="rail/20m-2v-double_to_slant9" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9, 2, -7.62939e-06 )
+
+[node name="bridge_double_straight" parent="rail/20m-2v-double_to_slant9/20m-2v-slant_to_double" instance=ExtResource( 37 )]
+
+[node name="column_20m" parent="rail/20m-2v-double_to_slant9/20m-2v-slant_to_double/bridge_double_straight" instance=ExtResource( 39 )]
+transform = Transform( 1, 0, 0, 3.55271e-15, 1, 1.77636e-15, 0, 0, 1, 0, -21, 0 )
+
+[node name="bridge_double_straight" parent="rail/20m-2v-double_to_slant9" instance=ExtResource( 37 )]
+
+[node name="column_20m" parent="rail/20m-2v-double_to_slant9/bridge_double_straight" instance=ExtResource( 39 )]
+transform = Transform( 1, 0, 0, 3.55271e-15, 1, 1.77636e-15, 0, 0, 1, 0, -21, 0 )
+
+[node name="20m-2v-double_to_slant10" parent="rail" instance=ExtResource( 34 )]
+transform = Transform( -1, 6.66145e-08, -5.96046e-08, -8.71951e-08, 0.999999, 8.67295e-08, 5.96046e-08, 7.9037e-08, -1, -377.888, -1.94035, -0.000206 )
+
+[node name="20m-2v-slant_to_double" parent="rail/20m-2v-double_to_slant10" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9, 2, -7.62939e-06 )
+
+[node name="bridge_double_straight" parent="rail/20m-2v-double_to_slant10/20m-2v-slant_to_double" instance=ExtResource( 37 )]
+
+[node name="column_20m" parent="rail/20m-2v-double_to_slant10/20m-2v-slant_to_double" instance=ExtResource( 39 )]
+transform = Transform( 1, 0, 0, 3.55271e-15, 1, 1.77636e-15, 0, 0, 1, 0, -21, 0 )
+
+[node name="bridge_double_straight" parent="rail/20m-2v-double_to_slant10" instance=ExtResource( 37 )]
+
+[node name="column_20m" parent="rail/20m-2v-double_to_slant10/bridge_double_straight" instance=ExtResource( 39 )]
+transform = Transform( 1, 0, 0, 3.55271e-15, 1, 1.77636e-15, 0, 0, 1, 0, -21, 0 )
+
+[node name="20m-2v-double_to_slant11" parent="rail" instance=ExtResource( 34 )]
+transform = Transform( -1, 6.66145e-08, -5.96046e-08, -8.71951e-08, 0.999999, 8.67295e-08, 5.96046e-08, 7.9037e-08, -1, -417.713, -5.93504, -0.000168 )
+
+[node name="20m-2v-slant_to_double" parent="rail/20m-2v-double_to_slant11" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9, 2, -7.62939e-06 )
+
+[node name="bridge_double_straight" parent="rail/20m-2v-double_to_slant11/20m-2v-slant_to_double" instance=ExtResource( 37 )]
+
+[node name="column_20m" parent="rail/20m-2v-double_to_slant11/20m-2v-slant_to_double/bridge_double_straight" instance=ExtResource( 39 )]
+transform = Transform( 1, 0, 0, 3.55271e-15, 1, 1.77636e-15, 0, 0, 1, 0, -21, 0 )
+
+[node name="bridge_double_straight" parent="rail/20m-2v-double_to_slant11" instance=ExtResource( 37 )]
+
+[node name="column_20m" parent="rail/20m-2v-double_to_slant11/bridge_double_straight" instance=ExtResource( 39 )]
+transform = Transform( 1, 0, 0, 3.55271e-15, 1, 1.77636e-15, 0, 0, 1, 0, -21, 0 )
+
+[node name="20m-2v-double_to_slant12" parent="rail" instance=ExtResource( 34 )]
+transform = Transform( -1, 6.66145e-08, -5.96046e-08, -8.71951e-08, 0.999999, 8.67295e-08, 5.96046e-08, 7.9037e-08, -1, -457.473, -9.92378, -0.00016 )
+
+[node name="20m-2v-slant_to_double" parent="rail/20m-2v-double_to_slant12" instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9, 2, -7.62939e-06 )
+
+[node name="bridge_double_straight" parent="rail/20m-2v-double_to_slant12/20m-2v-slant_to_double" instance=ExtResource( 37 )]
+
+[node name="column-10m" parent="rail/20m-2v-double_to_slant12/20m-2v-slant_to_double/bridge_double_straight" instance=ExtResource( 38 )]
+transform = Transform( 1, 0, 0, 3.55271e-15, 1, 1.77636e-15, 0, 0, 1, 0, -11, 0 )
+
+[node name="bridge_double_straight" parent="rail/20m-2v-double_to_slant12" instance=ExtResource( 37 )]
+
+[node name="column-10m" parent="rail/20m-2v-double_to_slant12/bridge_double_straight" instance=ExtResource( 38 )]
+transform = Transform( 1, 0, 0, 3.55271e-15, 1, 1.77636e-15, 0, 0, 1, 0, -11, 0 )
+
+[node name="bridge_double_straight" parent="rail" instance=ExtResource( 37 )]
+
+[node name="column_20m" parent="rail" instance=ExtResource( 39 )]
+transform = Transform( 1, 3.55271e-15, 0, 8.88178e-16, 1, -1.77636e-15, 0, 0, 1, 0, -21, 0 )
+
+[node name="active_entities" type="Spatial" parent="."]
+
+[node name="zone_hut" type="MultiMeshComponent" parent="active_entities"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 198.064, -248.173, -231.533 )
+
+[node name="gem_pickup" parent="active_entities/zone_hut" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.01747, 8.61465, 9.42462 )
+
+[node name="gem_pickup4" parent="active_entities/zone_hut" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.52654, 6.89766, 22.7446 )
+
+[node name="gem_pickup7" parent="active_entities/zone_hut" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.9595, 1.39165, 4.38162 )
+
+[node name="gem_pickup8" parent="active_entities/zone_hut" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.0945, 6.96265, 3.10463 )
+
+[node name="gem_pickup9" parent="active_entities/zone_hut" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21.8675, 1.55165, 0.0626221 )
+
+[node name="bug_pickup" parent="active_entities/zone_hut" instance=ExtResource( 9 )]
+transform = Transform( -0.755305, 0, 0.655374, 0, 1, 0, -0.655374, 0, -0.755305, -2.62347, 7.18765, -13.1124 )
+
+[node name="bug_pickup2" parent="active_entities/zone_hut" instance=ExtResource( 9 )]
+transform = Transform( -0.755305, 0, 0.655374, 0, 1, 0, -0.655374, 0, -0.755305, 8.65753, 10.8727, 12.5766 )
+
+[node name="bug_pickup3" parent="active_entities/zone_hut" instance=ExtResource( 9 )]
+transform = Transform( -0.755305, 0, 0.655374, 0, 1, 0, -0.655374, 0, -0.755305, -7.46747, 10.5087, 6.30063 )
+
+[node name="bug_pickup4" parent="active_entities/zone_hut" instance=ExtResource( 9 )]
+transform = Transform( -0.234277, 0, -0.97217, 0, 1, 0, 0.97217, 0, -0.234277, -12.0905, 1.70966, 9.79062 )
+
+[node name="bug_pickup5" parent="active_entities/zone_hut" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.16054, 1.46965, 20.7286 )
+
+[node name="bug_pickup6" parent="active_entities/zone_hut" instance=ExtResource( 9 )]
+transform = Transform( -0.0997191, 0, 0.995016, 0, 1, 0, -0.995016, 0, -0.0997191, 8.38153, 4.18465, 14.2026 )
+
+[node name="bug_pickup10" parent="active_entities/zone_hut" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.781525, 3.75465, -8.39137 )
+
+[node name="wardrobe" parent="active_entities/zone_hut" instance=ExtResource( 11 )]
+transform = Transform( -0.514245, 0, -0.857643, 0, 1, 0, 0.857643, 0, -0.514245, 11.5235, -0.868652, 13.2126 )
+
+[node name="bug_pickup11" parent="active_entities/zone_hut" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0535, 6.85265, 26.9606 )
+
+[node name="gem_pickup2" parent="active_entities/zone_hut" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.7245, 4.07265, 32.8966 )
+
+[node name="gem_pickup3" parent="active_entities/zone_hut" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2375, 3.85866, 22.9796 )
+
+[node name="npc" parent="active_entities/zone_hut" instance=ExtResource( 15 )]
+transform = Transform( 0.681871, 0, -0.731473, 0, 1, 0, 0.731473, 0, 0.681871, 12.5845, 2.25865, 8.91263 )
+dialog = ExtResource( 29 )
+visual_name = "Hermit"
+
+[node name="power_thing" parent="active_entities/zone_hut" instance=ExtResource( 16 )]
+transform = Transform( 0.343899, 0.926584, -0.152234, -0.374752, -0.0132197, -0.927031, -0.860985, 0.375855, 0.342693, 10.3645, 2.64966, 9.64062 )
+
+[node name="sofa" parent="active_entities/zone_hut" instance=ExtResource( 32 )]
+transform = Transform( -0.609727, 0, 0.792611, 0, 1, 0, -0.792611, 0, -0.609727, -5.14499, 2.254, 9.746 )
+
+[node name="bottle1" parent="active_entities/zone_hut/sofa" instance=ExtResource( 31 )]
+transform = Transform( 0.50756, 0.576713, 0.640144, -0.576713, -0.324591, 0.749695, 0.640144, -0.749695, 0.167849, -1.9063, 0.161102, 0.181091 )
+
+[node name="bug_pickup8" parent="active_entities/zone_hut" instance=ExtResource( 9 )]
+transform = Transform( -0.991452, 0, 0.130474, 0, 1, 0, -0.130474, 0, -0.991452, -28.456, 216.615, 271.868 )
+
+[node name="bug_pickup9" parent="active_entities/zone_hut" instance=ExtResource( 9 )]
+transform = Transform( -0.991452, 0, 0.130474, 0, 1, 0, -0.130474, 0, -0.991452, -36.147, 159.321, 210.359 )
+
+[node name="bug_pickup7" parent="active_entities/zone_hut" instance=ExtResource( 9 )]
+transform = Transform( -0.991452, 0, 0.130474, 0, 1, 0, -0.130474, 0, -0.991452, -28.457, 44.051, 101.466 )
+
+[node name="zone_danger" type="MultiMeshComponent" parent="active_entities"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 110.927 )
+
+[node name="scrap_pile2" parent="active_entities/zone_danger" instance=ExtResource( 22 )]
+transform = Transform( 1, 0, 0, 0, 0.999918, -0.0128278, 0, 0.0128278, 0.999918, -17.8755, 60.2833, 79.5053 )
+
+[node name="scrap_pile4" parent="active_entities/zone_danger" instance=ExtResource( 5 )]
+transform = Transform( 0.761199, 0.648519, 0, -0.648519, 0.761199, 0, 0, 0, 1, -2.75885, 36.69, 57.7823 )
+
+[node name="ultra_crawly" parent="active_entities/zone_danger" instance=ExtResource( 24 )]
+transform = Transform( 0.0752223, 0, 0.997167, 0, 1, 0, -0.997167, 0, 0.0752223, -29.3769, 47.938, 66.0353 )
+drops_coat = true
+minimum_rarity = 3
+maximum_rarity = 4
+gem_drop_max = 100
+health = 300
+attack_damage = 20
+run_speed = 12.0
+lunge_speed = 20.0
+turn_speed_windup = 10.0
+turn_speed_attacking = 2.0
+
+[node name="OmniLight" type="OmniLight" parent="active_entities/zone_danger/ultra_crawly"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.156647, 0 )
+light_color = Color( 1, 0, 0, 1 )
+
+[node name="crawly" parent="active_entities/zone_danger" instance=ExtResource( 24 )]
+transform = Transform( 0.270701, 0, -0.962663, 0, 1, 0, 0.962663, 0, 0.270701, -56.7677, 82.2421, 75.8803 )
+
+[node name="crawly2" parent="active_entities/zone_danger" instance=ExtResource( 24 )]
+transform = Transform( -0.859799, 0, -0.510633, 0, 1, 0, 0.510633, 0, -0.859799, -59.7553, 82.2421, 57.0843 )
+
+[node name="crawly3" parent="active_entities/zone_danger" instance=ExtResource( 24 )]
+transform = Transform( -0.69834, 0, -0.715765, 0, 1, 0, 0.715765, 0, -0.69834, -58.0738, 77.2241, 39.7483 )
+
+[node name="crawly4" parent="active_entities/zone_danger" instance=ExtResource( 24 )]
+transform = Transform( 0.969042, 0, -0.246898, 0, 1, 0, 0.246898, 0, 0.969042, -48.1347, 82.2421, 96.6663 )
+
+[node name="crawly5" parent="active_entities/zone_danger" instance=ExtResource( 24 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.02535, 33.7677, 62.0733 )
+
+[node name="crawly6" parent="active_entities/zone_danger" instance=ExtResource( 24 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9876, 58.7943, 51.1803 )
+
+[node name="crawly7" parent="active_entities/zone_danger" instance=ExtResource( 24 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.56599, 82.5499, 38.0733 )
+drops_coat = true
+maximum_rarity = 3
+health = 80
+
+[node name="deathgnat" parent="active_entities/zone_danger" instance=ExtResource( 25 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 90.1911, 56.0733 )
+drops_coat = true
+gem_drop_max = 20
+health = 100
+
+[node name="deathgnat2" parent="active_entities/zone_danger" instance=ExtResource( 25 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.8839, 50.6604, 19.6413 )
+
+[node name="deathgnat4" parent="active_entities/zone_danger" instance=ExtResource( 25 )]
+transform = Transform( 0.0389808, 0, -0.99924, 0, 1, 0, 0.99924, 0, 0.0389808, 30.9402, 77.6758, 68.2903 )
+
+[node name="deathgnat3" parent="active_entities/zone_danger" instance=ExtResource( 25 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.54869, 74.8839, 22.0733 )
+
+[node name="crawly8" parent="active_entities/zone_danger" instance=ExtResource( 24 )]
+transform = Transform( 0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, 99, 11.9446, 52.0733 )
+
+[node name="crawly9" parent="active_entities/zone_danger" instance=ExtResource( 24 )]
+transform = Transform( -0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, 94, 8.64232, 34.0733 )
+
+[node name="crawly10" parent="active_entities/zone_danger" instance=ExtResource( 24 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9876, 63.7943, 85.1803 )
+
+[node name="crawly11" parent="active_entities/zone_danger" instance=ExtResource( 24 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.37216, 83.4121, 51.7583 )
+drops_coat = true
+minimum_rarity = 1
+maximum_rarity = 4
+health = 90
+
+[node name="crawly12" parent="active_entities/zone_danger" instance=ExtResource( 24 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1841, 52.0688, 36.7303 )
+
+[node name="npc_riley" parent="active_entities/zone_danger" instance=ExtResource( 27 )]
+transform = Transform( -0.970754, 0, 0.240076, 0, 1, 0, -0.240076, 0, -0.970754, -9.50308, 89.0391, 93.4623 )
+dialog = ExtResource( 28 )
+custom_entry = "_entry111"
+enemies = [ NodePath("../deathgnat"), NodePath("../deathgnat2"), NodePath("../deathgnat4"), NodePath("../deathgnat3") ]
+
+[node name="bug_pickup12" parent="active_entities/zone_danger" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -86.652, 58.0911, -0.684692 )
+
+[node name="bug_pickup13" parent="active_entities/zone_danger" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -86.8425, 57.4164, -4.87069 )
+
+[node name="bug_pickup14" parent="active_entities/zone_danger" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -70.005, 58.5133, 5.35631 )
+
+[node name="bug_pickup15" parent="active_entities/zone_danger" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -62.1812, 55.2508, 40.6143 )
+
+[node name="bug_pickup16" parent="active_entities/zone_danger" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.3693, 50.0639, 79.6563 )
+
+[node name="bug_pickup17" parent="active_entities/zone_danger" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.0231, 53.2791, 79.6423 )
+
+[node name="bug_pickup18" parent="active_entities/zone_danger" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.15694, 63.9019, 56.3563 )
+
+[node name="bug_pickup19" parent="active_entities/zone_danger" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.68793, 76.9431, 34.8753 )
+
+[node name="bug_pickup20" parent="active_entities/zone_danger" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7196, 62.5519, -9.57369 )
+
+[node name="bug_pickup21" parent="active_entities/zone_danger" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -53.3323, 56.1964, -2.77669 )
+
+[node name="bug_pickup22" parent="active_entities/zone_danger" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -65.8239, 61.3539, 9.00431 )
+
+[node name="bug_pickup23" parent="active_entities/zone_danger" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -69.8683, 67.4225, 42.7303 )
+
+[node name="bug_pickup24" parent="active_entities/zone_danger" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.44609, 88.881, 89.9063 )
+
+[node name="bug_pickup25" parent="active_entities/zone_danger" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.8818, 59.6156, 75.9233 )
+
+[node name="bug_pickup26" parent="active_entities/zone_danger" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.0866, 58.9717, 63.2143 )
+
+[node name="bug_pickup27" parent="active_entities/zone_danger" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.88365, 73.2866, 64.0263 )
+
+[node name="bug_pickup28" parent="active_entities/zone_danger" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.063, 77.2278, 144.312 )
+
+[node name="bug_pickup29" parent="active_entities/zone_danger" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9274, 77.2, 147.418 )
+
+[node name="rock_kinematic2" parent="active_entities/zone_danger" instance=ExtResource( 30 )]
+transform = Transform( -0.387934, 0, 0.921687, 0, 1, 0, -0.921687, 0, -0.387934, -61.86, 40.7357, -16.1359 )
+
+[node name="rock_kinematic3" parent="active_entities/zone_danger" instance=ExtResource( 30 )]
+transform = Transform( 0.227331, -0.941622, 0.24833, 0, -0.255007, -0.966939, 0.973818, 0.219815, -0.057971, -96.9863, 53.5697, 7.56831 )

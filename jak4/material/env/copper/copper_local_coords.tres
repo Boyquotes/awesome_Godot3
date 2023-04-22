@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=2]
+
+[ext_resource path="res://material/triplanar_local_coords.shader" type="Shader" id=1]
+[ext_resource path="res://material/env/copper/copper1.png" type="Texture" id=2]
+[ext_resource path="res://material/env/copper/copper_corroded1.png" type="Texture" id=3]
+[ext_resource path="res://material/env/stone/sand1.jpg" type="Texture" id=4]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/uv_scale = 0.5
+shader_param/power = 2.0
+shader_param/softness = 0.5
+shader_param/specularity = 1.0
+shader_param/light_bias = 0.0
+shader_param/wall = ExtResource( 3 )
+shader_param/ground = ExtResource( 4 )
+shader_param/ceiling = ExtResource( 2 )

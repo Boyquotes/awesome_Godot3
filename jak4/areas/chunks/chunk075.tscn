@@ -1,0 +1,1627 @@
+[gd_scene load_steps=122 format=2]
+
+[ext_resource path="res://areas/chunk_content.gd" type="Script" id=1]
+[ext_resource path="res://entities/env/copper/junkyard.tscn" type="PackedScene" id=2]
+[ext_resource path="res://entities/env/copper/drill2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://entities/env/stone/fountain.tscn" type="PackedScene" id=4]
+[ext_resource path="res://entities/env/copper/scrap_pile2.tscn" type="PackedScene" id=5]
+[ext_resource path="res://entities/env/copper/scrap2.tscn" type="PackedScene" id=6]
+[ext_resource path="res://entities/env/stone/rock1.tscn" type="PackedScene" id=7]
+[ext_resource path="res://entities/env/copper/scrap_pile1.tscn" type="PackedScene" id=8]
+[ext_resource path="res://entities/env/copper/scrap1.tscn" type="PackedScene" id=9]
+[ext_resource path="res://entities/env/foundry/ladle_large.tscn" type="PackedScene" id=10]
+[ext_resource path="res://entities/env/copper/scrap3.tscn" type="PackedScene" id=11]
+[ext_resource path="res://entities/env/electrical/wind_generator.tscn" type="PackedScene" id=12]
+[ext_resource path="res://entities/env/stone/rock2.tscn" type="PackedScene" id=13]
+[ext_resource path="res://entities/npc/npc_shop.tscn" type="PackedScene" id=14]
+[ext_resource path="res://dialog/shops/junkyard_shop.dialog" type="Resource" id=15]
+[ext_resource path="res://entities/shop_stock/shop_default_stock.inv" type="Resource" id=16]
+[ext_resource path="res://entities/env/furniture/bed_native.tscn" type="PackedScene" id=17]
+[ext_resource path="res://entities/env/furniture/incense.tscn" type="PackedScene" id=18]
+[ext_resource path="res://entities/env/furniture/bottle1.tscn" type="PackedScene" id=19]
+[ext_resource path="res://entities/env/furniture/bottle2.tscn" type="PackedScene" id=20]
+[ext_resource path="res://entities/env/furniture/fruit_stand.tscn" type="PackedScene" id=21]
+[ext_resource path="res://entities/npc/npc.tscn" type="PackedScene" id=22]
+[ext_resource path="res://dialog/side_content/chunk075/priest.dialog" type="Resource" id=23]
+[ext_resource path="res://entities/env/furniture/sitting_pillow.tscn" type="PackedScene" id=24]
+[ext_resource path="res://entities/env/furniture/shelf.tscn" type="PackedScene" id=25]
+[ext_resource path="res://entities/env/furniture/stump_table.tscn" type="PackedScene" id=26]
+[ext_resource path="res://entities/env/electrical/outlet_box.tscn" type="PackedScene" id=27]
+[ext_resource path="res://entities/env/plants/cactus_round_flower.tscn" type="PackedScene" id=28]
+[ext_resource path="res://entities/env/stone/garden_melon.tscn" type="PackedScene" id=29]
+[ext_resource path="res://entities/env/plants/cactus_round.tscn" type="PackedScene" id=30]
+[ext_resource path="res://entities/env/stone/garden.tscn" type="PackedScene" id=31]
+[ext_resource path="res://entities/env/stone/rock3.tscn" type="PackedScene" id=32]
+[ext_resource path="res://entities/env/furniture/sofa.tscn" type="PackedScene" id=33]
+[ext_resource path="res://entities/env/stone/water_pot.tscn" type="PackedScene" id=34]
+[ext_resource path="res://entities/npc/npc_riley.tscn" type="PackedScene" id=35]
+[ext_resource path="res://entities/env/copper/rail_cart.tscn" type="PackedScene" id=36]
+[ext_resource path="res://entities/env/electrical/phone.tscn" type="PackedScene" id=37]
+[ext_resource path="res://entities/env/electrical/drink_fridge.tscn" type="PackedScene" id=38]
+[ext_resource path="res://entities/env/electrical/charger.tscn" type="PackedScene" id=39]
+[ext_resource path="res://entities/env/copper/mine_shack_small.tscn" type="PackedScene" id=40]
+[ext_resource path="res://entities/env/copper/pail.tscn" type="PackedScene" id=41]
+[ext_resource path="res://entities/env/copper/c_table.tscn" type="PackedScene" id=42]
+[ext_resource path="res://entities/env/copper/table2.tscn" type="PackedScene" id=43]
+[ext_resource path="res://entities/env/copper/crate1.tscn" type="PackedScene" id=44]
+[ext_resource path="res://items/bug_pickup.tscn" type="PackedScene" id=45]
+[ext_resource path="res://entities/env/electrical/gen_part_pvc.tscn" type="PackedScene" id=46]
+[ext_resource path="res://entities/env/copper/mine_shack.tscn" type="PackedScene" id=47]
+[ext_resource path="res://_glb/chunks/chunk075.glb" type="PackedScene" id=48]
+[ext_resource path="res://material/env/vaeler/tile.png" type="Texture" id=49]
+[ext_resource path="res://entities/control/dswitch.tscn" type="PackedScene" id=50]
+[ext_resource path="res://entities/control/door.gd" type="Script" id=51]
+[ext_resource path="res://entities/env/ancient/target_flower.tscn" type="PackedScene" id=52]
+[ext_resource path="res://management/environment_override.gd" type="Script" id=53]
+[ext_resource path="res://entities/hurtbox.gd" type="Script" id=54]
+[ext_resource path="res://entities/env/ancient/fountainA.tscn" type="PackedScene" id=55]
+[ext_resource path="res://entities/shop_stock/foreman.inv" type="Resource" id=56]
+[ext_resource path="res://dialog/foundry/worker.dialog" type="Resource" id=57]
+[ext_resource path="res://material/gem_transparent.shader" type="Shader" id=58]
+[ext_resource path="res://material/triplanar.shader" type="Shader" id=59]
+[ext_resource path="res://material/env/foundry/concrete.jpg" type="Texture" id=60]
+[ext_resource path="res://entities/env/copper/holstered_platform.tscn" type="PackedScene" id=61]
+[ext_resource path="res://material/env/foundry/metal_siding.png" type="Texture" id=62]
+[ext_resource path="res://material/env/vaeler/grey_brick.png" type="Texture" id=63]
+[ext_resource path="res://entities/enemies/crawly.tscn" type="PackedScene" id=64]
+[ext_resource path="res://material/env/ancient/white_metal.material" type="Material" id=65]
+[ext_resource path="res://material/env/foundry/metal_generic.png" type="Texture" id=66]
+[ext_resource path="res://material/triplanar_local_coords.shader" type="Shader" id=67]
+[ext_resource path="res://material/env/copper/copper_cleaned.tres" type="Material" id=68]
+[ext_resource path="res://entities/env/foundry/bucket_small.tscn" type="PackedScene" id=69]
+[ext_resource path="res://entities/control/power_thing.tscn" type="PackedScene" id=70]
+[ext_resource path="res://entities/env/electrical/light_wall.tscn" type="PackedScene" id=71]
+[ext_resource path="res://entities/env/copper/light_hang1.tscn" type="PackedScene" id=72]
+[ext_resource path="res://items/random_ammo_pickup.tscn" type="PackedScene" id=73]
+[ext_resource path="res://entities/env/stone/rock4.tscn" type="PackedScene" id=74]
+[ext_resource path="res://entities/env/stone/hut.tscn" type="PackedScene" id=75]
+[ext_resource path="res://entities/env/plants/tree1.tscn" type="PackedScene" id=76]
+[ext_resource path="res://entities/enemies/deathgnat.tscn" type="PackedScene" id=77]
+[ext_resource path="res://entities/env/train_set/20m-1v-slant_to_slant.tscn" type="PackedScene" id=78]
+[ext_resource path="res://entities/env/train_set/20m-1v-slant_to_straight.tscn" type="PackedScene" id=79]
+[ext_resource path="res://entities/env/train_set/45_up1.tscn" type="PackedScene" id=80]
+[ext_resource path="res://entities/env/train_set/straight_to_15.tscn" type="PackedScene" id=81]
+[ext_resource path="res://entities/env/train_set/20m-1v-straight_to_slant.tscn" type="PackedScene" id=82]
+[ext_resource path="res://entities/env/train_set/20m_straight.tscn" type="PackedScene" id=83]
+[ext_resource path="res://material/env/stone/sand1.jpg" type="Texture" id=84]
+[ext_resource path="res://entities/env/train_set/20m-1v-straight_to_straight.tscn" type="PackedScene" id=85]
+[ext_resource path="res://material/env/stone/gravel1.png" type="Texture" id=86]
+[ext_resource path="res://entities/env/train_set/bridge_slant_straight.tscn" type="PackedScene" id=87]
+[ext_resource path="res://entities/env/train_set/bridge_slant_bend45.tscn" type="PackedScene" id=88]
+[ext_resource path="res://entities/env/train_set/bridge_level_bend15.tscn" type="PackedScene" id=89]
+[ext_resource path="res://entities/env/train_set/column-10m.tscn" type="PackedScene" id=90]
+[ext_resource path="res://entities/env/train_set/cargo_cart.tscn" type="PackedScene" id=91]
+[ext_resource path="res://dialog/side_content/chunk063/train_quest_intro.dialog" type="Resource" id=92]
+[ext_resource path="res://dialog/foundry/foreman.dialog" type="Resource" id=93]
+[ext_resource path="res://items/ammo/pistol_pickup.tscn" type="PackedScene" id=94]
+
+[sub_resource type="ShaderMaterial" id=25]
+shader = ExtResource( 59 )
+shader_param/wall_scale = 0.75
+shader_param/ground_scale = 0.4
+shader_param/power = 5.0
+shader_param/softness = 0.5
+shader_param/specularity_ground = 1.0
+shader_param/specularity_wall = 1.0
+shader_param/specularity_ceiling = 1.0
+shader_param/light_bias = 0.0
+shader_param/shadow_normal_offset = 0.2
+shader_param/wall = ExtResource( 63 )
+shader_param/ground = ExtResource( 60 )
+shader_param/ceiling = ExtResource( 60 )
+
+[sub_resource type="ShaderMaterial" id=29]
+shader = ExtResource( 67 )
+shader_param/uv_scale = 0.7
+shader_param/power = 5.0
+shader_param/softness = 0.5
+shader_param/specularity = 1.0
+shader_param/light_bias = 0.0
+shader_param/wall = ExtResource( 63 )
+shader_param/ground = ExtResource( 49 )
+shader_param/ceiling = ExtResource( 66 )
+
+[sub_resource type="ShaderMaterial" id=27]
+shader = ExtResource( 67 )
+shader_param/uv_scale = 0.5
+shader_param/power = 5.0
+shader_param/softness = 0.5
+shader_param/specularity = 1.0
+shader_param/light_bias = 0.0
+shader_param/wall = ExtResource( 66 )
+shader_param/ground = ExtResource( 66 )
+shader_param/ceiling = ExtResource( 66 )
+
+[sub_resource type="ShaderMaterial" id=24]
+shader = ExtResource( 58 )
+shader_param/albedo = Color( 0.2, 0.211765, 0.219608, 1 )
+shader_param/refraction = 0.0
+shader_param/brightness = 0.0
+
+[sub_resource type="ShaderMaterial" id=39]
+shader = ExtResource( 67 )
+shader_param/uv_scale = 1.0
+shader_param/power = 1.0
+shader_param/softness = 0.5
+shader_param/specularity = 2.0
+shader_param/light_bias = -0.2
+shader_param/wall = ExtResource( 62 )
+shader_param/ground = ExtResource( 62 )
+shader_param/ceiling = ExtResource( 62 )
+
+[sub_resource type="ShaderMaterial" id=9]
+shader = ExtResource( 59 )
+shader_param/wall_scale = 0.5
+shader_param/ground_scale = 0.5
+shader_param/power = 0.5
+shader_param/softness = 0.5
+shader_param/specularity_ground = 1.0
+shader_param/specularity_wall = 1.0
+shader_param/specularity_ceiling = 1.0
+shader_param/light_bias = 0.0
+shader_param/shadow_normal_offset = 0.2
+shader_param/wall = ExtResource( 84 )
+shader_param/ground = ExtResource( 86 )
+shader_param/ceiling = ExtResource( 84 )
+
+[sub_resource type="Curve3D" id=42]
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, 1.3358, -4.36575, 15.6647, 0, 0, 0, 0, 0, 0, 0.00852966, -0.210037, 0.332108, 0, 0, 0, 0, 0, 0, 0.112915, -2.29797, -38.2819, 0, 0, 0, 0, 0, 0, 0.617508, -9.51139, -51.7886 ),
+"tilts": PoolRealArray( 0, 0, 0, 0 )
+}
+
+[sub_resource type="Curve3D" id=43]
+_data = {
+"points": PoolVector3Array( 0.473968, 1.05015, 0.544146, 0, 0, 0, 1.9296, -4.88537, 9.34659, 0.428596, 0.358523, 5.18257, -0.428596, -0.358523, -5.18257, 0.345772, 0.249219, -2.53072, 0, 0, 0, 0, 0, 0, -1.09875, -0.663892, -29.5851, 0, 0, 0, 0, 0, 0, 0.934654, -0.506279, -44.3663, 0, 0, 0, 0, 0, 0, 25.1577, -0.637679, -128.598, 0, 0, 0, 0, 0, 0, 26.8558, 0.186933, -135.479, 0, 0, 0, 0, 0, 0, 33.4426, 0.432961, -159.916, 0, 0, 0, 0, 0, 0, 35.7302, 0.219042, -167.476, 0, 0, 0, 0, 0, 0, 38.4318, -0.763035, -176.69, 0, 0, 0, 0, 0, 0, 56.7261, -0.788957, -243.122, 0, 0, 0, 0, 0, 0, 58.6619, -1.64924, -251.097, 0, 0, 0, 0, 0, 0, 76.5579, -1.65118, -318.635, -1.17001, 0.320013, 4.21011, 1.17001, -0.320013, -4.21011, 80.6314, -2.5811, -333.513, 0, 0, 0, 0, 0, 0, 82.6902, -7.33495, -341.577 ),
+"tilts": PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+}
+
+[sub_resource type="ShaderMaterial" id=28]
+shader = ExtResource( 67 )
+shader_param/uv_scale = 0.6
+shader_param/power = 5.0
+shader_param/softness = 0.5
+shader_param/specularity = 1.0
+shader_param/light_bias = 0.0
+shader_param/wall = ExtResource( 63 )
+shader_param/ground = ExtResource( 49 )
+shader_param/ceiling = ExtResource( 66 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "Activate"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:transform")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 4, 7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Transform( 0.8137, 0, -0.581284, 0, 1, 0, 0.581284, 0, 0.8137, 96.5931, 14.8709, -33.3309 ), Transform( 0.8137, 0, -0.581284, 0, 1, 0, 0.581284, 0, 0.8137, 96.5931, 15.4254, -33.3309 ), Transform( 0.953807, 0, -0.300417, 0, 1, 0, 0.300417, 0, 0.953807, 90.2144, 22.8142, -26.2101 ), Transform( 0.985982, 0, 0.166849, 0, 1, 0, -0.166849, 0, 0.985982, 82.6399, 33.8974, -14.901 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:transform")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Transform( 0.8137, 0, -0.581284, 0, 1, 0, 0.581284, 0, 0.8137, 96.5931, 14.8709, -33.3309 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Activate"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.1, 5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 94.1423, 36.2647, 7.56404 ), Vector3( 101.586, 36.2647, 19.5547 ), Vector3( 116.233, 36.2647, 24.0088 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, -63.9932, 0 ), Vector3( 0, 2.59042, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 94.1423, 36.2647, 7.56404 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, -63.9932, 0 ) ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "Activate"
+length = 14.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:transform")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.1, 3.2, 5.2, 6.6, 14 ),
+"transitions": PoolRealArray( 0.659754, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Transform( -0.216977, 0, -0.976177, 0, 1, 0, 0.976177, 0, -0.216977, 154.477, 51.7856, -10.5718 ), Transform( -0.216977, -0.24329, -0.945373, 0, 0.968445, -0.249228, 0.976177, -0.0540768, -0.210131, 153.326, 50.9938, -10.8276 ), Transform( 0.132171, 0.0230396, -0.990959, -0.00812343, 0.999721, 0.0221599, 0.991194, 0.00512109, 0.132322, 149.343, 52.2095, -9.93877 ), Transform( 0.169984, 0.0242326, -0.985149, 0.0121611, 0.99957, 0.0266857, 0.985372, -0.0165166, 0.169616, 146.973, 52.7015, -6.20097 ), Transform( 0.170658, 0.0249618, -0.985014, 0.0251408, 0.999243, 0.0296781, 0.98501, -0.0298288, 0.169901, 144.533, 53.0046, -5.31996 ), Transform( -0.216977, 0, -0.976177, 0, 1, 0, 0.976177, 0, -0.216977, 126.104, 59.3012, -4.75372 ) ]
+}
+
+[sub_resource type="Animation" id=16]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:transform")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Transform( -0.216977, 0, -0.976177, 0, 1, 0, 0.976177, 0, -0.216977, 154.477, 51.7856, -10.5718 ) ]
+}
+
+[sub_resource type="Animation" id=37]
+resource_name = "Activate"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 128.778, 36.5942, 26.2682 ), Vector3( 128.778, 8.83497, 26.2682 ) ]
+}
+
+[sub_resource type="Animation" id=38]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 128.778, 36.5942, 26.2682 ) ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "Activate"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 157.311, 43.259, -14.3697 ), Vector3( 157.311, 11.146, -14.3697 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 157.311, 43.259, -14.3697 ) ]
+}
+
+[sub_resource type="Animation" id=17]
+resource_name = "Activate"
+length = 8.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 8.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 109.603, 59.4883, -6.97608 ), Vector3( 109.603, 8.5604, -6.97608 ) ]
+}
+
+[sub_resource type="Animation" id=18]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 109.603, 59.4883, -6.97608 ) ]
+}
+
+[sub_resource type="CylinderShape" id=19]
+radius = 4.8
+
+[sub_resource type="SpatialMaterial" id=20]
+flags_unshaded = true
+albedo_color = Color( 12.1412, 0.588235, 0.290196, 1 )
+
+[sub_resource type="ConvexPolygonShape" id=40]
+points = PoolVector3Array( 48.3003, 23.4053, -0.00857544, 47.1561, 35.1842, -0.00857544, 47.0994, 35.1842, 2.31017, 48.2341, 23.4053, 2.3679, 48.3003, 5.9155, -0.00857544, 48.2341, 23.4053, -2.37543, 47.0994, 35.1842, -2.3177, 37.2937, 54.8043, -1.83663, 37.3315, 54.8043, -0.00857544, 37.2937, 54.8043, 1.82911, 46.9292, 35.1842, 4.6193, 48.0639, 23.4053, 4.72513, 48.2341, 5.9155, 2.3679, 35.516, -3.15581, 22.1879, 48.2341, 5.9155, -2.37543, 48.0639, 23.4053, -4.74228, 46.9292, 35.1842, -4.62683, 30.6274, 59.4431, -1.50951, 30.6652, 59.4431, -0.00857544, 37.1519, 54.8043, -3.66469, 30.5139, 59.4431, -3.01044, 30.6274, 59.4431, 1.50198, 30.5139, 59.4431, 3.00291, 37.1519, 54.8043, 3.65716, 36.9344, 54.8043, 5.4756, 46.6455, 35.1842, 6.9188, 47.7707, 23.4053, 7.08237, 48.0639, 5.9155, 4.72513, 34.0598, -3.15581, 27.5278, 31.3176, -3.15581, 16.8384, 37.3315, 5.9155, -30.643, 38.7877, 5.9155, -28.7764, 40.1588, 5.9155, -26.8425, 41.4259, 5.9155, -24.8317, 42.589, 5.9155, -22.7727, 43.6575, 5.9155, -20.656, 44.622, 5.9155, -18.4912, 45.473, 5.9155, -16.2783, 46.22, 5.9155, -14.0269, 46.8441, 5.9155, -11.737, 47.3641, 5.9155, -9.42788, 47.7707, 5.9155, -7.08989, 48.0639, 5.9155, -4.74228, 47.7707, 5.9155, 7.08237, 47.3641, 5.9155, 9.42036, 46.8441, 5.9155, 11.7295, 46.22, 5.9155, 14.0194, 46.6455, 35.1842, -6.92633, 47.7707, 23.4053, -7.08989, 36.9344, 54.8043, -5.48313, 17.1056, 64.4323, -1.26897, 17.1528, 64.4323, 0.414764, 30.3248, 59.4431, -4.50175, 16.907, 64.4323, -2.94309, 17.0299, 64.4323, 2.0985, 30.3248, 59.4431, 4.49422, 30.0695, 59.4431, 5.97591, 36.6223, 54.8043, 7.28441, 46.2578, 35.1842, 9.19906, 47.3641, 23.4053, 9.42036, 40.1588, 5.9155, 26.8254, 38.7877, 5.9155, 28.7689, 37.3315, 5.9155, 30.6354, 35.7808, 5.9155, 32.4346, 34.1449, 5.9155, 34.1472, 32.4334, 5.9155, 35.7829, 30.6368, 5.9155, 37.3319, 28.7646, 5.9155, 38.7944, 26.8261, 5.9155, 40.151, 24.831, 5.9155, 41.421, 22.7601, 5.9155, 42.5948, 20.642, 5.9155, 43.6628, 31.4878, -3.15581, 28.7497, 45.473, 5.9155, 16.2708, 44.622, 5.9155, 18.4837, 43.6575, 5.9155, 20.6485, 42.589, 5.9155, 22.7652, 41.4259, 5.9155, 24.8241, 22.6088, -3.15581, 18.9936, -9.80567, 5.48942, -49.2699, 4.91702, 5.48942, -49.9915, 7.36608, 5.48942, -49.6933, 19.2142, 5.48942, -46.4124, 21.4741, 5.48942, -45.4118, 35.7808, 5.9155, -32.4422, 37.3315, 23.4053, -30.643, 38.7877, 23.4053, -28.7764, 40.1588, 23.4053, -26.8425, 41.4259, 23.4053, -24.8317, 42.589, 23.4053, -22.7727, 43.6575, 23.4053, -20.656, 44.622, 23.4053, -18.4912, 45.473, 23.4053, -16.2783, 46.22, 23.4053, -14.0269, 46.8441, 23.4053, -11.737, 47.3641, 23.4053, -9.42788, 46.8441, 23.4053, 11.7295, 46.22, 23.4053, 14.0194, 46.2578, 35.1842, -9.20659, 36.6223, 54.8043, -7.29194, 30.0695, 59.4431, -5.98344, 7.88615, 66.1641, -0.585857, 7.84832, 66.1641, 0.963181, 7.62138, 66.1641, -2.11565, 29.7385, 59.4431, -7.45551, 16.5382, 64.4323, -4.57872, 16.7368, 64.4323, 3.75338, 29.7385, 59.4431, 7.44798, 36.2157, 54.8043, 9.06437, 45.7472, 35.1842, 11.4601, 40.1588, 23.4053, 26.8254, 38.7877, 23.4053, 28.7689, 37.3315, 23.4053, 30.6354, 35.7808, 23.4053, 32.4346, 34.1449, 23.4053, 34.1472, 32.4334, 23.4053, 35.7829, 30.6368, 23.4053, 37.3319, 28.7646, 23.4053, 38.7944, 26.8261, 23.4053, 40.151, 24.831, 23.4053, 41.421, 22.7601, 23.4053, 42.5948, 20.642, 23.4053, 43.6628, 18.4767, 5.9155, 44.6153, 26.0697, -3.15581, 30.9722, 45.473, 23.4053, 16.2708, 44.622, 23.4053, 18.4837, 43.6575, 23.4053, 20.6485, 42.589, 23.4053, 22.7652, 41.4259, 23.4053, 24.8241, 20.1503, -3.15581, 24.0929, -43.6669, 5.9155, -20.656, -42.5984, 5.9155, -22.7727, -41.4353, 5.9155, -24.8317, -40.1683, 5.9155, -26.8425, -38.7972, 5.9155, -28.7764, -37.341, 5.9155, -30.643, -35.7902, 5.9155, -32.4422, -34.1544, 5.9155, -34.1548, -32.4429, 5.9155, -35.7904, -30.6463, 5.9155, -37.3394, -12.5006, 5.61999, -48.6638, -12.2831, 9.86014, -49.0102, -12.2831, 21.3092, -49.0102, 2.30722, 35.1842, -47.1147, 4.61444, 35.1842, -46.9416, 6.9122, 35.1842, -46.6625, 9.2005, 35.1842, -46.2681, 11.451, 35.1842, -45.7581, 11.7347, 23.4053, -46.855, 14.0135, 23.4053, -46.2296, 13.6826, 35.1842, -45.1424, 23.4788, 21.6116, -43.3143, 30.6368, 23.4053, -37.3394, 32.4334, 23.4053, -35.7904, 32.4334, 5.9155, -35.7904, 34.1449, 5.9155, -34.1548, 35.7808, 23.4053, -32.4422, 34.9392, 35.1842, -31.6821, 36.4521, 35.1842, -29.9214, 37.88, 35.1842, -28.1029, 39.2132, 35.1842, -26.2075, 40.4519, 35.1842, -24.2544, 41.5866, 35.1842, -22.2339, 42.6362, 35.1842, -20.1749, 43.5724, 35.1842, -18.0582, 44.4045, 35.1842, -15.8934, 45.1326, 35.1842, -13.6998, 45.7472, 35.1842, -11.4676, 45.1326, 35.1842, 13.6826, 44.4045, 35.1842, 15.8859, 36.2157, 54.8043, -9.08152, -0.245846, 67.0506, 0.732269, 7.50792, 66.1641, 2.47374, 16.0087, 64.4323, -6.18549, 7.06349, 66.1641, -3.55886, 29.3414, 59.4431, -8.90833, 16.2924, 64.4323, 5.37939, 29.3414, 59.4431, 8.9008, 35.724, 54.8043, 10.8347, 40.4519, 35.1842, 24.2469, 39.2132, 35.1842, 26.2, 37.88, 35.1842, 28.0954, 36.4521, 35.1842, 29.9138, 34.9392, 35.1842, 31.6649, 33.3506, 35.1842, 33.3487, 31.6675, 35.1842, 34.9458, 29.9182, 35.1842, 36.4564, 28.0932, 35.1842, 37.8803, 26.202, 35.1842, 39.2081, 24.2447, 35.1842, 40.4492, 22.2306, 35.1842, 41.5942, 20.1598, 35.1842, 42.6333, 18.0417, 35.1842, 43.5666, 18.4767, 23.4053, 44.6153, 16.264, 5.9155, 45.4716, -37.341, 5.9155, 30.6354, 14.0135, 5.9155, 46.2124, 11.7347, 5.9155, 46.8474, 9.41799, 5.9155, 47.367, 7.0824, 5.9155, 47.7711, 4.72791, 5.9155, 48.0597, 2.36396, 5.9155, 48.2329, 3.8147e-06, 5.9155, 48.3003, -2.3734, 5.9155, 48.2329, -4.73735, 5.9155, 48.0597, -7.09185, 5.9155, 47.7711, -9.42743, 5.9155, 47.367, -11.7441, 5.9155, 46.8474, -14.023, 5.9155, 46.2124, -16.2734, 5.9155, 45.4716, -18.4861, 5.9155, 44.6153, -20.6515, 5.9155, 43.6628, -22.7696, 5.9155, 42.5948, -24.8404, 5.9155, 41.421, -26.8356, 5.9155, 40.151, -28.774, 5.9155, 38.7944, -30.6463, 5.9155, 37.3319, -32.4429, 5.9155, 35.7829, -34.1544, 5.9155, 34.1472, -35.7902, 5.9155, 32.4346, 42.6362, 35.1842, 20.1578, 43.5724, 35.1842, 18.0411, 41.5866, 35.1842, 22.2264, -41.4353, 5.9155, 24.8241, -42.5984, 5.9155, 22.7652, -43.6669, 5.9155, 20.6485, -44.6314, 5.9155, 18.4837, -45.4824, 5.9155, 16.2708, -46.2294, 5.9155, 14.0194, -46.8535, 5.9155, 11.7295, -47.3736, 5.9155, 9.42036, -47.7802, 5.9155, 7.08237, -48.0733, 5.9155, 4.72513, -48.2435, 5.9155, 2.3679, -48.3003, 5.9155, -0.00857544, -48.2435, 5.9155, -2.37543, -48.0733, 5.9155, -4.74228, -47.7802, 5.9155, -7.08989, -47.3736, 5.9155, -9.42788, -46.8535, 5.9155, -11.737, -46.2294, 5.9155, -14.0269, -45.4824, 5.9155, -16.2783, -44.6314, 5.9155, -18.4912, -38.7972, 5.9155, 28.7689, -40.1683, 5.9155, 26.8254, -43.6669, 23.4053, -20.656, -42.5984, 23.4053, -22.7727, -41.4353, 23.4053, -24.8317, -40.1683, 23.4053, -26.8425, -38.7972, 23.4053, -28.7764, -37.341, 23.4053, -30.643, -35.7902, 23.4053, -32.4422, -34.1544, 23.4053, -34.1548, -32.4429, 23.4053, -35.7904, -30.6463, 23.4053, -37.3394, -28.774, 5.9155, -38.8019, -26.8356, 5.9155, -40.1681, -24.8404, 5.9155, -41.4285, -24.8404, 23.4053, -41.4285, -24.2541, 35.1842, -40.4568, -22.2401, 35.1842, -41.6017, -20.1692, 35.1842, -42.6408, -18.0511, 35.1842, -43.5837, -15.8952, 35.1842, -44.4111, -13.692, 35.1842, -45.1424, -11.4604, 35.1842, -45.7581, -9.20995, 35.1842, -46.2681, -6.92165, 35.1842, -46.6625, -4.62389, 35.1842, -46.9416, -2.31667, 35.1842, -47.1147, -0.00945282, 35.1842, -47.1725, -0.00945282, 54.8043, -37.3491, 1.82497, 54.8043, -37.301, 3.6594, 54.8043, -37.1663, 5.47491, 54.8043, -36.945, 7.28098, 54.8043, -36.6275, 9.06812, 54.8043, -36.2234, 15.8858, 35.1842, -44.4111, 10.8364, 54.8043, -35.7327, 12.5762, 54.8043, -35.165, 18.0417, 35.1842, -43.5837, 20.1598, 35.1842, -42.6408, 22.2306, 35.1842, -41.6017, 24.2447, 35.1842, -40.4568, 26.202, 35.1842, -39.2252, 28.0932, 35.1842, -37.8879, 29.9182, 35.1842, -36.4639, 31.6675, 35.1842, -34.9533, 33.3506, 35.1842, -33.3562, 34.1449, 23.4053, -34.1548, 26.4006, 54.8043, -26.4096, 27.6582, 54.8043, -25.0818, 28.8591, 54.8043, -23.6964, 29.9844, 54.8043, -22.2532, 31.0434, 54.8043, -20.7522, 32.0268, 54.8043, -19.2032, 32.9251, 54.8043, -17.606, 33.7478, 54.8043, -15.9704, 34.4948, 54.8043, -14.2963, 35.1567, 54.8043, -12.5837, 35.724, 54.8043, -10.8422, 35.1567, 54.8043, 12.5762, -7.63083, 66.1641, 2.10812, -7.07294, 66.1641, 3.55133, -6.24083, 66.1641, 4.85983, -5.17232, 66.1641, 5.98553, -3.90524, 66.1641, 6.88032, -2.48687, 66.1641, 7.51533, -0.973946, 66.1641, 7.85207, 0.576809, 66.1641, 7.89056, 2.10865, 66.1641, 7.62116, 3.55539, 66.1641, 7.06312, 4.86029, 66.1641, 6.23569, 5.98553, 66.1641, 5.16772, 6.88383, 66.1641, 3.8977, 6.23138, 66.1641, -4.87698, 5.16287, 66.1641, -6.00268, 3.8958, 66.1641, -6.88784, 2.47742, 66.1641, -7.52285, 0.964497, 66.1641, -7.8596, -0.586254, 66.1641, -7.89809, -2.1181, 66.1641, -7.62869, -3.56483, 66.1641, -7.07065, -4.86974, 66.1641, -6.24321, -5.99498, 66.1641, -5.17524, -6.89328, 66.1641, -3.90522, -7.51736, 66.1641, -2.49089, -7.85777, 66.1641, -0.970711, -7.89559, 66.1641, 0.578327, 15.6872, 64.4323, 6.94767, 28.8686, 59.4431, -10.3323, 28.3296, 59.4431, -11.737, 15.3279, 64.4323, -7.7249, 14.4958, 64.4323, -9.18735, 28.3296, 59.4431, 11.7295, 28.8686, 59.4431, 10.3248, 32.9251, 54.8043, 17.5985, 32.0268, 54.8043, 19.1957, 31.0434, 54.8043, 20.7447, 29.9844, 54.8043, 22.236, 28.8591, 54.8043, 23.6792, 27.6582, 54.8043, 25.0743, 26.4006, 54.8043, 26.4021, 25.0673, 54.8043, 27.6624, 23.6868, 54.8043, 28.8555, 22.2401, 54.8043, 29.9908, 20.7366, 54.8043, 31.0395, 19.1953, 54.8043, 32.0209, 17.5973, 54.8043, 32.9253, 15.9614, 54.8043, 33.7528, 14.2877, 54.8043, 34.4936, 15.8858, 35.1842, 44.4036, 16.264, 23.4053, 45.4716, -37.341, 23.4053, 30.6354, 14.0135, 23.4053, 46.2124, 11.7347, 23.4053, 46.8474, 9.41799, 23.4053, 47.367, 7.0824, 23.4053, 47.7711, 4.72791, 23.4053, 48.0597, 2.36396, 23.4053, 48.2329, 3.8147e-06, 23.4053, 48.3003, -2.3734, 23.4053, 48.2329, -4.73735, 23.4053, 48.0597, -7.09185, 23.4053, 47.7711, -9.42743, 23.4053, 47.367, -11.7441, 23.4053, 46.8474, -14.023, 23.4053, 46.2124, -16.2734, 23.4053, 45.4716, -18.4861, 23.4053, 44.6153, -20.6515, 23.4053, 43.6628, -22.7696, 23.4053, 42.5948, -24.8404, 23.4053, 41.421, -26.8356, 23.4053, 40.151, -28.774, 23.4053, 38.7944, -30.6463, 23.4053, 37.3319, -32.4429, 23.4053, 35.7829, -34.1544, 23.4053, 34.1472, -35.7902, 23.4053, 32.4346, 34.4948, 54.8043, 14.2888, 33.7478, 54.8043, 15.9629, -41.4353, 23.4053, 24.8241, -42.5984, 23.4053, 22.7652, -43.6669, 23.4053, 20.6485, -44.6314, 23.4053, 18.4837, -45.4824, 23.4053, 16.2708, -46.2294, 23.4053, 14.0194, -46.8535, 23.4053, 11.7295, -47.3736, 23.4053, 9.42036, -47.7802, 23.4053, 7.08237, -48.0733, 23.4053, 4.72513, -48.2435, 23.4053, 2.3679, -48.3003, 23.4053, -0.00857544, -48.2435, 23.4053, -2.37543, -48.0733, 23.4053, -4.74228, -47.7802, 23.4053, -7.08989, -47.3736, 23.4053, -9.42788, -46.8535, 23.4053, -11.737, -46.2294, 23.4053, -14.0269, -45.4824, 23.4053, -16.2783, -44.6314, 23.4053, -18.4912, -38.7972, 23.4053, 28.7689, -40.1683, 23.4053, 26.8254, -42.6457, 35.1842, -20.1749, -41.5961, 35.1842, -22.2339, -40.4614, 35.1842, -24.2544, -39.2227, 35.1842, -26.2075, -37.8894, 35.1842, -28.1029, -36.4616, 35.1842, -29.9214, -34.9487, 35.1842, -31.6821, -33.3601, 35.1842, -33.3562, -31.6769, 35.1842, -34.9533, -29.9276, 35.1842, -36.4639, -28.774, 23.4053, -38.8019, -26.8356, 23.4053, -40.1681, -26.2115, 35.1842, -39.2252, -19.2047, 54.8043, -32.0285, -17.6067, 54.8043, -32.9329, -15.9709, 54.8043, -33.7603, -14.2972, 54.8043, -34.5011, -12.5857, 54.8043, -35.165, -10.8458, 54.8043, -35.7327, -9.07757, 54.8043, -36.2234, -7.29042, 54.8043, -36.6275, -5.48436, 54.8043, -36.945, -3.66885, 54.8043, -37.1663, -1.83442, 54.8043, -37.301, -1.51292, 59.4431, -30.6334, -0.00945282, 59.4431, -30.6718, 1.50348, 59.4431, -30.6334, 2.99749, 59.4431, -30.5275, 4.49151, 59.4431, -30.3351, 5.97607, 59.4431, -30.0849, 7.44172, 59.4431, -29.7482, 8.89792, 59.4431, -29.3537, 10.3257, 59.4431, -28.8823, 14.2877, 54.8043, -34.5011, 15.9614, 54.8043, -33.7603, 17.5973, 54.8043, -32.9329, 19.1953, 54.8043, -32.0285, 20.7366, 54.8043, -31.0567, 22.2401, 54.8043, -29.9983, 23.6868, 54.8043, -28.8726, 25.0673, 54.8043, -27.67, 20.5853, 59.4431, -22.7246, 21.6822, 59.4431, -21.6855, 22.7128, 59.4431, -20.5983, 23.6963, 59.4431, -19.463, 24.6229, 59.4431, -18.2699, 25.4929, 59.4431, -17.0384, 26.2966, 59.4431, -15.7684, 27.0436, 59.4431, -14.4599, 27.715, 59.4431, -13.1129, -16.9164, 64.4323, 2.92594, -16.5477, 64.4323, 4.57119, -16.0181, 64.4323, 6.16833, -15.3373, 64.4323, 7.70775, -14.5052, 64.4323, 9.17982, -13.5313, 64.4323, 10.5557, -12.4344, 64.4323, 11.8257, -11.2146, 64.4323, 12.9899, -9.88131, 64.4323, 14.029, -8.46294, 64.4323, 14.9238, -6.95947, 64.4323, 15.6839, -5.3898, 64.4323, 16.29, -3.7634, 64.4323, 16.7422, -2.10864, 64.4323, 17.0308, -0.425507, 64.4323, 17.1463, 1.25763, 64.4323, 17.1078, 2.9313, 64.4323, 16.9058, 4.57661, 64.4323, 16.5305, 6.17464, 64.4323, 16.0014, 7.70649, 64.4323, 15.3279, 9.17213, 64.4323, 14.4908, 10.5527, 64.4323, 13.5287, 11.8292, 64.4323, 12.4222, 12.9923, 64.4323, 11.2003, 14.023, 64.4323, 9.87256, 14.9307, 64.4323, 8.45822, 13.5218, 64.4323, -10.5632, 12.4249, 64.4323, -11.8332, 11.2051, 64.4323, -12.9974, 9.88132, 64.4323, -14.0365, 8.4535, 64.4323, -14.9409, 6.95002, 64.4323, -15.6914, 5.38036, 64.4323, -16.2975, 3.75396, 64.4323, -16.7497, 2.09919, 64.4323, -17.0384, 0.416061, 64.4323, -17.1635, -1.26707, 64.4323, -17.1153, -2.94075, 64.4323, -16.9133, -4.58606, 64.4323, -16.5477, -6.18409, 64.4323, -16.0185, -7.71593, 64.4323, -15.3354, -9.18158, 64.4323, -14.508, -10.5621, 64.4323, -13.5362, -11.8387, 64.4323, -12.4297, -13.0017, 64.4323, -11.2175, -14.0324, 64.4323, -9.88971, -14.9402, 64.4323, -8.46575, -15.6966, 64.4323, -6.9552, -16.3018, 64.4323, -5.38691, -16.7462, 64.4323, -3.76091, -17.0394, 64.4323, -2.10603, -17.1623, 64.4323, -0.422295, -17.115, 64.4323, 1.26144, 27.0436, 59.4431, 14.4523, 27.715, 59.4431, 13.1053, 26.2966, 59.4431, 15.7608, 25.4929, 59.4431, 17.0308, 24.6229, 59.4431, 18.2624, 23.6963, 59.4431, 19.4458, 22.7128, 59.4431, 20.5907, 21.6822, 59.4431, 21.678, 20.5853, 59.4431, 22.7171, 19.4506, 59.4431, 23.6985, 18.2592, 59.4431, 24.6221, 17.0299, 59.4431, 25.4976, 15.7628, 59.4431, 26.2962, 14.4485, 59.4431, 27.0371, 13.1058, 59.4431, 27.7202, 11.7347, 59.4431, 28.3263, 12.5762, 54.8043, 35.1575, 13.6826, 35.1842, 45.1252, -36.4616, 35.1842, 29.9138, -37.8894, 35.1842, 28.0954, 11.451, 35.1842, 45.7506, 9.2005, 35.1842, 46.2509, 6.9122, 35.1842, 46.6454, 4.61444, 35.1842, 46.934, 2.30722, 35.1842, 47.1072, -0.00945282, 35.1842, 47.1649, -2.31667, 35.1842, 47.1072, -4.62389, 35.1842, 46.934, -6.92165, 35.1842, 46.6454, -9.20995, 35.1842, 46.2509, -11.4604, 35.1842, 45.7506, -13.692, 35.1842, 45.1252, -15.8952, 35.1842, 44.4036, -18.0511, 35.1842, 43.5666, -20.1692, 35.1842, 42.6333, -22.2401, 35.1842, 41.5942, -24.2541, 35.1842, 40.4492, -26.2115, 35.1842, 39.2081, -28.1026, 35.1842, 37.8803, -29.9276, 35.1842, 36.4564, -31.6769, 35.1842, 34.9458, -33.3601, 35.1842, 33.3487, -34.9487, 35.1842, 31.6649, -40.4614, 35.1842, 24.2469, -41.5961, 35.1842, 22.2264, -42.6457, 35.1842, 20.1578, -43.5818, 35.1842, 18.0411, -44.4139, 35.1842, 15.8859, -45.142, 35.1842, 13.6826, -45.7566, 35.1842, 11.4601, -46.2673, 35.1842, 9.19906, -46.6549, 35.1842, 6.9188, -46.9386, 35.1842, 4.6193, -47.1088, 35.1842, 2.31017, -47.1656, 35.1842, -0.00857544, -47.1088, 35.1842, -2.3177, -46.9386, 35.1842, -4.62683, -46.6549, 35.1842, -6.92633, -46.2673, 35.1842, -9.20659, -45.7566, 35.1842, -11.4676, -45.142, 35.1842, -13.6998, -44.4139, 35.1842, -15.8934, -43.5818, 35.1842, -18.0582, -39.2227, 35.1842, 26.2, -34.5042, 54.8043, -14.2963, -33.7572, 54.8043, -15.9704, -32.9346, 54.8043, -17.606, -32.0363, 54.8043, -19.2032, -31.0529, 54.8043, -20.7522, -29.9938, 54.8043, -22.2532, -28.8686, 54.8043, -23.6964, -27.6677, 54.8043, -25.0818, -26.4101, 54.8043, -26.4096, -25.0768, 54.8043, -27.67, -23.6962, 54.8043, -28.8726, -28.1026, 35.1842, -37.8879, -22.2495, 54.8043, -29.9983, -20.746, 54.8043, -31.0567, -17.0394, 59.4431, -25.5052, -15.7723, 59.4431, -26.3037, -14.4579, 59.4431, -27.0542, -13.1152, 59.4431, -27.7277, -11.7441, 59.4431, -28.3339, -10.3352, 59.4431, -28.8823, -8.90736, 59.4431, -29.3537, -7.46062, 59.4431, -29.7482, -5.98552, 59.4431, -30.0849, -4.50096, 59.4431, -30.3351, -3.00694, 59.4431, -30.5275, 11.7347, 59.4431, -28.3339, 13.1058, 59.4431, -27.7277, 14.4485, 59.4431, -27.0542, 15.7628, 59.4431, -26.3037, 17.0299, 59.4431, -25.5052, 18.2592, 59.4431, -24.6392, 19.4506, 59.4431, -23.706, -30.5233, 59.4431, 3.00291, -30.3342, 59.4431, 4.49422, -30.0789, 59.4431, 5.97591, -29.748, 59.4431, 7.44798, -29.3508, 59.4431, 8.9008, -28.878, 59.4431, 10.3248, -28.339, 59.4431, 11.7295, -27.7244, 59.4431, 13.1053, -27.0531, 59.4431, 14.4523, -26.306, 59.4431, 15.7608, -25.5023, 59.4431, 17.0308, -24.6324, 59.4431, 18.2624, -23.7057, 59.4431, 19.4458, -22.7223, 59.4431, 20.5907, -21.6916, 59.4431, 21.678, -20.5947, 59.4431, 22.7171, -19.46, 59.4431, 23.6985, -18.2686, 59.4431, 24.6221, -17.0394, 59.4431, 25.4976, -15.7723, 59.4431, 26.2962, -14.4579, 59.4431, 27.0371, -13.1152, 59.4431, 27.7202, -11.7441, 59.4431, 28.3263, -10.3352, 59.4431, 28.8651, -8.90736, 59.4431, 29.3366, -7.46062, 59.4431, 29.7407, -5.98552, 59.4431, 30.0678, -4.50096, 59.4431, 30.3276, -3.00694, 59.4431, 30.5104, -1.51292, 59.4431, 30.6258, -0.00945282, 59.4431, 30.6643, 1.50348, 59.4431, 30.6258, 2.99749, 59.4431, 30.5104, 4.49151, 59.4431, 30.3276, 5.97607, 59.4431, 30.0678, 7.44172, 59.4431, 29.7407, 8.89792, 59.4431, 29.3366, 10.3257, 59.4431, 28.8651, -18.2686, 59.4431, -24.6392, -19.46, 59.4431, -23.706, -20.5947, 59.4431, -22.7246, -21.6916, 59.4431, -21.6855, -22.7223, 59.4431, -20.5983, -23.7057, 59.4431, -19.463, -24.6324, 59.4431, -18.2699, -25.5023, 59.4431, -17.0384, -26.306, 59.4431, -15.7684, -27.0531, 59.4431, -14.4599, -27.7244, 59.4431, -13.1129, -28.339, 59.4431, -11.737, -28.878, 59.4431, -10.3323, -29.3508, 59.4431, -8.90833, -29.748, 59.4431, -7.45551, -30.0789, 59.4431, -5.98344, -30.6368, 59.4431, -1.50951, -30.3342, 59.4431, -4.50175, -30.5233, 59.4431, -3.01044, -30.6746, 59.4431, -0.00857544, -30.6368, 59.4431, 1.50198, 10.8364, 54.8043, 35.7251, -27.6677, 54.8043, 25.0743, -28.8686, 54.8043, 23.6792, -29.9938, 54.8043, 22.236, -31.0529, 54.8043, 20.7447, 9.06812, 54.8043, 36.2158, 7.28098, 54.8043, 36.6199, 5.47491, 54.8043, 36.9278, 3.6594, 54.8043, 37.1587, 1.82497, 54.8043, 37.2934, -0.00945282, 54.8043, 37.3319, -1.83442, 54.8043, 37.2934, -3.66885, 54.8043, 37.1587, -5.48436, 54.8043, 36.9278, -7.29042, 54.8043, 36.6199, -9.07757, 54.8043, 36.2158, -10.8458, 54.8043, 35.7251, -12.5857, 54.8043, 35.1575, -14.2972, 54.8043, 34.4936, -15.9709, 54.8043, 33.7528, -17.6067, 54.8043, 32.9253, -19.2047, 54.8043, 32.0209, -20.746, 54.8043, 31.0395, -22.2495, 54.8043, 29.9908, -23.6962, 54.8043, 28.8555, -25.0768, 54.8043, 27.6624, -26.4101, 54.8043, 26.4021, -32.0363, 54.8043, 19.1957, -32.9346, 54.8043, 17.5985, -33.7572, 54.8043, 15.9629, -34.5042, 54.8043, 14.2888, -35.1661, 54.8043, 12.5762, -35.7335, 54.8043, 10.8347, -36.2252, 54.8043, 9.06437, -36.6318, 54.8043, 7.28441, -36.9438, 54.8043, 5.4756, -37.1613, 54.8043, 3.65716, -37.3032, 54.8043, 1.82911, -37.341, 54.8043, -0.00857544, -37.3032, 54.8043, -1.83663, -36.9438, 54.8043, -5.48313, -37.1613, 54.8043, -3.66469, -36.6318, 54.8043, -7.29194, -36.2252, 54.8043, -9.08152, -35.1661, 54.8043, -12.5837, -35.7335, 54.8043, -10.8422 )
+
+[sub_resource type="BoxShape" id=41]
+extents = Vector3( 3.82871, 3.30619, 4.84464 )
+
+[sub_resource type="SphereMesh" id=22]
+
+[sub_resource type="SpatialMaterial" id=23]
+flags_unshaded = true
+albedo_color = Color( 41.04, 1.74, 38.73, 1 )
+
+[node name="chunk075" instance=ExtResource( 48 )]
+script = ExtResource( 1 )
+
+[node name="foundry" parent="." index="0"]
+material/0 = SubResource( 25 )
+
+[node name="StaticBody" parent="foundry" index="0"]
+collision_layer = 257
+
+[node name="office" parent="." index="1"]
+material/0 = SubResource( 29 )
+
+[node name="reactor" parent="." index="2"]
+material/0 = ExtResource( 65 )
+
+[node name="StaticBody" parent="reactor" index="0"]
+collision_layer = 257
+
+[node name="furnace" parent="." index="3"]
+material/0 = SubResource( 27 )
+
+[node name="StaticBody" parent="furnace" index="0"]
+collision_layer = 257
+
+[node name="cable" parent="." index="4"]
+material/0 = SubResource( 27 )
+
+[node name="cable001" parent="." index="5"]
+material/0 = SubResource( 27 )
+
+[node name="furnace_vent" parent="." index="6"]
+material/0 = SubResource( 27 )
+
+[node name="StaticBody" parent="furnace_vent" index="0"]
+collision_layer = 257
+
+[node name="reactor_windows" parent="." index="7"]
+cast_shadow = 0
+material/0 = SubResource( 24 )
+
+[node name="door" parent="." index="8"]
+material/0 = SubResource( 39 )
+
+[node name="entry" parent="." index="9"]
+material/0 = SubResource( 25 )
+material/1 = SubResource( 39 )
+
+[node name="stairs" parent="entry" index="0"]
+material/0 = SubResource( 25 )
+
+[node name="stairs2" parent="entry" index="1"]
+material/0 = SubResource( 25 )
+
+[node name="StaticBody" parent="entry" index="2"]
+collision_layer = 257
+
+[node name="foundry-influence" parent="." index="10"]
+visible = false
+
+[node name="door001" parent="." index="11"]
+material/0 = SubResource( 39 )
+
+[node name="train_stop" parent="." index="12"]
+material/0 = SubResource( 25 )
+
+[node name="zone_train" type="Spatial" parent="." index="13"]
+transform = Transform( 0.79624, 0, -0.60498, 0, 1, 0, 0.60498, 0, 0.79624, -257.334, 15.2869, 75.6479 )
+
+[node name="rail" parent="zone_train" index="0" instance=ExtResource( 78 )]
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0 )
+
+[node name="20m-1v-slant_to_slant2" parent="zone_train/rail" index="0" instance=ExtResource( 78 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, -1, 6.10352e-05 )
+
+[node name="bridge_slant_straight" parent="zone_train/rail/20m-1v-slant_to_slant2" index="1" instance=ExtResource( 87 )]
+
+[node name="20m-1v-slant_to_slant3" parent="zone_train/rail" index="1" instance=ExtResource( 78 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 40.0001, -2, 7.62939e-05 )
+
+[node name="bridge_slant_straight" parent="zone_train/rail/20m-1v-slant_to_slant3" index="1" instance=ExtResource( 87 )]
+
+[node name="20m-1v-slant_to_slant4" parent="zone_train/rail" index="2" instance=ExtResource( 78 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 60.0001, -3, 0.000106812 )
+
+[node name="bridge_slant_straight" parent="zone_train/rail/20m-1v-slant_to_slant4" index="1" instance=ExtResource( 87 )]
+
+[node name="column-10m" parent="zone_train/rail/20m-1v-slant_to_slant4/bridge_slant_straight" index="1" instance=ExtResource( 90 )]
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, -11, 0 )
+
+[node name="20m-1v-slant_to_slant5" parent="zone_train/rail" index="3" instance=ExtResource( 78 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 80.0001, -4, 0.000137329 )
+
+[node name="bridge_slant_straight" parent="zone_train/rail/20m-1v-slant_to_slant5" index="1" instance=ExtResource( 87 )]
+
+[node name="column-10m" parent="zone_train/rail/20m-1v-slant_to_slant5/bridge_slant_straight" index="1" instance=ExtResource( 90 )]
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, -11, 0 )
+
+[node name="20m-1v-slant_to_slant" parent="zone_train/rail" index="5" instance=ExtResource( 78 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 100, -5, 0.000106812 )
+
+[node name="20m-1v-slant_to_straight" parent="zone_train/rail/20m-1v-slant_to_slant" index="1" instance=ExtResource( 79 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, -1, 6.10352e-05 )
+
+[node name="bridge_slant_straight" parent="zone_train/rail/20m-1v-slant_to_slant/20m-1v-slant_to_straight" index="1" instance=ExtResource( 87 )]
+
+[node name="column-10m" parent="zone_train/rail/20m-1v-slant_to_slant/20m-1v-slant_to_straight/bridge_slant_straight" index="1" instance=ExtResource( 90 )]
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, -11, 0 )
+
+[node name="bridge_slant_straight" parent="zone_train/rail/20m-1v-slant_to_slant" index="2" instance=ExtResource( 87 )]
+
+[node name="column-10m" parent="zone_train/rail/20m-1v-slant_to_slant/bridge_slant_straight" index="1" instance=ExtResource( 90 )]
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, -11, 0 )
+
+[node name="45_up1" parent="zone_train/rail" index="6" instance=ExtResource( 80 )]
+transform = Transform( -0.679265, 0, -0.733894, 0, 1, 0, 0.733894, 0, -0.679265, 161.495, -7.99408, -7.91202 )
+
+[node name="straight_to_15" parent="zone_train/rail/45_up1" index="1" instance=ExtResource( 81 )]
+transform = Transform( 0.939, 0, 0.343918, 0, 1, 0, -0.343918, 0, 0.939, -21.3755, 0.037756, 4.12128 )
+
+[node name="20m-1v-straight_to_slant" parent="zone_train/rail/45_up1/straight_to_15" index="1" instance=ExtResource( 82 )]
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, 0 )
+
+[node name="bridge_slant_straight" parent="zone_train/rail/45_up1/straight_to_15/20m-1v-straight_to_slant" index="1" instance=ExtResource( 87 )]
+
+[node name="column-10m" parent="zone_train/rail/45_up1/straight_to_15/20m-1v-straight_to_slant/bridge_slant_straight" index="1" instance=ExtResource( 90 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11, 0 )
+
+[node name="20m-1v-slant_to_slant" parent="zone_train/rail/45_up1/straight_to_15" index="2" instance=ExtResource( 78 )]
+transform = Transform( -1, 0, -1.49012e-07, 0, 1, 0, 1.49012e-07, 0, -1, -20, -1, 7.62939e-06 )
+
+[node name="bridge_slant_straight" parent="zone_train/rail/45_up1/straight_to_15/20m-1v-slant_to_slant" index="1" instance=ExtResource( 87 )]
+
+[node name="column-10m" parent="zone_train/rail/45_up1/straight_to_15/20m-1v-slant_to_slant/bridge_slant_straight" index="1" instance=ExtResource( 90 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11, 0 )
+
+[node name="20m-1v-slant_to_straight" parent="zone_train/rail/45_up1/straight_to_15" index="3" instance=ExtResource( 79 )]
+transform = Transform( -1, 0, -1.49012e-07, 0, 1, 0, 1.49012e-07, 0, -1, -40, -2, 3.8147e-05 )
+
+[node name="straight_to_15" parent="zone_train/rail/45_up1/straight_to_15/20m-1v-slant_to_straight" index="1" instance=ExtResource( 81 )]
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 20, -1, 0 )
+
+[node name="bridge_level_bend15" parent="zone_train/rail/45_up1/straight_to_15" index="4" instance=ExtResource( 89 )]
+
+[node name="column-10m" parent="zone_train/rail/45_up1/straight_to_15/bridge_level_bend15" index="1" instance=ExtResource( 90 )]
+transform = Transform( 0.933649, 0, -0.358188, 0, 1, 0, 0.358188, 0, 0.933649, 20.1481, -11, 2.75923 )
+
+[node name="bridge_slant_bend45" parent="zone_train/rail/45_up1" index="2" instance=ExtResource( 88 )]
+
+[node name="column-10m" parent="zone_train/rail/45_up1/bridge_slant_bend45" index="1" instance=ExtResource( 90 )]
+transform = Transform( 0.706328, 0, -0.707885, 0, 1, 0, 0.707885, 0, 0.706328, 19.3751, -10.1734, 8.134 )
+
+[node name="column-10m2" parent="zone_train/rail/45_up1/bridge_slant_bend45" index="2" instance=ExtResource( 90 )]
+transform = Transform( 0.918292, 0, -0.395903, 0, 1, 0, 0.395903, 0, 0.918292, 9.02724, -10.9538, 0.680084 )
+
+[node name="20m_straight" parent="zone_train/rail" index="7" instance=ExtResource( 83 )]
+transform = Transform( 0.654409, 0, 0.756141, 0, 1, 0, -0.756141, 0, 0.654409, 207.666, -10.9565, -100.276 )
+
+[node name="20m_straight2" parent="zone_train/rail/20m_straight" index="1" instance=ExtResource( 83 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -7.62939e-06 )
+
+[node name="20m_straight3" parent="zone_train/rail/20m_straight" index="2" instance=ExtResource( 83 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, -7.62939e-06 )
+
+[node name="20m_straight4" parent="zone_train/rail/20m_straight" index="3" instance=ExtResource( 83 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, -7.62939e-06 )
+
+[node name="20m-1v-straight_to_straight" parent="zone_train/rail/20m_straight" index="4" instance=ExtResource( 85 )]
+transform = Transform( -1, 0, -1.49012e-07, 0, 1, 0, 1.49012e-07, 0, -1, 100, 1, -3.8147e-05 )
+
+[node name="20m_straight5" parent="zone_train/rail/20m_straight" index="5" instance=ExtResource( 83 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 100, 1, -2.28882e-05 )
+
+[node name="20m-1v-straight_to_straight2" parent="zone_train/rail/20m_straight" index="6" instance=ExtResource( 85 )]
+transform = Transform( 1, 0, 2.38419e-07, 0, 1, 0, -2.38419e-07, 0, 1, 119, 1, -4.57764e-05 )
+
+[node name="20m_straight6" parent="zone_train/rail/20m_straight" index="7" instance=ExtResource( 83 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 139, 0, -4.57764e-05 )
+
+[node name="20m_straight7" parent="zone_train/rail/20m_straight" index="8" instance=ExtResource( 83 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 159, 0, -4.57764e-05 )
+
+[node name="20m_straight8" parent="zone_train/rail/20m_straight" index="9" instance=ExtResource( 83 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 179, 0, -5.34058e-05 )
+
+[node name="20m-1v-straight_to_straight" parent="zone_train/rail" index="8" instance=ExtResource( 85 )]
+transform = Transform( 0.642028, 0, 0.766682, 0, 1, 0, -0.766682, 0, 0.642028, 337.874, -10.9565, -250.725 )
+
+[node name="20m_straight9" parent="zone_train/rail/20m-1v-straight_to_straight" index="1" instance=ExtResource( 83 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.0001, -1, -5.34058e-05 )
+
+[node name="20m_straight10" parent="zone_train/rail/20m-1v-straight_to_straight" index="2" instance=ExtResource( 83 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 40, -1, -6.86646e-05 )
+
+[node name="20m_straight11" parent="zone_train/rail/20m-1v-straight_to_straight" index="3" instance=ExtResource( 83 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 60.0001, -1, -6.86646e-05 )
+
+[node name="20m-1v-straight_to_slant2" parent="zone_train/rail/20m-1v-straight_to_straight" index="4" instance=ExtResource( 82 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 80, -1, 0 )
+
+[node name="rail_gravel" type="CSGPolygon" parent="zone_train/rail" index="9"]
+transform = Transform( 7.54979e-08, 0, -1, 0, 1, 0, 1, 0, 7.54979e-08, 0, 0, 0 )
+use_collision = true
+collision_layer = 257
+polygon = PoolVector2Array( -3.491, -0.240085, -2.1, 0, 1.7, 0, 3.7955, -0.788329, 6, -3.1, 6.60641, -8.65937, -7, -6 )
+mode = 2
+path_node = NodePath("Path")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.1
+path_rotation = 2
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+smooth_faces = true
+material = SubResource( 9 )
+
+[node name="Path" type="Path" parent="zone_train/rail/rail_gravel" index="0"]
+curve = SubResource( 42 )
+
+[node name="rail_gravel2" type="CSGPolygon" parent="zone_train/rail" index="10"]
+transform = Transform( 0.904634, 0, -0.426189, 0, 1, 0, 0.426189, 0, 0.904634, 186.742, -10.6093, -59.5542 )
+use_collision = true
+collision_layer = 257
+polygon = PoolVector2Array( -3.491, -0.240085, -2.1, 0, 1.7, 0, 4, -1, 6, -5, -7, -4 )
+mode = 2
+path_node = NodePath("Path")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.1
+path_rotation = 2
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+smooth_faces = true
+material = SubResource( 9 )
+
+[node name="Path" type="Path" parent="zone_train/rail/rail_gravel2" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00276184, 0.015275, 0.00106812 )
+curve = SubResource( 43 )
+
+[node name="cargo_cart2" parent="zone_train" index="1" instance=ExtResource( 91 )]
+transform = Transform( -0.998796, 0.0490634, -1.50996e-07, 0.0490634, 0.998796, -1.69014e-09, 1.50731e-07, -9.09648e-09, -1, 19.8844, 0.173805, -1.52588e-05 )
+
+[node name="cargo_cart3" parent="zone_train/cargo_cart2" index="3" instance=ExtResource( 91 )]
+transform = Transform( 0.999931, 0.0117265, 0, -0.0117265, 0.999931, 3.72529e-09, 0, -3.72529e-09, 1, -12.289, -0.0599918, 0 )
+
+[node name="cargo_cart4" parent="zone_train/cargo_cart2" index="4" instance=ExtResource( 91 )]
+transform = Transform( 0.999974, -0.00713612, 2.08616e-07, 0.00713616, 0.999975, 1.86265e-09, -2.38419e-07, -1.86265e-09, 1, -24.5635, -0.0987034, 0 )
+
+[node name="cargo_cart5" parent="zone_train/cargo_cart2" index="5" instance=ExtResource( 91 )]
+transform = Transform( 0.999947, 0.0102043, 2.08616e-07, -0.0102043, 0.999948, -3.72529e-09, -2.38419e-07, 0, 1, -37.073, -0.108541, -3.05176e-05 )
+
+[node name="cargo_cart6" parent="zone_train/cargo_cart2" index="6" instance=ExtResource( 91 )]
+transform = Transform( 0.999993, 0.00356909, 4.47035e-07, -0.00356915, 0.999994, -3.72529e-09, -4.47035e-07, 3.72529e-09, 1, -49.2336, -0.0657072, -3.05176e-05 )
+
+[node name="cargo_cart7" parent="zone_train/cargo_cart2" index="7" instance=ExtResource( 91 )]
+transform = Transform( 0.999993, 0.00356909, 4.47035e-07, -0.00356905, 0.999994, -3.72529e-09, -4.47035e-07, 3.72529e-09, 1, -61.4054, -0.0581789, -1.52588e-05 )
+
+[node name="cargo_cart8" parent="zone_train/cargo_cart2" index="8" instance=ExtResource( 91 )]
+transform = Transform( 0.999986, -0.00513253, 2.08616e-07, 0.00513258, 0.999987, 9.31323e-09, -2.38419e-07, -9.31323e-09, 1, -73.6388, -0.091917, -3.05176e-05 )
+
+[node name="cargo_cart9" parent="zone_train/cargo_cart2" index="9" instance=ExtResource( 91 )]
+transform = Transform( 0.999986, -0.00513253, 2.08616e-07, 0.00513258, 0.999987, 3.72529e-09, -2.38419e-07, -3.72529e-09, 1, -85.8746, -0.154743, 0 )
+
+[node name="cargo_cart10" parent="zone_train/cargo_cart2" index="10" instance=ExtResource( 91 )]
+transform = Transform( 0.999986, -0.00513253, 2.08616e-07, 0.00513258, 0.999987, 3.72529e-09, -2.38419e-07, -3.72529e-09, 1, -98.2667, -0.218294, -3.05176e-05 )
+
+[node name="cargo_cart11" parent="zone_train/cargo_cart2" index="11" instance=ExtResource( 91 )]
+transform = Transform( 0.999986, -0.00513253, 2.08616e-07, 0.00513258, 0.999987, 3.72529e-09, -2.38419e-07, -3.72529e-09, 1, -110.505, -0.281121, -3.05176e-05 )
+
+[node name="cargo_cart12" parent="zone_train/cargo_cart2" index="12" instance=ExtResource( 91 )]
+transform = Transform( 0.999076, 0.0060968, 0.0424963, -0.00611163, 0.999981, 0.000218108, -0.0424941, -0.000477631, 0.999096, -122.658, -0.133576, 0.150009 )
+
+[node name="cargo_cart13" parent="zone_train/cargo_cart2" index="13" instance=ExtResource( 91 )]
+transform = Transform( 0.903721, -0.00962587, 0.42801, 0.0114598, 0.999933, -0.0017085, -0.427965, 0.00644894, 0.903771, -134.597, -0.2444, 2.5603 )
+
+[node name="cargo_cart14" parent="zone_train/cargo_cart2" index="14" instance=ExtResource( 91 )]
+transform = Transform( 0.650947, 0.0559124, 0.757059, -0.0425057, 0.998404, -0.0371887, -0.757929, -0.00797139, 0.652285, -143.673, -0.163246, 10.1269 )
+
+[node name="cargo_cart15" parent="zone_train/cargo_cart2" index="15" instance=ExtResource( 91 )]
+transform = Transform( 0.443565, 0.0559124, 0.894494, -0.0319915, 0.998404, -0.0465432, -0.895668, -0.00797134, 0.444646, -150.468, 0.333378, 20.2166 )
+
+[node name="cargo_cart16" parent="zone_train/cargo_cart2" index="16" instance=ExtResource( 91 )]
+transform = Transform( 0.3774, 0.0403883, 0.925167, 0.0104247, 0.9988, -0.0478551, -0.925988, 0.0277053, 0.376527, -155.401, 0.475876, 31.474 )
+
+[node name="cargo_cart2" parent="zone_train/cargo_cart2" index="17" instance=ExtResource( 91 )]
+transform = Transform( 1, 0, 0, 3.72529e-09, 1, 5.58794e-09, -2.98023e-08, -5.58794e-09, 1, 12.3119, 2.86102e-06, 3.05176e-05 )
+
+[node name="rock1" parent="zone_train" index="2" instance=ExtResource( 7 )]
+transform = Transform( 0.980829, 0.017272, -0.194106, -0.167433, -0.434952, -0.88475, -0.0997086, 0.900289, -0.423721, 40.5925, -7.3977, 3.27844 )
+
+[node name="rock2" parent="zone_train" index="3" instance=ExtResource( 7 )]
+transform = Transform( 0.0964327, -0.959955, -0.263033, 0.654446, 0.260261, -0.709905, 0.749935, -0.103683, 0.653337, 40.2531, -5.2, -5.61154 )
+
+[node name="rock3" parent="zone_train" index="4" instance=ExtResource( 13 )]
+transform = Transform( 0.73268, -0.311735, 0.604981, 0.391509, 0.920174, 0, -0.556687, 0.236855, 0.796241, 28.6701, -9.47767, 15.4605 )
+
+[node name="rock9" parent="zone_train" index="5" instance=ExtResource( 32 )]
+transform = Transform( -0.41052, -0.682256, 0.604981, 0.856846, -0.515573, 0, 0.311912, 0.518375, 0.796241, 161.57, -1.6892, -236.496 )
+
+[node name="fountain2" parent="zone_train" index="6" instance=ExtResource( 4 )]
+transform = Transform( 0.796241, -0.00778047, 0.604931, 0, 0.999918, 0.0128607, -0.604981, -0.0102402, 0.796175, 112.775, -13.0863, 16.035 )
+
+[node name="rock6" parent="zone_train" index="7" instance=ExtResource( 13 )]
+transform = Transform( 0.984514, 0, -0.17531, 0, 1, 0, 0.17531, 0, 0.984514, 42.3296, 5.11697, -51.2165 )
+
+[node name="drill2" parent="zone_train" index="8" instance=ExtResource( 3 )]
+transform = Transform( 0.796241, 0.439155, -0.416107, 0, -0.687802, -0.725899, -0.604981, 0.57799, -0.547656, 74.8284, 9.58017, -57.7458 )
+
+[node name="garden" parent="zone_train" index="9" instance=ExtResource( 31 )]
+transform = Transform( -0.993652, -0.0357697, -0.106667, -0.0304978, 0.998251, -0.0506527, 0.108292, -0.0470781, -0.993004, 92.4022, -13.35, 31.6703 )
+
+[node name="garden2" parent="zone_train" index="10" instance=ExtResource( 31 )]
+transform = Transform( 0.83951, 0.0100977, 0.543252, -0.00125623, 0.999861, -0.0166436, -0.543345, 0.0132901, 0.839406, 99.4128, -13.739, 18.0949 )
+
+[node name="garden3" parent="zone_train" index="11" instance=ExtResource( 31 )]
+transform = Transform( 0.221042, 0.0100977, 0.975212, 0.01073, 0.999861, -0.012785, -0.975206, 0.0132901, 0.220903, 86.3686, -13.6858, 24.002 )
+
+[node name="garden_melon" parent="zone_train" index="12" instance=ExtResource( 29 )]
+transform = Transform( -0.997604, -0.0484746, 0.0493779, -0.0540223, 0.991539, -0.118033, -0.0432392, -0.120417, -0.991782, 101.457, -12.8774, 27.1613 )
+
+[node name="rock5" parent="zone_train" index="13" instance=ExtResource( 7 )]
+transform = Transform( 0.796241, 0.376251, 0.473748, 0, 0.783079, -0.621922, -0.604981, 0.4952, 0.623519, 130.592, -11.1027, 20.3932 )
+
+[node name="rock7" parent="zone_train" index="14" instance=ExtResource( 7 )]
+transform = Transform( 0.796241, -0.366918, 0.481012, 0, 0.795087, 0.606496, -0.604981, -0.482917, 0.633081, 112.82, -8.70796, -20.2965 )
+
+[node name="rock8" parent="zone_train" index="15" instance=ExtResource( 32 )]
+transform = Transform( 0.796241, 0.182021, 0.576949, 0, 0.953665, -0.300871, -0.604981, 0.239566, 0.759347, 135.11, -9.06556, -39.3248 )
+
+[node name="garden_melon2" parent="zone_train" index="16" instance=ExtResource( 29 )]
+transform = Transform( 0.788333, 0.115094, 0.604389, -0.10995, 0.992888, -0.0456637, -0.605346, -0.0304544, 0.79538, 47.4301, 26.9059, -136.844 )
+
+[node name="scrap6" parent="zone_train" index="17" instance=ExtResource( 9 )]
+transform = Transform( 0.796241, 0, 0.604981, 0, 1, 0, -0.604981, 0, 0.796241, 67.2663, 3.68637, -47.9657 )
+
+[node name="scrap2" parent="zone_train/scrap6" index="1" instance=ExtResource( 6 )]
+transform = Transform( 0.300209, 0.930212, -0.211139, -0.760876, 0.367022, 0.535128, 0.575275, 2.98023e-08, 0.81796, 3.86646, 1.66118, 2.5087 )
+
+[node name="mine_shack_small" parent="zone_train" index="18" instance=ExtResource( 40 )]
+transform = Transform( 0.796241, 0, 0.604981, 0, 1, 0, -0.604981, 0, 0.796241, 74.3181, 10.5688, -89.235 )
+
+[node name="wind_generator6" parent="zone_train" index="19" instance=ExtResource( 12 )]
+transform = Transform( -0.31444, 0, 0.949278, 0, 1, 0, -0.949278, 0, -0.31444, 89.2238, -2.4379, -165.162 )
+active = false
+move_scale = 0.0
+
+[node name="wind_generator7" parent="zone_train" index="20" instance=ExtResource( 12 )]
+transform = Transform( -0.977135, 0, 0.21262, 0, 1, 0, -0.21262, 0, -0.977135, 87.8487, -5.2684, -183.342 )
+move_scale = 0.2
+
+[node name="wind_generator8" parent="zone_train" index="21" instance=ExtResource( 12 )]
+transform = Transform( -0.966065, 0, 0.258299, 0, 1, 0, -0.258299, 0, -0.966065, 82.6012, -6.52615, -187.554 )
+move_scale = 0.2
+
+[node name="zone_cliff" type="Spatial" parent="." index="14"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 138.343, 101.545, 204.384 )
+
+[node name="fountain" parent="zone_cliff" index="0" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 0.992113, 0.125351, 0, -0.125351, 0.992113, 62.8426, 32.5922, 2.98436 )
+
+[node name="rock3" parent="zone_cliff" index="1" instance=ExtResource( 7 )]
+transform = Transform( 0.913162, 0.389394, -0.120448, 0, 0.295508, 0.95534, 0.407597, -0.87238, 0.269847, 25.9986, 12.6542, 14.3674 )
+
+[node name="rock4" parent="zone_cliff" index="2" instance=ExtResource( 7 )]
+transform = Transform( -0.528089, -0.594257, -0.606614, -0.400818, 0.804195, -0.438881, 0.748644, 0.0113731, -0.662875, 25.9986, 7.39322, 14.3674 )
+
+[node name="mine_shack" parent="zone_cliff" index="3" instance=ExtResource( 47 )]
+transform = Transform( -0.91568, -0.401477, 0.0186005, -4.04596e-09, -0.0462804, -0.998928, 0.401908, -0.914699, 0.042378, 8.72688, 38.4585, 63.351 )
+
+[node name="rock1" parent="zone_cliff" index="4" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -41.4391, 27.0751, 50.209 )
+
+[node name="rock5" parent="zone_cliff" index="5" instance=ExtResource( 74 )]
+transform = Transform( 0.479996, -0.877271, 0, 0.877271, 0.479996, 0, 0, 0, 1, 77.1277, 36.9793, 24.7863 )
+
+[node name="hut" parent="zone_cliff" index="6" instance=ExtResource( 75 )]
+transform = Transform( -0.660173, 0, 0.751114, 0, 1, 0, -0.751114, 0, -0.660173, 54.4905, 35.4091, 17.6895 )
+
+[node name="hut2" parent="zone_cliff" index="7" instance=ExtResource( 75 )]
+transform = Transform( -0.923494, 0, -0.383612, 0, 1, 0, 0.383612, 0, -0.923494, -87.8166, 50.2687, 48.755 )
+
+[node name="hut3" parent="zone_cliff" index="8" instance=ExtResource( 75 )]
+transform = Transform( -0.219702, 0.00735825, 0.975539, 0.0334732, 0.99944, 4.654e-10, -0.974993, 0.0326544, -0.219825, -107.436, 50.0689, 47.849 )
+
+[node name="tree1" parent="zone_cliff" index="9" instance=ExtResource( 76 )]
+transform = Transform( 0.807886, 0, 0.589338, 0, 1, 0, -0.589338, 0, 0.807886, -145.121, 47.3218, 49.2833 )
+
+[node name="zone_rubble" type="Spatial" parent="." index="15"]
+transform = Transform( -0.0056199, 0, -0.999984, 0.960288, 0.278958, -0.00539681, 0.278953, -0.960303, -0.00156771, 108.997, -5.052, 152.768 )
+
+[node name="scrap_pile2" parent="zone_rubble" index="0" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, -2.32831e-10, 0, 1, 1.16415e-10, -1.45519e-10, 0, 1, 0, 0, 0 )
+
+[node name="scrap_pile1" parent="zone_rubble" index="1" instance=ExtResource( 8 )]
+transform = Transform( -0.990364, -0.0244487, 0.136316, -0.0445561, 0.98821, -0.146483, -0.131127, -0.151145, -0.979776, 1.51107, -5.45358, 15.7012 )
+
+[node name="scrap3" parent="zone_rubble" index="2" instance=ExtResource( 11 )]
+transform = Transform( 0.189222, -0.9808, 0.0471721, 0.955206, 0.172727, -0.240308, 0.227546, 0.0905306, 0.96955, 3.57917, -15.5367, 7.21799 )
+
+[node name="scrap2" parent="zone_rubble" index="3" instance=ExtResource( 6 )]
+transform = Transform( 0.998767, -0.047502, 0.0145032, 0.0144823, -0.000770439, -0.999895, 0.0475081, 0.998871, -8.1508e-05, 4.89521, -10.7754, -9.46266 )
+
+[node name="scrap4" parent="zone_rubble" index="4" instance=ExtResource( 6 )]
+transform = Transform( 0.998767, -0.047502, 0.0145032, 0.0144823, -0.000770439, -0.999895, 0.0475081, 0.998871, -8.1508e-05, 0.981533, -4.05316, 19.8073 )
+
+[node name="rock1" parent="zone_rubble" index="5" instance=ExtResource( 7 )]
+transform = Transform( -0.627865, 0.777461, 0.0366264, -0.775982, -0.621637, -0.106861, -0.0603116, -0.0955156, 0.993599, 5.43008, -16.8395, -3.34958 )
+
+[node name="rock2" parent="zone_rubble" index="6" instance=ExtResource( 7 )]
+transform = Transform( 0.924716, 0.259009, 0.278954, 0.269055, 0.0736657, -0.960304, -0.269276, 0.963062, -0.00156772, 0.871723, -7.22406, 7.94923 )
+
+[node name="scrap5" parent="zone_rubble" index="7" instance=ExtResource( 6 )]
+transform = Transform( 0.611791, 0.761334, -0.21467, -0.716192, 0.648345, 0.258297, 0.33583, -0.00427869, 0.941912, -6.50565, 43.4729, -10.7826 )
+
+[node name="junkyard" parent="." index="16" instance=ExtResource( 2 )]
+transform = Transform( -0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, -93.9996, 18, -4 )
+
+[node name="active_entities" type="Spatial" parent="." index="17"]
+
+[node name="zone_scrapyard" type="Spatial" parent="active_entities" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -139.049, 4.58447, 0.849531 )
+
+[node name="ReflectionProbe2" type="ReflectionProbe" parent="active_entities/zone_scrapyard" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 44.0966, 7.82103, -4.86204 )
+max_distance = 16384.0
+extents = Vector3( 10.7693, 5.28234, 10.5524 )
+origin_offset = Vector3( 0.478516, 1.41797, -0.0644531 )
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="active_entities/zone_scrapyard" index="1"]
+transform = Transform( 0.943853, 0.205315, 0.258819, -0.212558, 0.977148, -1.27428e-07, -0.252905, -0.055014, 0.965926, 46.6413, 41.341, 6.05055 )
+max_distance = 16384.0
+extents = Vector3( 8.86245, 4.18666, 4.13545 )
+
+[node name="bed_native" parent="active_entities/zone_scrapyard" index="2" instance=ExtResource( 17 )]
+transform = Transform( 0.878594, 0, -0.477569, 0, 1, 0, 0.477569, 0, 0.878594, 65.7308, 43.8515, -54.3631 )
+
+[node name="bed_native2" parent="active_entities/zone_scrapyard" index="3" instance=ExtResource( 17 )]
+transform = Transform( -0.871827, 0, 0.489814, 0, 1, 0, -0.489814, 0, -0.871827, 70.3742, 43.8515, -51.9399 )
+
+[node name="wind_generator" parent="active_entities/zone_scrapyard" index="4" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.9044, 51.0097, 15.2517 )
+
+[node name="wind_generator2" parent="active_entities/zone_scrapyard" index="5" instance=ExtResource( 12 )]
+transform = Transform( -0.790492, 0, 0.612472, 0, 1, 0, -0.612472, 0, -0.790492, 42.5366, 45.9689, -27.8015 )
+
+[node name="wind_generator3" parent="active_entities/zone_scrapyard" index="6" instance=ExtResource( 12 )]
+transform = Transform( 0.192632, 0, -0.981271, 0, 1, 0, 0.981271, 0, 0.192632, 35.2974, 43.4869, -22.7343 )
+
+[node name="npc_junkyard_shop" parent="active_entities/zone_scrapyard" index="7" instance=ExtResource( 14 )]
+transform = Transform( 0.994546, 0.0494039, 0.0918543, -0.0381831, 0.992023, -0.120134, -0.097057, 0.115972, 0.9885, 51.7828, 38.0577, 2.53023 )
+dialog = ExtResource( 15 )
+visual_name = "Shopkeeper"
+friendly_id = "junkyard_shop"
+sitting = true
+inventory_data = ExtResource( 16 )
+
+[node name="incense" parent="active_entities/zone_scrapyard" index="8" instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 50.1302, 39.1055, 4.39286 )
+
+[node name="bottle1" parent="active_entities/zone_scrapyard" index="9" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 49.8466, 39.1343, 4.16592 )
+
+[node name="bottle2" parent="active_entities/zone_scrapyard" index="10" instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 50.1714, 39.1031, 4.18 )
+
+[node name="bottle3" parent="active_entities/zone_scrapyard" index="11" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 50.2273, 39.0984, 3.92563 )
+
+[node name="bottle4" parent="active_entities/zone_scrapyard" index="12" instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 50.1936, 39.1023, 3.68792 )
+
+[node name="bottle5" parent="active_entities/zone_scrapyard" index="13" instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 50.0247, 39.1182, 3.77116 )
+
+[node name="bottle6" parent="active_entities/zone_scrapyard" index="14" instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 49.994, 39.1206, 3.98549 )
+
+[node name="fruit_stand" parent="active_entities/zone_scrapyard" index="15" instance=ExtResource( 21 )]
+transform = Transform( 0.249191, 0.125133, -0.960336, -0.0314292, 0.99214, 0.121122, 0.967944, 0, 0.251165, 48.3227, 39.2417, 4.22574 )
+
+[node name="npc" parent="active_entities/zone_scrapyard" index="16" instance=ExtResource( 22 )]
+transform = Transform( -0.815687, 0, -0.578492, 0, 1, 0, 0.578492, 0, -0.815687, 42.3592, 39.9742, 8.95737 )
+sitting = true
+
+[node name="npc8" parent="active_entities/zone_scrapyard" index="17" instance=ExtResource( 22 )]
+transform = Transform( -0.968286, 0, 0.249844, 0, 1, 0, -0.249844, 0, -0.968286, 41.1508, 40.1795, 9.22547 )
+sitting = true
+
+[node name="npc2" parent="active_entities/zone_scrapyard" index="18" instance=ExtResource( 22 )]
+transform = Transform( -0.903668, 0, 0.428233, 0, 1, 0, -0.428233, 0, -0.903668, 34.3494, 41.922, -20.9904 )
+
+[node name="npc3" parent="active_entities/zone_scrapyard" index="19" instance=ExtResource( 22 )]
+transform = Transform( -0.903668, 0, 0.428233, 0, 1, 0, -0.428233, 0, -0.903668, 37.8194, 40.6244, -5.43966 )
+
+[node name="npc_priest" parent="active_entities/zone_scrapyard" index="20" instance=ExtResource( 22 )]
+transform = Transform( 0.362088, 0, 0.932144, 0, 1, 0, -0.932144, 0, 0.362088, 54.7182, 45.3579, -13.7899 )
+dialog = ExtResource( 23 )
+visual_name = "Junkyard Priest"
+friendly_id = "junkyard_priest"
+sitting = true
+
+[node name="npc4" parent="active_entities/zone_scrapyard" index="21" instance=ExtResource( 22 )]
+transform = Transform( -0.864431, 0, -0.502752, 0, 1, 0, 0.502752, 0, -0.864431, 44.249, 10.8516, 8.92713 )
+
+[node name="npc_follower" parent="active_entities/zone_scrapyard" index="22" instance=ExtResource( 22 )]
+transform = Transform( -0.562988, 0, -0.826465, 0, 1, 0, 0.826465, 0, -0.562988, 55.8277, 44.211, -9.77344 )
+visual_name = "Follower"
+sitting = true
+
+[node name="npc_follower2" parent="active_entities/zone_scrapyard" index="23" instance=ExtResource( 22 )]
+transform = Transform( -0.484286, 0, -0.87491, 0, 1, 0, 0.87491, 0, -0.484286, 56.8353, 44.4089, -11.5747 )
+visual_name = "Follower"
+sitting = true
+
+[node name="npc_follower3" parent="active_entities/zone_scrapyard" index="24" instance=ExtResource( 22 )]
+transform = Transform( -0.22669, 0, -0.973967, 0, 1, 0, 0.973967, 0, -0.22669, 57.5464, 44.757, -13.7744 )
+visual_name = "Follower"
+sitting = true
+
+[node name="sitting_pillow" parent="active_entities/zone_scrapyard" index="25" instance=ExtResource( 24 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 66.3786, 43.8515, -55.9845 )
+
+[node name="sitting_pillow2" parent="active_entities/zone_scrapyard" index="26" instance=ExtResource( 24 )]
+transform = Transform( -0.0701968, 0, -0.997533, 0, 1, 0, 0.997533, 0, -0.0701968, 68.0966, 43.8515, -55.1143 )
+
+[node name="shelf" parent="active_entities/zone_scrapyard" index="27" instance=ExtResource( 25 )]
+transform = Transform( -0.969108, 0, -0.246638, 0, 1, 0, 0.246638, 0, -0.969108, 72.0921, 43.8515, -54.3737 )
+
+[node name="stump_table" parent="active_entities/zone_scrapyard" index="28" instance=ExtResource( 26 )]
+transform = Transform( -0.9876, 0, 0.15699, 0, 1, 0, -0.15699, 0, -0.9876, 71.1911, 43.8515, -55.6113 )
+
+[node name="outlet_box" parent="active_entities/zone_scrapyard/stump_table" index="1" instance=ExtResource( 27 )]
+transform = Transform( 0.788832, 0, 0.614608, 0, 1, 0, -0.614608, 0, 0.788832, -0.33712, 1.02678, 0.163052 )
+
+[node name="wind_generator4" parent="active_entities/zone_scrapyard" index="29" instance=ExtResource( 12 )]
+transform = Transform( -0.985456, 0, 0.169931, 0, 1, 0, -0.169931, 0, -0.985456, 70.107, 52.5436, -50.5308 )
+
+[node name="npc5" parent="active_entities/zone_scrapyard" index="30" instance=ExtResource( 22 )]
+transform = Transform( -0.270483, 0, 0.962725, 0, 1, 0, -0.962725, 0, -0.270483, 70.7269, 43.8515, -54.0549 )
+
+[node name="npc7" parent="active_entities/zone_scrapyard" index="31" instance=ExtResource( 22 )]
+transform = Transform( 0.257466, 0, 0.966287, 0, 1, 0, -0.966287, 0, 0.257466, 66.3537, 43.9678, -56.0678 )
+sitting = true
+
+[node name="npc6" parent="active_entities/zone_scrapyard" index="32" instance=ExtResource( 22 )]
+transform = Transform( -0.0961623, 0, -0.995366, 0, 1, 0, 0.995366, 0, -0.0961623, 68.1057, 43.9678, -55.2298 )
+sitting = true
+
+[node name="cactus_round_flower" parent="active_entities/zone_scrapyard" index="33" instance=ExtResource( 28 )]
+transform = Transform( 1, 0, 0, 0, 0.978335, 0.207026, 0, -0.207026, 0.978335, -44.1266, -2.67772, 150.202 )
+
+[node name="cactus_round_flower2" parent="active_entities/zone_scrapyard" index="34" instance=ExtResource( 28 )]
+transform = Transform( -0.999956, -0.00051136, 0.00938933, 0, 0.99852, 0.0543812, -0.00940324, 0.0543788, -0.998476, -44.8226, -2.75085, 149.666 )
+
+[node name="cactus_round" parent="active_entities/zone_scrapyard" index="35" instance=ExtResource( 30 )]
+transform = Transform( -0.371396, -0.0336768, 0.927863, -0.0903057, 0.995914, 0, -0.924072, -0.0837914, -0.37292, -44.2556, -2.41365, 152.491 )
+
+[node name="cactus_round2" parent="active_entities/zone_scrapyard" index="36" instance=ExtResource( 30 )]
+transform = Transform( 0.113085, 0.0207564, -0.993369, -0.180532, 0.983569, 1.34507e-09, 0.977047, 0.179335, 0.114974, -43.7826, -2.64828, 147.903 )
+
+[node name="cactus_round3" parent="active_entities/zone_scrapyard" index="37" instance=ExtResource( 30 )]
+transform = Transform( -0.916893, 0.063794, -0.394001, 0.0694084, 0.997588, 0, 0.393051, -0.027347, -0.91911, -41.6066, -2.60785, 149.447 )
+
+[node name="cactus_round4" parent="active_entities/zone_scrapyard" index="38" instance=ExtResource( 30 )]
+transform = Transform( -0.0383053, -0.156525, 0.986931, 0, 0.987656, 0.156639, -0.999266, 0.00600012, -0.0378324, -42.0736, -2.38584, 146.342 )
+
+[node name="cactus_round5" parent="active_entities/zone_scrapyard" index="39" instance=ExtResource( 30 )]
+transform = Transform( -0.753806, 0, 0.657097, 0, 1, 0, -0.657097, 0, -0.753806, -43.7046, -2.44214, 146.477 )
+
+[node name="cactus_round_flower3" parent="active_entities/zone_scrapyard" index="40" instance=ExtResource( 28 )]
+transform = Transform( -0.91911, 0, -0.394001, 0, 1, 0, 0.394001, 0, -0.91911, -43.5366, -2.75085, 149.373 )
+
+[node name="cactus_round_flower4" parent="active_entities/zone_scrapyard" index="41" instance=ExtResource( 28 )]
+transform = Transform( -0.820456, -0.0472267, -0.569755, 0, 0.996582, -0.0826061, 0.571709, -0.0677747, -0.817652, -45.4716, -2.62539, 151.344 )
+
+[node name="npc9" parent="active_entities/zone_scrapyard" index="42" instance=ExtResource( 22 )]
+transform = Transform( -0.975726, 0, -0.218993, 0, 1, 0, 0.218993, 0, -0.975726, 2.19438, 37.6129, -5.59116 )
+visual_name = "Gardener"
+
+[node name="water_pot" parent="active_entities/zone_scrapyard" index="43" instance=ExtResource( 34 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 51.1491, 49.7969, -8.51985 )
+
+[node name="sofa" parent="active_entities/zone_scrapyard" index="44" instance=ExtResource( 33 )]
+transform = Transform( -0.304338, 0.030283, -0.952083, 0.108306, 0.994113, -0.00300076, 0.946387, -0.10403, -0.305826, 51.8656, 49.5659, -10.4611 )
+
+[node name="npc_riley" parent="active_entities/zone_scrapyard" index="45" instance=ExtResource( 35 )]
+transform = Transform( 0.274034, 0, 0.96172, 0, 1, 0, -0.96172, 0, 0.274034, 51.9136, 49.7775, -10.2373 )
+sitting = true
+
+[node name="rail_cart" parent="active_entities/zone_scrapyard" index="46" instance=ExtResource( 36 )]
+transform = Transform( 1, 0, 0, 0, 0.811677, 0.584106, 0, -0.584106, 0.811677, -35.3056, 17.7365, 75.4763 )
+script = null
+
+[node name="rail_cart2" parent="active_entities/zone_scrapyard" index="47" instance=ExtResource( 36 )]
+transform = Transform( -0.181251, 0.760225, 0.623863, 0.135736, 0.647638, -0.749761, -0.974025, -0.0512138, -0.220575, -31.0486, 18.1325, 75.1717 )
+script = null
+
+[node name="outlet_box" parent="active_entities/zone_scrapyard" index="48" instance=ExtResource( 27 )]
+transform = Transform( 0.963939, 0, -0.266122, 0, 1, 0, 0.266122, 0, 0.963939, -37.5996, 16.5179, 76.8336 )
+
+[node name="phone" parent="active_entities/zone_scrapyard/outlet_box" index="1" instance=ExtResource( 37 )]
+transform = Transform( -0.142268, 0, -0.989828, 0, 1, 0, 0.989828, 0, -0.142268, 0.490479, -0.0329533, 0.302551 )
+
+[node name="phone2" parent="active_entities/zone_scrapyard/outlet_box" index="2" instance=ExtResource( 37 )]
+transform = Transform( 0.590805, 0, -0.806815, 0, 1, 0, 0.806815, 0, 0.590805, 0.796127, -0.0329533, 0.147301 )
+on = true
+
+[node name="charger" parent="active_entities/zone_scrapyard/outlet_box" index="3" instance=ExtResource( 39 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0953217, 0.053381, 0.0711136 )
+
+[node name="charger2" parent="active_entities/zone_scrapyard/outlet_box" index="4" instance=ExtResource( 39 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0995026, 0.212641, 0.0812683 )
+
+[node name="drink_fridge" parent="active_entities/zone_scrapyard/outlet_box" index="5" instance=ExtResource( 38 )]
+transform = Transform( 0.75882, 0, -0.651301, 0, 1, 0, 0.651301, 0, 0.75882, 0.394272, -0.0326328, -0.756157 )
+
+[node name="sitting_pillow3" parent="active_entities/zone_scrapyard" index="49" instance=ExtResource( 24 )]
+transform = Transform( 0.0696142, 0, 0.997574, 0, 1, 0, -0.997574, 0, 0.0696142, -35.4916, 16.4823, 77.1522 )
+
+[node name="sitting_pillow4" parent="active_entities/zone_scrapyard" index="50" instance=ExtResource( 24 )]
+transform = Transform( -0.558394, 0, -0.829576, 0, 1, 0, 0.829576, 0, -0.558394, -34.0446, 16.4424, 78.2013 )
+
+[node name="npc_guard" parent="active_entities/zone_scrapyard" index="51" instance=ExtResource( 22 )]
+transform = Transform( 0.997225, 0, -0.0744473, 0, 1, 0, 0.0744473, 0, 0.997225, -35.5306, 16.6398, 77.1942 )
+visual_name = "Guard"
+sitting = true
+
+[node name="npc_guard2" parent="active_entities/zone_scrapyard" index="52" instance=ExtResource( 22 )]
+transform = Transform( 0.855578, 0, -0.517675, 0, 1, 0, 0.517675, 0, 0.855578, -34.0726, 16.5624, 78.2658 )
+visual_name = "Guard"
+sitting = true
+
+[node name="wind_generator5" parent="active_entities/zone_scrapyard" index="53" instance=ExtResource( 12 )]
+transform = Transform( 0.483436, 0, -0.87538, 0, 1, 0, 0.87538, 0, 0.483436, -40.9766, 25.2064, 51.4507 )
+
+[node name="sitting_pillow5" parent="active_entities/zone_scrapyard" index="54" instance=ExtResource( 24 )]
+transform = Transform( 0.628105, 0, -0.778128, 0, 1, 0, 0.778128, 0, 0.628105, -6.71863, 21.2885, 46.4658 )
+
+[node name="sitting_pillow6" parent="active_entities/zone_scrapyard" index="55" instance=ExtResource( 24 )]
+transform = Transform( -0.996316, 0, -0.0857626, 0, 1, 0, 0.0857626, 0, -0.996316, -4.67262, 21.2885, 47.195 )
+
+[node name="bed_native3" parent="active_entities/zone_scrapyard" index="56" instance=ExtResource( 17 )]
+transform = Transform( 0.946302, 0, 0.323285, 0, 1, 0, -0.323285, 0, 0.946302, -6.06862, 21.2879, 50.3353 )
+
+[node name="pail" parent="active_entities/zone_scrapyard" index="57" instance=ExtResource( 41 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 47.6494, 7.39253, -1.70947 )
+
+[node name="pail2" parent="active_entities/zone_scrapyard" index="58" instance=ExtResource( 41 )]
+transform = Transform( -0.607001, 0, -0.794701, 0, 1, 0, 0.794701, 0, -0.607001, 46.9766, 7.39253, -1.30685 )
+
+[node name="drink_fridge" parent="active_entities/zone_scrapyard" index="59" instance=ExtResource( 38 )]
+transform = Transform( 0.759168, 0, 0.650895, 0, 1, 0, -0.650895, 0, 0.759168, 40.8183, 7.39253, -1.77534 )
+
+[node name="outlet_box2" parent="active_entities/zone_scrapyard" index="60" instance=ExtResource( 27 )]
+transform = Transform( 0.0371892, 0, 0.999308, 0, 1, 0, -0.999308, 0, 0.0371892, 39.8906, 8.16863, -2.16173 )
+
+[node name="c_table" parent="active_entities/zone_scrapyard" index="61" instance=ExtResource( 42 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 39.8848, 7.39253, -2.40866 )
+
+[node name="phone" parent="active_entities/zone_scrapyard" index="62" instance=ExtResource( 37 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 40.1294, 8.14913, -2.54351 )
+
+[node name="phone3" parent="active_entities/zone_scrapyard" index="63" instance=ExtResource( 37 )]
+transform = Transform( 0.551526, 0, 0.834158, 0, 1, 0, -0.834158, 0, 0.551526, 39.6406, 8.15253, -2.52105 )
+
+[node name="phone2" parent="active_entities/zone_scrapyard" index="64" instance=ExtResource( 37 )]
+transform = Transform( 0.754415, 0, 0.656398, 0, 1, 0, -0.656398, 0, 0.754415, 39.8672, 8.14893, -2.55332 )
+
+[node name="table2" parent="active_entities/zone_scrapyard" index="65" instance=ExtResource( 43 )]
+transform = Transform( -0.981396, 0, 0.191994, 0, 1, 0, -0.191994, 0, -0.981396, 50.0494, 7.41553, -3.84953 )
+
+[node name="table3" parent="active_entities/zone_scrapyard" index="66" instance=ExtResource( 43 )]
+transform = Transform( 0.630356, 0, 0.776306, 0, 1, 0, -0.776306, 0, 0.630356, 45.1715, 7.41553, -3.33813 )
+
+[node name="table4" parent="active_entities/zone_scrapyard" index="67" instance=ExtResource( 43 )]
+transform = Transform( 0.249457, 0, -0.968386, 0, 1, 0, 0.968386, 0, 0.249457, 46.3895, 7.41553, -8.12621 )
+
+[node name="table5" parent="active_entities/zone_scrapyard" index="68" instance=ExtResource( 43 )]
+transform = Transform( 0.969046, 0, -0.246879, 0, 1, 0, 0.246879, 0, 0.969046, 41.0965, 7.41553, -6.52939 )
+
+[node name="npc10" parent="active_entities/zone_scrapyard" index="69" instance=ExtResource( 22 )]
+transform = Transform( 0.920239, 0, -0.391357, 0, 1, 0, 0.391357, 0, 0.920239, 45.8599, 7.39253, -4.18771 )
+visual_name = "Worker"
+
+[node name="npc11" parent="active_entities/zone_scrapyard" index="70" instance=ExtResource( 22 )]
+transform = Transform( 0.116307, 0, 0.993213, 0, 1, 0, -0.993213, 0, 0.116307, 48.7704, 7.39253, -3.96614 )
+visual_name = "Worker"
+
+[node name="npc12" parent="active_entities/zone_scrapyard" index="71" instance=ExtResource( 22 )]
+transform = Transform( 0.116307, 0, 0.993213, 0, 1, 0, -0.993213, 0, 0.116307, 48.355, 7.39253, -4.7546 )
+visual_name = "Worker"
+
+[node name="npc13" parent="active_entities/zone_scrapyard" index="72" instance=ExtResource( 22 )]
+transform = Transform( -0.999795, 0, -0.0202574, 0, 1, 0, 0.0202574, 0, -0.999795, 46.0097, 7.39253, -6.65647 )
+visual_name = "Worker"
+
+[node name="npc14" parent="active_entities/zone_scrapyard" index="73" instance=ExtResource( 22 )]
+transform = Transform( -0.898199, 0, -0.439588, 0, 1, 0, 0.439588, 0, -0.898199, 47.4885, 7.39253, -7.19898 )
+visual_name = "Worker"
+
+[node name="npc15" parent="active_entities/zone_scrapyard" index="74" instance=ExtResource( 22 )]
+transform = Transform( -0.343012, 0, -0.939331, 0, 1, 0, 0.939331, 0, -0.343012, 42.2653, 7.39253, -6.04888 )
+visual_name = "Worker"
+
+[node name="npc16" parent="active_entities/zone_scrapyard" index="75" instance=ExtResource( 22 )]
+transform = Transform( -0.980465, 0, 0.196693, 0, 1, 0, -0.196693, 0, -0.980465, 42.8157, 7.39253, -2.25163 )
+visual_name = "Supervisor"
+
+[node name="crate1" parent="active_entities/zone_scrapyard" index="76" instance=ExtResource( 44 )]
+transform = Transform( 0.252115, 0, -0.967697, 0, 1, 0, 0.967697, 0, 0.252115, 46.3296, 7.43323, -9.57207 )
+
+[node name="bug_pickup" parent="active_entities/zone_scrapyard" index="77" instance=ExtResource( 45 )]
+transform = Transform( -0.94362, 0, 0.331032, 0, 1, 0, -0.331032, 0, -0.94362, 46.8345, 7.23283, -9.70841 )
+
+[node name="gen_part_pvc" parent="active_entities/zone_scrapyard" index="78" instance=ExtResource( 46 )]
+transform = Transform( -0.210467, 0.91716, 0.338409, -0.855112, -0.00494405, -0.51842, -0.473801, -0.398487, 0.785315, 46.6826, 8.02683, -8.0227 )
+
+[node name="gen_part_pvc2" parent="active_entities/zone_scrapyard" index="79" instance=ExtResource( 46 )]
+transform = Transform( 0.399837, 0.915257, 0.0493342, -0.11915, -0.00146645, 0.992875, 0.908809, -0.402867, 0.108466, 46.71, 8.03983, -8.34473 )
+
+[node name="zone_foundry" type="Spatial" parent="active_entities" index="1"]
+
+[node name="light_wall" parent="active_entities/zone_foundry" index="0" instance=ExtResource( 71 )]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 137.724, 13.2462, 7.4408 )
+
+[node name="scrap_pile4" parent="active_entities/zone_foundry" index="1" instance=ExtResource( 8 )]
+transform = Transform( 0.866542, 0.499081, -0.0048256, -0.498407, 0.86478, -0.0612072, -0.0263743, 0.0554438, 0.998114, 106.824, 12.9055, -49.6397 )
+
+[node name="CSGBox" type="CSGBox" parent="active_entities/zone_foundry" index="2"]
+transform = Transform( 0.570264, 0, 0.821461, 0, 1, 0, -0.821461, 0, 0.570264, 98.3348, 12.8409, -42.0048 )
+use_collision = true
+collision_layer = 257
+width = 11.6696
+height = 8.38614
+depth = 14.7267
+material = SubResource( 28 )
+
+[node name="CSGBox6" type="CSGBox" parent="active_entities/zone_foundry" index="3"]
+transform = Transform( -0.672851, 0, 0.73978, 0, 1, 0, -0.73978, 0, -0.672851, 146.178, 48.4102, 14.786 )
+use_collision = true
+width = 3.17129
+height = 1.07015
+depth = 4.84746
+material = SubResource( 28 )
+
+[node name="CSGBox7" type="CSGBox" parent="active_entities/zone_foundry" index="4"]
+transform = Transform( -0.984752, 0, 0.173973, 0, 1, 0, -0.173973, 0, -0.984752, 157.794, 44.849, -8.27614 )
+use_collision = true
+collision_layer = 257
+width = 7.27589
+height = 1.07015
+depth = 7.73949
+material = SubResource( 28 )
+
+[node name="CSGBox5" type="CSGBox" parent="active_entities/zone_foundry" index="5"]
+transform = Transform( -0.356509, 0, 0.934292, 0, 1, 0, -0.934292, 0, -0.356509, 136.264, 38.0601, 25.0438 )
+use_collision = true
+collision_layer = 257
+width = 6.55273
+height = 3.16432
+depth = 7.76131
+material = SubResource( 28 )
+
+[node name="CSGBox" type="CSGBox" parent="active_entities/zone_foundry/CSGBox5" index="0"]
+transform = Transform( 0.985062, 0, 0.172208, 0, 1, 0, -0.172208, 0, 0.985062, 1.88388, 6.0667, 3.67114 )
+width = 3.17129
+height = 1.07015
+depth = 4.84746
+material = SubResource( 28 )
+
+[node name="CSGBox2" type="CSGBox" parent="active_entities/zone_foundry/CSGBox5" index="1"]
+transform = Transform( 0.982544, 0, 0.186037, 0, 1, 0, -0.186037, 0, 0.982544, -0.267868, -3.54955, 4.6013 )
+width = 7.81904
+height = 1.07015
+depth = 4.84746
+material = SubResource( 28 )
+
+[node name="CSGBox3" type="CSGBox" parent="active_entities/zone_foundry" index="6"]
+transform = Transform( -0.915199, 0, 0.403001, 0, 1, 0, -0.403001, 0, -0.915199, 98.1667, 36.6226, 25.0431 )
+use_collision = true
+width = 6.34132
+height = 3.18126
+depth = 6.94998
+material = SubResource( 28 )
+
+[node name="CSGCylinder5" type="CSGCylinder" parent="active_entities/zone_foundry/CSGBox3" index="0"]
+transform = Transform( -0.357674, 0.00551528, -0.933831, 0.933845, 0.00338698, -0.35766, 0.00119029, -0.99998, -0.00636184, -3.87924, -1.20454, -0.0441113 )
+radius = 0.821898
+height = 5.48429
+material = ExtResource( 68 )
+
+[node name="CSGBox4" type="CSGBox" parent="active_entities/zone_foundry" index="7"]
+transform = Transform( -0.985064, 0, -0.172187, 0, 1, 0, 0.172187, 0, -0.985064, 123.897, 36.6226, 28.8779 )
+use_collision = true
+collision_layer = 257
+width = 6.34132
+height = 3.18126
+depth = 6.94998
+material = SubResource( 28 )
+
+[node name="CSGBox5" type="CSGBox" parent="active_entities/zone_foundry/CSGBox4" index="0"]
+transform = Transform( 1, -5.95364e-11, -3.22592e-09, -3.22592e-09, -0.0369002, -0.999319, -5.95364e-11, 0.999319, -0.0369002, 0, 3.76758, -0.230679 )
+use_collision = true
+width = 6.98904
+height = 3.18126
+depth = 6.94998
+material = SubResource( 28 )
+
+[node name="CSGBox2" type="CSGBox" parent="active_entities/zone_foundry" index="8"]
+transform = Transform( -0.176079, 0, 0.984376, 0, 1, 0, -0.984376, 0, -0.176079, 78.9195, 32.1082, -6.22143 )
+use_collision = true
+collision_layer = 257
+width = 11.6696
+height = 8.38614
+depth = 14.7267
+material = SubResource( 28 )
+
+[node name="CSGCylinder" type="CSGCylinder" parent="active_entities/zone_foundry/CSGBox2" index="0"]
+transform = Transform( 0.00441753, -0.965628, 0.259891, 0.99999, 0.00426573, -0.00114811, 2.35159e-08, 0.259894, 0.965638, -9.4978, 0.00431824, -5.34435 )
+height = 9.58369
+material = ExtResource( 68 )
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="active_entities/zone_foundry/CSGBox2" index="1"]
+transform = Transform( 0.0044176, -0.841747, 0.539855, 0.99999, 0.00371855, -0.00238486, -2.67755e-08, 0.53986, 0.841756, -18.3247, 0.0433121, -1.34817 )
+height = 11.4653
+material = ExtResource( 68 )
+
+[node name="CSGCylinder4" type="CSGCylinder" parent="active_entities/zone_foundry/CSGBox2" index="2"]
+transform = Transform( 0.00441756, -0.766715, 0.641974, 0.99999, 0.00338703, -0.00283599, 1.04192e-08, 0.641981, 0.766722, -27.0117, -3.84355, 6.99123 )
+height = 7.66889
+material = ExtResource( 68 )
+
+[node name="CSGCylinder3" type="CSGCylinder" parent="active_entities/zone_foundry/CSGBox2" index="3"]
+transform = Transform( 0.886533, 0.00441758, 0.462645, -0.00391637, 0.999991, -0.00204379, -0.46265, -6.40284e-10, 0.886542, -22.6185, 0.0622787, 3.10857 )
+radius = 3.28734
+height = 8.02586
+material = SubResource( 28 )
+
+[node name="CSGBox" type="CSGBox" parent="active_entities/zone_foundry/CSGBox2" index="4"]
+transform = Transform( 0.773426, -0.257463, 0.579246, 0, 0.9138, 0.406165, -0.633887, -0.314139, 0.706757, -29.0102, 2.55139, 5.49798 )
+height = 9.52694
+material = SubResource( 28 )
+
+[node name="CSGBox3" type="CSGBox" parent="active_entities/zone_foundry/CSGBox2/CSGBox" index="0"]
+transform = Transform( 1, 1.04308e-07, 2.98023e-08, 4.47035e-08, 0.777443, -0.628953, -1.49012e-07, 0.628953, 0.777443, 0, -7.7411, -2.7654 )
+height = 9.52694
+material = SubResource( 28 )
+
+[node name="CSGBox2" type="CSGBox" parent="active_entities/zone_foundry/CSGBox2" index="5"]
+transform = Transform( 0.773427, -0.257463, 0.579246, 0, 0.9138, 0.406165, -0.633887, -0.314139, 0.706757, -30.8917, 2.55139, 7.11897 )
+height = 9.26373
+material = SubResource( 28 )
+
+[node name="CSGBox4" type="CSGBox" parent="active_entities/zone_foundry/CSGBox2/CSGBox2" index="0"]
+transform = Transform( 1, 1.04308e-07, 8.9407e-08, 3.12924e-07, 0.777443, -0.628953, -7.45058e-07, 0.628953, 0.777443, 0.00389099, -7.7163, -2.8212 )
+height = 9.52694
+material = SubResource( 28 )
+
+[node name="crane1" type="Spatial" parent="active_entities/zone_foundry" index="9"]
+transform = Transform( 0.8137, 0, -0.581284, 0, 1, 0, 0.581284, 0, 0.8137, 96.5931, 14.8709, -33.3309 )
+script = ExtResource( 51 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="bucket_small" parent="active_entities/zone_foundry/crane1" index="0" instance=ExtResource( 69 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -2, 0 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="active_entities/zone_foundry/crane1" index="1"]
+playback_process_mode = 0
+anims/Activate = SubResource( 3 )
+anims/RESET = SubResource( 4 )
+
+[node name="dswitch" parent="active_entities/zone_foundry" index="10" instance=ExtResource( 50 )]
+transform = Transform( -0.811587, 0, 0.584232, 0, 1, 0, -0.584232, 0, -0.811587, 102.104, 17.034, -37.869 )
+
+[node name="crane2" type="Spatial" parent="active_entities/zone_foundry" index="11"]
+transform = Transform( 0.438478, 0, -0.898742, 0, 1, 0, 0.898742, 0, 0.438478, 94.1423, 36.2647, 7.56404 )
+script = ExtResource( 51 )
+
+[node name="bucket_small" parent="active_entities/zone_foundry/crane2" index="0" instance=ExtResource( 69 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.04628, 0 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="active_entities/zone_foundry/crane2" index="1"]
+playback_process_mode = 0
+anims/Activate = SubResource( 5 )
+anims/RESET = SubResource( 6 )
+
+[node name="dswitch2" parent="active_entities/zone_foundry" index="12" instance=ExtResource( 50 )]
+transform = Transform( 0.414944, 0, 0.909847, 0, 1, 0, -0.909847, 0, 0.414944, 98.9914, 38.2133, 22.5439 )
+
+[node name="crane3" type="Spatial" parent="active_entities/zone_foundry" index="13"]
+transform = Transform( -0.216977, 0, -0.976177, 0, 1, 0, 0.976177, 0, -0.216977, 154.477, 51.7856, -10.5718 )
+script = ExtResource( 51 )
+
+[node name="bucket_small" parent="active_entities/zone_foundry/crane3" index="0" instance=ExtResource( 69 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -1, 0 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="active_entities/zone_foundry/crane3" index="1"]
+playback_process_mode = 0
+anims/Activate = SubResource( 15 )
+anims/RESET = SubResource( 16 )
+
+[node name="dswitch3" parent="active_entities/zone_foundry" index="14" instance=ExtResource( 50 )]
+transform = Transform( -0.192398, 0, -0.981317, 0, 1, 0, 0.981317, 0, -0.192398, 157.482, 45.3841, -7.15066 )
+
+[node name="shortcut_elevator" parent="active_entities/zone_foundry" index="15" instance=ExtResource( 36 )]
+transform = Transform( 0.9578, 0, 0.287434, 0, 1, 0, -0.287434, 0, 0.9578, 128.778, 36.5942, 26.2682 )
+motion/sync_to_physics = true
+script = null
+
+[node name="door" type="Node" parent="active_entities/zone_foundry/shortcut_elevator" index="0"]
+script = ExtResource( 51 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="active_entities/zone_foundry/shortcut_elevator/door" index="0"]
+root_node = NodePath("../..")
+anims/Activate = SubResource( 37 )
+anims/RESET = SubResource( 38 )
+
+[node name="dswitch" parent="active_entities/zone_foundry/shortcut_elevator" index="5" instance=ExtResource( 50 )]
+transform = Transform( -2.98023e-08, 0, -1, 0, 1, 0, 1, 0, -2.98023e-08, 0.706528, 1.39045, 1.94501 )
+persistent = true
+
+[node name="light_wall" parent="active_entities/zone_foundry/shortcut_elevator" index="6" instance=ExtResource( 71 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.92842, 1.3679, -3.02883 )
+
+[node name="shortcurt_elevator2" parent="active_entities/zone_foundry" index="16" instance=ExtResource( 36 )]
+transform = Transform( -0.983727, 0, 0.179668, 0, 1, 0, -0.179668, 0, -0.983727, 157.311, 43.259, -14.3697 )
+motion/sync_to_physics = true
+script = null
+
+[node name="door" type="Node" parent="active_entities/zone_foundry/shortcurt_elevator2" index="0"]
+script = ExtResource( 51 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="active_entities/zone_foundry/shortcurt_elevator2/door" index="0"]
+root_node = NodePath("../..")
+playback_process_mode = 0
+anims/Activate = SubResource( 13 )
+anims/RESET = SubResource( 14 )
+
+[node name="dswitch" parent="active_entities/zone_foundry/shortcurt_elevator2" index="5" instance=ExtResource( 50 )]
+transform = Transform( -4.47035e-08, 0, -1, 0, 1, 0, 1, 0, -4.47035e-08, 0.549988, 1.46604, 1.83049 )
+persistent = true
+
+[node name="shortcut_elevator3" parent="active_entities/zone_foundry" index="17" instance=ExtResource( 36 )]
+transform = Transform( -0.727138, 0, -0.686491, 0, 1, 0, 0.686491, 0, -0.727138, 109.603, 59.4883, -6.97608 )
+motion/sync_to_physics = true
+script = null
+
+[node name="door" type="Node" parent="active_entities/zone_foundry/shortcut_elevator3" index="1"]
+script = ExtResource( 51 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="active_entities/zone_foundry/shortcut_elevator3/door" index="0"]
+root_node = NodePath("../..")
+playback_process_mode = 0
+anims/Activate = SubResource( 17 )
+anims/RESET = SubResource( 18 )
+
+[node name="dswitch" parent="active_entities/zone_foundry/shortcut_elevator3" index="2" instance=ExtResource( 50 )]
+transform = Transform( -0.0441284, 0, -0.999025, 0, 1, 0, 0.999025, 0, -0.0441284, 0.334267, 1.41996, 1.5921 )
+persistent = true
+
+[node name="ladle_large" parent="active_entities/zone_foundry" index="18" instance=ExtResource( 10 )]
+transform = Transform( -0.998245, 0, 0.0592247, 0, 1, 0, -0.0592247, 0, -0.998245, 147.596, 43.8063, 2.13743 )
+
+[node name="hurtbox" type="Area" parent="active_entities/zone_foundry/ladle_large" index="0"]
+transform = Transform( -0.998244, 0, -0.0592246, 0, 1, 0, 0.0592246, 0, -0.998244, 0, 3.64359, 0 )
+collision_layer = 0
+collision_mask = 6
+script = ExtResource( 54 )
+direction = Vector3( 0, 2, 0 )
+damage = 20
+active = true
+
+[node name="CollisionShape" type="CollisionShape" parent="active_entities/zone_foundry/ladle_large/hurtbox" index="0"]
+shape = SubResource( 19 )
+
+[node name="CSGCylinder" type="CSGCylinder" parent="active_entities/zone_foundry/ladle_large" index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.04173, 0 )
+use_collision = true
+radius = 4.92175
+sides = 24
+material = SubResource( 20 )
+
+[node name="CSGBox" type="CSGBox" parent="active_entities/zone_foundry/ladle_large/CSGCylinder" index="0"]
+transform = Transform( 0.71709, 0, -0.696982, 0, 1, 0, 0.696982, 0, 0.71709, 4.13741, 0.389874, -0.0177546 )
+height = 0.213673
+material = SubResource( 20 )
+
+[node name="OmniLight" type="OmniLight" parent="active_entities/zone_foundry/ladle_large" index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5138, 0 )
+light_color = Color( 1, 0.65098, 0.156863, 1 )
+omni_range = 6.98818
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="active_entities/zone_foundry/ladle_large" index="4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.0795, 0 )
+radius = 0.497165
+height = 8.72941
+material = SubResource( 27 )
+
+[node name="fountainA" parent="active_entities/zone_foundry" index="19" instance=ExtResource( 55 )]
+transform = Transform( 0.1914, 0, 0.981512, 0, 1, 0, -0.981512, 0, 0.1914, 159.618, 45.3841, -8.84392 )
+
+[node name="npc_worker" parent="active_entities/zone_foundry" index="20" instance=ExtResource( 22 )]
+transform = Transform( 0.970484, 0, 0.241167, 0, 1, 0, -0.241167, 0, 0.970484, 115.81, 9.14317, -45.2842 )
+dialog = ExtResource( 57 )
+visual_name = "Foundry Worker"
+
+[node name="npc_shop_foreman" parent="active_entities/zone_foundry" index="21" instance=ExtResource( 14 )]
+transform = Transform( 0.569266, 0, 0.822153, 0, 1, 0, -0.822153, 0, 0.569266, 114.216, 61.4356, -4.82937 )
+dialog = ExtResource( 93 )
+visual_name = "Bossman"
+friendly_id = "075_foreman"
+inventory_data = ExtResource( 56 )
+
+[node name="scrap1" parent="active_entities/zone_foundry" index="22" instance=ExtResource( 9 )]
+transform = Transform( 0.255429, -0.519348, -0.815496, 0, -0.843476, 0.537167, -0.966828, -0.137208, -0.215448, 59.1221, 4.05967, 48.731 )
+
+[node name="env_override" type="Area" parent="active_entities/zone_foundry" index="23"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 117.911, 3.23162, -15.276 )
+collision_layer = 0
+collision_mask = 2
+script = ExtResource( 53 )
+custom_fog = Color( 0.4, 0.364706, 0.364706, 1 )
+fog_start = 0.0
+fog_end = 100.0
+show_sun = false
+
+[node name="CollisionShape3" type="CollisionShape" parent="active_entities/zone_foundry/env_override" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00038147, -4.29153e-06, -3.91006e-05 )
+shape = SubResource( 40 )
+
+[node name="CollisionShape" type="CollisionShape" parent="active_entities/zone_foundry/env_override" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.8336, 6.97773, -49.3829 )
+shape = SubResource( 41 )
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="active_entities/zone_foundry" index="24"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 117.797, 26.8499, -15.5 )
+layers = 32
+max_distance = 16384.0
+extents = Vector3( 49.0127, 48.965, 52.8748 )
+origin_offset = Vector3( 0, 7.59375, 0 )
+
+[node name="MeshInstance9" type="MeshInstance" parent="active_entities/zone_foundry" index="25"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 117.911, 14.8971, -15.276 )
+cast_shadow = 0
+mesh = SubResource( 22 )
+skeleton = NodePath("../../..")
+material/0 = SubResource( 23 )
+
+[node name="reactor_light" type="OmniLight" parent="active_entities/zone_foundry/MeshInstance9" index="0"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2.25134, 0 )
+light_color = Color( 1, 0.411765, 0.960784, 1 )
+light_energy = 9.159
+shadow_enabled = true
+omni_range = 29.7304
+
+[node name="npc" parent="active_entities/zone_foundry" index="26" instance=ExtResource( 22 )]
+transform = Transform( -0.266542, 0, 0.963823, 0, 1, 0, -0.963823, 0, -0.266542, 134.885, 9.14791, 9.03025 )
+dialog = ExtResource( 57 )
+custom_entry = "_entry_capacitor"
+
+[node name="light_wall2" parent="active_entities/zone_foundry" index="27" instance=ExtResource( 71 )]
+transform = Transform( 0.5, 0.866025, -3.78552e-08, 0, -4.37114e-08, -1, -0.866025, 0.5, -2.18557e-08, 106.299, 16.0086, -40.5649 )
+
+[node name="light_hang1" parent="active_entities/zone_foundry" index="28" instance=ExtResource( 72 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 74.541, 44.1269, -6.25538 )
+
+[node name="light_hang2" parent="active_entities/zone_foundry" index="29" instance=ExtResource( 72 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 98.2638, 42.8744, 25.1542 )
+
+[node name="light_hang3" parent="active_entities/zone_foundry" index="30" instance=ExtResource( 72 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 138.966, 43.6633, 21.5461 )
+
+[node name="light_wall3" parent="active_entities/zone_foundry" index="31" instance=ExtResource( 71 )]
+transform = Transform( 0.965926, -0.258819, 1.13133e-08, 0, -4.37114e-08, -1, 0.258819, 0.965926, -4.2222e-08, 115.242, 63.6893, -5.16634 )
+
+[node name="light_wall4" parent="active_entities/zone_foundry" index="32" instance=ExtResource( 71 )]
+transform = Transform( -0.466595, -0.884471, 0, 0.884471, -0.466595, 0, 0, 0, 1, 159.051, 49.6708, -9.65399 )
+
+[node name="power_thing" parent="active_entities/zone_foundry" index="33" instance=ExtResource( 70 )]
+transform = Transform( -0.96513, 0, 0.261773, 0, 1, 0, -0.261773, 0, -0.96513, 137.262, 9.14792, 6.28738 )
+active = true
+
+[node name="power_thing2" parent="active_entities/zone_foundry" index="34" instance=ExtResource( 70 )]
+transform = Transform( -0.99162, 0, 0.129189, 0, 1, 0, -0.129189, 0, -0.99162, 137.023, 9.14792, 7.49134 )
+active = true
+
+[node name="power_thing3" parent="active_entities/zone_foundry" index="35" instance=ExtResource( 70 )]
+transform = Transform( -0.995106, 0, -0.098813, 0, 1, 0, 0.098813, 0, -0.995106, 136.959, 9.14792, 8.74042 )
+active = true
+
+[node name="zone_cliff" type="Spatial" parent="active_entities" index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 138.343, 101.545, 204.384 )
+
+[node name="random_ammo_pickup" parent="active_entities/zone_cliff" index="0" instance=ExtResource( 73 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 60.2885, 33.7512, 2.1879 )
+generate_on_ready = true
+regenerate_on_death = true
+
+[node name="random_ammo_pickup2" parent="active_entities/zone_cliff" index="1" instance=ExtResource( 73 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 60.349, 33.8338, 2.92088 )
+generate_on_ready = true
+regenerate_on_death = true
+
+[node name="bug_pickup" parent="active_entities/zone_cliff" index="2" instance=ExtResource( 45 )]
+transform = Transform( -0.459315, 0, -0.888273, 0, 1, 0, 0.888273, 0, -0.459315, 8.34105, 38.6635, 63.2499 )
+
+[node name="bug_pickup2" parent="active_entities/zone_cliff" index="3" instance=ExtResource( 45 )]
+transform = Transform( -0.459315, 0, -0.888273, 0, 1, 0, 0.888273, 0, -0.459315, 14.0208, 39.2296, 58.6019 )
+
+[node name="bug_pickup3" parent="active_entities/zone_cliff" index="4" instance=ExtResource( 45 )]
+transform = Transform( 0.579605, 0, -0.814898, 0, 1, 0, 0.814898, 0, 0.579605, 11.114, 43.997, 56.726 )
+
+[node name="target_flower" parent="active_entities/zone_cliff" index="5" instance=ExtResource( 52 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.6087, 34.3931, 50.0861 )
+open = false
+
+[node name="target_flower2" parent="active_entities/zone_cliff" index="6" instance=ExtResource( 52 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.2816, 38.9059, 55.2381 )
+
+[node name="target_flower3" parent="active_entities/zone_cliff" index="7" instance=ExtResource( 52 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.7311, 42.6517, 54.4595 )
+open = false
+
+[node name="holstered_platform" parent="active_entities/zone_cliff" index="8" instance=ExtResource( 61 )]
+transform = Transform( 0.280991, 0, 0.95971, 0, 1, 0, -0.95971, 0, 0.280991, -15.9901, 42.3387, 65.3367 )
+
+[node name="crawly" parent="active_entities/zone_cliff" index="9" instance=ExtResource( 64 )]
+transform = Transform( 0.28313, 0, 0.959082, 0, 1, 0, -0.959082, 0, 0.28313, -26.2269, 42.4595, 55.4984 )
+
+[node name="target_flower4" parent="active_entities/zone_cliff" index="10" instance=ExtResource( 52 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26.5556, 41.403, 55.5561 )
+
+[node name="dswitch" parent="active_entities/zone_cliff" index="11" instance=ExtResource( 50 )]
+transform = Transform( -0.91568, -0.401477, 0.0186005, -4.04596e-09, -0.0462804, -0.998928, 0.401908, -0.914699, 0.042378, 8.74297, 37.5936, 63.3878 )
+
+[node name="bug_pickup4" parent="active_entities/zone_cliff" index="12" instance=ExtResource( 45 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 63.4133, 36.5436, 2.89822 )
+
+[node name="bug_pickup5" parent="active_entities/zone_cliff" index="13" instance=ExtResource( 45 )]
+transform = Transform( -0.00461343, 0, -0.999989, 0, 1, 0, 0.999989, 0, -0.00461343, 73.9188, 36.5659, 23.2567 )
+
+[node name="crawly2" parent="active_entities/zone_cliff" index="14" instance=ExtResource( 64 )]
+transform = Transform( -0.835418, 0, -0.549615, 0, 1, 0, 0.549615, 0, -0.835418, -90.9092, 58.5179, 44.0411 )
+mesh_node = NodePath("../crawly/Armature/Skeleton/crawly")
+
+[node name="crawly3" parent="active_entities/zone_cliff" index="15" instance=ExtResource( 64 )]
+transform = Transform( -0.854749, 0, 0.519041, 0, 1, 0, -0.519041, 0, -0.854749, -101.752, 58.0863, 46.0736 )
+
+[node name="deathgnat" parent="active_entities/zone_cliff" index="16" instance=ExtResource( 77 )]
+transform = Transform( -0.417673, 0, 0.908597, 0, 1, 0, -0.908597, 0, -0.417673, -131.963, 68.6325, 50.9726 )
+
+[node name="deathgnat2" parent="active_entities/zone_cliff" index="17" instance=ExtResource( 77 )]
+transform = Transform( -0.417673, 0, 0.908597, 0, 1, 0, -0.908597, 0, -0.417673, -134.547, 63.6868, 45.3509 )
+
+[node name="crawly4" parent="active_entities/zone_cliff" index="18" instance=ExtResource( 64 )]
+transform = Transform( -0.703044, 0, 0.711146, 0, 1, 0, -0.711146, 0, -0.703044, -104.818, 51.2748, 46.0394 )
+
+[node name="target_flower6" parent="active_entities/zone_cliff" index="19" instance=ExtResource( 52 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -199.051, 60.7518, 68.4469 )
+
+[node name="target_flower7" parent="active_entities/zone_cliff" index="20" instance=ExtResource( 52 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -205.231, 64.5015, 64.1542 )
+
+[node name="target_flower8" parent="active_entities/zone_cliff" index="21" instance=ExtResource( 52 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -212.389, 70.9197, 68.5504 )
+
+[node name="crawly5" parent="active_entities/zone_cliff" index="22" instance=ExtResource( 64 )]
+transform = Transform( -0.104478, 0, 0.994527, 0, 1, 0, -0.994527, 0, -0.104478, -199.255, 61.7051, 68.35 )
+mesh_node = NodePath("../crawly/Armature/Skeleton/crawly")
+
+[node name="crawly6" parent="active_entities/zone_cliff" index="23" instance=ExtResource( 64 )]
+transform = Transform( -0.104478, 0, 0.994527, 0, 1, 0, -0.994527, 0, -0.104478, -205.131, 65.4228, 63.847 )
+mesh_node = NodePath("../crawly2/Armature/Skeleton/crawly")
+
+[node name="crawly7" parent="active_entities/zone_cliff" index="24" instance=ExtResource( 64 )]
+transform = Transform( -0.104478, 0, 0.994527, 0, 1, 0, -0.994527, 0, -0.104478, -212.096, 71.6078, 68.0003 )
+mesh_node = NodePath("../crawly3/Armature/Skeleton/crawly")
+
+[node name="pistol_pickup" parent="active_entities/zone_cliff" index="25" instance=ExtResource( 94 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -105.402, 54.1784, 47.1687 )
+respawn_on_player_death = true
+
+[node name="pistol_pickup2" parent="active_entities/zone_cliff" index="26" instance=ExtResource( 94 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -106.406, 54.2023, 46.261 )
+respawn_on_player_death = true
+
+[node name="pistol_pickup3" parent="active_entities/zone_cliff" index="27" instance=ExtResource( 94 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -88.8315, 54.3523, 50.1829 )
+
+[node name="npc_conductor" parent="active_entities" index="3" instance=ExtResource( 22 )]
+transform = Transform( 1, 0, 1.78814e-07, 0, 1, 0, -1.78814e-07, 0, 1, -92.6342, 6.38731, 150.844 )
+dialog = ExtResource( 92 )
+visual_name = "Conductor"
+
+[node name="npc2" parent="active_entities" index="4" instance=ExtResource( 22 )]
+transform = Transform( -0.704598, 0, -0.709606, 0, 1, 0, 0.709606, 0, -0.704598, -91.4829, 6.37726, 152.41 )
+
+[connection signal="toggled" from="active_entities/zone_foundry/dswitch" to="active_entities/zone_foundry/crane1" method="_on_toggled"]
+[connection signal="toggled" from="active_entities/zone_foundry/dswitch2" to="active_entities/zone_foundry/crane2" method="_on_toggled"]
+[connection signal="toggled" from="active_entities/zone_foundry/dswitch3" to="active_entities/zone_foundry/crane3" method="_on_toggled"]
+[connection signal="toggled" from="active_entities/zone_foundry/shortcut_elevator/dswitch" to="active_entities/zone_foundry/shortcut_elevator/door" method="_on_toggled"]
+[connection signal="toggled" from="active_entities/zone_foundry/shortcurt_elevator2/dswitch" to="active_entities/zone_foundry/shortcurt_elevator2/door" method="_on_toggled"]
+[connection signal="toggled" from="active_entities/zone_foundry/shortcut_elevator3/dswitch" to="active_entities/zone_foundry/shortcut_elevator3/door" method="_on_toggled"]
+[connection signal="toggled" from="active_entities/zone_cliff/dswitch" to="active_entities/zone_cliff/holstered_platform" method="_on_toggled"]

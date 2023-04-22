@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://items/item_pickup.tscn" type="PackedScene" id=1]
+[ext_resource path="res://items/mesh/wave_shot_ammo.tscn" type="PackedScene" id=2]
+[ext_resource path="res://items/ammo/ammo_pickup.gd" type="Script" id=3]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("wave_shot_ammo:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "spin"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("wave_shot_ammo:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 360, 0 ) ]
+}
+
+[node name="wave_shot_pickup" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+item_id = "wave_shot"
+quantity = 7
+persistent = false
+
+[node name="VisibilityEnabler" type="VisibilityEnabler" parent="." index="3"]
+aabb = AABB( -0.305912, -0.0393014, -0.257196, 0.611825, 0.53954, 0.514392 )
+
+[node name="wave_shot_ammo" parent="VisibilityEnabler" index="0" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.266542, 0 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VisibilityEnabler" index="1"]
+autoplay = "spin"
+anims/RESET = SubResource( 1 )
+anims/spin = SubResource( 2 )
+
+[node name="OmniLight" parent="." index="4"]
+light_color = Color( 0.623529, 1, 0.368627, 1 )

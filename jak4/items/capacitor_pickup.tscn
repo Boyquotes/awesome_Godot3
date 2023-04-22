@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://items/item_pickup.tscn" type="PackedScene" id=1]
+[ext_resource path="res://items/mesh/capacitor.tscn" type="PackedScene" id=2]
+
+[node name="capacitor_pickup" instance=ExtResource( 1 )]
+item_id = "capacitor"
+
+[node name="preview" parent="." index="0" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.161137, 0 )
+
+[node name="OmniLight2" type="OmniLight" parent="." index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.295452, 0.39048, 0.101144 )
+light_color = Color( 0, 0.882353, 1, 1 )
+omni_range = 0.795621
+
+[node name="CollisionShape" parent="area" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.350449, 0 )
+
+[node name="OmniLight" parent="." index="5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.163696, 0.546889, -0.0913631 )
+light_color = Color( 0, 0.670588, 1, 1 )
+omni_range = 0.636133

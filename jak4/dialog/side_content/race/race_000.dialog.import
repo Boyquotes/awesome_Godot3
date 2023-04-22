@@ -1,0 +1,13 @@
+[remap]
+
+importer="np.dialog"
+type="Resource"
+path="res://.import/race_000.dialog-eaae910818b322ef51df65906825bd1c.tres"
+
+[deps]
+
+source_file="res://dialog/side_content/race/race_000.dialog"
+dest_files=[ "res://.import/race_000.dialog-eaae910818b322ef51df65906825bd1c.tres" ]
+
+[params]
+

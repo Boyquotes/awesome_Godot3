@@ -1,0 +1,8 @@
+{
+	"persistent":[],
+	"temporary":[
+		{"I":"flag", "C":15, "$$":55},
+		{"I":"armor", "C":10, "$$":35},
+		{"I":"stamina_booster", "C":10, "$$":35}
+	]
+}

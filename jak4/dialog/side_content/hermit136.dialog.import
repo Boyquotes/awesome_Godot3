@@ -1,0 +1,13 @@
+[remap]
+
+importer="np.dialog"
+type="Resource"
+path="res://.import/hermit136.dialog-8345296c5b5a8bb19aa377e071cb4065.tres"
+
+[deps]
+
+source_file="res://dialog/side_content/hermit136.dialog"
+dest_files=[ "res://.import/hermit136.dialog-8345296c5b5a8bb19aa377e071cb4065.tres" ]
+
+[params]
+

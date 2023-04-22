@@ -1,0 +1,13 @@
+[remap]
+
+importer="np.dialog"
+type="Resource"
+path="res://.import/jump_game.dialog-5965fec8761131fb0bcb762e46c6dfbb.tres"
+
+[deps]
+
+source_file="res://dialog/side_content/jump_game.dialog"
+dest_files=[ "res://.import/jump_game.dialog-5965fec8761131fb0bcb762e46c6dfbb.tres" ]
+
+[params]
+

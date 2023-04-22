@@ -1,0 +1,427 @@
+[gd_scene load_steps=47 format=2]
+
+[ext_resource path="res://entities/env/medium/hologram.gd" type="Script" id=1]
+[ext_resource path="res://material/hologram.shader" type="Shader" id=2]
+[ext_resource path="res://material/env/ancient/white_metal.material" type="Material" id=3]
+[ext_resource path="res://material/env/medium/hologram_grid.png" type="Texture" id=4]
+[ext_resource path="res://_glb/env/medium/illusory_room.glb" type="PackedScene" id=5]
+[ext_resource path="res://ui/diagetic/dialog_circle.tscn" type="PackedScene" id=6]
+[ext_resource path="res://entities/visual/mum.tscn" type="PackedScene" id=7]
+[ext_resource path="res://entities/dialog_trigger.gd" type="Script" id=8]
+[ext_resource path="res://dialog/main/medium.dialog" type="Resource" id=9]
+[ext_resource path="res://entities/one_time/illusory_room.gd" type="Script" id=10]
+[ext_resource path="res://material/mum/discard.shader" type="Shader" id=11]
+[ext_resource path="res://material/env/medium/garbage_wood_wainscot.jpg" type="Texture" id=12]
+[ext_resource path="res://material/env/ancient/gem_emissive.tres" type="Material" id=13]
+[ext_resource path="res://material/main_spatial.shader" type="Shader" id=14]
+[ext_resource path="res://material/env/medium/coffee_table.jpg" type="Texture" id=15]
+[ext_resource path="res://material/env/medium/end_table.jpg" type="Texture" id=16]
+[ext_resource path="res://material/env/medium/floral4_stolen_from_vecteezy.jpg" type="Texture" id=17]
+[ext_resource path="res://material/coat/checkers1.jpg" type="Texture" id=18]
+[ext_resource path="res://material/env/medium/lounge-sofa.jpg" type="Texture" id=19]
+[ext_resource path="res://material/env/medium/wood_stolen_from_ambientcg.jpg" type="Texture" id=20]
+[ext_resource path="res://material/env/medium/floral3_stolen_from_vecteezy.png" type="Texture" id=21]
+[ext_resource path="res://material/triplanar_local_coords.shader" type="Shader" id=22]
+[ext_resource path="res://material/coat.shader" type="Shader" id=23]
+[ext_resource path="res://material/coat/detail_fabric.bmp" type="Texture" id=24]
+[ext_resource path="res://material/coat/fabric2.jpg" type="Texture" id=25]
+[ext_resource path="res://material/env/snow.png" type="Texture" id=26]
+
+[sub_resource type="CylinderShape" id=1]
+height = 0.791512
+radius = 0.715599
+
+[sub_resource type="ShaderMaterial" id=278]
+shader = ExtResource( 2 )
+shader_param/realness = 0.0
+shader_param/hologram_uv_scale = 64.0
+shader_param/hologram_emission = Color( 1, 1.36471, 1.45882, 1 )
+shader_param/hologram = ExtResource( 4 )
+
+[sub_resource type="ShaderMaterial" id=291]
+shader = ExtResource( 22 )
+shader_param/uv_scale = 1.0
+shader_param/power = 5.0
+shader_param/softness = 0.5
+shader_param/specularity = 4.0
+shader_param/light_bias = 0.0
+shader_param/wall = ExtResource( 20 )
+shader_param/ground = ExtResource( 20 )
+shader_param/ceiling = ExtResource( 20 )
+
+[sub_resource type="ShaderMaterial" id=292]
+shader = ExtResource( 22 )
+shader_param/uv_scale = 0.5
+shader_param/power = 5.0
+shader_param/softness = 0.5
+shader_param/specularity = 1.0
+shader_param/light_bias = 0.0
+shader_param/wall = ExtResource( 21 )
+shader_param/ground = ExtResource( 21 )
+shader_param/ceiling = ExtResource( 21 )
+
+[sub_resource type="ShaderMaterial" id=293]
+shader = ExtResource( 22 )
+shader_param/uv_scale = -0.95
+shader_param/power = 5.0
+shader_param/softness = 0.5
+shader_param/specularity = 5.0
+shader_param/light_bias = 0.0
+shader_param/wall = ExtResource( 12 )
+shader_param/ground = ExtResource( 12 )
+shader_param/ceiling = ExtResource( 12 )
+
+[sub_resource type="ShaderMaterial" id=294]
+shader = ExtResource( 22 )
+shader_param/uv_scale = 0.5
+shader_param/power = 5.0
+shader_param/softness = 0.5
+shader_param/specularity = 1.0
+shader_param/light_bias = 0.0
+shader_param/wall = ExtResource( 26 )
+shader_param/ground = ExtResource( 26 )
+shader_param/ceiling = ExtResource( 26 )
+
+[sub_resource type="ShaderMaterial" id=283]
+shader = ExtResource( 11 )
+
+[sub_resource type="Gradient" id=295]
+offsets = PoolRealArray( 0, 0.343173, 1 )
+colors = PoolColorArray( 0.738281, 0.39798, 0.39798, 1, 0.594238, 0.366756, 0.366756, 1, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=296]
+gradient = SubResource( 295 )
+width = 64
+
+[sub_resource type="ShaderMaterial" id=297]
+shader = ExtResource( 23 )
+shader_param/light_bias = 0.0
+shader_param/softness = 1.0
+shader_param/specularity = 1.0
+shader_param/palette = ExtResource( 18 )
+shader_param/gradient = SubResource( 296 )
+shader_param/detail = ExtResource( 24 )
+
+[sub_resource type="ShaderMaterial" id=285]
+shader = ExtResource( 14 )
+shader_param/subsurface_scattering = -1.0
+shader_param/softness = 1.0
+shader_param/specularity = 10.0
+shader_param/main_texture = ExtResource( 15 )
+
+[sub_resource type="ShaderMaterial" id=286]
+shader = ExtResource( 14 )
+shader_param/subsurface_scattering = -1.0
+shader_param/softness = 1.0
+shader_param/specularity = 10.0
+shader_param/main_texture = ExtResource( 16 )
+
+[sub_resource type="ShaderMaterial" id=290]
+shader = ExtResource( 14 )
+shader_param/subsurface_scattering = -1.0
+shader_param/softness = 1.0
+shader_param/specularity = 1.0
+shader_param/main_texture = ExtResource( 19 )
+
+[sub_resource type="Gradient" id=298]
+colors = PoolColorArray( 0.887795, 0.936035, 0.884846, 1, 0.936302, 0.939941, 0.811434, 1 )
+
+[sub_resource type="GradientTexture" id=299]
+gradient = SubResource( 298 )
+width = 64
+
+[sub_resource type="ShaderMaterial" id=300]
+shader = ExtResource( 23 )
+shader_param/light_bias = null
+shader_param/softness = 1.0
+shader_param/specularity = 1.0
+shader_param/palette = ExtResource( 25 )
+shader_param/gradient = SubResource( 299 )
+shader_param/detail = ExtResource( 24 )
+
+[sub_resource type="ShaderMaterial" id=288]
+shader = ExtResource( 14 )
+shader_param/subsurface_scattering = -1.0
+shader_param/softness = 1.0
+shader_param/specularity = 1.0
+shader_param/main_texture = ExtResource( 17 )
+
+[sub_resource type="Animation" id=279]
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("hologram:hologram_material:shader_param/realness")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5, 3 ),
+"transitions": PoolRealArray( 0.68302, 3.36359, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("hologram:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("hologram:real_object_visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ReflectionProbe:interior_ambient_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.223529, 0.262745, 0.235294, 1 ), Color( 0.937255, 0.976471, 1, 1 ), Color( 0.564706, 0.6, 0.623529, 1 ) ]
+}
+
+[sub_resource type="Animation" id=281]
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("hologram:hologram_material:shader_param/realness")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.1, 2.5 ),
+"transitions": PoolRealArray( 0.392292, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("hologram:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("hologram:real_object_visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ReflectionProbe:interior_ambient_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1.1, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.564706, 0.6, 0.623529, 1 ), Color( 0.937255, 0.976471, 1, 1 ), Color( 0.223529, 0.262745, 0.235294, 1 ) ]
+}
+
+[sub_resource type="Animation" id=280]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("hologram:material/0:shader_param/realness")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("hologram:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("hologram:real_object_visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ReflectionProbe:interior_ambient_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.223529, 0.262745, 0.235294, 1 ) ]
+}
+
+[node name="illusory_room" instance=ExtResource( 5 )]
+script = ExtResource( 10 )
+preview = true
+
+[node name="mum" parent="." index="0" instance=ExtResource( 7 )]
+
+[node name="DialogTrigger" type="Area" parent="." index="1"]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0.0477264, -1.1073, -0.147872 )
+collision_layer = 0
+collision_mask = 2
+script = ExtResource( 8 )
+dialog_sequence = ExtResource( 9 )
+main_speaker = NodePath("..")
+friendly_id = "medium"
+
+[node name="CollisionShape" type="CollisionShape" parent="DialogTrigger" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.364483, 0 )
+shape = SubResource( 1 )
+
+[node name="dialog_circle" parent="DialogTrigger" index="1" instance=ExtResource( 6 )]
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="." index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.520651, 0.0393349 )
+layers = 65536
+extents = Vector3( 4.20511, 1.73285, 4.19788 )
+origin_offset = Vector3( 0.0356445, 0, -0.0307617 )
+cull_mask = 65536
+interior_enable = true
+interior_ambient_color = Color( 0.223529, 0.262745, 0.235294, 1 )
+
+[node name="hologram" parent="." index="3"]
+visible = false
+layers = 65536
+material_overlay = SubResource( 278 )
+material/0 = SubResource( 291 )
+material/1 = SubResource( 292 )
+material/2 = SubResource( 293 )
+material/3 = SubResource( 294 )
+script = ExtResource( 1 )
+real_object_visible = false
+invisible_material = SubResource( 283 )
+hologram_material = SubResource( 278 )
+
+[node name="chair" parent="hologram" index="0"]
+layers = 65536
+material_overlay = SubResource( 278 )
+material/0 = SubResource( 297 )
+
+[node name="chair001" parent="hologram" index="1"]
+layers = 65536
+material_overlay = SubResource( 278 )
+material/0 = SubResource( 297 )
+
+[node name="coffee_table" parent="hologram" index="2"]
+layers = 65536
+material_overlay = SubResource( 278 )
+material/0 = SubResource( 285 )
+
+[node name="door_frame" parent="hologram" index="3"]
+layers = 98304
+material_overlay = SubResource( 278 )
+material/0 = SubResource( 291 )
+
+[node name="end_table" parent="hologram" index="4"]
+layers = 65536
+material_overlay = SubResource( 278 )
+material/0 = SubResource( 286 )
+
+[node name="end_table2" parent="hologram" index="5"]
+layers = 65536
+material_overlay = SubResource( 278 )
+material/0 = SubResource( 286 )
+
+[node name="lounge-sofa" parent="hologram" index="6"]
+layers = 65536
+material_overlay = SubResource( 278 )
+material/0 = SubResource( 290 )
+material/1 = SubResource( 300 )
+
+[node name="pillow" parent="hologram" index="7"]
+layers = 65536
+material_overlay = SubResource( 278 )
+material/0 = SubResource( 288 )
+
+[node name="pillow2" parent="hologram" index="8"]
+layers = 65536
+material_overlay = SubResource( 278 )
+material/0 = SubResource( 288 )
+
+[node name="chair" parent="." index="4"]
+material/0 = ExtResource( 3 )
+material/1 = ExtResource( 13 )
+
+[node name="activator" type="AnimationPlayer" parent="." index="5"]
+anims/Activate = SubResource( 279 )
+anims/Deactivate = SubResource( 281 )
+anims/RESET = SubResource( 280 )
+
+[node name="SpotLight" type="SpotLight" parent="." index="6"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.02803, 0.304066 )
+light_color = Color( 0.466667, 1, 0.886275, 1 )
+light_cull_mask = 4294901759
+spot_range = 3.06288
+spot_angle = 37.4657
+
+[node name="OmniLight" type="OmniLight" parent="." index="7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.380018, 1.19864, -2.16977 )
+light_color = Color( 1, 0.894118, 0.745098, 1 )
+light_cull_mask = 4293984256
+shadow_enabled = true
+
+[node name="OmniLight5" type="OmniLight" parent="." index="8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.53643, 1.19864, 0.898832 )
+light_color = Color( 1, 0.894118, 0.745098, 1 )
+light_cull_mask = 4293984256
+omni_range = 4.1412
+
+[node name="OmniLight2" type="OmniLight" parent="." index="9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.19258, 0.156977, 0.786691 )
+light_color = Color( 1, 0.894118, 0.745098, 1 )
+light_cull_mask = 4293984256
+
+[node name="OmniLight3" type="OmniLight" parent="." index="10"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.610705, 0.156977, 3.41268 )
+light_color = Color( 1, 0.894118, 0.745098, 1 )
+light_cull_mask = 4293984256

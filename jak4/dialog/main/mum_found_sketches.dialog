@@ -1,0 +1,9 @@
+* You examine the decaying papers. In this dry air, they may have been here for decades.
+{remember("I found a photograph that seems to be of her, in an abandoned village on the plateau.", "Mum")}
++{mum/info}
++{mum/appearance}
++{mum/plateau}
+* A photograph seems familiar.
+[You] ... Mum?
+
+{exit()}

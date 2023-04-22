@@ -1,0 +1,350 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://areas/chunk_content.gd" type="Script" id=1]
+[ext_resource path="res://entities/env/train_set/20m-1v-straight_to_slant.tscn" type="PackedScene" id=2]
+[ext_resource path="res://entities/env/train_set/20m-2v-slant_to_double.tscn" type="PackedScene" id=3]
+[ext_resource path="res://entities/env/train_set/20m-2v-double_to_slant.tscn" type="PackedScene" id=4]
+[ext_resource path="res://entities/env/train_set/straight_to_15.tscn" type="PackedScene" id=5]
+[ext_resource path="res://entities/env/train_set/20m-1v-slant_to_straight.tscn" type="PackedScene" id=6]
+[ext_resource path="res://entities/env/train_set/20m_straight.tscn" type="PackedScene" id=7]
+[ext_resource path="res://entities/env/train_set/20m-1v-straight_to_straight.tscn" type="PackedScene" id=8]
+[ext_resource path="res://entities/env/train_set/bridge_slant_straight.tscn" type="PackedScene" id=9]
+[ext_resource path="res://entities/env/train_set/bridge_level_bend15.tscn" type="PackedScene" id=10]
+[ext_resource path="res://entities/env/train_set/bridge_double_straight.tscn" type="PackedScene" id=11]
+[ext_resource path="res://material/triplanar.shader" type="Shader" id=12]
+[ext_resource path="res://material/env/stone/sand1.jpg" type="Texture" id=13]
+[ext_resource path="res://material/env/stone/gravel1.png" type="Texture" id=14]
+[ext_resource path="res://entities/env/stone/rock2.tscn" type="PackedScene" id=15]
+[ext_resource path="res://entities/env/stone/rock1.tscn" type="PackedScene" id=16]
+[ext_resource path="res://entities/env/train_set/column-10m.tscn" type="PackedScene" id=17]
+[ext_resource path="res://entities/env/train_set/column_20m.tscn" type="PackedScene" id=18]
+[ext_resource path="res://entities/env/train_set/locomotive.tscn" type="PackedScene" id=19]
+[ext_resource path="res://entities/visual/flag.tscn" type="PackedScene" id=20]
+[ext_resource path="res://entities/env/train_set/cargo_cart.tscn" type="PackedScene" id=21]
+[ext_resource path="res://entities/npc/captain_redford.tscn" type="PackedScene" id=22]
+[ext_resource path="res://entities/navigation/nav_point.gd" type="Script" id=23]
+[ext_resource path="res://material/env/transparent.shader" type="Shader" id=24]
+[ext_resource path="res://material/env/vaeler/imperial_flag.png" type="Texture" id=25]
+
+[sub_resource type="ShaderMaterial" id=9]
+shader = ExtResource( 12 )
+shader_param/wall_scale = 0.5
+shader_param/ground_scale = 0.5
+shader_param/power = 0.5
+shader_param/softness = 0.5
+shader_param/specularity_ground = 1.0
+shader_param/specularity_wall = 1.0
+shader_param/specularity_ceiling = 1.0
+shader_param/light_bias = 0.0
+shader_param/shadow_normal_offset = 0.2
+shader_param/wall = ExtResource( 13 )
+shader_param/ground = ExtResource( 14 )
+shader_param/ceiling = ExtResource( 13 )
+
+[sub_resource type="Curve3D" id=10]
+_data = {
+"points": PoolVector3Array( 1.53054, -0.883766, 0.18396, 0, 0, 0, 4.02091, -2.64391, 18.3563, 0, 0, 0, 0, 0, 0, 1.67163, -0.227884, 8.40301, -3.6, 0.3, 10.1, 3.6, -0.3, -10.1, 5.03952, 0.146852, -23.1205, 0, 0, 0, 0, 0, 0, 13.7682, 0.323934, -47.4034, 0, 0, 0, 0, 0, 0, 16.1464, 1.14685, -54.1952, 0, 0, 0, 0, 0, 0, 23.4829, 1.14685, -71.7502, 0, 0, 0, 0, 0, 0, 36.1328, 1.14685, -86.344, 0, 0, 0, 0, 0, 0, 47.5532, 1.081, -94.2133, -2.93851, 0.107942, 2.10428, 2.93851, -0.107942, -2.10428, 61.6294, 0.147491, -103.892, 0, 0, 0, 0, 0, 0, 69.4112, -6.14346, -112.669 ),
+"tilts": PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+}
+
+[sub_resource type="ShaderMaterial" id=11]
+shader = ExtResource( 24 )
+shader_param/subsurface_scattering = -1.0
+shader_param/softness = 0.865
+shader_param/specularity = 1.0
+shader_param/alpha_clip = 0.75
+shader_param/main_texture = ExtResource( 25 )
+
+[node name="chunk063" type="Spatial" groups=["navmesh"]]
+script = ExtResource( 1 )
+
+[node name="zone_train" type="MultiMeshSystem" parent="."]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 58.2507, 0, 100.893 )
+
+[node name="rail" parent="zone_train" instance=ExtResource( 3 )]
+transform = Transform( -0.995399, 0, 0.0958243, 0, 1, 0, -0.0958243, 0, -0.995399, -219.141, 30.2247, -18.9405 )
+
+[node name="bridge_double_straight2" parent="zone_train/rail" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -39.8915, 4, 0.000305176 )
+
+[node name="column-10m" parent="zone_train/rail/bridge_double_straight2" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11, 0 )
+
+[node name="20m-2v-double_to_slant" parent="zone_train/rail" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 2, 7.62939e-06 )
+
+[node name="bridge_double_straight" parent="zone_train/rail/20m-2v-double_to_slant" instance=ExtResource( 11 )]
+
+[node name="column-10m" parent="zone_train/rail/20m-2v-double_to_slant/bridge_double_straight" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11, 0 )
+
+[node name="bridge_double_straight" parent="zone_train/rail" instance=ExtResource( 11 )]
+
+[node name="column-10m" parent="zone_train/rail/bridge_double_straight" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11, 0 )
+
+[node name="20m-2v-slant_to_double2" parent="zone_train/rail" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -39.8915, 4, 0.000305176 )
+
+[node name="bridge_slant_straight" parent="zone_train/rail/20m-2v-slant_to_double2" instance=ExtResource( 9 )]
+transform = Transform( -1, 0, -1.78814e-07, 0, 1, 0, 1.78814e-07, 0, -1, -20, 0.983692, -1.52588e-05 )
+
+[node name="20m-1v-straight_to_slant" parent="zone_train/rail/20m-2v-slant_to_double2" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0.983692, 0 )
+
+[node name="bridge_slant_straight" parent="zone_train/rail/20m-2v-slant_to_double2/20m-1v-straight_to_slant" instance=ExtResource( 9 )]
+
+[node name="20m-1v-straight_to_slant2" parent="zone_train/rail/20m-2v-slant_to_double2" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -20, 0.983692, 0 )
+
+[node name="20m-2v-slant_to_double" parent="zone_train/rail/20m-2v-slant_to_double2/20m-1v-straight_to_slant2" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, -1, 7.62939e-06 )
+
+[node name="bridge_double_straight" parent="zone_train/rail/20m-2v-slant_to_double2/20m-1v-straight_to_slant2/20m-2v-slant_to_double" instance=ExtResource( 11 )]
+
+[node name="column-10m" parent="zone_train/rail/20m-2v-slant_to_double2/20m-1v-straight_to_slant2/20m-2v-slant_to_double/bridge_double_straight" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, -11, 0 )
+
+[node name="20m-2v-double_to_slant" parent="zone_train/rail/20m-2v-slant_to_double2/20m-1v-straight_to_slant2" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 39.911, -2.98812, 0 )
+
+[node name="bridge_double_straight" parent="zone_train/rail/20m-2v-slant_to_double2/20m-1v-straight_to_slant2/20m-2v-double_to_slant" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0 )
+
+[node name="column_20m" parent="zone_train/rail/20m-2v-slant_to_double2/20m-1v-straight_to_slant2/20m-2v-double_to_slant/bridge_double_straight" instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, -21, 0 )
+
+[node name="20m-2v-slant_to_double2" parent="zone_train/rail/20m-2v-slant_to_double2/20m-1v-straight_to_slant2/20m-2v-double_to_slant" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.9127, -1.99437, 3.05176e-05 )
+
+[node name="bridge_double_straight" parent="zone_train/rail/20m-2v-slant_to_double2/20m-1v-straight_to_slant2/20m-2v-double_to_slant/20m-2v-slant_to_double2" instance=ExtResource( 11 )]
+
+[node name="column_20m" parent="zone_train/rail/20m-2v-slant_to_double2/20m-1v-straight_to_slant2/20m-2v-double_to_slant/20m-2v-slant_to_double2/bridge_double_straight" instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, -21, 0 )
+
+[node name="20m-2v-double_to_slant2" parent="zone_train/rail/20m-2v-slant_to_double2/20m-1v-straight_to_slant2" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 79.7463, -6.97336, -7.62939e-06 )
+
+[node name="20m-2v-slant_to_double2" parent="zone_train/rail/20m-2v-slant_to_double2/20m-1v-straight_to_slant2/20m-2v-double_to_slant2" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.9127, -1.99437, 3.05176e-05 )
+
+[node name="bridge_double_straight" parent="zone_train/rail/20m-2v-slant_to_double2/20m-1v-straight_to_slant2/20m-2v-double_to_slant2/20m-2v-slant_to_double2" instance=ExtResource( 11 )]
+
+[node name="column_20m" parent="zone_train/rail/20m-2v-slant_to_double2/20m-1v-straight_to_slant2/20m-2v-double_to_slant2/20m-2v-slant_to_double2/bridge_double_straight" instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, -21, 0 )
+
+[node name="bridge_double_straight" parent="zone_train/rail/20m-2v-slant_to_double2/20m-1v-straight_to_slant2/20m-2v-double_to_slant2" instance=ExtResource( 11 )]
+
+[node name="column_20m" parent="zone_train/rail/20m-2v-slant_to_double2/20m-1v-straight_to_slant2/20m-2v-double_to_slant2/bridge_double_straight" instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, -21, 0 )
+
+[node name="20m-2v-double_to_slant3" parent="zone_train/rail/20m-2v-slant_to_double2/20m-1v-straight_to_slant2" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 119.579, -10.9489, 7.62939e-06 )
+
+[node name="20m-2v-slant_to_double2" parent="zone_train/rail/20m-2v-slant_to_double2/20m-1v-straight_to_slant2/20m-2v-double_to_slant3" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.9127, -1.99437, 3.05176e-05 )
+
+[node name="bridge_double_straight" parent="zone_train/rail/20m-2v-slant_to_double2/20m-1v-straight_to_slant2/20m-2v-double_to_slant3/20m-2v-slant_to_double2" instance=ExtResource( 11 )]
+
+[node name="column_20m" parent="zone_train/rail/20m-2v-slant_to_double2/20m-1v-straight_to_slant2/20m-2v-double_to_slant3/20m-2v-slant_to_double2/bridge_double_straight" instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, -21, 0 )
+
+[node name="bridge_double_straight" parent="zone_train/rail/20m-2v-slant_to_double2/20m-1v-straight_to_slant2/20m-2v-double_to_slant3" instance=ExtResource( 11 )]
+
+[node name="column_20m" parent="zone_train/rail/20m-2v-slant_to_double2/20m-1v-straight_to_slant2/20m-2v-double_to_slant3/bridge_double_straight" instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, -21, 0 )
+
+[node name="20m-2v-double_to_slant4" parent="zone_train/rail/20m-2v-slant_to_double2/20m-1v-straight_to_slant2" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 159.422, -14.9337, 3.8147e-05 )
+
+[node name="bridge_double_straight" parent="zone_train/rail/20m-2v-slant_to_double2/20m-1v-straight_to_slant2/20m-2v-double_to_slant4" instance=ExtResource( 11 )]
+
+[node name="column_20m" parent="zone_train/rail/20m-2v-slant_to_double2/20m-1v-straight_to_slant2/20m-2v-double_to_slant4/bridge_double_straight" instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, -21, 0 )
+
+[node name="20m-2v-double_to_slant2" parent="zone_train/rail" instance=ExtResource( 4 )]
+transform = Transform( -0.999991, 0, 0.00423542, 0, 1, 0, -0.00423542, 0, -0.999991, -239.226, -11.9474, -0.00247955 )
+
+[node name="20m-1v-slant_to_straight" parent="zone_train/rail/20m-2v-double_to_slant2" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, -2, 0 )
+
+[node name="straight_to_15" parent="zone_train/rail/20m-2v-double_to_slant2/20m-1v-slant_to_straight" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, -1, 0 )
+
+[node name="bridge_level_bend15" parent="zone_train/rail/20m-2v-double_to_slant2/20m-1v-slant_to_straight/straight_to_15" instance=ExtResource( 10 )]
+
+[node name="straight_to_16" parent="zone_train/rail/20m-2v-double_to_slant2/20m-1v-slant_to_straight" instance=ExtResource( 5 )]
+transform = Transform( 0.942153, 0, -0.335182, 0, 1, 0, 0.335182, 0, 0.942153, 41.532, -1, 3.52058 )
+
+[node name="bridge_slant_straight" parent="zone_train/rail/20m-2v-double_to_slant2/20m-1v-slant_to_straight" instance=ExtResource( 9 )]
+
+[node name="column-10m" parent="zone_train/rail/20m-2v-double_to_slant2/20m-1v-slant_to_straight/bridge_slant_straight" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, -11, 0 )
+
+[node name="bridge_double_straight" parent="zone_train/rail/20m-2v-double_to_slant2" instance=ExtResource( 11 )]
+
+[node name="column-10m" parent="zone_train/rail/20m-2v-double_to_slant2/bridge_double_straight" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, -11, 0 )
+
+[node name="20m_straight" parent="zone_train/rail" instance=ExtResource( 7 )]
+transform = Transform( -0.771611, 0, 0.636095, 0, 1, 0, -0.636095, 0, -0.771611, -319.792, -14.9551, -14.3865 )
+
+[node name="20m-1v-straight_to_straight" parent="zone_train/rail/20m_straight" instance=ExtResource( 8 )]
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 40, 0.999999, 0 )
+
+[node name="straight_to_15" parent="zone_train/rail/20m_straight" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0.999999, 0 )
+
+[node name="straight_to_16" parent="zone_train/rail/20m_straight" instance=ExtResource( 5 )]
+transform = Transform( 0.952563, 0, -0.304342, 0, 1, 0, 0.304342, 0, 0.952563, 61.5144, 0.999999, 3.51585 )
+
+[node name="20m-1v-straight_to_slant" parent="zone_train/rail" instance=ExtResource( 2 )]
+transform = Transform( -0.229563, 0, 0.973293, 0, 1, 0, -0.973293, 0, -0.229563, -373.714, -13.956, -76.2292 )
+
+[node name="rail_gravel" type="CSGPolygon" parent="zone_train/rail"]
+transform = Transform( 0.339281, 0, 0.940684, 0, 1, 0, -0.940684, 0, 0.339281, -301.532, -15.3716, -3.08873 )
+use_collision = true
+collision_layer = 257
+polygon = PoolVector2Array( -3.491, -0.240085, -2.1, 0, 1.7, 0, 3.7955, -0.788329, 6, -3.1, 6, -6, -6, -3.1 )
+mode = 2
+path_node = NodePath("Path")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 3.0
+path_rotation = 1
+path_local = true
+path_continuous_u = true
+path_u_distance = 3.0
+path_joined = false
+smooth_faces = true
+material = SubResource( 9 )
+
+[node name="Path" type="Path" parent="zone_train/rail/rail_gravel"]
+curve = SubResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="locomotive" parent="zone_train" instance=ExtResource( 19 )]
+transform = Transform( 0.990162, 0.10407, -0.0935396, -0.104528, 0.994522, 0, 0.0930269, 0.00977752, 0.995616, -119.056, 34.0692, -9.29169 )
+
+[node name="cargo_cart" parent="zone_train/locomotive" instance=ExtResource( 21 )]
+transform = Transform( -0.99996, -0.00895293, 6.27833e-07, -0.00895293, 0.99996, 6.70552e-08, -6.28408e-07, 6.14316e-08, -1, 15.2432, -0.882431, 0.0448074 )
+
+[node name="cargo_cart2" parent="zone_train/locomotive" instance=ExtResource( 21 )]
+transform = Transform( -1, 0.000877138, 8.64267e-07, 0.000877146, 1, 9.68575e-08, -9.23872e-07, 1.00583e-07, -1, 27.5514, -0.705162, 0.0448227 )
+
+[node name="cargo_cart3" parent="zone_train/locomotive" instance=ExtResource( 21 )]
+transform = Transform( -0.999998, 0.00206212, 8.64267e-07, 0.00206209, 0.999998, 1.08033e-07, -1.01328e-06, 1.37836e-07, -1, 39.882, -0.60524, 0.044838 )
+
+[node name="cargo_cart4" parent="zone_train/locomotive" instance=ExtResource( 21 )]
+transform = Transform( -0.999998, 0.00206211, 8.64267e-07, 0.00206206, 0.999998, 1.08033e-07, -1.40071e-06, 1.63913e-07, -1, 52.2107, -0.630659, 0.0937424 )
+
+[node name="cargo_cart5" parent="zone_train/locomotive" instance=ExtResource( 21 )]
+transform = Transform( -0.999826, -0.0186676, 1.58151e-06, -0.0186676, 0.999826, 2.00197e-07, -1.58497e-06, 1.70639e-07, -1, 64.6068, -0.429379, 0.0937576 )
+
+[node name="cargo_cart6" parent="zone_train/locomotive" instance=ExtResource( 21 )]
+transform = Transform( -0.999916, 0.0130074, 1.60933e-06, 0.0130074, 0.999916, 2.16067e-07, -1.60933e-06, 2.38419e-07, -1, 76.8232, -0.352722, 0.146873 )
+
+[node name="cargo_cart7" parent="zone_train/locomotive" instance=ExtResource( 21 )]
+transform = Transform( -0.999916, 0.0130074, 1.60933e-06, 0.0130074, 0.999916, 2.08616e-07, -1.66893e-06, 2.57045e-07, -1, 89.0748, -0.512096, 0.146896 )
+
+[node name="cargo_cart8" parent="zone_train/locomotive" instance=ExtResource( 21 )]
+transform = Transform( -0.999887, -0.0150438, 2.32458e-06, -0.0150438, 0.999888, 2.98023e-07, -2.38419e-06, 2.71946e-07, -1, 101.514, -0.395004, 0.242653 )
+
+[node name="cargo_cart9" parent="zone_train/locomotive" instance=ExtResource( 21 )]
+transform = Transform( -0.999868, -0.0162979, 2.53518e-06, -0.0162979, 0.999868, 3.10587e-07, -2.53991e-06, 2.69227e-07, -1, 114.019, -0.177418, 0.242691 )
+
+[node name="cargo_cart10" parent="zone_train/locomotive" instance=ExtResource( 21 )]
+transform = Transform( -0.999868, -0.016298, 2.5034e-06, -0.0162979, 0.999868, 3.09199e-07, -2.71201e-06, 2.79397e-07, -1, 126.336, -0.235477, 0.242722 )
+
+[node name="cargo_cart11" parent="zone_train/locomotive" instance=ExtResource( 21 )]
+transform = Transform( -0.999868, -0.0162979, 2.5034e-06, -0.0162979, 0.999869, 3.09199e-07, -2.89083e-06, 2.94298e-07, -1, 138.467, -0.0377407, 0.292175 )
+
+[node name="cargo_cart12" parent="zone_train/locomotive" instance=ExtResource( 21 )]
+transform = Transform( -0.999868, -0.0162979, 2.5034e-06, -0.0162979, 0.999869, 3.09199e-07, -3.18885e-06, 3.12924e-07, -1, 150.827, -0.0290966, 0.292252 )
+
+[node name="cargo_cart13" parent="zone_train/locomotive" instance=ExtResource( 21 )]
+transform = Transform( -0.999198, -0.0400485, 0.000683725, -0.0400487, 0.9992, -0.000192236, -0.000675559, -0.000219442, -1, 163.089, 0.17198, 0.475891 )
+
+[node name="cargo_cart14" parent="zone_train/locomotive" instance=ExtResource( 21 )]
+transform = Transform( -0.996313, -0.0858018, 0.000683933, -0.0858018, 0.996314, -0.000192199, -0.000665009, -0.000250175, -1, 175.843, 0.719604, 0.484543 )
+
+[node name="cargo_cart15" parent="zone_train/locomotive" instance=ExtResource( 21 )]
+transform = Transform( -0.99224, -0.0858018, 0.0899967, -0.0854737, 0.996315, 0.00750039, -0.0903085, -0.000250157, -0.995914, 188.16, 1.92414, 0.990761 )
+
+[node name="cargo_cart16" parent="zone_train/locomotive" instance=ExtResource( 21 )]
+transform = Transform( -0.942935, -0.0997015, 0.317703, -0.0960687, 0.995008, 0.0271223, -0.31882, -0.00494669, -0.947802, 199.942, 3.1581, 3.90158 )
+
+[node name="cargo_cart17" parent="zone_train/locomotive" instance=ExtResource( 21 )]
+transform = Transform( -0.870102, -0.0997622, 0.482671, -0.0888695, 0.995009, 0.0454519, -0.484796, -0.00334689, -0.874621, 211.31, 4.37789, 8.83121 )
+
+[node name="cargo_cart18" parent="zone_train/locomotive" instance=ExtResource( 21 )]
+transform = Transform( -0.772808, -0.107155, 0.625529, -0.0880125, 0.994218, 0.0615764, -0.62851, -0.00746764, -0.777766, 221.128, 5.41018, 15.8938 )
+
+[node name="cargo_cart19" parent="zone_train/locomotive" instance=ExtResource( 21 )]
+transform = Transform( -0.767428, -0.107155, 0.632118, -0.0874825, 0.994218, 0.0623271, -0.63514, -0.00746773, -0.772361, 230.456, 6.47393, 23.6702 )
+
+[node name="cargo_cart20" parent="zone_train/locomotive" instance=ExtResource( 21 )]
+transform = Transform( -0.762117, -0.140021, 0.632118, -0.130109, 0.989543, 0.062327, -0.634234, -0.0347437, -0.772361, 239.85, 7.77534, 31.4629 )
+
+[node name="cargo_cart21" parent="zone_train/locomotive" instance=ExtResource( 21 )]
+transform = Transform( -0.767172, -0.108975, 0.632118, -0.089841, 0.994008, 0.0623271, -0.635121, -0.00897456, -0.772361, 249.073, 9.22943, 39.2633 )
+
+[node name="cargo_cart22" parent="zone_train/locomotive" instance=ExtResource( 21 )]
+transform = Transform( -0.675923, -0.10747, 0.729095, -0.0764307, 0.994203, 0.0756891, -0.733001, -0.00456523, -0.680213, 258.124, 10.3671, 47.5207 )
+
+[node name="cargo_cart23" parent="zone_train/locomotive" instance=ExtResource( 21 )]
+transform = Transform( -0.515463, -0.102675, 0.850738, -0.0502825, 0.994714, 0.0895836, -0.855437, 0.00339988, -0.517897, 264.968, 11.1257, 57.4337 )
+
+[node name="cargo_cart24" parent="zone_train/locomotive" instance=ExtResource( 21 )]
+transform = Transform( -0.365439, -0.102675, 0.925154, -0.0345414, 0.994715, 0.0967493, -0.930196, 0.00339985, -0.36705, 270.705, 11.6808, 68.2738 )
+
+[node name="cargo_cart25" parent="zone_train/locomotive" instance=ExtResource( 21 )]
+transform = Transform( -0.232623, -0.0957442, 0.967841, 0.0094502, 0.994879, 0.100689, -0.972523, 0.032569, -0.230524, 273.935, 11.8647, 79.9865 )
+
+[node name="cargo_cart26" parent="zone_train/locomotive" instance=ExtResource( 21 )]
+transform = Transform( -0.219984, -0.0855166, 0.971747, 0.0440612, 0.994269, 0.0974718, -0.97451, 0.0642589, -0.214953, 276.774, 11.6199, 91.9044 )
+
+[node name="rock2" parent="." instance=ExtResource( 15 )]
+transform = Transform( 0.980965, -0.194184, 0, 0.194184, 0.980965, 0, 0, 0, 1, 108, 5, 62 )
+
+[node name="rock1" parent="." instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 249, 12, 70 )
+
+[node name="rock3" parent="." instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 236, 8, 92 )
+
+[node name="active_entities" type="Spatial" parent="."]
+
+[node name="flag" parent="active_entities" instance=ExtResource( 20 )]
+transform = Transform( 0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, -41.3995, 35.2025, 189.223 )
+
+[node name="path_ember_crest" type="Position3D" parent="active_entities"]
+transform = Transform( -0.713369, 0, -0.700788, 0, 1, 0, 0.700788, 0, -0.713369, -45.0789, 33.6448, 186.988 )
+script = ExtResource( 23 )
+next = NodePath("point1")
+action = 1
+
+[node name="point1" type="Position3D" parent="active_entities/path_ember_crest"]
+transform = Transform( 0.896071, 0, -0.443911, 0, 1, 0, 0.443911, 0, 0.896071, -4.57764e-05, 2.99226, 98.8588 )
+script = ExtResource( 23 )
+next = NodePath("../point2")
+
+[node name="point2" type="Position3D" parent="active_entities/path_ember_crest"]
+transform = Transform( 0.896071, 0, -0.443911, 0, 1, 0, 0.443911, 0, 0.896071, -62.6818, -15.2446, 178.719 )
+script = ExtResource( 23 )
+next = NodePath("../exit")
+
+[node name="exit" type="Position3D" parent="active_entities/path_ember_crest"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -132.676, -66.2379, 378.155 )
+script = ExtResource( 23 )
+chunk_entry = "chunk052:path_manor"
+
+[node name="captain_redford" parent="active_entities" instance=ExtResource( 22 )]
+transform = Transform( -0.937355, 0, 0.348375, 0, 1, 0, -0.348375, 0, -0.937355, -45.338, 33.6217, 189.369 )
+default_location = true
+
+[node name="flag2" parent="active_entities" instance=ExtResource( 20 )]
+transform = Transform( 0.577155, -0.204698, -0.790563, 0.21227, 0.972403, -0.0968119, 0.788564, -0.111938, 0.604679, -45.2076, 34.4026, 188.202 )
+flag_material = SubResource( 11 )

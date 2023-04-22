@@ -1,0 +1,13 @@
+[remap]
+
+importer="np.dialog"
+type="Resource"
+path="res://.import/lockbox_bedroom.dialog-1e3dbc7f71fe22c13efca211ddb938d9.tres"
+
+[deps]
+
+source_file="res://dialog/side_content/chunk052/lockbox_bedroom.dialog"
+dest_files=[ "res://.import/lockbox_bedroom.dialog-1e3dbc7f71fe22c13efca211ddb938d9.tres" ]
+
+[params]
+

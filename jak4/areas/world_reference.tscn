@@ -1,0 +1,593 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://_glb/world.glb" type="PackedScene" id=1]
+
+[node name="world" instance=ExtResource( 1 )]
+
+[node name="chunk_lowres000" parent="." index="202"]
+visible = false
+
+[node name="chunk_lowres001" parent="." index="203"]
+visible = false
+
+[node name="chunk_lowres002" parent="." index="204"]
+visible = false
+
+[node name="chunk_lowres003" parent="." index="205"]
+visible = false
+
+[node name="chunk_lowres004" parent="." index="206"]
+visible = false
+
+[node name="chunk_lowres005" parent="." index="207"]
+visible = false
+
+[node name="chunk_lowres006" parent="." index="208"]
+visible = false
+
+[node name="chunk_lowres007" parent="." index="209"]
+visible = false
+
+[node name="chunk_lowres008" parent="." index="210"]
+visible = false
+
+[node name="chunk_lowres009" parent="." index="211"]
+visible = false
+
+[node name="chunk_lowres010" parent="." index="212"]
+visible = false
+
+[node name="chunk_lowres011" parent="." index="213"]
+visible = false
+
+[node name="chunk_lowres012" parent="." index="214"]
+visible = false
+
+[node name="chunk_lowres013" parent="." index="215"]
+visible = false
+
+[node name="chunk_lowres014" parent="." index="216"]
+visible = false
+
+[node name="chunk_lowres015" parent="." index="217"]
+visible = false
+
+[node name="chunk_lowres016" parent="." index="218"]
+visible = false
+
+[node name="chunk_lowres017" parent="." index="219"]
+visible = false
+
+[node name="chunk_lowres018" parent="." index="220"]
+visible = false
+
+[node name="chunk_lowres019" parent="." index="221"]
+visible = false
+
+[node name="chunk_lowres020" parent="." index="222"]
+visible = false
+
+[node name="chunk_lowres021" parent="." index="223"]
+visible = false
+
+[node name="chunk_lowres022" parent="." index="224"]
+visible = false
+
+[node name="chunk_lowres023" parent="." index="225"]
+visible = false
+
+[node name="chunk_lowres024" parent="." index="226"]
+visible = false
+
+[node name="chunk_lowres025" parent="." index="227"]
+visible = false
+
+[node name="chunk_lowres026" parent="." index="228"]
+visible = false
+
+[node name="chunk_lowres027" parent="." index="229"]
+visible = false
+
+[node name="chunk_lowres028" parent="." index="230"]
+visible = false
+
+[node name="chunk_lowres029" parent="." index="231"]
+visible = false
+
+[node name="chunk_lowres030" parent="." index="232"]
+visible = false
+
+[node name="chunk_lowres031" parent="." index="233"]
+visible = false
+
+[node name="chunk_lowres032" parent="." index="234"]
+visible = false
+
+[node name="chunk_lowres033" parent="." index="235"]
+visible = false
+
+[node name="chunk_lowres034" parent="." index="236"]
+visible = false
+
+[node name="chunk_lowres035" parent="." index="237"]
+visible = false
+
+[node name="chunk_lowres036" parent="." index="238"]
+visible = false
+
+[node name="chunk_lowres037" parent="." index="239"]
+visible = false
+
+[node name="chunk_lowres038" parent="." index="240"]
+visible = false
+
+[node name="chunk_lowres039" parent="." index="241"]
+visible = false
+
+[node name="chunk_lowres040" parent="." index="242"]
+visible = false
+
+[node name="chunk_lowres041" parent="." index="243"]
+visible = false
+
+[node name="chunk_lowres042" parent="." index="244"]
+visible = false
+
+[node name="chunk_lowres043" parent="." index="245"]
+visible = false
+
+[node name="chunk_lowres044" parent="." index="246"]
+visible = false
+
+[node name="chunk_lowres045" parent="." index="247"]
+visible = false
+
+[node name="chunk_lowres046" parent="." index="248"]
+visible = false
+
+[node name="chunk_lowres047" parent="." index="249"]
+visible = false
+
+[node name="chunk_lowres048" parent="." index="250"]
+visible = false
+
+[node name="chunk_lowres049" parent="." index="251"]
+visible = false
+
+[node name="chunk_lowres050" parent="." index="252"]
+visible = false
+
+[node name="chunk_lowres051" parent="." index="253"]
+visible = false
+
+[node name="chunk_lowres052" parent="." index="254"]
+visible = false
+
+[node name="chunk_lowres053" parent="." index="255"]
+visible = false
+
+[node name="chunk_lowres054" parent="." index="256"]
+visible = false
+
+[node name="chunk_lowres055" parent="." index="257"]
+visible = false
+
+[node name="chunk_lowres056" parent="." index="258"]
+visible = false
+
+[node name="chunk_lowres057" parent="." index="259"]
+visible = false
+
+[node name="chunk_lowres058" parent="." index="260"]
+visible = false
+
+[node name="chunk_lowres059" parent="." index="261"]
+visible = false
+
+[node name="chunk_lowres060" parent="." index="262"]
+visible = false
+
+[node name="chunk_lowres061" parent="." index="263"]
+visible = false
+
+[node name="chunk_lowres062" parent="." index="264"]
+visible = false
+
+[node name="chunk_lowres063" parent="." index="265"]
+visible = false
+
+[node name="chunk_lowres064" parent="." index="266"]
+visible = false
+
+[node name="chunk_lowres065" parent="." index="267"]
+visible = false
+
+[node name="chunk_lowres066" parent="." index="268"]
+visible = false
+
+[node name="chunk_lowres067" parent="." index="269"]
+visible = false
+
+[node name="chunk_lowres068" parent="." index="270"]
+visible = false
+
+[node name="chunk_lowres069" parent="." index="271"]
+visible = false
+
+[node name="chunk_lowres070" parent="." index="272"]
+visible = false
+
+[node name="chunk_lowres071" parent="." index="273"]
+visible = false
+
+[node name="chunk_lowres072" parent="." index="274"]
+visible = false
+
+[node name="chunk_lowres073" parent="." index="275"]
+visible = false
+
+[node name="chunk_lowres074" parent="." index="276"]
+visible = false
+
+[node name="chunk_lowres075" parent="." index="277"]
+visible = false
+
+[node name="chunk_lowres076" parent="." index="278"]
+visible = false
+
+[node name="chunk_lowres077" parent="." index="279"]
+visible = false
+
+[node name="chunk_lowres078" parent="." index="280"]
+visible = false
+
+[node name="chunk_lowres079" parent="." index="281"]
+visible = false
+
+[node name="chunk_lowres080" parent="." index="282"]
+visible = false
+
+[node name="chunk_lowres081" parent="." index="283"]
+visible = false
+
+[node name="chunk_lowres082" parent="." index="284"]
+visible = false
+
+[node name="chunk_lowres083" parent="." index="285"]
+visible = false
+
+[node name="chunk_lowres084" parent="." index="286"]
+visible = false
+
+[node name="chunk_lowres085" parent="." index="287"]
+visible = false
+
+[node name="chunk_lowres086" parent="." index="288"]
+visible = false
+
+[node name="chunk_lowres087" parent="." index="289"]
+visible = false
+
+[node name="chunk_lowres088" parent="." index="290"]
+visible = false
+
+[node name="chunk_lowres089" parent="." index="291"]
+visible = false
+
+[node name="chunk_lowres090" parent="." index="292"]
+visible = false
+
+[node name="chunk_lowres091" parent="." index="293"]
+visible = false
+
+[node name="chunk_lowres092" parent="." index="294"]
+visible = false
+
+[node name="chunk_lowres093" parent="." index="295"]
+visible = false
+
+[node name="chunk_lowres094" parent="." index="296"]
+visible = false
+
+[node name="chunk_lowres095" parent="." index="297"]
+visible = false
+
+[node name="chunk_lowres096" parent="." index="298"]
+visible = false
+
+[node name="chunk_lowres097" parent="." index="299"]
+visible = false
+
+[node name="chunk_lowres098" parent="." index="300"]
+visible = false
+
+[node name="chunk_lowres099" parent="." index="301"]
+visible = false
+
+[node name="chunk_lowres100" parent="." index="302"]
+visible = false
+
+[node name="chunk_lowres101" parent="." index="303"]
+visible = false
+
+[node name="chunk_lowres102" parent="." index="304"]
+visible = false
+
+[node name="chunk_lowres103" parent="." index="305"]
+visible = false
+
+[node name="chunk_lowres104" parent="." index="306"]
+visible = false
+
+[node name="chunk_lowres105" parent="." index="307"]
+visible = false
+
+[node name="chunk_lowres106" parent="." index="308"]
+visible = false
+
+[node name="chunk_lowres107" parent="." index="309"]
+visible = false
+
+[node name="chunk_lowres108" parent="." index="310"]
+visible = false
+
+[node name="chunk_lowres109" parent="." index="311"]
+visible = false
+
+[node name="chunk_lowres110" parent="." index="312"]
+visible = false
+
+[node name="chunk_lowres111" parent="." index="313"]
+visible = false
+
+[node name="chunk_lowres112" parent="." index="314"]
+visible = false
+
+[node name="chunk_lowres113" parent="." index="315"]
+visible = false
+
+[node name="chunk_lowres114" parent="." index="316"]
+visible = false
+
+[node name="chunk_lowres115" parent="." index="317"]
+visible = false
+
+[node name="chunk_lowres116" parent="." index="318"]
+visible = false
+
+[node name="chunk_lowres117" parent="." index="319"]
+visible = false
+
+[node name="chunk_lowres118" parent="." index="320"]
+visible = false
+
+[node name="chunk_lowres119" parent="." index="321"]
+visible = false
+
+[node name="chunk_lowres120" parent="." index="322"]
+visible = false
+
+[node name="chunk_lowres121" parent="." index="323"]
+visible = false
+
+[node name="chunk_lowres122" parent="." index="324"]
+visible = false
+
+[node name="chunk_lowres123" parent="." index="325"]
+visible = false
+
+[node name="chunk_lowres124" parent="." index="326"]
+visible = false
+
+[node name="chunk_lowres125" parent="." index="327"]
+visible = false
+
+[node name="chunk_lowres126" parent="." index="328"]
+visible = false
+
+[node name="chunk_lowres127" parent="." index="329"]
+visible = false
+
+[node name="chunk_lowres128" parent="." index="330"]
+visible = false
+
+[node name="chunk_lowres129" parent="." index="331"]
+visible = false
+
+[node name="chunk_lowres130" parent="." index="332"]
+visible = false
+
+[node name="chunk_lowres131" parent="." index="333"]
+visible = false
+
+[node name="chunk_lowres132" parent="." index="334"]
+visible = false
+
+[node name="chunk_lowres133" parent="." index="335"]
+visible = false
+
+[node name="chunk_lowres134" parent="." index="336"]
+visible = false
+
+[node name="chunk_lowres135" parent="." index="337"]
+visible = false
+
+[node name="chunk_lowres136" parent="." index="338"]
+visible = false
+
+[node name="chunk_lowres137" parent="." index="339"]
+visible = false
+
+[node name="chunk_lowres138" parent="." index="340"]
+visible = false
+
+[node name="chunk_lowres139" parent="." index="341"]
+visible = false
+
+[node name="chunk_lowres140" parent="." index="342"]
+visible = false
+
+[node name="chunk_lowres141" parent="." index="343"]
+visible = false
+
+[node name="chunk_lowres142" parent="." index="344"]
+visible = false
+
+[node name="chunk_lowres143" parent="." index="345"]
+visible = false
+
+[node name="chunk_lowres_outer001" parent="." index="346"]
+visible = false
+
+[node name="chunk_lowres_outer002" parent="." index="347"]
+visible = false
+
+[node name="chunk_lowres_outer003" parent="." index="348"]
+visible = false
+
+[node name="chunk_lowres_outer004" parent="." index="349"]
+visible = false
+
+[node name="chunk_lowres_outer005" parent="." index="350"]
+visible = false
+
+[node name="chunk_lowres_outer006" parent="." index="351"]
+visible = false
+
+[node name="chunk_lowres_outer007" parent="." index="352"]
+visible = false
+
+[node name="chunk_lowres_outer008" parent="." index="353"]
+visible = false
+
+[node name="chunk_lowres_outer009" parent="." index="354"]
+visible = false
+
+[node name="chunk_lowres_outer010" parent="." index="355"]
+visible = false
+
+[node name="chunk_lowres_outer011" parent="." index="356"]
+visible = false
+
+[node name="chunk_lowres_outer012" parent="." index="357"]
+visible = false
+
+[node name="chunk_lowres_outer013" parent="." index="358"]
+visible = false
+
+[node name="chunk_lowres_outer014" parent="." index="359"]
+visible = false
+
+[node name="chunk_lowres_outer015" parent="." index="360"]
+visible = false
+
+[node name="chunk_lowres_outer016" parent="." index="361"]
+visible = false
+
+[node name="chunk_lowres_outer017" parent="." index="362"]
+visible = false
+
+[node name="chunk_lowres_outer018" parent="." index="363"]
+visible = false
+
+[node name="chunk_lowres_outer019" parent="." index="364"]
+visible = false
+
+[node name="chunk_lowres_outer020" parent="." index="365"]
+visible = false
+
+[node name="chunk_lowres_outer021" parent="." index="366"]
+visible = false
+
+[node name="chunk_lowres_outer022" parent="." index="367"]
+visible = false
+
+[node name="chunk_lowres_outer023" parent="." index="368"]
+visible = false
+
+[node name="chunk_lowres_outer024" parent="." index="369"]
+visible = false
+
+[node name="chunk_lowres_outer025" parent="." index="370"]
+visible = false
+
+[node name="chunk_lowres_outer026" parent="." index="371"]
+visible = false
+
+[node name="chunk_lowres_outer027" parent="." index="372"]
+visible = false
+
+[node name="chunk_lowres_outer028" parent="." index="373"]
+visible = false
+
+[node name="chunk_lowres_outer029" parent="." index="374"]
+visible = false
+
+[node name="chunk_lowres_outer030" parent="." index="375"]
+visible = false
+
+[node name="chunk_lowres_outer031" parent="." index="376"]
+visible = false
+
+[node name="chunk_lowres_outer032" parent="." index="377"]
+visible = false
+
+[node name="chunk_lowres_outer033" parent="." index="378"]
+visible = false
+
+[node name="chunk_lowres_outer034" parent="." index="379"]
+visible = false
+
+[node name="chunk_lowres_outer035" parent="." index="380"]
+visible = false
+
+[node name="chunk_lowres_outer036" parent="." index="381"]
+visible = false
+
+[node name="chunk_lowres_outer037" parent="." index="382"]
+visible = false
+
+[node name="chunk_lowres_outer038" parent="." index="383"]
+visible = false
+
+[node name="chunk_lowres_outer039" parent="." index="384"]
+visible = false
+
+[node name="chunk_lowres_outer040" parent="." index="385"]
+visible = false
+
+[node name="chunk_lowres_outer041" parent="." index="386"]
+visible = false
+
+[node name="chunk_lowres_outer042" parent="." index="387"]
+visible = false
+
+[node name="chunk_lowres_outer043" parent="." index="388"]
+visible = false
+
+[node name="chunk_lowres_outer044" parent="." index="389"]
+visible = false
+
+[node name="chunk_lowres_outer045" parent="." index="390"]
+visible = false
+
+[node name="chunk_lowres_outer046" parent="." index="391"]
+visible = false
+
+[node name="chunk_lowres_outer047" parent="." index="392"]
+visible = false
+
+[node name="chunk_lowres_outer048" parent="." index="393"]
+visible = false
+
+[node name="chunk_lowres_outer049" parent="." index="394"]
+visible = false
+
+[node name="chunk_lowres_outer050" parent="." index="395"]
+visible = false
+
+[node name="chunk_lowres_outer051" parent="." index="396"]
+visible = false
+
+[node name="chunk_lowres_outer052" parent="." index="397"]
+visible = false

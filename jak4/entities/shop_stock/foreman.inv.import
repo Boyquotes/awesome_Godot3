@@ -1,0 +1,13 @@
+[remap]
+
+importer="game.shop_inventory"
+type="Resource"
+path="res://.import/foreman.inv-fea9dbfcb67893db9e73963bfac1b1ae.tres"
+
+[deps]
+
+source_file="res://entities/shop_stock/foreman.inv"
+dest_files=[ "res://.import/foreman.inv-fea9dbfcb67893db9e73963bfac1b1ae.tres" ]
+
+[params]
+

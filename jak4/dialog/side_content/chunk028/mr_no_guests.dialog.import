@@ -1,0 +1,13 @@
+[remap]
+
+importer="np.dialog"
+type="Resource"
+path="res://.import/mr_no_guests.dialog-9b56c981e86425b1f9bb0c6cc81964b3.tres"
+
+[deps]
+
+source_file="res://dialog/side_content/chunk028/mr_no_guests.dialog"
+dest_files=[ "res://.import/mr_no_guests.dialog-9b56c981e86425b1f9bb0c6cc81964b3.tres" ]
+
+[params]
+

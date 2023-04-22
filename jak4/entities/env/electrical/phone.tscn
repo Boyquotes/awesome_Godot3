@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://_glb/env/electrical/phone.glb" type="PackedScene" id=1]
+[ext_resource path="res://entities/env/electrical/phone.gd" type="Script" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0, 0, 0, 1 )
+roughness = 0.0
+
+[sub_resource type="SpatialMaterial" id=2]
+resource_local_to_scene = true
+albedo_color = Color( 0, 0, 0, 1 )
+roughness = 0.79
+emission_enabled = true
+emission = Color( 0.960784, 0.960784, 0.960784, 1 )
+emission_energy = 0.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[node name="phone" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="phone" parent="." index="0"]
+material/0 = SubResource( 1 )
+material/1 = SubResource( 2 )

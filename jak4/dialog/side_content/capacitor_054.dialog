@@ -1,0 +1,18 @@
+{main_speaker.active}
+	* The machine is active. Take the capacitor?
+	> {skip()}Yes
+		{main_speaker.deactivate()}
+		{Global.add_item("capacitor")}
+	> {skip()}	No
+	{exit()}
+{otherwise if Global.count("capacitor")}
+	* The machine is inactive. Insert a capacitor?
+	> {skip()} Yes
+		{Global.remove_item("capacitor")}
+		{main_speaker.activate()}
+	> {skip()} No
+	{exit()}
+{otherwise}
+	* The machine is inactive, and you have no capacitors.
+	* You are fucked.
+	* Please tell the developer you got soft-locked at the capacitor puzzle in chunk 054.

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://ui/items/item_description.gd" type="Script" id=1]
+[ext_resource path="res://ui/items/vis/mother_letter.tscn" type="PackedScene" id=3]
+
+[resource]
+script = ExtResource( 1 )
+category = 2
+preview_3d = ExtResource( 3 )
+full_name = "A letter to Natia"
+description = "I was asked to deliver this to \"Natia\" at Muzna Cross. I can't read Yaqazi, so I don't know what it says."
+extra_items = {
+}

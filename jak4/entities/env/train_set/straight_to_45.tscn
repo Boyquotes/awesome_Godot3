@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://material/triplanar.shader" type="Shader" id=2]
+[ext_resource path="res://material/env/vaeler/wood-slats-old.png" type="Texture" id=3]
+[ext_resource path="res://material/env/copper/copper_cleaned.tres" type="Material" id=4]
+[ext_resource path="res://_glb/env/train_set/straight_to_45.glb" type="PackedScene" id=5]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 2 )
+shader_param/wall_scale = 0.5
+shader_param/ground_scale = 0.5
+shader_param/power = 5.0
+shader_param/softness = 0.5
+shader_param/specularity_ground = 1.0
+shader_param/specularity_wall = 1.0
+shader_param/specularity_ceiling = 1.0
+shader_param/light_bias = 0.0
+shader_param/wall = ExtResource( 3 )
+shader_param/ground = ExtResource( 3 )
+shader_param/ceiling = ExtResource( 3 )
+
+[node name="straight_to_45" instance=ExtResource( 5 )]
+
+[node name="train_tracks" parent="." index="0"]
+material/0 = ExtResource( 4 )
+material/1 = SubResource( 1 )

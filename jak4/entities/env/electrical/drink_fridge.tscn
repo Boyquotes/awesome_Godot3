@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://audio/env/amb_fridge.ogg" type="AudioStream" id=1]
+[ext_resource path="res://_glb/env/electrical/drink_fridge.glb" type="PackedScene" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_transparent = true
+albedo_color = Color( 0.909804, 0.905882, 0.913725, 0.133333 )
+roughness = 0.0
+
+[node name="drink_fridge" instance=ExtResource( 2 )]
+
+[node name="mesh" parent="drink_fridge-kine" index="0"]
+material/1 = SubResource( 1 )
+
+[node name="SpotLight" type="SpotLight" parent="." index="1"]
+transform = Transform( 0.823981, 0.220859, 0.521801, -0.564773, 0.394358, 0.724923, -0.0456704, -0.892022, 0.449679, 0.285763, 1.13841, 0.251231 )
+light_energy = 0.5
+spot_range = 1.2749
+spot_attenuation = 0.258816
+spot_angle = 33.9069
+spot_angle_attenuation = 4.5948
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.552378, 0 )
+stream = ExtResource( 1 )
+unit_db = -8.0
+autoplay = true
+bus = "SFX"

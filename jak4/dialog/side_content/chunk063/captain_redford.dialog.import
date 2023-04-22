@@ -1,0 +1,13 @@
+[remap]
+
+importer="np.dialog"
+type="Resource"
+path="res://.import/captain_redford.dialog-ad0739a56bc48b4a6dc766cdf0ab1a7c.tres"
+
+[deps]
+
+source_file="res://dialog/side_content/chunk063/captain_redford.dialog"
+dest_files=[ "res://.import/captain_redford.dialog-ad0739a56bc48b4a6dc766cdf0ab1a7c.tres" ]
+
+[params]
+

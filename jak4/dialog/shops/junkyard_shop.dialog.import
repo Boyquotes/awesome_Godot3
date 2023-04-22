@@ -1,0 +1,13 @@
+[remap]
+
+importer="np.dialog"
+type="Resource"
+path="res://.import/junkyard_shop.dialog-3f87a77a5e27587cd1c29d51a091951b.tres"
+
+[deps]
+
+source_file="res://dialog/shops/junkyard_shop.dialog"
+dest_files=[ "res://.import/junkyard_shop.dialog-3f87a77a5e27587cd1c29d51a091951b.tres" ]
+
+[params]
+

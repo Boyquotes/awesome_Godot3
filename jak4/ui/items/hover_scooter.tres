@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://ui/items/item_description.gd" type="Script" id=1]
+[ext_resource path="res://ui/items/vis/mesh_hover_scooter.tscn" type="PackedScene" id=3]
+
+[resource]
+script = ExtResource( 1 )
+category = 1
+preview_3d = ExtResource( 3 )
+full_name = "Hover Scooter"
+description = "You can gain quite some speed going down hills with this thing. Should I be wearing a helmet? Goggles?"
+extra_items = {
+"hover_speed_up": "Hover Speed Up"
+}

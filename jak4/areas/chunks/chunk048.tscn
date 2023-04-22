@@ -1,0 +1,134 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://areas/chunk_content.gd" type="Script" id=1]
+[ext_resource path="res://entities/env/train_set/20m-1v-straight_to_slant.tscn" type="PackedScene" id=2]
+[ext_resource path="res://entities/env/train_set/20m-1v-slant_to_slant.tscn" type="PackedScene" id=3]
+[ext_resource path="res://entities/env/train_set/20m-1v-slant_to_straight.tscn" type="PackedScene" id=4]
+[ext_resource path="res://entities/env/train_set/straight_to_15.tscn" type="PackedScene" id=5]
+[ext_resource path="res://entities/env/train_set/20m_straight.tscn" type="PackedScene" id=6]
+[ext_resource path="res://material/env/stone/gravel1.png" type="Texture" id=7]
+[ext_resource path="res://material/env/stone/sand1.jpg" type="Texture" id=8]
+[ext_resource path="res://material/triplanar.shader" type="Shader" id=9]
+
+[sub_resource type="ShaderMaterial" id=9]
+shader = ExtResource( 9 )
+shader_param/wall_scale = 0.5
+shader_param/ground_scale = 0.5
+shader_param/power = 0.5
+shader_param/softness = 0.5
+shader_param/specularity_ground = 1.0
+shader_param/specularity_wall = 1.0
+shader_param/specularity_ceiling = 1.0
+shader_param/light_bias = 0.0
+shader_param/wall = ExtResource( 8 )
+shader_param/ground = ExtResource( 7 )
+shader_param/ceiling = ExtResource( 8 )
+
+[sub_resource type="Curve3D" id=10]
+_data = {
+"points": PoolVector3Array( 0.4, -3.1, 3.9, -0.4, 3.1, -3.9, 1.24901, -5.36414, 14.7031, -0.11, -0.55, 5.36, 0.11, 0.55, -5.36, 0.590256, -0.369519, 1.7467, 0.05, 0.44, 8.77, -0.05, -0.44, -8.77, 0.125351, -1.48563, -23.3012, -0.3, 0.8, 11.4, 0.3, -0.8, -11.4, 0.074234, -3.2078, -58.4693, 0, 0.6, 9.5, 0, -0.6, -9.5, -0.17215, -4.92987, -92.8011, 0.2, -0.2, 10.2, -0.2, 0.2, -10.2, -0.104156, -6.05173, -124.483, 0, 0.4, 8.4, 0, -0.4, -8.4, 0.31694, -4.27868, -161.06, -0.2, 0.9, 15.4, 0.2, -0.9, -15.4, 0.33783, -5.90065, -193.249, 0, 0, 0, 0, 0, 0, 0.0924683, -8.12895, -236.736, -2, -0.3, 7.4, 2, 0.3, -7.4, 3.28688, -8.16113, -260.227, -4.8, -0.1, 11.7, 4.8, 0.1, -11.7, 15.8554, -10.3517, -299.483, -3.3, 0, 8.7, 3.3, 0, -8.7, 84.8813, -10.7444, -508.476, 0, 0, 0, 0, 0, 0, 87.7057, -24.1686, -522.836 ),
+"tilts": PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+}
+
+[node name="chunk048" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="rail" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.109626, 0.00497776, -0.993961, 0.00067869, 0.999987, 0.00508279, 0.993973, -0.0012318, 0.109621, 182.58, 11.2677, -260.029 )
+
+[node name="rail_gravel" type="CSGPolygon" parent="rail"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0 )
+use_collision = true
+collision_layer = 257
+polygon = PoolVector2Array( -2.8, -0.3, -2.1, 0, 1.7, 0, 2.6, -0.5, 7.7, -5.3, -8.8, -5 )
+mode = 2
+path_node = NodePath("Path")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.1
+path_rotation = 2
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+smooth_faces = true
+material = SubResource( 9 )
+
+[node name="Path" type="Path" parent="rail/rail_gravel"]
+transform = Transform( 1, 3.20142e-10, -7.45058e-09, 3.92902e-10, 1, 0, 7.45058e-09, -1.16415e-10, 1, 0, 0, 0 )
+curve = SubResource( 10 )
+
+[node name="20m-1v-slant_to_slant" parent="rail" instance=ExtResource( 3 )]
+transform = Transform( 1, 6.98492e-10, -4.47035e-08, 1.16415e-10, 1, 2.70666e-09, 8.19564e-08, 3.07045e-09, 1, 19.9773, -0.98309, 7.62939e-05 )
+
+[node name="20m-1v-slant_to_slant2" parent="rail" instance=ExtResource( 3 )]
+transform = Transform( 1, 1.28057e-09, -7.45058e-08, 1.16415e-10, 1, 4.61296e-09, 1.3411e-07, 5.89353e-09, 1, 39.9774, -1.98309, 0.00012207 )
+
+[node name="20m-1v-slant_to_slant3" parent="rail" instance=ExtResource( 3 )]
+transform = Transform( 1, 1.62981e-09, -9.68575e-08, 1.16415e-10, 1, 6.03904e-09, 1.56462e-07, 7.77072e-09, 1, 59.9774, -2.9831, 0.000183105 )
+
+[node name="20m-1v-slant_to_slant4" parent="rail" instance=ExtResource( 3 )]
+transform = Transform( 1, 2.09548e-09, -1.2666e-07, 1.16415e-10, 1, 7.93079e-09, 1.86265e-07, 1.05792e-08, 1, 79.9773, -3.9831, 0.000305176 )
+
+[node name="20m-1v-slant_to_straight" parent="rail" instance=ExtResource( 4 )]
+transform = Transform( 1, 4.19095e-09, -2.30968e-07, 0, 1, 1.4581e-08, 3.05474e-07, 1.62545e-08, 1, 99.9774, -4.98312, 0.00062561 )
+
+[node name="20m-1v-slant_to_straight2" parent="rail/20m-1v-slant_to_straight" instance=ExtResource( 4 )]
+transform = Transform( -1, -3.60887e-09, -3.72529e-08, 0, 1, 2.61934e-08, 9.68575e-08, 7.71252e-10, -1, 40, -3.33786e-06, 7.62939e-05 )
+
+[node name="20m-1v-straight_to_slant" parent="rail/20m-1v-slant_to_straight" instance=ExtResource( 2 )]
+transform = Transform( -1, -3.95812e-09, -6.70552e-08, -2.32831e-10, 0.999999, 2.42726e-08, 1.41561e-07, -4.62751e-09, -1, 59.9999, 1.00001, -0.000274658 )
+
+[node name="20m-1v-straight_to_slant2" parent="rail/20m-1v-slant_to_straight" instance=ExtResource( 2 )]
+transform = Transform( 1, -2.32831e-10, 2.28984e-07, 2.3283e-10, 0.999999, 4.62752e-09, -2.28984e-07, -4.62751e-09, 1, 59.9999, 1.00001, -0.000274658 )
+
+[node name="20m-1v-slant_to_slant" parent="rail/20m-1v-slant_to_straight/20m-1v-straight_to_slant2" instance=ExtResource( 3 )]
+transform = Transform( 1, 5.82077e-10, -3.72529e-08, 5.82077e-10, 1, 2.91038e-11, 2.98023e-08, 2.57569e-09, 1, 19.9844, -0.980723, 4.57764e-05 )
+
+[node name="20m-1v-slant_to_slant2" parent="rail/20m-1v-slant_to_straight/20m-1v-straight_to_slant2" instance=ExtResource( 3 )]
+transform = Transform( 0.999999, 9.31323e-10, -4.47035e-08, 1.04774e-09, 1, 7.27596e-11, 5.96046e-08, 6.38829e-09, 0.999999, 39.9844, -1.98072, 7.62939e-05 )
+
+[node name="20m-1v-slant_to_straight" parent="rail/20m-1v-slant_to_straight/20m-1v-straight_to_slant2" instance=ExtResource( 4 )]
+transform = Transform( 0.999999, 1.16415e-09, -6.70552e-08, 1.74623e-09, 1, -3.20142e-10, 8.19564e-08, 8.7748e-09, 0.999999, 59.9844, -2.98072, 9.15527e-05 )
+
+[node name="straight_to_15" parent="rail/20m-1v-slant_to_straight/20m-1v-straight_to_slant2/20m-1v-slant_to_straight" instance=ExtResource( 5 )]
+transform = Transform( 1, 1.16415e-10, 0, -4.65661e-10, 1, 1.33878e-09, 2.23517e-08, 1.33878e-09, 1, 20, -0.999997, 0 )
+
+[node name="20m-1v-straight_to_slant" parent="rail" instance=ExtResource( 2 )]
+transform = Transform( 0.94968, 0.000678694, -0.313219, -0.00223656, 0.999987, -0.00461445, 0.313212, 0.00508279, 0.949669, 261.463, -7.9631, 3.51021 )
+
+[node name="20m-1v-slant_to_straight" parent="rail/20m-1v-straight_to_slant" instance=ExtResource( 4 )]
+transform = Transform( 1, 4.16334e-17, -2.98023e-08, -5.55112e-17, 1, 0, 0, 0, 1, 19.9898, -0.978747, 3.05176e-05 )
+
+[node name="20m_straight3" parent="rail" instance=ExtResource( 6 )]
+transform = Transform( 0.94968, 0.000678694, -0.313219, -0.00223656, 0.999987, -0.00461445, 0.313212, 0.00508279, 0.949669, 299.42, -10.0312, 16.019 )
+
+[node name="20m_straight4" parent="rail/20m_straight3" instance=ExtResource( 6 )]
+transform = Transform( 1, -9.64951e-11, 2.98023e-08, 1.16415e-10, 1, 4.65661e-10, -1.49012e-08, -4.55554e-10, 1, 20, 0.00134528, 6.10352e-05 )
+
+[node name="20m_straight2" parent="rail/20m_straight3/20m_straight4" instance=ExtResource( 6 )]
+transform = Transform( 1, 6.93889e-18, -1.49012e-08, -6.93889e-18, 1, 2.08167e-17, 2.98023e-08, -2.60209e-18, 1, 20, 0, -1.52588e-05 )
+
+[node name="20m_straight2" parent="rail" instance=ExtResource( 6 )]
+transform = Transform( 0.94968, 0.000678694, -0.313219, -0.00223656, 0.999987, -0.00461445, 0.313212, 0.00508279, 0.949669, 356.401, -10.1626, 34.8118 )
+
+[node name="20m_straight2" parent="rail/20m_straight2" instance=ExtResource( 6 )]
+transform = Transform( 1, 6.93889e-18, -1.49012e-08, -6.93889e-18, 1, 2.08167e-17, 2.98023e-08, -2.60209e-18, 1, 20, 0, -1.52588e-05 )
+
+[node name="20m_straight3" parent="rail/20m_straight2" instance=ExtResource( 6 )]
+transform = Transform( 1, 1.13888e-10, 1.49012e-08, -1.16415e-10, 1, 6.28837e-18, 4.47035e-08, -2.41238e-11, 1, 40.0001, -2.86102e-06, 4.57764e-05 )
+
+[node name="20m_straight2" parent="rail/20m_straight2/20m_straight3" instance=ExtResource( 6 )]
+transform = Transform( 1, 6.93889e-18, -1.49012e-08, -6.93889e-18, 1, 2.08167e-17, 2.98023e-08, -2.60209e-18, 1, 20, 0, -1.52588e-05 )
+
+[node name="20m_straight4" parent="rail" instance=ExtResource( 6 )]
+transform = Transform( 0.94968, 0.000678694, -0.313219, -0.00223656, 0.999987, -0.00461445, 0.313212, 0.00508279, 0.949669, 432.375, -10.3415, 59.8688 )
+
+[node name="20m_straight2" parent="rail/20m_straight4" instance=ExtResource( 6 )]
+transform = Transform( 1, 6.93889e-18, -1.49012e-08, -6.93889e-18, 1, 2.08167e-17, 2.98023e-08, -2.60209e-18, 1, 20, 0, -1.52588e-05 )
+
+[node name="20m_straight3" parent="rail/20m_straight4" instance=ExtResource( 6 )]
+transform = Transform( 1, 1.13888e-10, 1.49012e-08, -1.16415e-10, 1, 6.28837e-18, 4.47035e-08, -2.41238e-11, 1, 40.0001, -2.86102e-06, 4.57764e-05 )
+
+[node name="exit_rail" parent="." instance=ExtResource( 6 )]
+transform = Transform( -0.207222, -1.39698e-09, -0.978294, -4.65661e-10, 1, -4.65661e-10, 0.978293, 5.82077e-10, -0.207222, 157.987, 1.52408, 235.013 )

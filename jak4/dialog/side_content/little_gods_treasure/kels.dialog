@@ -1,0 +1,18 @@
+
+Vaeler?
+{Global.task_is_active("treasure_of_little_god")}
+	[You] Uh, yes. Are you Kels? Hickory said you would know about an alleged treasure at Little God.
+	Hikori.
+	[You] Yes. Do you know her?
+	She is my younger sister. Hikori. Not Hickory.
+	[You] I, uh, can't hear a difference.
+	I can. There is no treasure, also.
+	[You] You heard her talking?
+	Don't need to. She tells every Vaeler and sends them to me. Business thing she tries.
+	[You] I see... to get people into your shop? You don't seem enthused about it.
+	I do not like such dishonesty. False hope for witless tourists.
+	[You] Ah... So the whole in the mountain and all that is fiction?
+	The hole is real. It is a cave. They do not put treasure in caves. Just more cave.
+	People have died going down there. Very dangerous.
+{otherwise}
+	[You] Uh, yes. Just looking around.

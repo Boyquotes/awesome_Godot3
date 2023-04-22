@@ -1,0 +1,13 @@
+[remap]
+
+importer="np.dialog"
+type="Resource"
+path="res://.import/jackie_end.dialog-769bcf4b2ece85b931954d5e51bb8073.tres"
+
+[deps]
+
+source_file="res://dialog/main/jackie_end.dialog"
+dest_files=[ "res://.import/jackie_end.dialog-769bcf4b2ece85b931954d5e51bb8073.tres" ]
+
+[params]
+

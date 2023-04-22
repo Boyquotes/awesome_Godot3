@@ -1,0 +1,258 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://_glb/weapons/grav_gun.glb" type="PackedScene" id=1]
+[ext_resource path="res://player/weapons/grav_gun.gd" type="Script" id=2]
+[ext_resource path="res://entities/visual/mum_hologram.png" type="Texture" id=3]
+[ext_resource path="res://entities/grav_explosion.gd" type="Script" id=4]
+[ext_resource path="res://material/env/ancient/white_metal.material" type="Material" id=5]
+[ext_resource path="res://player/weapons/grav_projectile.gd" type="Script" id=6]
+[ext_resource path="res://material/env/ancient/gem.material" type="Material" id=7]
+[ext_resource path="res://audio/weapons/grav_gun_fire.wav" type="AudioStream" id=8]
+[ext_resource path="res://audio/weapons/grav_gun_explosion.wav" type="AudioStream" id=9]
+[ext_resource path="res://player/weapons/explode_sound.gd" type="Script" id=10]
+[ext_resource path="res://audio/weapons/grav_gun_bounce.wav" type="AudioStream" id=11]
+
+[sub_resource type="PhysicsMaterial" id=22]
+friction = 0.0
+bounce = 0.91
+
+[sub_resource type="SphereShape" id=2]
+radius = 0.114207
+
+[sub_resource type="CubeMesh" id=20]
+size = Vector3( 0.2, 0.2, 0.2 )
+
+[sub_resource type="SpatialMaterial" id=21]
+flags_unshaded = true
+albedo_color = Color( 13.3, 1, 9.82, 1 )
+
+[sub_resource type="SphereShape" id=17]
+resource_local_to_scene = true
+radius = 8.0
+
+[sub_resource type="SphereMesh" id=18]
+resource_local_to_scene = true
+radial_segments = 24
+rings = 24
+
+[sub_resource type="Shader" id=9]
+code = "shader_type spatial;
+render_mode unshaded, cull_disabled, blend_add;
+
+uniform sampler2D main_texture;
+uniform vec4 color : hint_color;
+
+void fragment() {
+	ALBEDO = texture(main_texture, UV).rgb*color.rgb;
+	ALPHA = pow(1.0 - NORMAL.z, 2)*color.a;
+}"
+
+[sub_resource type="ShaderMaterial" id=19]
+resource_local_to_scene = true
+shader = SubResource( 9 )
+shader_param/color = Color( 1, 1, 1, 1 )
+shader_param/main_texture = ExtResource( 3 )
+
+[sub_resource type="Animation" id=6]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("MeshInstance:material/0:shader_param/color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MeshInstance:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.1, 0.1, 0.1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape:shape:radius")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 8.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CollisionShape:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("OmniLight:light_energy")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "fire"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("MeshInstance:material/0:shader_param/color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 2.21914, 1 ),
+"update": 0,
+"values": [ Color( 6, 6, 6, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MeshInstance:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 0.148651, 1 ),
+"update": 0,
+"values": [ Vector3( 0.1, 0.1, 0.1 ), Vector3( 8, 8, 8 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape:shape:radius")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 0.965939, 1 ),
+"update": 0,
+"values": [ 0.1, 8.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CollisionShape:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("OmniLight:light_energy")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.5, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 3.153, 0.0 ]
+}
+
+[node name="grav_gun" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="grav_gun" parent="Armature/Skeleton" index="0"]
+layers = 2
+material/0 = ExtResource( 5 )
+material/1 = ExtResource( 7 )
+
+[node name="launcher" type="Spatial" parent="." index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0187108, 0.0846297, 0.291625 )
+
+[node name="projectile" type="RigidBody" parent="launcher" index="0"]
+collision_layer = 0
+collision_mask = 536870917
+physics_material_override = SubResource( 22 )
+contacts_reported = 1
+contact_monitor = true
+script = ExtResource( 6 )
+
+[node name="CollisionShape" type="CollisionShape" parent="launcher/projectile" index="0"]
+shape = SubResource( 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="launcher/projectile" index="1"]
+transform = Transform( 0.537381, -0.537381, 0, 0.218175, 0.218175, 0, 0, 0, 1, 0, 0, 0 )
+mesh = SubResource( 20 )
+material/0 = SubResource( 21 )
+
+[node name="bounce_sound" type="AudioStreamPlayer3D" parent="launcher/projectile" index="2"]
+stream = ExtResource( 11 )
+unit_db = -10.0
+unit_size = 20.0
+bus = "SFX_Player"
+
+[node name="OmniLight" type="OmniLight" parent="launcher/projectile" index="3"]
+light_color = Color( 0.968627, 0.580392, 1, 1 )
+omni_range = 2.7
+
+[node name="explosion" type="Area" parent="launcher" index="1"]
+collision_layer = 0
+collision_mask = 536870919
+script = ExtResource( 4 )
+
+[node name="CollisionShape" type="CollisionShape" parent="launcher/explosion" index="0"]
+shape = SubResource( 17 )
+disabled = true
+
+[node name="MeshInstance" type="MeshInstance" parent="launcher/explosion" index="1"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
+layers = 2
+mesh = SubResource( 18 )
+material/0 = SubResource( 19 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="launcher/explosion" index="2"]
+anims/RESET = SubResource( 6 )
+anims/fire = SubResource( 16 )
+
+[node name="OmniLight" type="OmniLight" parent="launcher/explosion" index="3"]
+light_color = Color( 0.462745, 0.568627, 1, 1 )
+light_energy = 0.0
+omni_range = 12.4
+
+[node name="explode_sound" type="AudioStreamPlayer3D" parent="launcher" index="2"]
+stream = ExtResource( 9 )
+unit_size = 25.0
+bus = "SFX_Player"
+script = ExtResource( 10 )
+
+[node name="fire_sound" type="AudioStreamPlayer" parent="." index="2"]
+stream = ExtResource( 8 )
+bus = "SFX_Player"
+
+[connection signal="body_entered" from="launcher/projectile" to="launcher/projectile" method="_on_body_entered"]
+[connection signal="contact" from="launcher/projectile" to="." method="_on_projectile_contact"]
+[connection signal="disappeared" from="launcher/explosion" to="." method="_on_explosion_disappeared"]
+[connection signal="animation_finished" from="launcher/explosion/AnimationPlayer" to="launcher/explosion" method="_on_animation_finished"]
+[connection signal="sound_finished" from="launcher/explode_sound" to="." method="_on_explode_sound_finished"]

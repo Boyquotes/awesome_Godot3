@@ -1,0 +1,13 @@
+[remap]
+
+importer="np.dialog"
+type="Resource"
+path="res://.import/medium.dialog-06cd6b5454e76db22c649a28f2aaae05.tres"
+
+[deps]
+
+source_file="res://dialog/main/medium.dialog"
+dest_files=[ "res://.import/medium.dialog-06cd6b5454e76db22c649a28f2aaae05.tres" ]
+
+[params]
+

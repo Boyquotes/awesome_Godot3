@@ -1,0 +1,40 @@
+{talked == 0} Ey! Serisari! Leshene ine hugote?
+	* The boy gestures to the roofs. It seems he wants you to play with him.
+	* Will you?
+	{goto("choice")}
+
+{otherwise}?{tyler_tutorial}
+	*The boy seems satisfied.
+	{main_speaker.chase = false}
+	{exit()}
+
+{otherwise} Hugote? Eeya ili paina?
+	* The boy clearly wants to play some sort of game on the roofs.
+	* Should you?
+
+:choice:
+> {skip()} Yes (Play tutorial)
+	[You] Uh, eya?
+	* The boys eyes glint. He starts running. You suppose he wants you to chase him.
+	{main_speaker.start_tutorial()}
+	{exit()}
+
+> {skip()} No (Skip Tutorial)
+	[You] Um. P-Paina? Yotia.
+	* The boy shakes his head and sits down.  Maybe you can play later.
+	{exit()}
+
+{exit()}
+:_coat
+{traded_coats()}
+	[You] Could we trade coats again?
+	* You make the same gesture to explain this to the boy.
+	Eeya!
+	{swap_coats()} * You two trade coats.
+{otherwise} 
+	[You] Hello. Could we trade coats? Yours is lovely.
+	Eh?
+	* You gesture to the boy's coat, then to yours, trying to pantomime swapping.
+	* With some effort, he understands.
+	Oh? Eeya!
+	{swap_coats()} * You two trade coats.

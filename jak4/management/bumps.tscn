@@ -1,0 +1,105 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://management/bumps.gd" type="Script" id=1]
+[ext_resource path="res://material/particles/dust.png" type="Texture" id=2]
+[ext_resource path="res://material/particles.gdshader" type="Shader" id=3]
+
+[sub_resource type="Gradient" id=5]
+offsets = PoolRealArray( 0, 0.908108 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=6]
+gradient = SubResource( 5 )
+width = 32
+
+[sub_resource type="Curve" id=7]
+_data = [ Vector2( 0, 0.686364 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.95 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=8]
+width = 32
+curve = SubResource( 7 )
+
+[sub_resource type="ParticlesMaterial" id=1]
+resource_local_to_scene = true
+spread = 180.0
+flatness = 1.0
+gravity = Vector3( 0, 1, 0 )
+initial_velocity = 1.0
+initial_velocity_random = 0.47
+angular_velocity = 24.83
+angular_velocity_random = 0.53
+radial_accel = -1.5
+angle = 161.4
+angle_random = 1.0
+scale = 0.7
+scale_random = 0.3
+scale_curve = SubResource( 8 )
+color_ramp = SubResource( 6 )
+hue_variation = -0.02
+hue_variation_random = 1.0
+
+[sub_resource type="ShaderMaterial" id=10]
+render_priority = 1
+shader = ExtResource( 3 )
+shader_param/albedo = Color( 1, 1, 1, 1 )
+shader_param/subsurface_scattering = 1.0
+shader_param/texture_albedo = ExtResource( 2 )
+
+[sub_resource type="QuadMesh" id=4]
+material = SubResource( 10 )
+
+[sub_resource type="Curve" id=14]
+_data = [ Vector2( 0, 0.268182 ), 0.0, 2.17104, 0, 0, Vector2( 1, 0.970455 ), 0.0450216, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=15]
+width = 32
+curve = SubResource( 14 )
+
+[sub_resource type="ParticlesMaterial" id=13]
+resource_local_to_scene = true
+spread = 180.0
+flatness = 1.0
+gravity = Vector3( 0, 2, 0 )
+initial_velocity = 1.3
+initial_velocity_random = 0.76
+angular_velocity = 24.83
+angular_velocity_random = 0.53
+radial_accel = -1.5
+angle = 161.4
+angle_random = 1.0
+scale_random = 0.3
+scale_curve = SubResource( 15 )
+color_ramp = SubResource( 6 )
+hue_variation = -0.02
+hue_variation_random = 1.0
+
+[node name="bumps" type="Node"]
+script = ExtResource( 1 )
+
+[node name="particle_sand_small" type="Particles" parent="."]
+cast_shadow = 0
+emitting = false
+amount = 6
+lifetime = 1.5
+one_shot = true
+explosiveness = 0.86
+visibility_aabb = AABB( -0.926582, -0.270309, -0.987797, 1.85316, 1.50058, 1.9756 )
+process_material = SubResource( 1 )
+draw_pass_1 = SubResource( 4 )
+
+[node name="particle_sand_large" type="Particles" parent="."]
+cast_shadow = 0
+emitting = false
+amount = 6
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+visibility_aabb = AABB( -1.33673, -0.270309, -1.32533, 2.67345, 1.50058, 2.65066 )
+process_material = SubResource( 13 )
+draw_pass_1 = SubResource( 4 )
+
+[node name="sound_footstep" type="AudioStreamPlayer3D" parent="."]
+unit_db = -4.0
+unit_size = 8.0
+max_db = -2.0
+bus = "SFX"

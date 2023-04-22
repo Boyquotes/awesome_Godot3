@@ -1,0 +1,13 @@
+[remap]
+
+importer="np.dialog"
+type="Resource"
+path="res://.import/race_coat_trade.dialog-058b4072d555a92806f72e006ce73619.tres"
+
+[deps]
+
+source_file="res://dialog/side_content/race/race_coat_trade.dialog"
+dest_files=[ "res://.import/race_coat_trade.dialog-058b4072d555a92806f72e006ce73619.tres" ]
+
+[params]
+

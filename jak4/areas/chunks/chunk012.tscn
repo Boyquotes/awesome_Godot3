@@ -1,0 +1,719 @@
+[gd_scene load_steps=54 format=2]
+
+[ext_resource path="res://_glb/chunks/chunk012.glb" type="PackedScene" id=1]
+[ext_resource path="res://areas/chunk_content.gd" type="Script" id=2]
+[ext_resource path="res://entities/npc/npc.tscn" type="PackedScene" id=3]
+[ext_resource path="res://dialog/crab_hill/balter.dialog" type="Resource" id=4]
+[ext_resource path="res://material/env/stone/cobblestone1.png" type="Texture" id=5]
+[ext_resource path="res://material/env/stone/sand_brick1.jpg" type="Texture" id=6]
+[ext_resource path="res://material/triplanar.shader" type="Shader" id=7]
+[ext_resource path="res://material/env/plants/grass.png" type="Texture" id=8]
+[ext_resource path="res://material/env/stone/bricks.material" type="Material" id=9]
+[ext_resource path="res://entities/env/stone/fountain.tscn" type="PackedScene" id=10]
+[ext_resource path="res://entities/env/empire/shop_stand.tscn" type="PackedScene" id=11]
+[ext_resource path="res://material/env/stone/sand1.jpg" type="Texture" id=12]
+[ext_resource path="res://_glb/mat_basic.material" type="Material" id=13]
+[ext_resource path="res://material/water_surface.material" type="Material" id=14]
+[ext_resource path="res://material/env/fountain-waterfall.material" type="Material" id=15]
+[ext_resource path="res://entities/save_zone.gd" type="Script" id=16]
+[ext_resource path="res://material/main_spatial.shader" type="Shader" id=17]
+[ext_resource path="res://material/env/vaeler/decayed_wood.png" type="Texture" id=18]
+[ext_resource path="res://material/triplanar_local_coords.shader" type="Shader" id=19]
+[ext_resource path="res://material/env/vaeler/roof_tiles.png" type="Texture" id=20]
+[ext_resource path="res://material/env/vaeler/grey_brick.png" type="Texture" id=21]
+[ext_resource path="res://material/env/vaeler/tile.png" type="Texture" id=22]
+[ext_resource path="res://material/env/vaeler/faux_marble.png" type="Texture" id=23]
+[ext_resource path="res://entities/env/stone/garden_melon.tscn" type="PackedScene" id=24]
+[ext_resource path="res://entities/env/stone/garden.tscn" type="PackedScene" id=25]
+[ext_resource path="res://entities/env/stone/glass-furnace.tscn" type="PackedScene" id=26]
+[ext_resource path="res://entities/env/copper/pail.tscn" type="PackedScene" id=27]
+[ext_resource path="res://entities/env/copper/glass_support.tscn" type="PackedScene" id=28]
+[ext_resource path="res://entities/env/copper/glass-tools.tscn" type="PackedScene" id=29]
+[ext_resource path="res://entities/env/copper/c_table.tscn" type="PackedScene" id=30]
+[ext_resource path="res://entities/env/copper/table2.tscn" type="PackedScene" id=31]
+[ext_resource path="res://entities/env/electrical/outlet_box.tscn" type="PackedScene" id=32]
+[ext_resource path="res://entities/env/electrical/wind_generator.tscn" type="PackedScene" id=33]
+[ext_resource path="res://entities/env/furniture/sitting_pillow.tscn" type="PackedScene" id=34]
+[ext_resource path="res://entities/env/furniture/sofa.tscn" type="PackedScene" id=35]
+[ext_resource path="res://entities/env/furniture/carpet.tscn" type="PackedScene" id=36]
+[ext_resource path="res://entities/env/furniture/bottle2.tscn" type="PackedScene" id=37]
+[ext_resource path="res://entities/env/furniture/incense.tscn" type="PackedScene" id=38]
+[ext_resource path="res://dialog/crab_hill/den_npc.dialog" type="Resource" id=39]
+[ext_resource path="res://management/environment_override.gd" type="Script" id=40]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 7 )
+shader_param/wall_scale = 0.4
+shader_param/ground_scale = 0.5
+shader_param/power = 1.0
+shader_param/softness = 0.5
+shader_param/specularity_ground = 1.0
+shader_param/specularity_wall = 1.0
+shader_param/specularity_ceiling = 1.0
+shader_param/light_bias = 0.0
+shader_param/shadow_normal_offset = 0.2
+shader_param/wall = ExtResource( 6 )
+shader_param/ground = ExtResource( 5 )
+shader_param/ceiling = ExtResource( 5 )
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 7 )
+shader_param/wall_scale = 0.125
+shader_param/ground_scale = 0.125
+shader_param/power = 5.0
+shader_param/softness = 0.5
+shader_param/specularity_ground = 1.0
+shader_param/specularity_wall = 1.0
+shader_param/specularity_ceiling = 1.0
+shader_param/light_bias = 0.0
+shader_param/shadow_normal_offset = 0.2
+shader_param/wall = ExtResource( 12 )
+shader_param/ground = ExtResource( 8 )
+shader_param/ceiling = ExtResource( 12 )
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = ExtResource( 17 )
+shader_param/subsurface_scattering = -1.0
+shader_param/softness = 0.399
+shader_param/specularity = 1.0
+shader_param/main_texture = ExtResource( 18 )
+
+[sub_resource type="ShaderMaterial" id=5]
+shader = ExtResource( 19 )
+shader_param/uv_scale = 0.7
+shader_param/power = 5.0
+shader_param/softness = 0.5
+shader_param/specularity = 1.0
+shader_param/light_bias = 0.0
+shader_param/wall = ExtResource( 21 )
+shader_param/ground = ExtResource( 22 )
+shader_param/ceiling = ExtResource( 22 )
+
+[sub_resource type="ShaderMaterial" id=6]
+shader = ExtResource( 19 )
+shader_param/uv_scale = 0.6
+shader_param/power = 5.0
+shader_param/softness = 0.5
+shader_param/specularity = 1.0
+shader_param/light_bias = 0.0
+shader_param/wall = ExtResource( 20 )
+shader_param/ground = ExtResource( 20 )
+shader_param/ceiling = ExtResource( 20 )
+
+[sub_resource type="ShaderMaterial" id=8]
+shader = ExtResource( 19 )
+shader_param/uv_scale = 0.8
+shader_param/power = 5.0
+shader_param/softness = 0.5
+shader_param/specularity = 1.0
+shader_param/light_bias = 0.0
+shader_param/wall = ExtResource( 21 )
+shader_param/ground = ExtResource( 21 )
+shader_param/ceiling = ExtResource( 21 )
+
+[sub_resource type="SpatialMaterial" id=7]
+albedo_texture = ExtResource( 18 )
+
+[sub_resource type="ShaderMaterial" id=9]
+shader = ExtResource( 17 )
+shader_param/subsurface_scattering = -1.0
+shader_param/softness = 1.0
+shader_param/specularity = 1.0
+shader_param/main_texture = ExtResource( 20 )
+
+[sub_resource type="ShaderMaterial" id=10]
+shader = ExtResource( 17 )
+shader_param/subsurface_scattering = -1.0
+shader_param/softness = 1.0
+shader_param/specularity = 1.0
+shader_param/main_texture = ExtResource( 5 )
+
+[sub_resource type="ShaderMaterial" id=11]
+shader = ExtResource( 17 )
+shader_param/subsurface_scattering = -0.434
+shader_param/softness = 1.0
+shader_param/specularity = 1.0
+shader_param/main_texture = ExtResource( 23 )
+
+[sub_resource type="ShaderMaterial" id=12]
+shader = ExtResource( 19 )
+shader_param/uv_scale = 1.0
+shader_param/power = 5.0
+shader_param/softness = 0.5
+shader_param/specularity = 1.0
+shader_param/light_bias = 0.0
+shader_param/wall = ExtResource( 20 )
+shader_param/ground = ExtResource( 20 )
+shader_param/ceiling = ExtResource( 20 )
+
+[sub_resource type="BoxShape" id=13]
+extents = Vector3( 30.777, 26.5799, 55.4538 )
+
+[sub_resource type="SphereShape" id=3]
+radius = 9.97388
+
+[node name="chunk012" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="fort" parent="." index="0"]
+material/0 = SubResource( 1 )
+
+[node name="StaticBody" parent="fort" index="0"]
+collision_layer = 257
+
+[node name="tower$multi" parent="." index="1"]
+material/0 = SubResource( 1 )
+
+[node name="tower$multi001" parent="." index="2"]
+material/0 = SubResource( 1 )
+
+[node name="tower$multi002" parent="." index="3"]
+material/0 = SubResource( 1 )
+
+[node name="tower$multi003" parent="." index="4"]
+material/0 = SubResource( 1 )
+
+[node name="topwer$multi" parent="." index="5"]
+material/0 = SubResource( 1 )
+
+[node name="ramp" parent="." index="6"]
+material/0 = SubResource( 1 )
+
+[node name="StaticBody" parent="ramp" index="0"]
+collision_layer = 257
+
+[node name="tower$multi004" parent="." index="7"]
+material/0 = SubResource( 1 )
+
+[node name="tower$multi005" parent="." index="8"]
+material/0 = SubResource( 1 )
+
+[node name="stairs" parent="." index="9"]
+material/0 = ExtResource( 9 )
+
+[node name="stairs001" parent="." index="10"]
+material/0 = ExtResource( 9 )
+
+[node name="stairs002" parent="." index="11"]
+material/0 = ExtResource( 9 )
+
+[node name="stairs_entrance" parent="." index="12"]
+material/0 = ExtResource( 9 )
+
+[node name="ramp2" parent="." index="13"]
+material/0 = SubResource( 1 )
+
+[node name="StaticBody" parent="ramp2" index="0"]
+collision_layer = 257
+
+[node name="stairs003" parent="." index="14"]
+material/0 = ExtResource( 9 )
+
+[node name="arch" parent="." index="15"]
+material/0 = ExtResource( 9 )
+
+[node name="small_tower" parent="." index="16"]
+material/0 = ExtResource( 9 )
+
+[node name="ramp3" parent="." index="17"]
+material/0 = SubResource( 1 )
+
+[node name="StaticBody" parent="ramp3" index="0"]
+collision_layer = 257
+
+[node name="stairs004" parent="." index="18"]
+material/0 = ExtResource( 9 )
+
+[node name="arch2" parent="." index="19"]
+material/0 = ExtResource( 9 )
+
+[node name="arch3" parent="." index="20"]
+material/0 = ExtResource( 9 )
+
+[node name="stairs-small" parent="." index="21"]
+material/0 = ExtResource( 9 )
+
+[node name="ramp4" parent="." index="22"]
+material/0 = SubResource( 1 )
+
+[node name="StaticBody" parent="ramp4" index="0"]
+collision_layer = 257
+
+[node name="stairs-small2" parent="." index="23"]
+material/0 = ExtResource( 9 )
+
+[node name="stairs005" parent="." index="25"]
+material/0 = ExtResource( 9 )
+
+[node name="stairs006" parent="." index="26"]
+material/0 = ExtResource( 9 )
+
+[node name="railing" parent="." index="27"]
+material/0 = ExtResource( 9 )
+
+[node name="stairs007" parent="." index="28"]
+material/0 = ExtResource( 9 )
+
+[node name="column" parent="." index="29"]
+material/0 = ExtResource( 9 )
+
+[node name="spiral_stairs" parent="column" index="1"]
+material/0 = ExtResource( 9 )
+
+[node name="column001" parent="." index="30"]
+material/0 = ExtResource( 9 )
+
+[node name="spiral_stairs001" parent="column001" index="1"]
+material/0 = ExtResource( 9 )
+
+[node name="column002" parent="." index="31"]
+material/0 = ExtResource( 9 )
+
+[node name="stairs_large" parent="." index="32"]
+material/0 = ExtResource( 9 )
+
+[node name="garden004" parent="stairs_large" index="0"]
+material/0 = ExtResource( 9 )
+
+[node name="garden_soil004" parent="stairs_large/garden004" index="0"]
+material/0 = SubResource( 2 )
+
+[node name="StaticBody" parent="stairs_large/garden004/garden_soil004" index="0" groups=["flag_surface"]]
+
+[node name="garden005" parent="stairs_large" index="1"]
+material/0 = ExtResource( 9 )
+
+[node name="garden_soil005" parent="stairs_large/garden005" index="0"]
+material/0 = SubResource( 2 )
+
+[node name="StaticBody" parent="stairs_large/garden005/garden_soil005" index="0" groups=["flag_surface"]]
+
+[node name="rail" parent="stairs_large" index="2"]
+material/0 = ExtResource( 9 )
+
+[node name="rail001" parent="stairs_large" index="3"]
+material/0 = ExtResource( 9 )
+
+[node name="rail002" parent="stairs_large" index="4"]
+material/0 = ExtResource( 9 )
+
+[node name="garden" parent="." index="33"]
+material/0 = ExtResource( 9 )
+
+[node name="garden_soul" parent="garden" index="0"]
+material/0 = SubResource( 2 )
+
+[node name="StaticBody" parent="garden/garden_soul" index="0" groups=["flag_surface"]]
+
+[node name="doorway_large" parent="." index="34"]
+material/0 = ExtResource( 9 )
+material/1 = SubResource( 4 )
+
+[node name="doorway_large001" parent="." index="35"]
+material/0 = ExtResource( 9 )
+material/1 = SubResource( 4 )
+
+[node name="doorway_large002" parent="." index="36"]
+material/0 = ExtResource( 9 )
+material/1 = SubResource( 4 )
+
+[node name="garden001" parent="." index="37"]
+material/0 = ExtResource( 9 )
+
+[node name="garden_soil001" parent="garden001" index="0"]
+material/0 = SubResource( 2 )
+
+[node name="StaticBody" parent="garden001/garden_soil001" index="0" groups=["flag_surface"]]
+
+[node name="garden002" parent="." index="38"]
+material/0 = ExtResource( 9 )
+
+[node name="garden_soil003" parent="garden002" index="0"]
+material/0 = SubResource( 2 )
+
+[node name="StaticBody" parent="garden002/garden_soil003" index="0" groups=["flag_surface"]]
+
+[node name="church" parent="." index="39"]
+material/0 = SubResource( 5 )
+material/1 = SubResource( 6 )
+material/2 = SubResource( 5 )
+
+[node name="doorway_large003" parent="church" index="0"]
+material/0 = SubResource( 8 )
+material/1 = SubResource( 7 )
+
+[node name="doorway_large004" parent="church" index="1"]
+material/0 = SubResource( 8 )
+material/1 = SubResource( 7 )
+
+[node name="garden003" parent="." index="40"]
+material/0 = ExtResource( 9 )
+
+[node name="garden_soil002" parent="garden003" index="0"]
+material/0 = SubResource( 2 )
+
+[node name="StaticBody" parent="garden003/garden_soil002" index="0" groups=["flag_surface"]]
+
+[node name="garden006" parent="." index="41"]
+material/0 = ExtResource( 9 )
+
+[node name="garden_soil006" parent="garden006" index="0"]
+material/0 = SubResource( 2 )
+
+[node name="StaticBody" parent="garden006/garden_soil006" index="0" groups=["flag_surface"]]
+
+[node name="garden007" parent="." index="42"]
+material/0 = ExtResource( 9 )
+
+[node name="garden-rocks" parent="garden007" index="0"]
+material/0 = ExtResource( 13 )
+
+[node name="garden-water" parent="garden007" index="1"]
+material/0 = ExtResource( 14 )
+
+[node name="garden-waterfall" parent="garden007" index="2"]
+material/0 = ExtResource( 15 )
+
+[node name="garden_soil007" parent="garden007" index="3"]
+material/0 = SubResource( 2 )
+
+[node name="StaticBody" parent="garden007/garden_soil007" index="0" groups=["flag_surface"]]
+
+[node name="doorway_large005" parent="." index="43"]
+material/0 = ExtResource( 9 )
+material/1 = SubResource( 4 )
+
+[node name="doorway_large006" parent="." index="44"]
+material/0 = ExtResource( 9 )
+material/1 = SubResource( 4 )
+
+[node name="doorway_large007" parent="." index="45"]
+material/0 = ExtResource( 9 )
+material/1 = SubResource( 4 )
+
+[node name="housing001" parent="." index="46"]
+material/0 = ExtResource( 9 )
+
+[node name="housing002" parent="." index="47"]
+material/0 = ExtResource( 9 )
+
+[node name="housing003" parent="." index="48"]
+material/0 = ExtResource( 9 )
+
+[node name="housing004" parent="." index="49"]
+material/0 = ExtResource( 9 )
+
+[node name="housing005" parent="." index="50"]
+material/0 = ExtResource( 9 )
+
+[node name="housing006" parent="." index="51"]
+material/0 = ExtResource( 9 )
+
+[node name="housing007" parent="." index="52"]
+material/0 = ExtResource( 9 )
+
+[node name="housing008" parent="." index="53"]
+material/0 = ExtResource( 9 )
+
+[node name="housing009" parent="." index="54"]
+material/0 = ExtResource( 9 )
+
+[node name="housing010" parent="." index="55"]
+material/0 = ExtResource( 9 )
+
+[node name="housing011" parent="." index="56"]
+material/0 = ExtResource( 9 )
+
+[node name="housing012" parent="." index="57"]
+material/0 = ExtResource( 9 )
+
+[node name="housing013" parent="." index="58"]
+material/0 = ExtResource( 9 )
+
+[node name="housing014" parent="." index="59"]
+material/0 = ExtResource( 9 )
+
+[node name="housing015" parent="." index="60"]
+material/0 = ExtResource( 9 )
+
+[node name="housing016" parent="." index="61"]
+material/0 = ExtResource( 9 )
+
+[node name="housing017" parent="." index="62"]
+material/0 = ExtResource( 9 )
+
+[node name="housing018" parent="." index="63"]
+material/0 = ExtResource( 9 )
+
+[node name="housing019" parent="." index="64"]
+material/0 = ExtResource( 9 )
+
+[node name="housing020" parent="." index="65"]
+material/0 = ExtResource( 9 )
+
+[node name="housing021" parent="." index="66"]
+material/0 = ExtResource( 9 )
+
+[node name="tower" parent="." index="67"]
+material/0 = ExtResource( 9 )
+
+[node name="hoising" parent="." index="68"]
+material/0 = ExtResource( 9 )
+
+[node name="housing" parent="." index="69"]
+material/0 = ExtResource( 9 )
+
+[node name="villa" parent="." index="70"]
+material/0 = SubResource( 5 )
+material/1 = SubResource( 9 )
+material/2 = SubResource( 10 )
+material/3 = ExtResource( 9 )
+material/4 = SubResource( 11 )
+
+[node name="garden_villa" parent="villa" index="0"]
+material/0 = SubResource( 5 )
+
+[node name="garden_soil008" parent="villa/garden_villa" index="0" groups=["flag_surface"]]
+material/0 = SubResource( 2 )
+
+[node name="house" parent="." index="71"]
+material/0 = SubResource( 5 )
+material/1 = ExtResource( 9 )
+material/2 = SubResource( 9 )
+material/3 = SubResource( 12 )
+material/4 = SubResource( 11 )
+
+[node name="house001" parent="." index="72"]
+material/0 = SubResource( 5 )
+material/1 = ExtResource( 9 )
+material/2 = SubResource( 9 )
+material/3 = SubResource( 12 )
+material/4 = SubResource( 11 )
+
+[node name="house002" parent="." index="73"]
+material/0 = SubResource( 5 )
+material/1 = ExtResource( 9 )
+material/2 = SubResource( 9 )
+material/3 = SubResource( 12 )
+material/4 = SubResource( 11 )
+
+[node name="house003" parent="." index="74"]
+material/0 = SubResource( 5 )
+material/1 = ExtResource( 9 )
+material/2 = SubResource( 9 )
+material/3 = SubResource( 12 )
+material/4 = SubResource( 11 )
+
+[node name="house004" parent="." index="75"]
+material/0 = SubResource( 5 )
+material/1 = ExtResource( 9 )
+material/2 = SubResource( 9 )
+material/3 = SubResource( 12 )
+material/4 = SubResource( 11 )
+
+[node name="house005" parent="." index="76"]
+material/0 = SubResource( 5 )
+material/1 = ExtResource( 9 )
+material/2 = SubResource( 9 )
+material/3 = SubResource( 12 )
+material/4 = SubResource( 11 )
+
+[node name="garden008" parent="." index="77"]
+material/0 = ExtResource( 9 )
+
+[node name="garden_soil" parent="garden008" index="0"]
+material/0 = SubResource( 2 )
+
+[node name="StaticBody" parent="garden008/garden_soil" index="0" groups=["flag_surface"]]
+
+[node name="active_entities" type="Spatial" parent="." index="78"]
+
+[node name="zone_fort" type="MultiMeshSystem" parent="active_entities" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -43.8926, -13.4246, -106.934 )
+
+[node name="fountain2" parent="active_entities/zone_fort" index="0" instance=ExtResource( 10 )]
+transform = Transform( -0.84482, 0, -0.53505, 0, 1, 0, 0.53505, 0, -0.84482, 0.181602, -2.5305, -1.929 )
+
+[node name="wind_reduction" type="Area" parent="active_entities/zone_fort" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.0135, -18.3231, 52.6145 )
+collision_layer = 0
+collision_mask = 2
+script = ExtResource( 40 )
+
+[node name="CollisionShape" type="CollisionShape" parent="active_entities/zone_fort/wind_reduction" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.1436, 4.34872, -39.7271 )
+shape = SubResource( 13 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="active_entities/zone_fort/wind_reduction" index="1"]
+transform = Transform( 0.355105, 0, 0.934826, 0, 1, 0, -0.934826, 0, 0.355105, -46.3051, 4.34872, -77.9213 )
+shape = SubResource( 13 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="active_entities/zone_fort/wind_reduction" index="2"]
+transform = Transform( -0.180741, 0, 0.983531, 0, 1, 0, -0.983531, 0, -0.180741, -99.2527, 20.7408, -71.1623 )
+shape = SubResource( 13 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="active_entities/zone_fort/wind_reduction" index="3"]
+transform = Transform( -0.782742, 0, 0.622346, 0, 1, 0, -0.622346, 0, -0.782742, -87.7722, 20.7408, -55.9862 )
+shape = SubResource( 13 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="active_entities/zone_fort/wind_reduction" index="4"]
+transform = Transform( -0.782742, 0, 0.622346, 0, 1, 0, -0.622346, 0, -0.782742, -17.8872, 6.67612, -20.6886 )
+shape = SubResource( 13 )
+
+[node name="CollisionShape6" type="CollisionShape" parent="active_entities/zone_fort/wind_reduction" index="5"]
+transform = Transform( -0.251474, 0, 0.967864, 0, 1, 0, -0.967864, 0, -0.251474, 10.4764, 6.67612, -0.675529 )
+shape = SubResource( 13 )
+
+[node name="level_1" type="Spatial" parent="active_entities/zone_fort" index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 87.1263, -19.6257, 44.6107 )
+
+[node name="fort_entry" type="Area" parent="active_entities/zone_fort/level_1" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.92799, -3.26205, -1.9529 )
+collision_layer = 0
+collision_mask = 2
+script = ExtResource( 16 )
+
+[node name="CollisionShape" type="CollisionShape" parent="active_entities/zone_fort/level_1/fort_entry" index="0"]
+shape = SubResource( 3 )
+
+[node name="shop_stand" parent="active_entities/zone_fort/level_1" index="1" instance=ExtResource( 11 )]
+transform = Transform( 0.746542, 0, 0.665338, 0, 1, 0, -0.665338, 0, 0.746542, 10.5157, -4.52195, 9.2074 )
+
+[node name="shop_stand6" parent="active_entities/zone_fort/level_1" index="2" instance=ExtResource( 11 )]
+transform = Transform( -0.669823, 0, -0.742521, 0, 1, 0, 0.742521, 0, -0.669823, -3.11281, -4.52195, -19.1179 )
+enable_light = false
+
+[node name="shop_stand2" parent="active_entities/zone_fort/level_1" index="3" instance=ExtResource( 11 )]
+transform = Transform( -0.269349, 0, -0.963043, 0, 1, 0, 0.963043, 0, -0.269349, -6.63471, -4.52195, -13.3095 )
+
+[node name="shop_stand3" parent="active_entities/zone_fort/level_1" index="4" instance=ExtResource( 11 )]
+transform = Transform( 0.859471, 0, 0.511184, 0, 1, 0, -0.511184, 0, 0.859471, 4.34629, -4.52195, 13.4559 )
+
+[node name="shop_stand4" parent="active_entities/zone_fort/level_1" index="5" instance=ExtResource( 11 )]
+transform = Transform( 0.778889, 0, 0.627162, 0, 1, 0, -0.627162, 0, 0.778889, 7.28869, -4.52195, 11.7095 )
+
+[node name="shop_stand5" parent="active_entities/zone_fort/level_1" index="6" instance=ExtResource( 11 )]
+transform = Transform( -0.522573, 0, -0.852595, 0, 1, 0, 0.852595, 0, -0.522573, -5.39101, -4.52195, -16.1766 )
+
+[node name="garden2" parent="active_entities/zone_fort/level_1" index="7" instance=ExtResource( 25 )]
+transform = Transform( -0.967898, 0, 0.251345, 0, 1, 0, -0.251345, 0, -0.967898, -18.5704, 0.992649, -11.0504 )
+
+[node name="fountain_npc" parent="active_entities/zone_fort/level_1" index="8" instance=ExtResource( 3 )]
+transform = Transform( -0.976381, 0, 0.216057, 0, 1, 0, -0.216057, 0, -0.976381, 2.53032, -4.52732, 8.76057 )
+visual_name = "Fountain Enjoyer"
+friendly_id = "fountain_npc"
+custom_entry = "_entry_fountain"
+
+[node name="den" parent="active_entities/zone_fort" index="3" instance=ExtResource( 36 )]
+transform = Transform( 0.951708, 0, -0.307005, 0, 1, 0, 0.307005, 0, 0.951708, 36.4469, -8.30251, -39.9438 )
+
+[node name="sitting_pillow3" parent="active_entities/zone_fort/den" index="0" instance=ExtResource( 34 )]
+transform = Transform( 0.809888, 0, 0.586585, 0, 1, 0, -0.586585, 0, 0.809888, -3.1229, 0.491865, -1.66592 )
+
+[node name="bottle2" parent="active_entities/zone_fort/den" index="1" instance=ExtResource( 37 )]
+transform = Transform( 0.951708, 0, 0.307005, 0, 1, 0, -0.307005, 0, 0.951708, -3.63049, 0.491867, 0.784958 )
+
+[node name="bottle3" parent="active_entities/zone_fort/den" index="2" instance=ExtResource( 37 )]
+transform = Transform( -0.25004, 0.918275, 0.307005, -0.96487, -0.262727, 0, 0.0806585, -0.29622, 0.951708, -3.49269, 0.582716, 0.646896 )
+
+[node name="sofa" parent="active_entities/zone_fort/den" index="3" instance=ExtResource( 35 )]
+transform = Transform( 0.99985, 0, 0.0173305, 0, 1, 0, -0.0173305, 0, 0.99985, -2.95029, 0.491867, 1.39238 )
+
+[node name="incense" parent="active_entities/zone_fort/den" index="5" instance=ExtResource( 38 )]
+transform = Transform( -0.904117, 0, 0.427287, 0, 1, 0, -0.427287, 0, -0.904117, -3.63747, 0.491867, 0.459534 )
+
+[node name="npc_den" parent="active_entities/zone_fort/den" index="6" instance=ExtResource( 3 )]
+transform = Transform( -0.904117, 0, 0.427287, 0, 1, 0, -0.427287, 0, -0.904117, -3.29686, 0.68984, 1.50908 )
+dialog = ExtResource( 39 )
+visual_name = "Den Enjoyer"
+sitting = true
+
+[node name="sitting_pillow" parent="active_entities/zone_fort/den" index="7" instance=ExtResource( 34 )]
+transform = Transform( 0.792749, -0.564, 0.231198, 0.533977, 0.825495, 0.182828, -0.293968, -0.021482, 0.955574, -2.48966, 0.86178, 1.37308 )
+
+[node name="fountain" parent="active_entities/zone_fort" index="4" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -63.7604, 15.2854, 18.0381 )
+
+[node name="garden_melon" parent="active_entities/zone_fort" index="5" instance=ExtResource( 24 )]
+transform = Transform( -0.0239575, 0, 0.999713, 0, 1, 0, -0.999713, 0, -0.0239575, -4.03164, -1.84751, -49.3868 )
+
+[node name="npc_balter" parent="active_entities/zone_fort" index="6" instance=ExtResource( 3 )]
+transform = Transform( 0.354651, 0, -0.934998, 0, 1, 0, 0.934998, 0, 0.354651, -85.1884, 20.6984, -13.7638 )
+dialog = ExtResource( 4 )
+visual_name = "Balter"
+friendly_id = "balter"
+
+[node name="shop_stand7" parent="active_entities/zone_fort" index="7" instance=ExtResource( 11 )]
+transform = Transform( 0.479557, 0, 0.877511, 0, 1, 0, -0.877511, 0, 0.479557, 37.1491, -8.29931, 35.0992 )
+
+[node name="shop_stand8" parent="active_entities/zone_fort" index="8" instance=ExtResource( 11 )]
+transform = Transform( -0.3689, 0, 0.929469, 0, 1, 0, -0.929469, 0, -0.3689, 37.0966, -8.29931, 30.5375 )
+
+[node name="shop_stand9" parent="active_entities/zone_fort" index="9" instance=ExtResource( 11 )]
+transform = Transform( -0.999153, 0, -0.0411506, 0, 1, 0, 0.0411506, 0, -0.999153, 12.7161, -1.79341, -31.8558 )
+
+[node name="shop_stand12" parent="active_entities/zone_fort" index="10" instance=ExtResource( 11 )]
+transform = Transform( -0.957582, 0, -0.288162, 0, 1, 0, 0.288162, 0, -0.957582, 20.7203, -8.30396, -41.2244 )
+enable_light = false
+
+[node name="shop_stand11" parent="active_entities/zone_fort" index="11" instance=ExtResource( 11 )]
+transform = Transform( -0.945336, 0, 0.326096, 0, 1, 0, -0.326096, 0, -0.945336, 16.5946, -1.79341, -31.5638 )
+
+[node name="shop_stand10" parent="active_entities/zone_fort" index="12" instance=ExtResource( 11 )]
+transform = Transform( -0.581692, 0, 0.813409, 0, 1, 0, -0.813409, 0, -0.581692, 8.58876, -1.79341, -32.6878 )
+
+[node name="glass_work" type="Spatial" parent="active_entities/zone_fort" index="13"]
+transform = Transform( -0.842853, 0, -0.538144, 0, 1, 0, 0.538144, 0, -0.842853, 19.37, -8.31061, -51.2458 )
+
+[node name="glass-furnace" parent="active_entities/zone_fort/glass_work" index="0" instance=ExtResource( 26 )]
+transform = Transform( 1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0 )
+
+[node name="pail" parent="active_entities/zone_fort/glass_work" index="1" instance=ExtResource( 27 )]
+transform = Transform( -0.842853, 0, 0.538144, 0, 1, 0, -0.538144, 0, -0.842853, -0.120094, 0, -4.74533 )
+
+[node name="c_table" parent="active_entities/zone_fort/glass_work" index="2" instance=ExtResource( 30 )]
+transform = Transform( -0.842853, 0, 0.538144, 0, 1, 0, -0.538144, 0, -0.842853, 5.87991, 0, -10.0268 )
+
+[node name="c_table2" parent="active_entities/zone_fort/glass_work" index="3" instance=ExtResource( 30 )]
+transform = Transform( -0.842853, 0, 0.538144, 0, 1, 0, -0.538144, 0, -0.842853, 4.12398, 0, -4.99777 )
+
+[node name="c_table3" parent="active_entities/zone_fort/glass_work" index="4" instance=ExtResource( 30 )]
+transform = Transform( -0.842853, 0, 0.538144, 0, 1, 0, -0.538144, 0, -0.842853, 3.73713, 0, -3.99426 )
+
+[node name="glass-tools" parent="active_entities/zone_fort/glass_work" index="5" instance=ExtResource( 29 )]
+transform = Transform( 0.743099, 0, 0.66918, 0, 1, 0, -0.66918, 0, 0.743099, -1.41796, 0, -4.0862 )
+
+[node name="glass_support" parent="active_entities/zone_fort/glass_work" index="6" instance=ExtResource( 28 )]
+transform = Transform( 0.572082, 0, 0.820196, 0, 1, 0, -0.820196, 0, 0.572082, 2.00393, 0, -1.41731 )
+
+[node name="glass_support2" parent="active_entities/zone_fort/glass_work" index="7" instance=ExtResource( 28 )]
+transform = Transform( -0.77962, 0, 0.626252, 0, 1, 0, -0.626252, 0, -0.77962, -1.93885, 0, -1.13823 )
+
+[node name="table2" parent="active_entities/zone_fort" index="14" instance=ExtResource( 31 )]
+transform = Transform( 0.946351, 0, 0.323141, 0, 1, 0, -0.323141, 0, 0.946351, 50.5457, -9.77371, 2.7082 )
+
+[node name="outlet_box" parent="active_entities/zone_fort" index="15" instance=ExtResource( 32 )]
+transform = Transform( -0.862533, 0, -0.506001, 0, 1, 0, 0.506001, 0, -0.862533, 51.3014, -9.23868, 3.7892 )
+
+[node name="wind_generator" parent="active_entities/zone_fort" index="16" instance=ExtResource( 33 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.1298, 8.15051, 9.5452 )
+
+[node name="sofa" parent="active_entities/zone_fort" index="17" instance=ExtResource( 35 )]
+transform = Transform( 0.909793, 0, 0.415062, 0, 1, 0, -0.415062, 0, 0.909793, 55.3805, -9.88061, -25.6168 )
+
+[node name="sitting_pillow" parent="active_entities/zone_fort" index="18" instance=ExtResource( 34 )]
+transform = Transform( -0.257866, 0, -0.966181, 0, 1, 0, 0.966181, 0, -0.257866, 55.4262, -9.88061, -27.6518 )
+
+[node name="sitting_pillow2" parent="active_entities/zone_fort" index="19" instance=ExtResource( 34 )]
+transform = Transform( 0.947107, 0, -0.320918, 0, 1, 0, 0.320918, 0, 0.947107, 54.4008, -9.88061, -26.7698 )
+
+[node name="npc" parent="active_entities/zone_fort" index="20" instance=ExtResource( 3 )]
+transform = Transform( -0.998347, 0, -0.057466, 0, 1, 0, 0.057466, 0, -0.998347, 19.3855, -8.31056, -47.9764 )
+
+[node name="npc2" parent="active_entities/zone_fort" index="21" instance=ExtResource( 3 )]
+transform = Transform( -0.257304, 0, -0.966331, 0, 1, 0, 0.966331, 0, -0.257304, 22.0921, -8.31056, -50.2376 )
+
+[node name="npc3" parent="active_entities/zone_fort" index="22" instance=ExtResource( 3 )]
+transform = Transform( -0.0986199, 0, 0.995125, 0, 1, 0, -0.995125, 0, -0.0986199, -35.1683, 6.41824, -60.2354 )
+visual_name = "Siraj"
+friendly_id = "siraj"

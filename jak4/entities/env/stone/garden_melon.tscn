@@ -1,0 +1,40 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://material/env/stone/garden_soil.png" type="Texture" id=1]
+[ext_resource path="res://_glb/env/stone/garden_melon.glb" type="PackedScene" id=2]
+[ext_resource path="res://material/env/stone/bricks.material" type="Material" id=3]
+[ext_resource path="res://material/main_spatial.shader" type="Shader" id=4]
+[ext_resource path="res://material/env/stone/melon.png" type="Texture" id=5]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 4 )
+shader_param/subsurface_scattering = -1.0
+shader_param/softness = 1.0
+shader_param/specularity = 1.0
+shader_param/main_texture = ExtResource( 1 )
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 4 )
+shader_param/subsurface_scattering = -1.0
+shader_param/softness = 1.0
+shader_param/specularity = 1.0
+shader_param/main_texture = ExtResource( 5 )
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 4 )
+shader_param/subsurface_scattering = -1.0
+shader_param/softness = 1.0
+shader_param/specularity = 1.0
+shader_param/main_texture = ExtResource( 5 )
+
+[node name="garden_melon" instance=ExtResource( 2 )]
+
+[node name="garden_melon" parent="." index="0"]
+material/0 = ExtResource( 3 )
+material/1 = SubResource( 1 )
+material/2 = SubResource( 3 )
+
+[node name="StaticBody" parent="garden_melon" index="0" groups=["flag_surface"]]
+
+[node name="garden_vine" parent="." index="1"]
+material/0 = SubResource( 2 )

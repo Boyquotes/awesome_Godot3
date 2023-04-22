@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://material/env/ancient/white_metal.material" type="Material" id=1]
+[ext_resource path="res://material/env/ancient/gem_emissive.tres" type="Material" id=2]
+[ext_resource path="res://_glb/env/ancient/falling_platform.glb" type="PackedScene" id=3]
+[ext_resource path="res://entities/env/dynamic/falling_platform.gd" type="Script" id=4]
+
+[sub_resource type="ConvexPolygonShape" id=1]
+points = PoolVector3Array( 0, -0.157505, -2, 0, -0.250014, -1.90446, -1.00039, -0.157505, -1.73218, 0, 0.157438, -2, 1, -0.157505, -1.73218, 0, -0.290658, -1.50861, -0.754503, -0.290658, -1.30658, -0.952232, -0.250014, -1.64918, 0.95184, -0.250014, -1.64918, 0.754111, -0.290658, -1.30658, -1.00039, 0.157438, -1.73218, -1.64918, -0.250014, -0.952232, -1.73218, -0.157505, -1, 0, 0.25, -1.90446, 1, 0.157438, -1.73218, 1.73179, -0.157505, -1, 1.64879, -0.250014, -0.952232, -1.30658, -0.290658, -0.754503, 1.30619, -0.290658, -0.754503, -0.952232, 0.25, -1.64918, -1.73218, 0.157438, -1, -1.64918, 0.25, -0.952232, -1.90446, -0.250014, 0, -2, -0.157505, 0, 0.95184, 0.25, -1.64918, 1.64879, 0.25, -0.952232, 1.73179, 0.157438, -1, 2, -0.157505, 0, 1.90407, -0.250014, 0, -1.50861, -0.290658, 0, 1.50822, -0.290658, 0, -2, 0.157438, 0, -1.90446, 0.25, 0, -1.30658, -0.290658, 0.754111, -1.64918, -0.250014, 0.95184, -1.73218, -0.157505, 0.999609, 1.90407, 0.25, 0, 2, 0.157438, 0, 1.73179, -0.157505, 1, 1.64879, -0.250014, 0.95184, 1.30619, -0.290658, 0.754111, -1.73218, 0.157438, 0.999609, -1.64918, 0.25, 0.95184, -0.754503, -0.290658, 1.30619, -0.952232, -0.250014, 1.64879, -1, -0.157505, 1.73179, 1.64879, 0.25, 0.95184, 1.73179, 0.157438, 1, 1, -0.157505, 1.73179, 0.95184, -0.250014, 1.64879, 0.754111, -0.290658, 1.30619, -1, 0.157438, 1.73179, -0.952232, 0.25, 1.64879, -0.000391483, -0.290658, 1.50822, -0.000391483, -0.250014, 1.90407, -0.000391483, -0.157505, 2, 0.95184, 0.25, 1.64879, 1, 0.157438, 1.73179, -0.000391483, 0.157438, 2, -0.000391483, 0.25, 1.90407 )
+
+[sub_resource type="CylinderShape" id=2]
+height = 0.682624
+radius = 2.08642
+
+[node name="falling_platform" groups=["dynamic"] instance=ExtResource( 3 )]
+collision_layer = 16384
+collision_mask = 16385
+mode = 3
+mass = 250.0
+script = ExtResource( 4 )
+delay = 0.2
+
+[node name="falling_platform" parent="." index="0"]
+material/0 = ExtResource( 1 )
+material/1 = ExtResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="." index="1"]
+shape = SubResource( 1 )
+
+[node name="Timer" type="Timer" parent="." index="2"]
+one_shot = true
+
+[node name="Area" type="Area" parent="." index="3"]
+collision_layer = 0
+collision_mask = 6
+
+[node name="CollisionShape" type="CollisionShape" parent="Area" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00186566, 0 )
+shape = SubResource( 2 )
+
+[node name="KinematicBody" type="KinematicBody" parent="." index="4"]
+collision_layer = 65560
+collision_mask = 15
+
+[node name="CollisionShape2" type="CollisionShape" parent="KinematicBody" index="0"]
+shape = SubResource( 1 )
+
+[connection signal="timeout" from="Timer" to="." method="_on_timeout"]
+[connection signal="body_entered" from="Area" to="." method="_on_body_entered"]

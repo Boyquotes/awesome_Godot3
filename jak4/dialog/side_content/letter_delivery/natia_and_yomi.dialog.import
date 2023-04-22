@@ -1,0 +1,13 @@
+[remap]
+
+importer="np.dialog"
+type="Resource"
+path="res://.import/natia_and_yomi.dialog-befdbac1409eea22cc7334033b45c8e6.tres"
+
+[deps]
+
+source_file="res://dialog/side_content/letter_delivery/natia_and_yomi.dialog"
+dest_files=[ "res://.import/natia_and_yomi.dialog-befdbac1409eea22cc7334033b45c8e6.tres" ]
+
+[params]
+

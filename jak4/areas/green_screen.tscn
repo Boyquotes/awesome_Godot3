@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://player/player.tscn" type="PackedScene" id=1]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_unshaded = true
+albedo_color = Color( 0, 1, 0, 1 )
+
+[node name="green_screen" type="Spatial"]
+
+[node name="CSGBox" type="CSGBox" parent="."]
+use_collision = true
+collision_layer = 257
+width = 52.2171
+depth = 40.7408
+material = SubResource( 1 )
+
+[node name="CSGBox2" type="CSGBox" parent="CSGBox"]
+transform = Transform( 0.0290816, -0.999577, 0, 0.999577, 0.0290816, 0, 0, 0, 1, -25.2881, 0, 0 )
+use_collision = true
+width = 52.2171
+depth = 40.7408
+material = SubResource( 1 )
+
+[node name="CSGBox3" type="CSGBox" parent="CSGBox"]
+transform = Transform( 0.0290816, -0.999577, 0, 0.999577, 0.0290816, 0, 0, 0, 1, -14.2627, 0, 15.8406 )
+use_collision = true
+width = 10.1913
+depth = 12.7937
+material = SubResource( 1 )
+
+[node name="player" parent="." instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -24.0612, 1, 5.31327 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 0.618202, -0.717583, 0.320782, 0, 0.40811, 0.912933, -0.786019, -0.564377, 0.252294, 0, 0, 0 )
+light_energy = 0.7
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -18.09, 2.25, 5.28097 )
+fov = 5.9

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://ui/items/item_description.gd" type="Script" id=1]
+[ext_resource path="res://ui/items/vis/mesh_wave_shot.tscn" type="PackedScene" id=3]
+
+[resource]
+script = ExtResource( 1 )
+category = 0
+preview_3d = ExtResource( 3 )
+full_name = "Bubble Shot"
+description = "Fires a protective bubble that damages enemies and stops projectiles. Hold for larger bubbles."
+extra_items = {
+"wave_shot": "Bubble Charges",
+"wave_shot_capacity_up": "Capacity Upgrades"
+}

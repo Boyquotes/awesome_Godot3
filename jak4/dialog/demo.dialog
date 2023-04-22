@@ -1,0 +1,15 @@
+{Global.task_is_complete("activate_the_medium") and Global.stat("capacitor_113")}
+	!{demo_freedom}
+		Congrats! You're done with the demo.
+		Or at least the two variables I'm programmed to check.
+		Welp, I'm taking down the demo borders. They're still there, but you can walk through it now.
+		+{demo_freedom}
+		Explore to your heart's content! Most of the game isn't done yet, so please only give me positive feedback on things outside the demo borders.
+	{otherwise}
+		Have you been having fun exploring? Remember, you can walk through the demo borders now!
+{otherwise}
+	How are you liking the demo so far?
+	[You] The what?
+	Don't worry about it.
+	{!Global.task_is_complete("activate_the_medium")} You haven't even activated the Medium yet! Shoo! Come back when you're LOST.
+	{otherwise}!{capacitor_113} The tower up on the cliff nearby probably has some fun things to do still!

@@ -1,0 +1,24 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://material/triplanar_local_coords.shader" type="Shader" id=1]
+[ext_resource path="res://material/env/copper/copper_cleaned.tres" type="Material" id=2]
+[ext_resource path="res://material/env/foundry/concrete.jpg" type="Texture" id=3]
+[ext_resource path="res://material/env/vaeler/grey_brick.png" type="Texture" id=4]
+[ext_resource path="res://_glb/env/train_set/column-10m.glb" type="PackedScene" id=5]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 1 )
+shader_param/uv_scale = 0.5
+shader_param/power = 1.0
+shader_param/softness = 0.5
+shader_param/specularity = 1.0
+shader_param/light_bias = 0.0
+shader_param/wall = ExtResource( 4 )
+shader_param/ground = ExtResource( 3 )
+shader_param/ceiling = ExtResource( 3 )
+
+[node name="column-10m" instance=ExtResource( 5 )]
+
+[node name="bridge_column" parent="." index="0"]
+material/0 = SubResource( 1 )
+material/1 = ExtResource( 2 )

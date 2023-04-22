@@ -1,0 +1,73 @@
+:_entry_front
+{talked==0}
+	[You] Wow. What is this place?
+	Huh? Vaeler?
+	[You] Uh, yes. I'm from Vaeland.
+	Interesting. This is Maslikir foundry. We melt the copper into things and sell them.
+	[You] Oh, interesting.
+{otherwise}
+	[You] Hello again.
+	Hello, Vaeler.
+
+:main_loop
+> What's that thing in the centre?
+	That is a reactor. Impressive, yes? Old world technology. Very few can work with it, but it is all of our electricity needs right here.
+	[You] Is it dangerous to be so close to it?
+	Oh no no. Not that... I think so?
+> Can I buy things from you directly? Or do sell to some sort of hardware store?
+	Eh, I do not know. I would ask the bossman. At the top of the building, in the office.
+> ?{need_capacitors} Do you have any spare capacitors? I imagine you use a lot of electricity.
+	I am not much of an electrician. I would ask the bossman, in the office at the top of the foundry.
+> This is an impressive building. When was it built?
+	Bossman had a small foundry at Crab Hill, selling copper wire he pulled himself.
+	He made big cash. Hired people. Operation got bigger and bigger until we built a new foundry here. Very big operation now, largest copper recycling.. thing.. in Yaqaz.
+	He could tell you more about it. 
+> Bye.
+	{goto("_exit")}
+{goto("main_loop")}
+
+:_entry_capacitor
+?{need_capacitors}
+	?{foundry/arc_furnace}
+		[You] Hello again.
+		Hi.
+		[You] You said I could buy a capacitor from the foreman, correct?
+		If we have any surplus, you would ask him. At his office above the whole foundry.
+	{otherwise}
+		+{foundry/arc_furnace}
+		[You] Excuse me, sir! Are those capacitors?
+		Hm? These? Eh, yes.
+		[You] Would you be able to lend me one?
+		What? No. These power the arc furnace. If we have any surplus to sell, the foreman would know.
+
+{otherwise if talked == 0}
+	[You] Hello. What's this?
+	Hm? Arc furnace. It melts the copper.
+	[You] That seems dangerous.
+	Very.
+{otherwise}
+	[You] Hello again.
+	Hi.
+{exit()}
+
+:_exit
+Goodbye.
+{exit()}
+
+{mention("_coat")}
+{traded_coats()} [You] Hi again! How do you like my coat?
+	It's good, thank you.
+	> That's good to hear. Take care!
+	> Could we trade again?
+		Again? Uh... sure.
+		{swap_coats()} [You] Excellent, thank you!
+{otherwise} [You] Excuse me! I couldn't help but notice that beautiful fabric you're wearing!
+	Uh, thank you?
+	> I just thought I'd mention it. Take care!
+		{exit()}
+	> I'd like to trade my jacket for yours.
+		...?
+		[You] Uh, if you don't mind...
+		I suppose we can.
+		{swap_coats()} Here you go.
+		[You] Thank you kindly!

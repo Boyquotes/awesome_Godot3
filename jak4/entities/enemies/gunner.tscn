@@ -1,0 +1,318 @@
+[gd_scene load_steps=59 format=2]
+
+[ext_resource path="res://material/env/copper/copper1.png" type="Texture" id=1]
+[ext_resource path="res://entities/enemies/gunner.gd" type="Script" id=2]
+[ext_resource path="res://material/env/ancient/white_metal.material" type="Material" id=3]
+[ext_resource path="res://material/env/ancient/gem.material" type="Material" id=4]
+[ext_resource path="res://_glb/enemies/gunner.glb" type="PackedScene" id=5]
+[ext_resource path="res://entities/visual/laser.gd" type="Script" id=6]
+
+[sub_resource type="SpatialMaterial" id=114]
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="CylinderShape" id=2]
+height = 1.34271
+radius = 0.291365
+
+[sub_resource type="SphereShape" id=111]
+radius = 0.446617
+
+[sub_resource type="SphereShape" id=151]
+radius = 35.0
+
+[sub_resource type="SphereMesh" id=107]
+radius = 0.07
+height = 0.14
+radial_segments = 5
+rings = 5
+
+[sub_resource type="SpatialMaterial" id=106]
+resource_local_to_scene = true
+render_priority = 2
+flags_transparent = true
+flags_unshaded = true
+params_blend_mode = 1
+params_cull_mode = 2
+albedo_color = Color( 3, 0.2, 0.2, 1 )
+
+[sub_resource type="ArrayMesh" id=1]
+resource_name = "laser_Cylinder"
+surfaces/0 = {
+"aabb": AABB( -0.00866025, -0.00500004, -2.18557e-10, 0.0173205, 0.01501, 1 ),
+"array_data": PoolByteArray( 0, 0, 0, 0, 10, 215, 35, 60, 79, 78, 240, 47, 176, 46, 210, 23, 0, 0, 0, 56, 0, 0, 0, 0, 10, 215, 35, 60, 79, 78, 240, 47, 126, 127, 126, 193, 0, 58, 20, 56, 0, 0, 0, 0, 10, 215, 35, 60, 79, 78, 240, 47, 80, 46, 210, 103, 0, 60, 0, 56, 0, 0, 0, 0, 219, 214, 35, 60, 0, 0, 128, 63, 176, 46, 210, 23, 0, 0, 0, 0, 0, 0, 0, 0, 219, 214, 35, 60, 0, 0, 128, 63, 0, 0, 126, 63, 0, 52, 20, 56, 0, 0, 0, 0, 219, 214, 35, 60, 0, 0, 128, 63, 80, 46, 210, 103, 0, 60, 0, 0, 189, 227, 13, 60, 11, 215, 163, 187, 80, 78, 112, 175, 0, 130, 126, 63, 85, 57, 0, 56, 189, 227, 13, 60, 11, 215, 163, 187, 80, 78, 112, 175, 126, 127, 126, 193, 169, 59, 245, 58, 189, 227, 13, 60, 11, 215, 163, 187, 80, 78, 112, 175, 80, 46, 210, 103, 85, 57, 0, 56, 189, 227, 13, 60, 105, 215, 163, 187, 0, 0, 128, 63, 0, 130, 126, 63, 85, 57, 0, 0, 189, 227, 13, 60, 105, 215, 163, 187, 0, 0, 128, 63, 0, 0, 126, 63, 83, 55, 245, 58, 189, 227, 13, 60, 105, 215, 163, 187, 0, 0, 128, 63, 80, 46, 210, 103, 85, 57, 0, 0, 189, 227, 13, 188, 8, 215, 163, 187, 76, 78, 112, 175, 176, 46, 210, 23, 85, 53, 0, 56, 189, 227, 13, 188, 8, 215, 163, 187, 76, 78, 112, 175, 0, 130, 126, 63, 85, 53, 0, 56, 189, 227, 13, 188, 8, 215, 163, 187, 76, 78, 112, 175, 126, 127, 126, 193, 86, 56, 245, 58, 189, 227, 13, 188, 102, 215, 163, 187, 0, 0, 128, 63, 176, 46, 210, 23, 85, 53, 0, 0, 189, 227, 13, 188, 102, 215, 163, 187, 0, 0, 128, 63, 0, 130, 126, 63, 85, 53, 0, 0, 189, 227, 13, 188, 102, 215, 163, 187, 0, 0, 128, 63, 0, 0, 126, 63, 101, 41, 245, 58 ),
+"array_index_data": PoolByteArray( 2, 0, 11, 0, 5, 0, 2, 0, 8, 0, 11, 0, 6, 0, 16, 0, 9, 0, 6, 0, 13, 0, 16, 0, 10, 0, 17, 0, 4, 0, 12, 0, 3, 0, 15, 0, 12, 0, 0, 0, 3, 0, 1, 0, 14, 0, 7, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 24,
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 18
+}
+
+[sub_resource type="Curve" id=5]
+_data = [ Vector2( 0, 1 ), 0.0, -0.933152, 0, 0, Vector2( 0.593583, 0 ), -4.92613, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=6]
+width = 32
+curve = SubResource( 5 )
+
+[sub_resource type="ParticlesMaterial" id=7]
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 2.0
+scale_curve = SubResource( 6 )
+
+[sub_resource type="SpatialMaterial" id=10]
+flags_unshaded = true
+
+[sub_resource type="SphereMesh" id=8]
+material = SubResource( 10 )
+radius = 0.15
+height = 0.3
+radial_segments = 5
+rings = 5
+
+[sub_resource type="SphereShape" id=109]
+radius = 0.476531
+
+[sub_resource type="CylinderShape" id=110]
+height = 0.212674
+radius = 0.276986
+
+[sub_resource type="CubeMesh" id=112]
+
+[sub_resource type="SpatialMaterial" id=113]
+albedo_color = Color( 0.572549, 0.572549, 0.572549, 1 )
+metallic = 1.0
+
+[sub_resource type="AnimationNodeAnimation" id=115]
+animation = "AimLeft"
+
+[sub_resource type="AnimationNodeAnimation" id=116]
+animation = "AimRight"
+
+[sub_resource type="AnimationNodeAnimation" id=117]
+animation = "AimUp"
+
+[sub_resource type="AnimationNodeAnimation" id=118]
+animation = "AimDown"
+
+[sub_resource type="AnimationNodeAnimation" id=119]
+animation = "Idle"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=120]
+blend_point_0/node = SubResource( 115 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 116 )
+blend_point_1/pos = Vector2( 1, 0 )
+blend_point_2/node = SubResource( 117 )
+blend_point_2/pos = Vector2( 0, 1 )
+blend_point_3/node = SubResource( 118 )
+blend_point_3/pos = Vector2( 0, -1 )
+blend_point_4/node = SubResource( 119 )
+blend_point_4/pos = Vector2( 0, 0 )
+
+[sub_resource type="AnimationNodeAnimation" id=136]
+animation = "Damaged"
+
+[sub_resource type="AnimationNodeAnimation" id=146]
+animation = "Death"
+
+[sub_resource type="AnimationNodeAnimation" id=127]
+animation = "Flee_Jump"
+
+[sub_resource type="AnimationNodeAnimation" id=128]
+animation = "Flee_Stop"
+
+[sub_resource type="AnimationNodeAnimation" id=129]
+animation = "Flee_Windup"
+
+[sub_resource type="AnimationNodeAnimation" id=147]
+animation = "GravityStun"
+
+[sub_resource type="AnimationNodeAnimation" id=121]
+animation = "Idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=122]
+xfade_time = 0.5
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=123]
+xfade_time = 0.5
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=130]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=131]
+switch_mode = 2
+auto_advance = true
+priority = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=132]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=133]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=134]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=135]
+priority = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=137]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=138]
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=139]
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=140]
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=141]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=142]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=143]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=144]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=145]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=148]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=149]
+xfade_time = 0.3
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=150]
+
+[sub_resource type="AnimationNodeStateMachine" id=124]
+states/Aim/node = SubResource( 120 )
+states/Aim/position = Vector2( 486, 71 )
+states/Damaged/node = SubResource( 136 )
+states/Damaged/position = Vector2( 239, 181 )
+states/Death/node = SubResource( 146 )
+states/Death/position = Vector2( 477, 181 )
+states/Flee_Jump/node = SubResource( 127 )
+states/Flee_Jump/position = Vector2( 96, -43 )
+states/Flee_Stop/node = SubResource( 128 )
+states/Flee_Stop/position = Vector2( 96, 71 )
+states/Flee_Windup/node = SubResource( 129 )
+states/Flee_Windup/position = Vector2( 246, -127 )
+states/GravityStun/node = SubResource( 147 )
+states/GravityStun/position = Vector2( 477, -33 )
+states/Idle/node = SubResource( 121 )
+states/Idle/position = Vector2( 246, 71 )
+transitions = [ "Idle", "Aim", SubResource( 122 ), "Aim", "Idle", SubResource( 123 ), "Aim", "Flee_Windup", SubResource( 130 ), "Flee_Windup", "Flee_Jump", SubResource( 131 ), "Flee_Jump", "Flee_Stop", SubResource( 132 ), "Idle", "Flee_Windup", SubResource( 133 ), "Flee_Stop", "Idle", SubResource( 134 ), "Flee_Jump", "Flee_Windup", SubResource( 135 ), "Flee_Windup", "Flee_Stop", SubResource( 137 ), "Damaged", "Aim", SubResource( 138 ), "Damaged", "Idle", SubResource( 139 ), "Damaged", "Flee_Stop", SubResource( 140 ), "Aim", "Damaged", SubResource( 141 ), "Idle", "Damaged", SubResource( 142 ), "Flee_Stop", "Damaged", SubResource( 143 ), "Flee_Jump", "Damaged", SubResource( 144 ), "Flee_Windup", "Damaged", SubResource( 145 ), "Damaged", "Death", SubResource( 148 ), "GravityStun", "Idle", SubResource( 149 ), "Damaged", "GravityStun", SubResource( 150 ) ]
+start_node = "Idle"
+graph_offset = Vector2( -258, -22 )
+
+[sub_resource type="AnimationNodeBlendTree" id=125]
+graph_offset = Vector2( -125, 58 )
+nodes/StateMachine/node = SubResource( 124 )
+nodes/StateMachine/position = Vector2( 80, 140 )
+node_connections = [ "output", 0, "StateMachine" ]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=126]
+
+[node name="gunner" groups=["dynamic", "enemy", "push", "target"] instance=ExtResource( 5 )]
+collision_layer = 65549
+mass = 50.0
+axis_lock_angular_x = true
+axis_lock_angular_z = true
+angular_damp = 10.0
+script = ExtResource( 2 )
+id = "gunner"
+drops_ammo = 1.0
+maximum_rarity = 3
+gem_drop_max = 15
+mesh_node = NodePath("Armature/Skeleton/gunner")
+health = 55
+
+[node name="Armature" parent="." index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="gunner" parent="Armature/Skeleton" index="0"]
+material/0 = ExtResource( 3 )
+material/1 = ExtResource( 4 )
+material/2 = SubResource( 114 )
+
+[node name="CollisionShape" type="CollisionShape" parent="." index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.67697, 0 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="." index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0364776, 0.940261, -0.0565119 )
+shape = SubResource( 111 )
+
+[node name="awareness" type="Area" parent="." index="4"]
+collision_layer = 0
+collision_mask = 6
+
+[node name="CollisionShape" type="CollisionShape" parent="awareness" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 31.2875 )
+shape = SubResource( 151 )
+
+[node name="laser" type="Spatial" parent="." index="5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22144, 0.822621, 0.217506 )
+
+[node name="aim_cast" type="SpringArm" parent="laser" index="0"]
+collision_mask = 7
+spring_length = 160.0
+script = ExtResource( 6 )
+laser_geometry = NodePath("../geomentry")
+
+[node name="laser_end" type="MeshInstance" parent="laser/aim_cast" index="0"]
+time_scale_response = false
+mesh = SubResource( 107 )
+skeleton = NodePath("")
+material/0 = SubResource( 106 )
+
+[node name="geomentry" type="MeshInstance" parent="laser" index="1"]
+material_override = SubResource( 106 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+
+[node name="OmniLight" type="OmniLight" parent="laser" index="2"]
+light_color = Color( 1, 0, 0, 1 )
+omni_range = 1.0
+omni_attenuation = 2.82843
+
+[node name="target" type="Spatial" parent="." index="6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.967191, 0 )
+
+[node name="impact" type="Node" parent="." index="7"]
+
+[node name="Particles" type="Particles" parent="impact" index="0"]
+emitting = false
+amount = 12
+lifetime = 0.3
+one_shot = true
+preprocess = 0.2
+randomness = 0.81
+process_material = SubResource( 7 )
+draw_pass_1 = SubResource( 8 )
+
+[node name="claw_hitbox" type="Area" parent="." index="8"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape" type="CollisionShape" parent="claw_hitbox" index="0"]
+shape = SubResource( 109 )
+
+[node name="ground_area" type="Area" parent="." index="9"]
+collision_layer = 0
+
+[node name="CollisionShape" type="CollisionShape" parent="ground_area" index="0"]
+shape = SubResource( 110 )
+
+[node name="debug_shield" type="MeshInstance" parent="." index="10"]
+transform = Transform( 0.304438, 0, 0, 0, 0.417058, 0.0168175, 0, -0.116419, 0.060247, -0.173768, 0.844999, 0.45623 )
+visible = false
+mesh = SubResource( 112 )
+material/0 = SubResource( 113 )
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="11"]
+tree_root = SubResource( 125 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/StateMachine/playback = SubResource( 126 )
+parameters/StateMachine/Aim/blend_position = Vector2( -0.139373, -0.018868 )

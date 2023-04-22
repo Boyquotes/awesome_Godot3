@@ -1,0 +1,13 @@
+[remap]
+
+importer="np.dialog"
+type="Resource"
+path="res://.import/hikori.dialog-4e2f8ea900d2be3930e609b7d75454d6.tres"
+
+[deps]
+
+source_file="res://dialog/side_content/little_gods_treasure/hikori.dialog"
+dest_files=[ "res://.import/hikori.dialog-4e2f8ea900d2be3930e609b7d75454d6.tres" ]
+
+[params]
+

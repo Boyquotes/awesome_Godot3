@@ -1,0 +1,90 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://items/item_pickup.tscn" type="PackedScene" id=1]
+[ext_resource path="res://material/env/ancient/white_metal.material" type="Material" id=2]
+[ext_resource path="res://material/env/ancient/gem.material" type="Material" id=3]
+[ext_resource path="res://_glb/items/bug.glb" type="PackedScene" id=4]
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("VisibilityEnabler/bug:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.396698, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("VisibilityEnabler/bug:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.6, 0.6, 0.6 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "bob"
+length = 4.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("VisibilityEnabler/bug:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 1, 1.7, 2, 2.7, 3.3, 4.1, 4.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.396698, 0 ), Vector3( -0.00296102, 0.399472, 0 ), Vector3( 0.00572793, 0.394418, 0 ), Vector3( -0.0445396, 0.369415, 0.0289777 ), Vector3( -0.0445396, 0.369415, 0.0289777 ), Vector3( 0.0022503, 0.370751, -0.000324765 ), Vector3( 0.0022503, 0.370751, -0.000324765 ), Vector3( 0.0015138, 0.379194, -0.0186942 ), Vector3( 0.0015138, 0.379194, -0.0186942 ), Vector3( 0, 0.396698, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("VisibilityEnabler/bug:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 1, 1.7, 2, 2.7, 3.3, 4.1, 4.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( -0.938132, -0.0119705, 0.731083 ), Vector3( 0, 0, -1.75762 ), Vector3( -1.07419, -0.070822, 3.77231 ), Vector3( -1.07419, -0.070822, 3.77231 ), Vector3( -0.959099, -0.0632339, -1.56554 ), Vector3( -0.959099, -0.0632339, -1.56554 ), Vector3( -1.26523, -0.0307522, -1.04388 ), Vector3( -1.26523, -0.0307522, -1.04388 ), Vector3( 0, 0, 0 ) ]
+}
+
+[node name="bug_pickup" instance=ExtResource( 1 )]
+item_id = "bug"
+
+[node name="VisibilityEnabler" type="VisibilityEnabler" parent="." index="2"]
+aabb = AABB( -0.261076, -0.16238, -0.236926, 0.522152, 0.935112, 0.473852 )
+children_only = false
+
+[node name="bug" parent="VisibilityEnabler" index="0" instance=ExtResource( 4 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0.396698, 0 )
+
+[node name="bug" parent="VisibilityEnabler/bug/Armature/Skeleton" index="0"]
+material/0 = ExtResource( 2 )
+material/1 = ExtResource( 3 )
+
+[node name="AnimationPlayer" parent="VisibilityEnabler/bug" index="1"]
+autoplay = "Idle-loop"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VisibilityEnabler" index="1"]
+root_node = NodePath("../..")
+autoplay = "bob"
+anims/RESET = SubResource( 2 )
+anims/bob = SubResource( 3 )
+
+[node name="OmniLight" parent="." index="4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.151005, 0 )
+
+[editable path="VisibilityEnabler/bug"]

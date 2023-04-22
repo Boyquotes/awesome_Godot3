@@ -1,0 +1,70 @@
+{!main_speaker.get_parent().has_required_items()}
+	Hm... Sorry, you can't race unless you have a hoverboard.
+	[You] A hoverboard?
+	Yeah. There's a few of em around.
+	{exit()}
+
+
+{game_stat("completed") or game_stat("failed")}
+	!{racer/discussed/medium} So what brought you to the area? You're from Kiper, right?
+		[You] Vaeland, actually.
+		Really? Why would a Vaeler want to come here?
+		> I'm using the Medium.
+			Like a psychic?
+			[You] It's basically, hm... It's a machine that shows you what someone was like.
+			How's that going?
+			?{talked/mum}
+				[You] It's going well, I suppose. But I never really knew my mother, so the Medium can only give me so much.
+				Oh, you're using it to talk to your mom? Did she, uh... Is she not around anymore?
+				[You] Yes. She disappeared when I was young. I came here because she used to live in the area.
+				Oh, wow! You traveled all this way just to see her?
+				You must really love her, huh?
+				[You] ...
+			{otherwise}
+				[You] Uh, well, I haven't used it yet.
+				You haven't? You said you came all this way to use it?
+				[You] Well, it's complicated...
+					The Medium uses a person's memories to construct a version of the person they want to see.
+					But I never knew my mother! We think she returned here when I was a toddler, but I don't know for sure.
+					I'm just, I don't know, looking around to see if there's any sign of her?
+			If she lived around here, I bet there's records about her in the capital building. It's the city on the hill.
+		> I'm looking for someone.
+			Oh, neat! Are you like a detective or something?
+			> Yes.
+				Cool! The capital building would probably have records if they lived in Braalna. You could check there!
+				// TODO: maybe build on the detective thing for a laugh
+			> No, it's just some family.
+				Oh, I see. Well, I bet the capital building would have records if they lived here. It's the walled city up the hill.
+		{Global.task_note_place("mum", "crab_hill", "The capital building would possibly have records of my mother.")}
+		+{mum/records}
+		[You] I might check there. Thanks.
+		+{racer/discussed/medium}
+		Since you're here, did you want to try the race again?
+	{otherwise}
+		Wanna race again?
+{otherwise}
+	{talked > 0} Nice, you found a hoverboard!
+	{otherwise} Hey, is that a hoverboard?
+		[You] It's more of a scooter than a board.
+		That works for me!
+	Want to race?
+
+{has_game_stat("best")}
+	* Your current best time is #{"%.3f" % game_stat("best")} seconds (#{main_speaker.get_parent().Award.keys()[game_stat("award") - 1]} Rank).
+> Sure.
+	Alright, let's go!
+	{main_speaker.get_parent().start_race()}
+	{main_speaker.get_parent().hover_scooter}
+		{exit(Global.get_player().State.Hover)}
+> Maybe later.
+	Ok, later!
+{exit()}
+
+:_coat
+[You] Say, that's a lovely coat..
+> Do you want to trade?
+	{game_stat("award") >= 2} Sure.
+		{swap_coats()} [You] Thanks!
+	{otherwise} Hm... how about if you get silver in the race?
+> Just wanted to mention that, bye!
+	{exit()}

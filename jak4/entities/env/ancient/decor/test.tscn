@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://material/env/ancient/writing/writing.png" type="Texture" id=1]
+[ext_resource path="res://material/env/ancient/ancient_writing.gdshader" type="Shader" id=2]
+
+[sub_resource type="QuadMesh" id=1]
+size = Vector2( 1, 2 )
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 2 )
+shader_param/metal_color = Color( 0.603922, 0.603922, 0.603922, 1 )
+shader_param/gem_color = Color( 0.643137, 0.0745098, 0.141176, 1 )
+shader_param/gem_emission = Color( 0.196078, 0.403922, 0.537255, 1 )
+shader_param/metal_specularity = 12.621
+shader_param/gem_specularity = 32.0
+shader_param/softness = 0.485
+shader_param/writing_texture = ExtResource( 1 )
+
+[node name="ancient_decor_test" type="MeshInstance"]
+mesh = SubResource( 1 )
+material/0 = SubResource( 3 )

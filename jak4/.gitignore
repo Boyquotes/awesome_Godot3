@@ -1,0 +1,26 @@
+# Godot-specific ignores
+.import/
+export/
+export.cfg
+export_presets.cfg
+
+# Imported translations (automatically generated from CSV files)
+*.translation
+# Secret cheats file!!!
+scripts/cheats.gd
+
+# Mono-specific ignores
+.mono/
+data_*/
+
+*.blend[0-9]
+*.kra~
+*.*~
+*.pdf
+*.log
+*.aux
+*.synctex.gz
+
+# Too big for github
+*.lmbake
+areas/chunks/_lightmaps
