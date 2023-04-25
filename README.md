@@ -7,7 +7,9 @@ TempusFugit
 3D:  
 https://github.com/LudumDare41/LD41  
 https://github.com/LoukaSoret/GameOff2019  
-<img src="/images/GameOff2019" />
+<p align="center">
+<img width=645.45 height=274.95  src="https://raw.githubusercontent.com/Boyquotes/awesome_Godot3/main/images/GameOff2019.png">
+</p>
 Godot-Getaway  
 https://github.com/JohnnyRouddro/Godot_Third_Person_Shooter  
 https://github.com/needleful/jak4 fork version godot here : https://github.com/needleful/godot/tree/jackie_3.x  
