@@ -25,3 +25,6 @@
 [submodule "GameOff2019"]
 	path = GameOff2019
 	url = https://github.com/LoukaSoret/GameOff2019.git
+[submodule "TempusFugit"]
+	path = TempusFugit
+	url = https://github.com/CPau/TempusFugit

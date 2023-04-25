@@ -2,7 +2,7 @@ Awesome projects/addons/tutorials for GODOT engine version 3.
 
 ## 2D:  
 - https://github.com/OsamaElHariri/oriks_lantern  
-- TempusFugit
+- https://github.com/CPau/TempusFugit
 
 ## 3D:  
 - https://github.com/LudumDare41/LD41  
