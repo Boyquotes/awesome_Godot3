@@ -13,9 +13,15 @@
 [submodule "LD41"]
 	path = LD41
 	url = https://github.com/LudumDare41/LD41
-[submodule "Godot_Third_Person_Controller"]
-	path = Godot_Third_Person_Controller
-	url = https://github.com/JohnnyRouddro/Godot_Third_Person_Controller
 [submodule "GDTLancer"]
 	path = GDTLancer
 	url = https://github.com/roalyr/GDTLancer
+[submodule "Godot_Third_Person_Shooter"]
+	path = Godot_Third_Person_Shooter
+	url = https://github.com/JohnnyRouddro/Godot_Third_Person_Shooter
+[submodule "proton_trail"]
+	path = proton_trail
+	url = https://github.com/HungryProton/proton_trail
+[submodule "GameOff2019"]
+	path = GameOff2019
+	url = https://github.com/LoukaSoret/GameOff2019.git
