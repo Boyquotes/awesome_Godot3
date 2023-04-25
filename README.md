@@ -8,7 +8,7 @@ TempusFugit
 https://github.com/LudumDare41/LD41  
 https://github.com/LoukaSoret/GameOff2019  
 <p align="center">
-<img width=645.45 height=274.95  src="https://raw.githubusercontent.com/Boyquotes/awesome_Godot3/main/images/GameOff2019.png">
+<img width=600 src="https://raw.githubusercontent.com/Boyquotes/awesome_Godot3/main/images/GameOff2019.png">
 </p>
 Godot-Getaway  
 https://github.com/JohnnyRouddro/Godot_Third_Person_Shooter  
