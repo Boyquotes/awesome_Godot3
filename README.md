@@ -6,6 +6,9 @@ Awesome projects/addons/tutorials for GODOT engine version 3.
 
 ## 3D:  
 - https://github.com/LudumDare41/LD41  
+<p align="center">
+<img width=600 src="https://raw.githubusercontent.com/Boyquotes/awesome_Godot3/main/images/LD41.png">
+</p>
 - https://github.com/LoukaSoret/GameOff2019  
 <p align="center">
 <img width=600 src="https://raw.githubusercontent.com/Boyquotes/awesome_Godot3/main/images/GameOff2019.png">
