@@ -28,3 +28,6 @@
 [submodule "TempusFugit"]
 	path = TempusFugit
 	url = https://github.com/CPau/TempusFugit
+[submodule "godot-getaway"]
+	path = godot-getaway
+	url = https://github.com/pablokintopp/godot-getaway
