@@ -1,5 +1,9 @@
 Awesome projects/addons/tutorials for GODOT engine version 3.
 
+```
+git clone --recurse-submodules https://github.com/Boyquotes/awesome_Godot3
+```
+
 ## 2D:  
 - https://github.com/OsamaElHariri/oriks_lantern  
 - https://github.com/CPau/TempusFugit
