@@ -22,11 +22,15 @@ git clone --recurse-submodules https://github.com/Boyquotes/awesome_Godot3
 <p align="center">
 <img width=600 src="https://raw.githubusercontent.com/Boyquotes/awesome_Godot3/main/images/godot-getaway.png">
 </p>
-- https://github.com/JohnnyRouddro/Godot_Third_Person_Shooter  
+- https://github.com/JohnnyRouddro/Godot_Third_Person_Shooter   
+![](images/Godot_Third_Person_Shooter.png)
 - https://github.com/needleful/jak4 fork version godot here : https://github.com/needleful/godot/tree/jackie_3.x  
-- Third-Person-Controller
-- Godot-Souls-like-35  
-- Tavern  
+- Third-Person-Controller / Godot-Souls-like-35
+![](images/Third-Person-Controller.png) 
+- https://github.com/teddybear082/redorahn-project
+![](images/redorahn-project.png) 
+- Tavern  -> https://godotlabs.io/asset/tavern  
+![](images/tavern.png)
 
 ## FX:  
 https://github.com/drcd1/GodotSimpleExplosionVFX  
