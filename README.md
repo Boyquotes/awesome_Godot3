@@ -7,7 +7,10 @@ git clone --recurse-submodules https://github.com/Boyquotes/awesome_Godot3
 ## 2D:  
 - https://github.com/OsamaElHariri/oriks_lantern  
 ![](images/oriks_lantern.png)
-- https://github.com/CPau/TempusFugit  
+- https://github.com/CPau/TempusFugit v3.0.6  
+<p align="center">
+<img width=600 src="https://raw.githubusercontent.com/Boyquotes/awesome_Godot3/main/images/TempusFugit.png">
+</p>
 
 ## 3D:  
 - https://github.com/LudumDare41/LD41  
