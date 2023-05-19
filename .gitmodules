@@ -31,3 +31,6 @@
 [submodule "godot-getaway"]
 	path = godot-getaway
 	url = https://github.com/pablokintopp/godot-getaway
+[submodule "Third-Person-Controller---Godot-Souls-like"]
+	path = Third-Person-Controller---Godot-Souls-like
+	url = https://github.com/pemguin005/Third-Person-Controller---Godot-Souls-like.git
