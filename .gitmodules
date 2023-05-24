@@ -34,3 +34,6 @@
 [submodule "Third-Person-Controller---Godot-Souls-like"]
 	path = Third-Person-Controller---Godot-Souls-like
 	url = https://github.com/pemguin005/Third-Person-Controller---Godot-Souls-like.git
+[submodule "Libre-TrainSim"]
+	path = Libre-TrainSim
+	url = https://github.com/Libre-TrainSim/Libre-TrainSim
