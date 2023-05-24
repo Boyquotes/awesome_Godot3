@@ -35,7 +35,8 @@ git clone --recurse-submodules https://github.com/Boyquotes/awesome_Godot3
 
 - https://github.com/needleful/jak4 fork version godot here : https://github.com/needleful/godot/tree/jackie_3.x  
 
-- Third-Person-Controller / Godot-Souls-like-35 https://github.com/pemguin005/Third-Person-Controller---Godot-Souls-like    
+- Third-Person-Controller / Godot-Souls-like-35 https://github.com/pemguin005/Third-Person-Controller---Godot-Souls-like  
+https://www.youtube.com/watch?v=GQ96m3ZBLY0  
 <p align="center">
 <img width=600 src="https://raw.githubusercontent.com/Boyquotes/awesome_Godot3/main/images/Third-Person-Controller---Godot-Souls-like.gif">
 </p>
