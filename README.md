@@ -68,5 +68,11 @@ https://github.com/dreadpon/godot_spatial_gardener 3D
 ## Charts:  
 https://github.com/fenix-hub/godot-engine.easy-charts  
 
+## Tools:  
+- https://github.com/RodZill4/material-maker  
+<p align="center">
+<img width=600 src="https://raw.githubusercontent.com/Boyquotes/awesome_Godot3/main/images/material-maker.png">
+</p>
+
 ## Youtube channels:  
 https://www.youtube.com/@johnnygossdev/  

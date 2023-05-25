@@ -37,3 +37,6 @@
 [submodule "Libre-TrainSim"]
 	path = Libre-TrainSim
 	url = https://github.com/Libre-TrainSim/Libre-TrainSim
+[submodule "material-maker"]
+	path = material-maker
+	url = https://github.com/RodZill4/material-maker
