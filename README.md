@@ -69,6 +69,9 @@ textextreme
 
 ## Addons:
 https://github.com/dreadpon/godot_spatial_gardener 3D
+<p align="center">
+<img width=600 src="https://raw.githubusercontent.com/Boyquotes/awesome_Godot3/main/images/godot_spatial_gardener.gif">
+</p>
 
 ## Charts:  
 https://github.com/fenix-hub/godot-engine.easy-charts  
