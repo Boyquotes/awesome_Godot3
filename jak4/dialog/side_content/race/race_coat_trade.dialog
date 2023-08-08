@@ -1,8 +1,0 @@
-:_coat
-[You] Say, that's a lovely coat..
-> Do you want to trade?
-	{game_stat("award") >= 2} Sure.
-		{swap_coats()} [You] Thanks!
-	{otherwise} Hm... how about if you get silver in the race?
-> Just wanted to mention that, bye!
-	{exit()}

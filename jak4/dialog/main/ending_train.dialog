@@ -1,9 +1,0 @@
-* The train is going to depart soon for the capital.
-* From there, you will take a ship back home to Vaeland.
-* It's unlikely you will ever return to Yaqaz.
-* Are you ready to go?
-
-> {skip()} Yes.
-	{main_speaker.end_game()}
-> {skip()} No.
- {exit()}

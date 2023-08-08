@@ -1,6 +1,0 @@
-[gd_resource type="Environment" format=2]
-
-[resource]
-background_color = Color( 0.227451, 0.227451, 0.227451, 1 )
-ambient_light_color = Color( 0.482353, 0.509804, 0.815686, 1 )
-indirect_light_color = Color( 0.992157, 0.87451, 0.65098, 1 )

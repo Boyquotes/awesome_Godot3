@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=2]
-
-[ext_resource path="res://material/env/copper/copper_corroded.material" type="Material" id=1]
-[ext_resource path="res://_glb/env/copper/scrap2.glb" type="PackedScene" id=2]
-
-[node name="scrap2" instance=ExtResource( 2 )]
-
-[node name="scrap2" parent="." index="0"]
-material_override = ExtResource( 1 )

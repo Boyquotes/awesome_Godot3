@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=2]
-
-[ext_resource path="res://_glb/env/plants/grass1_Plane.mesh" type="ArrayMesh" id=1]
-[ext_resource path="res://entities/visual/distance_visible.gd" type="Script" id=2]
-
-[node name="grass1" type="MultiMeshComponent"]
-mesh = ExtResource( 1 )
-script = ExtResource( 2 )
-distance = 50.0
