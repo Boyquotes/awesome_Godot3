@@ -58,15 +58,17 @@ https://www.youtube.com/watch?v=GQ96m3ZBLY0
 <img width=600 src="https://raw.githubusercontent.com/Boyquotes/awesome_Godot3/main/images/tavern.png">
 </p>
 
+- https://github.com/nwallenfang/solar-gardener
+<p align="center">
+<img width=600 src="https://raw.githubusercontent.com/Boyquotes/awesome_Godot3/main/images/solar-gardener.png">
+</p>
+
 ## FX:  
 https://github.com/drcd1/GodotSimpleExplosionVFX  
 textextreme  
 
 ## Addons:
 https://github.com/dreadpon/godot_spatial_gardener 3D
-<p align="center">
-<img width=600 src="https://raw.githubusercontent.com/Boyquotes/awesome_Godot3/main/images/solar-gardener.png">
-</p>
 
 ## Charts:  
 https://github.com/fenix-hub/godot-engine.easy-charts  
